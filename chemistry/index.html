@@ -3,59 +3,151 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chemistry — Cadu — Science Journal</title>
-<meta name="description" content="Articles on chemistry by Cadu.">
-<link rel="canonical" href="https://PLACEHOLDER-DOMINIO.com/chemistry/">
-<link rel="alternate" type="application/rss+xml" title="Cadu — Science Journal" href="https://PLACEHOLDER-DOMINIO.com/feed.xml">
-<meta property="og:title" content="Chemistry — Cadu — Science Journal">
-<meta property="og:description" content="Articles on chemistry by Cadu.">
-<meta property="og:url" content="https://PLACEHOLDER-DOMINIO.com/chemistry/">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="Cadu — Science Journal">
+<title>Chemistry — Carlos Raymond</title>
+<meta name="description" content="Articles on chemistry by Carlos Raymond.">
+<link rel="canonical" href="https://carlosraymond.com/chemistry/">
+<link rel="alternate" type="application/rss+xml" title="Carlos Raymond" href="https://carlosraymond.com/feed.xml">
+<meta property="og:title" content="Chemistry — Carlos Raymond">
+<meta property="og:description" content="Articles on chemistry by Carlos Raymond.">
+<meta property="og:url" content="https://carlosraymond.com/chemistry/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Carlos Raymond">
 
 <style>
-:root{--ink:#1a1a1a;--muted:#5b5b5b;--accent:#0f4c81;--rule:#e3e0d8;--bg:#fdfcf9}
+:root{--bg:#FFFFFF;--ink:#141414;--muted:#6E6E73;--rule:#E7E7E4;--card:#FAFAF8;
+--physics:#3E7DBF;--math:#E8604C;--chem:#D89B2C;--bio:#55A05E;--tech:#8B67C9}
+@media (prefers-color-scheme: dark){:root{--bg:#101013;--ink:#ECECE8;--muted:#9A9AA2;--rule:#26262C;--card:#17171B;
+--physics:#6FA6DC;--math:#F08B7B;--chem:#E4B45C;--bio:#7CBB84;--tech:#AC8FE0}}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--bg);line-height:1.7}
-a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-header{border-bottom:3px double var(--rule);padding:2rem 1rem 1.2rem;text-align:center}
-header .site-title{font-size:1.9rem;letter-spacing:.02em}
-header .tagline{color:var(--muted);font-style:italic;font-size:.95rem;margin-top:.3rem}
-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem;padding:.8rem 1rem;border-bottom:1px solid var(--rule);font-family:Helvetica,Arial,sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
-main{max-width:46rem;margin:0 auto;padding:2.5rem 1.2rem}
-h1{font-size:1.8rem;line-height:1.25;margin-bottom:.6rem}
-h2{font-size:1.25rem;margin:2rem 0 .8rem}
-h3{font-size:1.05rem;margin:1.5rem 0 .6rem}
-p{margin-bottom:1rem}
-.article-meta{color:var(--muted);font-size:.88rem;font-family:Helvetica,Arial,sans-serif;margin-bottom:1.6rem}
-.abstract{border-left:3px solid var(--accent);padding:.7rem 1rem;background:#f4f1ea;font-size:.95rem;margin-bottom:1.8rem}
-.abstract b{font-family:Helvetica,Arial,sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
-ul,ol{margin:0 0 1rem 1.4rem}
-blockquote{border-left:3px solid var(--rule);padding-left:1rem;color:var(--muted);margin-bottom:1rem}
-code{font-family:Consolas,Menlo,monospace;font-size:.9em;background:#f0ede6;padding:.1em .35em;border-radius:3px}
-pre{background:#f0ede6;padding:1rem;overflow-x:auto;border-radius:4px;margin-bottom:1rem}
-pre code{background:none;padding:0}
-.article-list{list-style:none;margin:0}
-.article-list li{border-bottom:1px solid var(--rule);padding:1.2rem 0}
-.article-list .d{font-family:Helvetica,Arial,sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-.article-list h3{margin:.25rem 0}
-.article-list p{color:var(--muted);font-size:.93rem;margin:0}
-footer{border-top:1px solid var(--rule);margin-top:3rem;padding:1.5rem 1rem;text-align:center;color:var(--muted);font-size:.82rem;font-family:Helvetica,Arial,sans-serif}
-img{max-width:100%}
-table{border-collapse:collapse;margin-bottom:1rem;width:100%}
-td,th{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;font-size:.92rem}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.68;font-size:17px}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--physics);outline-offset:3px;border-radius:2px}
+img{max-width:100%;display:block}
+.sans{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif}
+.top{border-bottom:1px solid var(--rule)}
+.top-inner{max-width:74rem;margin:0 auto;padding:1.3rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.logo{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-weight:800;font-size:1.55rem;letter-spacing:-.02em}
+.logo span{color:var(--physics)}
+.logo small{display:block;font-weight:500;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:.1rem}
+.top nav{display:flex;gap:1.5rem;flex-wrap:wrap}
+.top nav a{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.top nav a:hover{opacity:.7}
+.c-physics,.k-physics{color:var(--physics)}.c-math,.k-math{color:var(--math)}
+.c-chem,.k-chem{color:var(--chem)}.c-bio,.k-bio{color:var(--bio)}.c-tech,.k-tech{color:var(--tech)}
+main{max-width:74rem;margin:0 auto;padding:0 1.5rem}
+.kicker{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.featured{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:2.6rem;align-items:center;padding:2.8rem 0;border-bottom:1px solid var(--rule)}
+@media (max-width:780px){.featured{grid-template-columns:1fr;gap:1.4rem}}
+.art{aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:var(--card)}
+.art canvas{width:100%;height:100%;display:block}
+.featured h1{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-weight:800;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.12;letter-spacing:-.015em;margin:.7rem 0 .9rem;text-wrap:balance}
+.featured h1 a:hover{opacity:.75}
+.dek{color:var(--muted);font-size:1.04rem}
+.byline{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:.76rem;color:var(--muted);margin-top:1.1rem;letter-spacing:.04em}
+.byline b{color:var(--ink);font-weight:600}
+.sec{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-weight:800;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;margin:2.6rem 0 1.4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:2rem;padding-bottom:1rem}
+.card .art{margin-bottom:.9rem}
+.card h3{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-weight:700;font-size:1.12rem;line-height:1.28;letter-spacing:-.01em;margin:.4rem 0 .45rem;text-wrap:balance}
+.card h3 a:hover{opacity:.75}
+.card p{color:var(--muted);font-size:.92rem}
+.card time{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:.72rem;color:var(--muted);display:block;margin-top:.55rem;letter-spacing:.06em}
+.empty{padding:3rem 0;color:var(--muted);font-style:italic}
+.author{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:3rem;align-items:center;margin:3rem 0 0;padding:2.8rem 0;border-top:1px solid var(--rule)}
+@media (max-width:780px){.author{grid-template-columns:1fr;gap:1.6rem}}
+.portrait{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/5;max-width:24rem}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.portrait::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);border-radius:8px}
+.author .kicker{margin-bottom:.5rem;display:block}
+.author h2{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-weight:800;font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.15;letter-spacing:-.015em;margin-bottom:.9rem;text-wrap:balance}
+.author p{color:var(--muted);font-size:1rem;max-width:38rem}
+.chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.3rem}
+.chip{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.08em;border:1px solid var(--rule);background:var(--card);padding:.45em .95em;border-radius:100px;color:var(--ink)}
+.chip.gold{border-color:var(--chem);color:var(--chem)}
+.author .cta{display:inline-block;margin-top:1.4rem;font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--physics)}
+.author .cta:hover{opacity:.7}
+.strip{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:1.6rem 2rem;margin:2.6rem 0;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.strip .t{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-weight:700;font-size:1.05rem}
+.strip .s{color:var(--muted);font-size:.9rem}
+.strip a{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--physics);white-space:nowrap}
+/* artigo */
+.article-head{max-width:46rem;margin:0 auto;padding:3rem 0 1.4rem;text-align:left}
+.article-head h1{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-weight:800;font-size:clamp(1.8rem,4.5vw,2.7rem);line-height:1.12;letter-spacing:-.015em;margin:.7rem 0 .9rem;text-wrap:balance}
+.article-art{max-width:60rem;margin:1.4rem auto}
+.article-body{max-width:46rem;margin:0 auto;padding:1.2rem 0 2rem}
+.article-body h2{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-weight:700;font-size:1.35rem;letter-spacing:-.01em;margin:2.2rem 0 .8rem}
+.article-body h3{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-weight:700;font-size:1.1rem;margin:1.8rem 0 .6rem}
+.article-body p{margin-bottom:1.1rem}
+.article-body ul,.article-body ol{margin:0 0 1.1rem 1.5rem}
+.article-body blockquote{border-left:3px solid var(--rule);padding-left:1.1rem;color:var(--muted);margin-bottom:1.1rem}
+.article-body code{font-family:Consolas,Menlo,monospace;font-size:.88em;background:var(--card);border:1px solid var(--rule);padding:.08em .35em;border-radius:4px}
+.article-body pre{background:var(--card);border:1px solid var(--rule);padding:1rem;border-radius:6px;overflow-x:auto;margin-bottom:1.1rem}
+.article-body pre code{border:0;background:none;padding:0}
+.article-body img{border-radius:6px;margin:1.2rem 0}
+.article-body table{border-collapse:collapse;width:100%;margin-bottom:1.1rem;font-size:.94rem}
+.article-body td,.article-body th{border:1px solid var(--rule);padding:.45rem .7rem;text-align:left}
+.abstract{border-left:3px solid var(--physics);background:var(--card);padding:.9rem 1.2rem;border-radius:0 6px 6px 0;margin:1.4rem 0;font-size:.97rem}
+.abstract b{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+footer{border-top:1px solid var(--rule);margin-top:3rem}
+.foot{max-width:74rem;margin:0 auto;padding:1.6rem 1.5rem 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;font-size:.74rem;color:var(--muted);letter-spacing:.06em}
 </style>
 </head>
 <body>
-<header>
-  <div class="site-title"><a href="/" style="color:inherit">Cadu — Science Journal</a></div>
-  <div class="tagline">Independent research and essays in exact sciences and technology</div>
-</header>
-<nav><a href="/">Home</a><a href="/physics/">Physics</a><a href="/chemistry/">Chemistry</a><a href="/biology/">Biology</a><a href="/mathematics/">Mathematics</a><a href="/technology/">Technology</a><a href="/about/">About</a></nav>
+<header class="top"><div class="top-inner">
+  <div class="logo"><a href="/">Carlos <span>Raymond</span></a><small>Science · Essays · Research Notes</small></div>
+  <nav aria-label="Fields"><a href="/physics/" class="c-physics">Physics</a><a href="/chemistry/" class="c-chem">Chemistry</a><a href="/biology/" class="c-bio">Biology</a><a href="/mathematics/" class="c-math">Mathematics</a><a href="/technology/" class="c-tech">Technology</a><a href="/about/">About</a></nav>
+</div></header>
 <main>
-<h1 style="font-size:1.4rem">Chemistry</h1>
-<p><i>No articles in this section yet.</i></p>
+<h2 class="sec" style="margin-top:2.6rem"><span class="k-chem">Chemistry</span></h2>
+<p class="empty">No articles in this section yet — coming soon.</p>
 </main>
-<footer>&copy; 2026 Cadu &middot; Cadu — Science Journal &middot; <a href="/feed.xml">RSS</a></footer>
+<footer><div class="foot">
+  <span>&copy; 2026 Carlos Raymond — carlosraymond.com</span>
+  <span>Corrections welcome — every claim referenced</span>
+  <span><a href="/feed.xml">RSS</a> · <a href="/sitemap.xml">Sitemap</a></span>
+</div></footer>
+<script>
+(function(){
+  const colors=()=>{const s=getComputedStyle(document.documentElement);return{
+    physics:s.getPropertyValue('--physics').trim(),math:s.getPropertyValue('--math').trim(),
+    chem:s.getPropertyValue('--chem').trim(),bio:s.getPropertyValue('--bio').trim(),
+    tech:s.getPropertyValue('--tech').trim(),bg:s.getPropertyValue('--card').trim()}};
+  function mkRnd(seed){let s=seed;return()=> (s=(s*9301+49297)%233280)/233280}
+  function draw(cv){
+    const kind=cv.dataset.art,rnd=mkRnd(+cv.dataset.seed||1);
+    const w=cv.clientWidth||600,h=cv.clientHeight||375,dpr=window.devicePixelRatio||1;
+    cv.width=w*dpr;cv.height=h*dpr;const x=cv.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);
+    const C=colors();const main=C[kind]||C.physics;
+    x.fillStyle=C.bg;x.fillRect(0,0,w,h);
+    if(kind==='physics'){x.strokeStyle=main;x.globalAlpha=.35;x.lineWidth=1.2;
+      for(let i=0;i<4;i++){x.beginPath();x.ellipse(w*.5,h*.55,(i+1)*w*.11,(i+1)*h*.13,-.35,0,7);x.stroke()}
+      x.globalAlpha=1;x.fillStyle=main;x.beginPath();x.arc(w*.5,h*.55,9,0,7);x.fill();
+      for(let i=0;i<4;i++){const a=rnd()*6.28;x.beginPath();
+        x.arc(w*.5+Math.cos(a)*(i+1)*w*.11,h*.55+Math.sin(a)*(i+1)*h*.13,4,0,7);x.fill()}}
+    if(kind==='math'){x.strokeStyle=main;x.lineWidth=1.4;
+      for(let i=0;i<14;i++){x.globalAlpha=.18+i*.05;x.beginPath();
+        for(let t=0;t<=w;t+=6){const y=h*.5+Math.sin(t/w*6.28+i*.4)*(h*.3)*(i/14);
+          t===0?x.moveTo(t,y):x.lineTo(t,y)}x.stroke()}}
+    if(kind==='chem'){const pts=[];for(let i=0;i<9;i++)pts.push([w*.12+rnd()*w*.76,h*.14+rnd()*h*.72]);
+      x.strokeStyle=main;x.globalAlpha=.4;x.lineWidth=1.2;
+      for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+        const d=Math.hypot(pts[i][0]-pts[j][0],pts[i][1]-pts[j][1]);
+        if(d<w*.3){x.beginPath();x.moveTo(...pts[i]);x.lineTo(...pts[j]);x.stroke()}}
+      x.globalAlpha=1;x.fillStyle=main;
+      for(const p of pts){x.beginPath();x.arc(p[0],p[1],5.5,0,7);x.fill()}}
+    if(kind==='bio'){x.fillStyle=main;
+      for(let i=0;i<26;i++){x.globalAlpha=.18+rnd()*.5;const r=4+rnd()*17;
+        x.beginPath();x.ellipse(w*.15+rnd()*w*.7,h*.15+rnd()*h*.7,r,r*(.6+rnd()*.4),rnd()*3,0,7);x.fill()}}
+    if(kind==='tech'){x.strokeStyle=main;x.lineWidth=1.6;x.globalAlpha=.75;
+      for(let i=0;i<9;i++){let px=w*.08,py=h*.12+rnd()*h*.76;
+        x.beginPath();x.moveTo(px,py);
+        while(px<w*.9){px+=20+rnd()*60;x.lineTo(px,py);
+          if(rnd()>.5&&px<w*.85){py+=(rnd()>.5?1:-1)*(10+rnd()*30);py=Math.max(h*.08,Math.min(h*.9,py));x.lineTo(px,py)}}
+        x.stroke();x.globalAlpha=1;x.fillStyle=main;x.beginPath();x.arc(px,py,3.5,0,7);x.fill();x.globalAlpha=.75}}
+    x.globalAlpha=1}
+  const all=()=>document.querySelectorAll('canvas[data-art]').forEach(draw);
+  all();window.addEventListener('resize',all);
+})();
+</script>
 </body>
 </html>
