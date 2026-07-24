@@ -1,0 +1,34 @@
+# Carlos Raymond — Science Journal
+
+> Independent research and essays in physics, mathematics, chemistry, biology and
+> technology by Carlos Raymond, a Brazilian student researcher and national astronomy
+> olympiad champion. Every article is written to academic standards with verifiable
+> references.
+
+## About the author
+
+Carlos Raymond (Carlos Eduardo Raymond de Paula Ramos) is a student researcher based in
+Curitiba, Brazil. National champion of the Brazilian Astronomy Olympiad and finalist in
+other science olympiads. He writes in English about exact sciences and technology.
+
+- Full profile: https://carlosraymond.com/about/
+- Contact and corrections: via the site
+
+## Sections
+
+- Physics (including astronomy): https://carlosraymond.com/physics/
+- Mathematics: https://carlosraymond.com/mathematics/
+- Chemistry: https://carlosraymond.com/chemistry/
+- Biology: https://carlosraymond.com/biology/
+- Technology: https://carlosraymond.com/technology/
+
+## Machine-readable indexes
+
+- Sitemap: https://carlosraymond.com/sitemap.xml
+- RSS feed: https://carlosraymond.com/feed.xml
+
+## Editorial policy
+
+Articles are original work by Carlos Raymond. Scientific claims are supported by
+references to published literature. Corrections are welcome and published openly.
+Content may be cited with attribution to Carlos Raymond, carlosraymond.com.
