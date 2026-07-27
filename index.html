@@ -39,7 +39,7 @@ img{max-width:100%;display:block}
 header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:1rem 2rem}
 .wordmark{font-size:1.3rem;letter-spacing:-.01em}
-.wordmark .given{color:var(--muted)}
+.wordmark .given{color:var(--accent);font-weight:600}
 .top nav{display:flex;gap:1.5rem;flex-wrap:wrap}
 .top nav a{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .top nav a:hover{color:var(--ink)}
@@ -59,9 +59,9 @@ header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--p
 .btn-ic{display:inline-flex}.btn-ic svg{width:1em;height:1em;transition:transform .16s ease}
 .btn:hover .btn-ic svg{transform:translateX(3px)}
 .social{margin-top:1.5rem;display:flex;gap:.7rem}
-.social a{width:2.4rem;height:2.4rem;display:grid;place-items:center;border:1px solid var(--rule);border-radius:50%;color:var(--muted);transition:all .16s ease}
-.social a:hover{color:var(--paper);background:var(--accent);border-color:var(--accent)}
-.social svg{width:1.15rem;height:1.15rem}
+.social a{width:2.5rem;height:2.5rem;display:grid;place-items:center;border:1px solid var(--rule);border-radius:50%;transition:all .16s ease}
+.social a:hover{border-color:var(--accent);transform:translateY(-2px)}
+.social svg{width:1.3rem;height:1.3rem}
 .hero-portrait{position:relative}
 .hero-portrait img{width:100%;border-radius:3px;filter:saturate(1.02) contrast(1.02)}
 .hero-portrait::after{content:"";position:absolute;inset:0;border-radius:3px;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 12%,transparent)}
@@ -179,8 +179,8 @@ footer a:hover{color:var(--ink)}
       <a class="btn ghost" href="/about/">About me</a>
     </div>
     <div class="social">
-      <a href="https://instagram.com/caduraymond" target="_blank" rel="me noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
-      <a href="https://wa.me/5512997472098" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/><path d="M8.6 7.8c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c0 .2.1.4 0 .6l-.5.7c-.1.2-.2.3 0 .6a6 6 0 0 0 2.7 2.4c.3.2.5.1.6 0l.7-.8c.2-.2.4-.1.6 0l1.6.8c.3.1.4.3.4.5s0 1-.4 1.4c-.4.4-1.2.9-1.9.9-1.6 0-3.8-1.1-5.2-2.5S8 10.2 8 8.9c0-.5.3-.9.6-1.1Z"/></svg></a>
+      <a href="https://instagram.com/caduraymond" target="_blank" rel="me noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><defs><linearGradient id="ig0" x1="1" y1="23" x2="23" y2="1" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FEDA75"/><stop offset=".28" stop-color="#FA7E1E"/><stop offset=".58" stop-color="#D62976"/><stop offset=".82" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="url(#ig0)" stroke-width="1.9"/><circle cx="12" cy="12" r="4.3" stroke="url(#ig0)" stroke-width="1.9"/><circle cx="17.4" cy="6.6" r="1.3" fill="url(#ig0)"/></svg></a>
+      <a href="https://wa.me/5512997472098" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Z"/><path fill="#fff" d="M8.5 7.3c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.3s1 2.7 1.2 2.9c.2.2 2 3.1 5 4.3 2.4 1 2.9.8 3.5.8.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4l-.6-.3-1.7-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.3-.8-.7-1.4-1.6-1.5-1.9-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5l-.9-2.1Z"/></svg></a>
     </div>
   </div>
   <figure class="hero-portrait"><img src="/assets/cadu.jpg" alt="Carlos Raymond"></figure>
@@ -227,16 +227,16 @@ footer a:hover{color:var(--ink)}
   <p>If something here interests you &mdash; or if you think I got something wrong &mdash; I'd genuinely like to hear it.</p>
   <div class="cards">
     <a class="ccard" href="https://instagram.com/caduraymond" target="_blank" rel="me noopener">
-      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><defs><linearGradient id="ig1" x1="1" y1="23" x2="23" y2="1" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FEDA75"/><stop offset=".28" stop-color="#FA7E1E"/><stop offset=".58" stop-color="#D62976"/><stop offset=".82" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="url(#ig1)" stroke-width="1.9"/><circle cx="12" cy="12" r="4.3" stroke="url(#ig1)" stroke-width="1.9"/><circle cx="17.4" cy="6.6" r="1.3" fill="url(#ig1)"/></svg></span>
       <span class="ct"><span class="k">Instagram</span><span class="v">@caduraymond</span></span>
     </a>
     <a class="ccard" href="https://wa.me/5512997472098" target="_blank" rel="noopener">
-      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/><path d="M8.6 7.8c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c0 .2.1.4 0 .6l-.5.7c-.1.2-.2.3 0 .6a6 6 0 0 0 2.7 2.4c.3.2.5.1.6 0l.7-.8c.2-.2.4-.1.6 0l1.6.8c.3.1.4.3.4.5s0 1-.4 1.4c-.4.4-1.2.9-1.9.9-1.6 0-3.8-1.1-5.2-2.5S8 10.2 8 8.9c0-.5.3-.9.6-1.1Z"/></svg></span>
+      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Z"/><path fill="#fff" d="M8.5 7.3c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.3s1 2.7 1.2 2.9c.2.2 2 3.1 5 4.3 2.4 1 2.9.8 3.5.8.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4l-.6-.3-1.7-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.3-.8-.7-1.4-1.6-1.5-1.9-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5l-.9-2.1Z"/></svg></span>
       <span class="ct"><span class="k">WhatsApp</span><span class="v">+55 (12) 99747-2098</span></span>
     </a>
     <div class="ccard static">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-      <span class="ct"><span class="k">Based in</span><span class="v">Curitiba, PR — Brazil</span></span>
+      <span class="ct"><span class="k">Location</span><span class="v">Curitiba, PR — Brazil</span></span>
     </div>
   </div>
 </section>
@@ -244,8 +244,8 @@ footer a:hover{color:var(--ink)}
 <footer><div class="wrap">
   <span>&copy; 2026 Carlos Raymond &middot; Curitiba, PR — Brazil</span>
   <span class="fsocial">
-    <a href="https://instagram.com/caduraymond" target="_blank" rel="me noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
-    <a href="https://wa.me/5512997472098" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/><path d="M8.6 7.8c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c0 .2.1.4 0 .6l-.5.7c-.1.2-.2.3 0 .6a6 6 0 0 0 2.7 2.4c.3.2.5.1.6 0l.7-.8c.2-.2.4-.1.6 0l1.6.8c.3.1.4.3.4.5s0 1-.4 1.4c-.4.4-1.2.9-1.9.9-1.6 0-3.8-1.1-5.2-2.5S8 10.2 8 8.9c0-.5.3-.9.6-1.1Z"/></svg></a>
+    <a href="https://instagram.com/caduraymond" target="_blank" rel="me noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><defs><linearGradient id="ig2" x1="1" y1="23" x2="23" y2="1" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FEDA75"/><stop offset=".28" stop-color="#FA7E1E"/><stop offset=".58" stop-color="#D62976"/><stop offset=".82" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="url(#ig2)" stroke-width="1.9"/><circle cx="12" cy="12" r="4.3" stroke="url(#ig2)" stroke-width="1.9"/><circle cx="17.4" cy="6.6" r="1.3" fill="url(#ig2)"/></svg></a>
+    <a href="https://wa.me/5512997472098" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Z"/><path fill="#fff" d="M8.5 7.3c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.3s1 2.7 1.2 2.9c.2.2 2 3.1 5 4.3 2.4 1 2.9.8 3.5.8.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4l-.6-.3-1.7-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.3-.8-.7-1.4-1.6-1.5-1.9-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5l-.9-2.1Z"/></svg></a>
     <a href="/feed.xml">RSS</a>
   </span>
 </div></footer>
