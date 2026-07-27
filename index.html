@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://carlosraymond.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Carlos Raymond">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Carlos Raymond","alternateName":"Carlos Eduardo Raymond de Paula Ramos","url":"https://carlosraymond.com/","image":"https://carlosraymond.com/assets/cadu.jpg","jobTitle":"Student researcher","description":"Brazilian student researcher in exact sciences and technology. Three-time gold medalist in the Brazilian Astronomy Olympiad and multiple science and mathematics olympiad awards.","knowsAbout":["Physics","Astronomy","Mathematics","Chemistry","Biology","Technology"],"knowsLanguage":["en","pt-BR"],"nationality":{"@type":"Country","name":"Brazil"},"address":{"@type":"PostalAddress","addressLocality":"Curitiba","addressCountry":"BR"},"sameAs":["https://instagram.com/caduraymond"],"award":["OBA — Brazilian Astronomy and Astronautics Olympiad — Gold medal, three times","ONC — National Science Olympiad — Gold medal","OPRM — Gold and Bronze medals","OP — Silver medal and Honorable Mention","OBMEP — Brazilian Mathematics Olympiad — Bronze medal, regional","SEB National Model UN 2024 — Honorable Mention","XII SEB Model UN — Dom Bosco, Curitiba — Delegate","XV CMPA Simulation — Oral Mention","SEB Regional Hackathon — Dom Bosco, Curitiba, 2024 — Winning project"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Carlos Raymond","alternateName":"Carlos Eduardo Raymond de Paula Ramos","url":"https://carlosraymond.com/","image":"https://carlosraymond.com/assets/cadu.jpg","jobTitle":"Student researcher","description":"Brazilian student researcher in exact sciences and technology. Three-time gold medalist in the Brazilian Astronomy Olympiad and multiple science and mathematics olympiad awards.","knowsAbout":["Physics","Astronomy","Mathematics","Chemistry","Biology","Technology"],"knowsLanguage":["en","pt-BR"],"nationality":{"@type":"Country","name":"Brazil"},"address":{"@type":"PostalAddress","addressLocality":"Curitiba","addressRegion":"PR","addressCountry":"BR"},"telephone":"+55 (12) 99747-2098","sameAs":["https://instagram.com/caduraymond","https://wa.me/5512997472098"],"award":["OBA — Brazilian Astronomy and Astronautics Olympiad — Gold medal, three times","ONC — National Science Olympiad — Gold medal","OPRM — Paraná State Mathematics Olympiad — Gold and Bronze medals","OP — Portuguese Language Olympiad — Silver medal and Honorable Mention","OBMEP — Brazilian Mathematics Olympiad — Bronze medal, regional","XII SEB Model UN — Dom Bosco, Curitiba — Best Delegate","SEB National Model UN 2024 — Honorable Mention","XV CMPA Simulation — Oral Mention","SEB Regional Hackathon — Dom Bosco, Curitiba, 2024 — Winning project"]}</script>
 <link rel="author" href="https://carlosraymond.com/about/">
 <style>
 :root{
@@ -55,6 +55,13 @@ header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--p
 .btn:hover{background:var(--ink);color:var(--paper)}
 .btn.ghost{border-color:var(--rule);color:var(--muted)}
 .btn.ghost:hover{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn{display:inline-flex;align-items:center;gap:.5em}
+.btn-ic{display:inline-flex}.btn-ic svg{width:1em;height:1em;transition:transform .16s ease}
+.btn:hover .btn-ic svg{transform:translateX(3px)}
+.social{margin-top:1.5rem;display:flex;gap:.7rem}
+.social a{width:2.4rem;height:2.4rem;display:grid;place-items:center;border:1px solid var(--rule);border-radius:50%;color:var(--muted);transition:all .16s ease}
+.social a:hover{color:var(--paper);background:var(--accent);border-color:var(--accent)}
+.social svg{width:1.15rem;height:1.15rem}
 .hero-portrait{position:relative}
 .hero-portrait img{width:100%;border-radius:3px;filter:saturate(1.02) contrast(1.02)}
 .hero-portrait::after{content:"";position:absolute;inset:0;border-radius:3px;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 12%,transparent)}
@@ -104,9 +111,18 @@ section.block{padding:3rem 0;border-top:1px solid var(--rule)}
 @media (max-width:720px){.index .date{text-align:left}}
 .soon{color:var(--muted);font-style:italic;padding:.4rem 0 .2rem}
 
-/* contato */
-.contact p{font-size:1.1rem;max-width:44ch;color:var(--muted)}
-.contact .links{margin-top:1.3rem;display:flex;gap:.8rem;flex-wrap:wrap}
+/* contato — cards modernos com ícone */
+.contact > p{font-size:1.1rem;max-width:46ch;color:var(--muted);margin-bottom:1.7rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.ccard{display:flex;align-items:center;gap:1rem;padding:1.15rem 1.25rem;border:1px solid var(--rule);border-radius:10px;background:var(--faint);transition:border-color .16s ease,transform .16s ease}
+.ccard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.ccard .ic{flex:none;width:2.5rem;height:2.5rem;display:grid;place-items:center;border-radius:8px;background:var(--paper);border:1px solid var(--rule);color:var(--accent)}
+.ccard .ic svg{width:1.3rem;height:1.3rem}
+.ccard .ct{display:flex;flex-direction:column;min-width:0}
+.ccard .ct .k{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.ccard .ct .v{font-size:1rem;letter-spacing:-.005em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ccard.static{cursor:default}
+.ccard.static:hover{transform:none;border-color:var(--rule)}
 
 /* páginas internas (artigo/about) */
 .page{max-width:42rem;margin:0 auto;padding:3rem 0 1rem}
@@ -137,8 +153,12 @@ section.block{padding:3rem 0;border-top:1px solid var(--rule)}
 @media (max-width:760px){.about-grid .portrait{max-width:11rem;order:-1}}
 
 footer{border-top:1px solid var(--ink);margin-top:1rem}
-footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.5rem;padding-bottom:2.6rem;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.7rem;letter-spacing:.05em;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:1.5rem;padding-bottom:2.6rem;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.7rem;letter-spacing:.05em;color:var(--muted)}
 footer a:hover{color:var(--ink)}
+.fsocial{display:flex;gap:.9rem;align-items:center}
+.fsocial a{display:inline-flex;color:var(--muted)}
+.fsocial a:hover{color:var(--accent)}
+.fsocial svg{width:1.1rem;height:1.1rem}
 </style>
 </head>
 <body>
@@ -150,13 +170,17 @@ footer a:hover{color:var(--ink)}
 
 <section class="hero">
   <div>
-    <span class="label">Student researcher &middot; Curitiba, Brazil</span>
+    <span class="label">Student researcher &middot; Curitiba, PR — Brazil</span>
     <h1>Carlos Raymond</h1>
     <p class="role">I study the exact sciences and write about them at academic standards &mdash; astronomy, mathematics, physics and beyond.</p>
     <p class="intro">Three-time gold medalist in the Brazilian Astronomy Olympiad. This is my public notebook: research, essays, and the questions I can't stop thinking about.</p>
     <div class="actions">
-      <a class="btn" href="#research">See my research</a>
+      <a class="btn" href="#research">See my research <span class="btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       <a class="btn ghost" href="/about/">About me</a>
+    </div>
+    <div class="social">
+      <a href="https://instagram.com/caduraymond" target="_blank" rel="me noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://wa.me/5512997472098" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/><path d="M8.6 7.8c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c0 .2.1.4 0 .6l-.5.7c-.1.2-.2.3 0 .6a6 6 0 0 0 2.7 2.4c.3.2.5.1.6 0l.7-.8c.2-.2.4-.1.6 0l1.6.8c.3.1.4.3.4.5s0 1-.4 1.4c-.4.4-1.2.9-1.9.9-1.6 0-3.8-1.1-5.2-2.5S8 10.2 8 8.9c0-.5.3-.9.6-1.1Z"/></svg></a>
     </div>
   </div>
   <figure class="hero-portrait"><img src="/assets/cadu.jpg" alt="Carlos Raymond"></figure>
@@ -181,11 +205,11 @@ footer a:hover{color:var(--ink)}
 </div>
 <div class="awgroup">
   <h3>Mathematics Olympiads</h3>
-  <ul><li><span class="medal gold"></span><span class="aw-name">OPRM<span class="aw-detail">Gold and Bronze medals</span></span></li><li><span class="medal silver"></span><span class="aw-name">OP<span class="aw-detail">Silver medal and Honorable Mention</span></span></li><li><span class="medal bronze"></span><span class="aw-name">OBMEP — Brazilian Mathematics Olympiad<span class="aw-detail">Bronze medal, regional</span></span></li></ul>
+  <ul><li><span class="medal gold"></span><span class="aw-name">OPRM — Paraná State Mathematics Olympiad<span class="aw-detail">Gold and Bronze medals</span></span></li><li><span class="medal silver"></span><span class="aw-name">OP — Portuguese Language Olympiad<span class="aw-detail">Silver medal and Honorable Mention</span></span></li><li><span class="medal bronze"></span><span class="aw-name">OBMEP — Brazilian Mathematics Olympiad<span class="aw-detail">Bronze medal, regional</span></span></li></ul>
 </div>
 <div class="awgroup">
   <h3>Model UN &amp; Debate</h3>
-  <ul><li><span class="medal mention"></span><span class="aw-name">SEB National Model UN 2024<span class="aw-detail">Honorable Mention</span></span></li><li><span class="medal plain"></span><span class="aw-name">XII SEB Model UN — Dom Bosco, Curitiba<span class="aw-detail">Delegate</span></span></li><li><span class="medal mention"></span><span class="aw-name">XV CMPA Simulation<span class="aw-detail">Oral Mention</span></span></li></ul>
+  <ul><li><span class="medal gold"></span><span class="aw-name">XII SEB Model UN — Dom Bosco, Curitiba<span class="aw-detail">Best Delegate</span></span></li><li><span class="medal mention"></span><span class="aw-name">SEB National Model UN 2024<span class="aw-detail">Honorable Mention</span></span></li><li><span class="medal mention"></span><span class="aw-name">XV CMPA Simulation<span class="aw-detail">Oral Mention</span></span></li></ul>
 </div>
 <div class="awgroup">
   <h3>Innovation</h3>
@@ -201,15 +225,29 @@ footer a:hover{color:var(--ink)}
 <section class="block contact" id="contact">
   <div class="block-head"><h2>Get in touch</h2></div>
   <p>If something here interests you &mdash; or if you think I got something wrong &mdash; I'd genuinely like to hear it.</p>
-  <div class="links">
-    <a class="btn" href="https://instagram.com/caduraymond" target="_blank" rel="me noopener">Instagram &mdash; @caduraymond</a>
+  <div class="cards">
+    <a class="ccard" href="https://instagram.com/caduraymond" target="_blank" rel="me noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="ct"><span class="k">Instagram</span><span class="v">@caduraymond</span></span>
+    </a>
+    <a class="ccard" href="https://wa.me/5512997472098" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/><path d="M8.6 7.8c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c0 .2.1.4 0 .6l-.5.7c-.1.2-.2.3 0 .6a6 6 0 0 0 2.7 2.4c.3.2.5.1.6 0l.7-.8c.2-.2.4-.1.6 0l1.6.8c.3.1.4.3.4.5s0 1-.4 1.4c-.4.4-1.2.9-1.9.9-1.6 0-3.8-1.1-5.2-2.5S8 10.2 8 8.9c0-.5.3-.9.6-1.1Z"/></svg></span>
+      <span class="ct"><span class="k">WhatsApp</span><span class="v">+55 (12) 99747-2098</span></span>
+    </a>
+    <div class="ccard static">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+      <span class="ct"><span class="k">Based in</span><span class="v">Curitiba, PR — Brazil</span></span>
+    </div>
   </div>
 </section>
 </main>
 <footer><div class="wrap">
-  <span>&copy; 2026 Carlos Raymond &middot; Curitiba, Brazil</span>
-  <span><a href="https://instagram.com/caduraymond" target="_blank" rel="me noopener">@caduraymond</a></span>
-  <span><a href="/feed.xml">RSS</a></span>
+  <span>&copy; 2026 Carlos Raymond &middot; Curitiba, PR — Brazil</span>
+  <span class="fsocial">
+    <a href="https://instagram.com/caduraymond" target="_blank" rel="me noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://wa.me/5512997472098" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/><path d="M8.6 7.8c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c0 .2.1.4 0 .6l-.5.7c-.1.2-.2.3 0 .6a6 6 0 0 0 2.7 2.4c.3.2.5.1.6 0l.7-.8c.2-.2.4-.1.6 0l1.6.8c.3.1.4.3.4.5s0 1-.4 1.4c-.4.4-1.2.9-1.9.9-1.6 0-3.8-1.1-5.2-2.5S8 10.2 8 8.9c0-.5.3-.9.6-1.1Z"/></svg></a>
+    <a href="/feed.xml">RSS</a>
+  </span>
 </div></footer>
 </body>
 </html>
