@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LIMIAR Trainer — Carlos Raymond</title>
+<style>
+  :root{
+    --paper:#FBFAF7;--ink:#1B2432;--muted:#5F6773;--rule:#E5E2D9;--faint:#F3F1EB;
+    --accent:#1D4E6F;--gold:#9C7C38;--good:#3E7D52;--bad:#B23A3A;
+  }
+  @media (prefers-color-scheme:dark){:root{--paper:#0F1216;--ink:#E9E7E1;--muted:#949BA5;--rule:#272B31;--faint:#171A1F;--accent:#7FA9CE;--gold:#C79A4A;--good:#6FB587;--bad:#D97070}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.6;font-size:17px}
+  .sans{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+  a{color:var(--accent)}
+  .wrap{max-width:52rem;margin:0 auto;padding:2rem 1.4rem 4rem}
+  .label{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.64rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:1.9rem;font-weight:400;letter-spacing:-.015em;margin:.5rem 0}
+  h2{font-size:1.25rem;font-weight:400;margin:0 0 .3rem}
+  p.sub{color:var(--muted);margin-bottom:1.6rem}
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--rule);padding-bottom:1rem;margin-bottom:1.6rem}
+  .topbar a.back{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+  .card{border:1px solid var(--rule);border-radius:10px;background:var(--faint);padding:1.4rem;margin-bottom:1.2rem}
+  .row{display:flex;gap:1rem;flex-wrap:wrap}
+  .field{flex:1;min-width:9rem}
+  .field label{display:block;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+  input[type=number],input[type=file]{width:100%;font:inherit;font-size:1rem;padding:.6rem .7rem;border:1px solid var(--rule);border-radius:7px;background:var(--paper);color:var(--ink)}
+  input[type=file]{padding:.5rem;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.85rem}
+  .btn{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.06em;padding:.7em 1.2em;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:7px;cursor:pointer;transition:opacity .15s}
+  .btn:hover{opacity:.88}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+  .btn.ghost{background:transparent;color:var(--accent)}
+  .btn.good{border-color:var(--good);background:var(--good)}
+  .btn.bad{border-color:var(--bad);background:var(--bad)}
+  .btn.lg{font-size:.92rem;padding:.85em 1.6em}
+  .muted{color:var(--muted)}
+  .qedit{width:100%;font:inherit;font-size:.95rem;min-height:4rem;padding:.7rem;border:1px solid var(--rule);border-radius:7px;background:var(--paper);color:var(--ink);resize:vertical;margin-bottom:.5rem}
+  .qitem{border:1px solid var(--rule);border-radius:8px;padding:.8rem;margin-bottom:.7rem;background:var(--paper)}
+  .qitem .qh{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+  .qitem .qn{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .qitem .del{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.68rem;color:var(--bad);background:none;border:0;cursor:pointer}
+  .hide{display:none}
+  /* sessão */
+  .status{display:flex;gap:1.4rem;flex-wrap:wrap;align-items:baseline;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;margin-bottom:1rem}
+  .status .big{font-size:2.4rem;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .status .k{font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block}
+  .phasebadge{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.35em .8em;border-radius:100px}
+  .phasebadge.study{background:var(--accent);color:#fff}
+  .phasebadge.rest{background:var(--gold);color:#fff}
+  .qbox{font-size:1.15rem;line-height:1.55;white-space:pre-wrap;padding:1.2rem 0;min-height:6rem}
+  .answer{border-left:3px solid var(--gold);background:var(--faint);padding:.9rem 1.1rem;border-radius:0 8px 8px 0;margin:.6rem 0 1rem;white-space:pre-wrap}
+  .rest-screen{text-align:center;padding:2.5rem 0}
+  .rest-screen .big{font-size:3.4rem;font-variant-numeric:tabular-nums}
+  .progress{height:5px;background:var(--rule);border-radius:3px;overflow:hidden;margin:.6rem 0 1.2rem}
+  .progress > i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+  table{border-collapse:collapse;width:100%;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.82rem;margin:1rem 0}
+  th,td{border-bottom:1px solid var(--rule);padding:.45rem .5rem;text-align:right;font-variant-numeric:tabular-nums}
+  th:first-child,td:first-child{text-align:left}
+  th{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  canvas{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:10px;background:var(--paper);margin:.6rem 0 1.4rem}
+  .params{display:flex;gap:1.5rem;flex-wrap:wrap;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;margin:.4rem 0 1rem}
+  .params .p .v{font-size:1.5rem;font-variant-numeric:tabular-nums}
+  .params .p .k{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block}
+  .err{color:var(--bad);font-size:.88rem;margin-top:.5rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div><span class="label">LIMIAR</span><div class="sans" style="font-size:.8rem;color:var(--muted)">Study-session data collector</div></div>
+    <a class="back" href="/limiar/">&larr; Project</a>
+  </div>
+
+  <!-- ETAPA 1: SETUP -->
+  <section id="setup">
+    <h1>Set up a session</h1>
+    <p class="sub">Load a list of exercises, set your study and rest times, and how many cycles you want. A cycle is one study block followed by one rest block.</p>
+
+    <div class="card">
+      <h2>1. Load your exercises</h2>
+      <p class="muted" style="font-size:.9rem;margin-bottom:.8rem">Upload a PDF and I'll extract the questions. Extraction is never perfect, so you'll review and edit them below before starting. You can also skip the PDF and type questions in by hand.</p>
+      <input type="file" id="pdf" accept="application/pdf">
+      <div id="pdfstatus" class="muted sans" style="font-size:.82rem;margin-top:.5rem"></div>
+    </div>
+
+    <div class="card" id="reviewCard">
+      <h2>2. Review the questions</h2>
+      <p class="muted" style="font-size:.9rem;margin-bottom:.8rem">Fix the split if needed. Each question can have an answer — the trainer reveals it during the session, then you mark whether you got it right. If a question has no answer, you just self-assess.</p>
+      <div id="qlist"></div>
+      <button class="btn ghost" id="addQ" type="button">+ Add a question</button>
+    </div>
+
+    <div class="card">
+      <h2>3. Session settings</h2>
+      <div class="row">
+        <div class="field"><label>Study minutes / cycle</label><input type="number" id="studyMin" value="25" min="1" step="1"></div>
+        <div class="field"><label>Rest minutes / cycle</label><input type="number" id="restMin" value="5" min="0" step="1"></div>
+        <div class="field"><label>Number of cycles</label><input type="number" id="cycles" value="3" min="1" step="1"></div>
+      </div>
+      <div id="setupErr" class="err"></div>
+      <div style="margin-top:1.2rem"><button class="btn lg" id="startBtn" type="button">Start session</button></div>
+    </div>
+  </section>
+
+  <!-- ETAPA 2: STUDY -->
+  <section id="study" class="hide">
+    <div class="status">
+      <div><span class="k">Cycle</span><span class="big" id="cycNow">1</span></div>
+      <div><span class="k">Time left (study)</span><span class="big" id="studyClock">25:00</span></div>
+      <div><span class="k">Answered</span><span class="big" id="answered">0</span></div>
+      <div style="align-self:center"><span class="phasebadge study">Studying</span></div>
+    </div>
+    <div class="progress"><i id="studyBar"></i></div>
+    <div class="card">
+      <div class="sans" style="font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)" id="qLabel">Question 1</div>
+      <div class="qbox" id="qText"></div>
+      <div class="answer hide" id="ansBox"></div>
+      <div id="controls">
+        <button class="btn" id="revealBtn" type="button">Reveal answer</button>
+      </div>
+      <div id="grade" class="hide">
+        <p class="muted sans" style="font-size:.85rem;margin-bottom:.6rem">Did you get it right?</p>
+        <button class="btn good" id="rightBtn" type="button">Got it right</button>
+        <button class="btn bad" id="wrongBtn" type="button" style="margin-left:.5rem">Got it wrong</button>
+      </div>
+    </div>
+    <button class="btn ghost sans" id="endEarly" type="button" style="font-size:.72rem">End session now</button>
+  </section>
+
+  <!-- ETAPA 3: REST -->
+  <section id="rest" class="hide">
+    <div class="rest-screen">
+      <span class="phasebadge rest">Resting</span>
+      <div class="big" id="restClock" style="margin-top:1rem">05:00</div>
+      <p class="muted">Cycle <b id="restCyc">1</b> done. Next study block starts when the timer ends.</p>
+      <button class="btn ghost sans" id="skipRest" type="button" style="font-size:.72rem;margin-top:1rem">Skip rest</button>
+    </div>
+  </section>
+
+  <!-- ETAPA 4: RESULTS -->
+  <section id="results" class="hide">
+    <h1>Session results</h1>
+    <p class="sub" id="resSummary"></p>
+    <div class="params" id="paramBox"></div>
+    <h2 class="sans" style="font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:1.4rem">Correct answers over study time</h2>
+    <canvas id="chart" width="900" height="480" aria-label="Accumulated correct answers over time"></canvas>
+    <p class="muted sans" style="font-size:.8rem;margin-top:-1rem;margin-bottom:1.6rem">Dots are your discrete data points (green = right, red = wrong). The curve is the least-squares fit of S(t) = a(1 &minus; e^&minus;&#8203;kt). This form is a working hypothesis: it follows <em>if</em> the answering rate decays exponentially with fatigue, r(t) = r&#8320;&middot;e^&minus;&#8203;kt, integrating to S(t) = (r&#8320;/k)(1 &minus; e^&minus;&#8203;kt), so a = r&#8320;/k. It is coherent with the model's fatigue form, not proven &mdash; the data is what tests it.</p>
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.6rem">
+      <button class="btn" id="csvBtn" type="button">Download spreadsheet (CSV)</button>
+      <button class="btn ghost" id="againBtn" type="button">New session</button>
+    </div>
+    <h2 class="sans" style="font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Raw log</h2>
+    <div style="overflow-x:auto"><table id="logTable"></table></div>
+  </section>
+</div>
+
+<script src="/limiar/vendor/pdf.min.js"></script>
+<script>
+"use strict";
+if (window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = "/limiar/vendor/pdf.worker.min.js";
+
+var $ = function(id){ return document.getElementById(id); };
+var state = { questions: [], settings: {}, log: [], cycle: 1, phase: "setup", startAbs: 0 };
+
+/* ---------- 1. PDF extraction ---------- */
+$("pdf").addEventListener("change", function(e){
+  var file = e.target.files[0]; if(!file) return;
+  $("pdfstatus").textContent = "Reading PDF...";
+  var reader = new FileReader();
+  reader.onload = function(){
+    pdfjsLib.getDocument({data: reader.result}).promise.then(function(pdf){
+      var pages = [];
+      var seq = Promise.resolve();
+      for(var i=1;i<=pdf.numPages;i++){ (function(n){
+        seq = seq.then(function(){ return pdf.getPage(n).then(function(pg){ return pg.getTextContent(); }).then(function(tc){
+          var line = tc.items.map(function(it){return it.str;}).join(" ");
+          pages.push(line);
+        }); });
+      })(i); }
+      return seq.then(function(){ return pages.join("\n"); });
+    }).then(function(text){
+      var qs = splitQuestions(text);
+      state.questions = qs.map(function(q){ return { text:q, answer:"" }; });
+      renderReview();
+      $("pdfstatus").textContent = qs.length + " question(s) detected. Review them below.";
+    }).catch(function(err){
+      $("pdfstatus").innerHTML = "<span class='err'>Could not read this PDF ("+err.message+"). You can add questions by hand.</span>";
+    });
+  };
+  reader.readAsArrayBuffer(file);
+});
+
+// segmenta texto em questões por marcadores de numeração
+function splitQuestions(text){
+  text = text.replace(/\r/g,"").replace(/[ \t]+/g," ");
+  // quebra antes de "1)" "1." "1 -" "Questão 1" "Question 1" no começo de trecho
+  var marker = /(?:^|\s)(?:Quest(?:ã|a)o|Question|Q)\s*\d{1,3}\b|(?:^|\s)\d{1,3}\s*[\).\-–]\s+/g;
+  var idx = [], m;
+  while((m = marker.exec(text)) !== null){ idx.push(m.index); }
+  var out = [];
+  if(idx.length < 2){
+    // sem marcadores claros: quebra por linhas longas
+    return text.split(/\n{1,}/).map(function(s){return s.trim();}).filter(function(s){return s.length>15;});
+  }
+  for(var i=0;i<idx.length;i++){
+    var start = idx[i], end = (i+1<idx.length)? idx[i+1] : text.length;
+    var chunk = text.slice(start,end).trim();
+    if(chunk.length>4) out.push(chunk);
+  }
+  return out;
+}
+
+/* ---------- 2. Review / edit ---------- */
+function renderReview(){
+  var wrap = $("qlist"); wrap.innerHTML = "";
+  state.questions.forEach(function(q, i){
+    var div = document.createElement("div"); div.className = "qitem";
+    div.innerHTML =
+      '<div class="qh"><span class="qn">Question '+(i+1)+'</span><button class="del" data-i="'+i+'" type="button">remove</button></div>'+
+      '<textarea class="qedit" data-i="'+i+'" data-f="text" placeholder="Question text">'+escapeHtml(q.text)+'</textarea>'+
+      '<textarea class="qedit" data-i="'+i+'" data-f="answer" placeholder="Answer (optional — shown when you reveal)" style="min-height:2.6rem">'+escapeHtml(q.answer)+'</textarea>';
+    wrap.appendChild(div);
+  });
+  wrap.querySelectorAll("textarea").forEach(function(t){
+    t.addEventListener("input", function(){ state.questions[+t.dataset.i][t.dataset.f] = t.value; });
+  });
+  wrap.querySelectorAll(".del").forEach(function(b){
+    b.addEventListener("click", function(){ state.questions.splice(+b.dataset.i,1); renderReview(); });
+  });
+}
+$("addQ").addEventListener("click", function(){ state.questions.push({text:"",answer:""}); renderReview(); });
+function escapeHtml(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+renderReview();
+
+/* ---------- 3. Start ---------- */
+var timer = null;
+$("startBtn").addEventListener("click", function(){
+  var qs = state.questions.filter(function(q){ return (q.text||"").trim().length>0; });
+  if(qs.length === 0){ $("setupErr").textContent = "Add at least one question first."; return; }
+  state.questions = qs;
+  state.settings = {
+    studyMin: Math.max(1, +$("studyMin").value||25),
+    restMin: Math.max(0, +$("restMin").value||0),
+    cycles: Math.max(1, +$("cycles").value||1)
+  };
+  state.log = []; state.cycle = 1; state.startAbs = Date.now();
+  show("study"); startStudy();
+});
+
+function show(name){
+  ["setup","study","rest","results"].forEach(function(s){ $(s).classList.toggle("hide", s!==name); });
+  state.phase = name;
+}
+
+/* ---------- study phase ---------- */
+var qPtr = 0, qStartTs = 0, studyEndsAt = 0, answeredThisCycle = 0;
+function startStudy(){
+  answeredThisCycle = 0; $("answered").textContent = "0";
+  $("cycNow").textContent = state.cycle;
+  studyEndsAt = Date.now() + state.settings.studyMin*60000;
+  qPtr = 0; nextQuestion();
+  clearInterval(timer); timer = setInterval(tickStudy, 250); tickStudy();
+}
+function tickStudy(){
+  var left = Math.max(0, studyEndsAt - Date.now());
+  $("studyClock").textContent = fmt(left);
+  var total = state.settings.studyMin*60000;
+  $("studyBar").style.width = (100*(1-left/total))+"%";
+  if(left<=0){ clearInterval(timer); endStudyBlock(); }
+}
+function nextQuestion(){
+  var q = state.questions[qPtr % state.questions.length];
+  $("qLabel").textContent = "Question " + ((qPtr % state.questions.length)+1);
+  $("qText").textContent = q.text;
+  $("ansBox").classList.add("hide"); $("ansBox").textContent = "";
+  $("grade").classList.add("hide"); $("controls").classList.remove("hide");
+  qStartTs = Date.now();
+}
+$("revealBtn").addEventListener("click", function(){
+  var q = state.questions[qPtr % state.questions.length];
+  $("ansBox").textContent = (q.answer && q.answer.trim()) ? q.answer : "(No answer stored — check your own solution, then self-assess.)";
+  $("ansBox").classList.remove("hide");
+  $("controls").classList.add("hide"); $("grade").classList.remove("hide");
+});
+$("rightBtn").addEventListener("click", function(){ grade(true); });
+$("wrongBtn").addEventListener("click", function(){ grade(false); });
+function grade(correct){
+  var now = Date.now();
+  state.log.push({
+    cycle: state.cycle,
+    qIndex: (qPtr % state.questions.length)+1,
+    startIso: new Date(qStartTs).toISOString(),
+    elapsedSec: +((now - qStartTs)/1000).toFixed(2),
+    correct: correct
+  });
+  answeredThisCycle++; $("answered").textContent = answeredThisCycle;
+  qPtr++;
+  if(Date.now() >= studyEndsAt){ endStudyBlock(); } else { nextQuestion(); }
+}
+$("endEarly").addEventListener("click", function(){ clearInterval(timer); finish(); });
+
+function endStudyBlock(){
+  if(state.cycle >= state.settings.cycles){ finish(); return; }
+  if(state.settings.restMin <= 0){ state.cycle++; show("study"); startStudy(); return; }
+  show("rest"); $("restCyc").textContent = state.cycle;
+  var restEnds = Date.now() + state.settings.restMin*60000;
+  clearInterval(timer);
+  timer = setInterval(function(){
+    var left = Math.max(0, restEnds - Date.now());
+    $("restClock").textContent = fmt(left);
+    if(left<=0){ clearInterval(timer); state.cycle++; show("study"); startStudy(); }
+  }, 250);
+}
+$("skipRest").addEventListener("click", function(){ clearInterval(timer); state.cycle++; show("study"); startStudy(); });
+
+function fmt(ms){ var s=Math.round(ms/1000); var m=Math.floor(s/60); s=s%60; return (m<10?"0":"")+m+":"+(s<10?"0":"")+s; }
+
+/* ---------- 4. results ---------- */
+function finish(){
+  clearInterval(timer); show("results");
+  var log = state.log;
+  var correct = log.filter(function(r){return r.correct;}).length;
+  $("resSummary").textContent = log.length + " questions answered, " + correct + " correct, across " +
+    state.cycle + " cycle(s). Study " + state.settings.studyMin + " min / rest " + state.settings.restMin + " min.";
+
+  // série: tempo de estudo acumulado (s) x acertos acumulados
+  var t=0, acc=0, pts=[];
+  log.forEach(function(r){ t += r.elapsedSec; if(r.correct) acc++; pts.push({t:t, y:acc, correct:r.correct}); });
+
+  var fit = fitSaturating(pts);
+  var pb = $("paramBox"); pb.innerHTML = "";
+  if(fit){
+    pb.innerHTML =
+      '<div class="p"><span class="k">a (ceiling)</span><span class="v">'+fit.a.toFixed(1)+'</span></div>'+
+      '<div class="p"><span class="k">k (per min)</span><span class="v">'+(fit.k*60).toFixed(3)+'</span></div>'+
+      '<div class="p"><span class="k">r&#8320; = a&middot;k (per min)</span><span class="v">'+(fit.a*fit.k*60).toFixed(2)+'</span></div>';
+  }
+  drawChart(pts, fit);
+  buildTable(log);
+}
+
+// ajuste S(t)=a(1-e^{-k t}) por busca em k (golden) + a linear ótimo
+function fitSaturating(pts){
+  if(pts.length < 3) return null;
+  var T = pts.map(function(p){return p.t;}), Y = pts.map(function(p){return p.y;});
+  function bestAandSSE(k){
+    var su=0, suy=0;
+    for(var i=0;i<T.length;i++){ var u=1-Math.exp(-k*T[i]); su+=u*u; suy+=u*Y[i]; }
+    var a = su>1e-9 ? suy/su : 0;
+    var sse=0; for(var j=0;j<T.length;j++){ var e=Y[j]-a*(1-Math.exp(-k*T[j])); sse+=e*e; }
+    return {a:a, sse:sse};
+  }
+  var lo=0.0005, hi=0.5, gr=(Math.sqrt(5)-1)/2;
+  var c=hi-gr*(hi-lo), d=lo+gr*(hi-lo);
+  for(var it=0; it<80; it++){
+    if(bestAandSSE(c).sse < bestAandSSE(d).sse){ hi=d; } else { lo=c; }
+    c=hi-gr*(hi-lo); d=lo+gr*(hi-lo);
+  }
+  var k=(lo+hi)/2, r=bestAandSSE(k);
+  return {a:r.a, k:k};
+}
+
+function drawChart(pts, fit){
+  var cv=$("chart"), ctx=cv.getContext("2d");
+  var W=cv.width, H=cv.height, pad=54;
+  var cs=getComputedStyle(document.documentElement);
+  var ink=cs.getPropertyValue("--ink").trim(), muted=cs.getPropertyValue("--muted").trim(),
+      rule=cs.getPropertyValue("--rule").trim(), accent=cs.getPropertyValue("--accent").trim(),
+      good=cs.getPropertyValue("--good").trim(), bad=cs.getPropertyValue("--bad").trim(),
+      paper=cs.getPropertyValue("--paper").trim();
+  ctx.clearRect(0,0,W,H); ctx.fillStyle=paper; ctx.fillRect(0,0,W,H);
+  var maxT = Math.max.apply(null, pts.map(function(p){return p.t;}).concat([1]));
+  var maxY = Math.max.apply(null, pts.map(function(p){return p.y;}).concat([1]));
+  maxY = Math.ceil(maxY*1.1)+1;
+  function X(t){ return pad + (W-pad*1.4-pad)*(t/maxT)+pad*0.4; }
+  function Yc(y){ return H-pad - (H-pad*1.5-pad*0.4)*(y/maxY); }
+  // eixos + grade
+  ctx.strokeStyle=rule; ctx.lineWidth=1; ctx.fillStyle=muted; ctx.font="12px Helvetica,Arial";
+  for(var g=0; g<=maxY; g+=Math.max(1,Math.ceil(maxY/6))){
+    var yy=Yc(g); ctx.beginPath(); ctx.moveTo(X(0),yy); ctx.lineTo(X(maxT),yy); ctx.stroke();
+    ctx.textAlign="right"; ctx.fillText(g, X(0)-8, yy+4);
+  }
+  ctx.textAlign="center";
+  for(var tk=0; tk<=6; tk++){ var tt=maxT*tk/6; ctx.fillText((tt/60).toFixed(1)+"m", X(tt), H-pad+18); }
+  ctx.save(); ctx.translate(16,H/2); ctx.rotate(-Math.PI/2); ctx.textAlign="center"; ctx.fillText("Correct (cumulative)",0,0); ctx.restore();
+  ctx.fillText("Study time",(X(0)+X(maxT))/2,H-14);
+  // curva de regressão
+  if(fit){
+    ctx.strokeStyle=accent; ctx.lineWidth=2.4; ctx.beginPath();
+    for(var px=0; px<=200; px++){ var tt2=maxT*px/200; var yy2=fit.a*(1-Math.exp(-fit.k*tt2));
+      var Xp=X(tt2), Yp=Yc(yy2); px===0?ctx.moveTo(Xp,Yp):ctx.lineTo(Xp,Yp); }
+    ctx.stroke();
+  }
+  // degraus discretos (linha) + pontos
+  ctx.strokeStyle=muted; ctx.lineWidth=1.2; ctx.setLineDash([4,4]); ctx.beginPath();
+  ctx.moveTo(X(0),Yc(0));
+  pts.forEach(function(p){ ctx.lineTo(X(p.t),Yc(p.y)); }); ctx.stroke(); ctx.setLineDash([]);
+  pts.forEach(function(p){
+    ctx.fillStyle = p.correct? good : bad;
+    ctx.beginPath(); ctx.arc(X(p.t),Yc(p.y),4.5,0,7); ctx.fill();
+  });
+}
+
+function buildTable(log){
+  var t=0, acc=0;
+  var head="<tr><th>#</th><th>Cycle</th><th>Question</th><th>Elapsed (s)</th><th>Correct</th><th>Cum. correct</th><th>Cum. study (s)</th></tr>";
+  var rows=log.map(function(r,i){ t+=r.elapsedSec; if(r.correct)acc++;
+    return "<tr><td>"+(i+1)+"</td><td>"+r.cycle+"</td><td>"+r.qIndex+"</td><td>"+r.elapsedSec.toFixed(2)+"</td><td>"+(r.correct?"yes":"no")+"</td><td>"+acc+"</td><td>"+t.toFixed(2)+"</td></tr>";
+  }).join("");
+  $("logTable").innerHTML = head+rows;
+}
+
+$("csvBtn").addEventListener("click", function(){
+  var t=0, acc=0;
+  var lines=["index,cycle,question,start_iso,elapsed_seconds,correct,cumulative_correct,cumulative_study_seconds"];
+  state.log.forEach(function(r,i){ t+=r.elapsedSec; if(r.correct)acc++;
+    lines.push([i+1,r.cycle,r.qIndex,r.startIso,r.elapsedSec,r.correct?1:0,acc,t.toFixed(2)].join(","));
+  });
+  var blob=new Blob([lines.join("\n")],{type:"text/csv"});
+  var a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download="limiar-session-"+new Date().toISOString().slice(0,19).replace(/[:T]/g,"-")+".csv"; a.click();
+});
+$("againBtn").addEventListener("click", function(){ show("setup"); });
+</script>
+</body>
+</html>
