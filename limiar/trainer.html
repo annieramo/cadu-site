@@ -174,8 +174,20 @@ $("pdf").addEventListener("change", function(e){
       var seq = Promise.resolve();
       for(var i=1;i<=pdf.numPages;i++){ (function(n){
         seq = seq.then(function(){ return pdf.getPage(n).then(function(pg){ return pg.getTextContent(); }).then(function(tc){
-          var line = tc.items.map(function(it){return it.str;}).join(" ");
-          pages.push(line);
+          // reconstrói linhas pela posição vertical (y) de cada fragmento
+          var lines=[], cur=null, lastY=null;
+          tc.items.forEach(function(it){
+            if(typeof it.str!=="string" || !it.str.length) return;
+            var x=it.transform[4], y=it.transform[5];
+            if(lastY===null || Math.abs(y-lastY)>3.5){ if(cur) lines.push(cur); cur=[[x,it.str]]; }
+            else { cur.push([x,it.str]); }
+            lastY=y;
+          });
+          if(cur) lines.push(cur);
+          var pageText = lines.map(function(l){
+            return l.sort(function(a,b){return a[0]-b[0];}).map(function(p){return p[1];}).join(" ").replace(/\s+/g," ").trim();
+          }).filter(Boolean).join("\n");
+          pages.push(pageText);
         }); });
       })(i); }
       return seq.then(function(){ return pages.join("\n"); });
@@ -191,24 +203,46 @@ $("pdf").addEventListener("change", function(e){
   reader.readAsArrayBuffer(file);
 });
 
-// segmenta texto em questões por marcadores de numeração
-function splitQuestions(text){
-  text = text.replace(/\r/g,"").replace(/[ \t]+/g," ");
-  // quebra antes de "1)" "1." "1 -" "Questão 1" "Question 1" no começo de trecho
-  var marker = /(?:^|\s)(?:Quest(?:ã|a)o|Question|Q)\s*\d{1,3}\b|(?:^|\s)\d{1,3}\s*[\).\-–]\s+/g;
-  var idx = [], m;
-  while((m = marker.exec(text)) !== null){ idx.push(m.index); }
+// limpa lixo típico de PDF: números de página, cabeçalhos repetidos, hifenização de quebra
+function cleanText(text){
+  var raw = text.replace(/\r/g,"").split("\n");
+  var freq = {};
+  raw.forEach(function(l){ var t=l.trim(); if(t) freq[t]=(freq[t]||0)+1; });
   var out = [];
-  if(idx.length < 2){
-    // sem marcadores claros: quebra por linhas longas
-    return text.split(/\n{1,}/).map(function(s){return s.trim();}).filter(function(s){return s.length>15;});
+  raw.forEach(function(l){
+    l = l.trim();
+    if(!l) return;
+    if(/^\d{1,4}$/.test(l)) return;                 // número de página solto
+    if(/^p[áa]g(?:ina)?\.?\s*\d+/i.test(l)) return;  // "Página 3"
+    if(/^\d+\s*\/\s*\d+$/.test(l)) return;           // "3 / 20"
+    if(freq[l] >= 3 && l.length < 70) return;        // cabeçalho/rodapé repetido em várias páginas
+    out.push(l);
+  });
+  // junta palavra quebrada por hífen no fim da linha: "exer-\ncício" -> "exercício"
+  return out.join("\n").replace(/(\p{L})-\n(\p{L})/gu, "$1$2");
+}
+
+// segmenta em questões pelo marcador no INÍCIO da linha (e tira o número do começo)
+function splitQuestions(text){
+  var lines = cleanText(text).split("\n");
+  var qstart = /^\s*(?:Quest(?:ã|a)o|Question|Exerc[íi]cio)?\s*\d{1,3}\s*[\).\-–:]\s+/i;
+  var qs = [], cur = null;
+  lines.forEach(function(l){
+    if(qstart.test(l)){
+      if(cur !== null) qs.push(cur.replace(/\s+/g," ").trim());
+      cur = l.replace(qstart, "");            // remove "1)" / "Questão 3 -" do início
+    } else if(cur !== null){
+      cur += " " + l;                          // continua a questão atual
+    }
+    // linhas antes da 1ª questão (instruções/cabeçalho) são ignoradas
+  });
+  if(cur !== null) qs.push(cur.replace(/\s+/g," ").trim());
+  qs = qs.filter(function(s){ return s.length > 4; });
+  if(qs.length < 2){
+    // sem marcadores claros: cada linha significativa vira uma questão
+    return lines.filter(function(s){ return s.length > 15; });
   }
-  for(var i=0;i<idx.length;i++){
-    var start = idx[i], end = (i+1<idx.length)? idx[i+1] : text.length;
-    var chunk = text.slice(start,end).trim();
-    if(chunk.length>4) out.push(chunk);
-  }
-  return out;
+  return qs;
 }
 
 /* ---------- 2. Review / edit ---------- */
