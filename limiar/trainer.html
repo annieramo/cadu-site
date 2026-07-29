@@ -164,40 +164,77 @@ var $ = function(id){ return document.getElementById(id); };
 var state = { questions: [], settings: {}, log: [], cycle: 1, phase: "setup", startAbs: 0 };
 
 /* ---------- 1. PDF extraction ---------- */
+function us(html){ $("pdfstatus").innerHTML = html; }
+
+// extrai texto do PDF reconstruindo linhas pela posição vertical (y)
+function extractPdfText(buf){
+  return pdfjsLib.getDocument({data: buf.slice(0)}).promise.then(function(pdf){
+    var pages=[], seq=Promise.resolve();
+    for(var i=1;i<=pdf.numPages;i++){ (function(n){
+      seq = seq.then(function(){ return pdf.getPage(n).then(function(pg){return pg.getTextContent();}).then(function(tc){
+        var lines=[], cur=null, lastY=null;
+        tc.items.forEach(function(it){
+          if(typeof it.str!=="string" || !it.str.length) return;
+          var x=it.transform[4], y=it.transform[5];
+          if(lastY===null || Math.abs(y-lastY)>3.5){ if(cur) lines.push(cur); cur=[[x,it.str]]; }
+          else { cur.push([x,it.str]); }
+          lastY=y;
+        });
+        if(cur) lines.push(cur);
+        pages.push(lines.map(function(l){ return l.sort(function(a,b){return a[0]-b[0];}).map(function(p){return p[1];}).join(" ").replace(/\s+/g," ").trim(); }).filter(Boolean).join("\n"));
+      }); });
+    })(i); }
+    return seq.then(function(){ return pages.join("\n"); });
+  });
+}
+function abToB64(buf){
+  var bytes=new Uint8Array(buf), bin="", chunk=0x8000;
+  for(var i=0;i<bytes.length;i+=chunk){ bin+=String.fromCharCode.apply(null, bytes.subarray(i,i+chunk)); }
+  return btoa(bin);
+}
+function applyQuestions(list, note){
+  state.questions = list.map(function(q){ return { text:(typeof q==="string"?q:(q.text||"")).trim(), answer:(q&&q.answer||"").trim() }; })
+                        .filter(function(q){ return q.text; });
+  renderReview();
+  us(state.questions.length + " question(s) ready. " + (note||"Review them below."));
+}
+function localFallback(text, note){
+  var qs = splitQuestions(text||"");
+  if(qs.length){ applyQuestions(qs, note); }
+  else { us("<span class='err'>Couldn't read this PDF automatically. Add the questions by hand below.</span>"); }
+}
+
 $("pdf").addEventListener("change", function(e){
   var file = e.target.files[0]; if(!file) return;
-  $("pdfstatus").textContent = "Reading PDF...";
+  us("Reading the PDF...");
   var reader = new FileReader();
   reader.onload = function(){
-    pdfjsLib.getDocument({data: reader.result}).promise.then(function(pdf){
-      var pages = [];
-      var seq = Promise.resolve();
-      for(var i=1;i<=pdf.numPages;i++){ (function(n){
-        seq = seq.then(function(){ return pdf.getPage(n).then(function(pg){ return pg.getTextContent(); }).then(function(tc){
-          // reconstrói linhas pela posição vertical (y) de cada fragmento
-          var lines=[], cur=null, lastY=null;
-          tc.items.forEach(function(it){
-            if(typeof it.str!=="string" || !it.str.length) return;
-            var x=it.transform[4], y=it.transform[5];
-            if(lastY===null || Math.abs(y-lastY)>3.5){ if(cur) lines.push(cur); cur=[[x,it.str]]; }
-            else { cur.push([x,it.str]); }
-            lastY=y;
-          });
-          if(cur) lines.push(cur);
-          var pageText = lines.map(function(l){
-            return l.sort(function(a,b){return a[0]-b[0];}).map(function(p){return p[1];}).join(" ").replace(/\s+/g," ").trim();
-          }).filter(Boolean).join("\n");
-          pages.push(pageText);
-        }); });
-      })(i); }
-      return seq.then(function(){ return pages.join("\n"); });
-    }).then(function(text){
-      var qs = splitQuestions(text);
-      state.questions = qs.map(function(q){ return { text:q, answer:"" }; });
-      renderReview();
-      $("pdfstatus").textContent = qs.length + " question(s) detected. Review them below.";
+    var buf = reader.result;
+    extractPdfText(buf).then(function(text){
+      var hasText = text && text.replace(/\s/g,"").length > 200;
+      us("Reading with AI...");
+      var payload = hasText ? {mode:"text", text:text} : {mode:"pdf", pdfBase64:abToB64(buf)};
+      return fetch("/api/parse",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)})
+        .then(function(r){return r.json();})
+        .then(function(res){
+          if(res && res.questions && res.questions.length){
+            applyQuestions(res.questions, "Read by AI &mdash; check the split and the answers.");
+          } else if(res && res.error === "no_key"){
+            localFallback(text, "AI reader not turned on yet &mdash; used the basic reader, review carefully.");
+          } else {
+            localFallback(text, "AI was unavailable &mdash; used the basic reader.");
+          }
+        });
     }).catch(function(err){
-      $("pdfstatus").innerHTML = "<span class='err'>Could not read this PDF ("+err.message+"). You can add questions by hand.</span>";
+      // pdf.js não conseguiu abrir (ex.: escaneado) — tenta a IA com o PDF cru (visão)
+      us("Reading with AI...");
+      fetch("/api/parse",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({mode:"pdf", pdfBase64:abToB64(reader.result)})})
+        .then(function(r){return r.json();})
+        .then(function(res){
+          if(res && res.questions && res.questions.length){ applyQuestions(res.questions, "Read by AI."); }
+          else { us("<span class='err'>Couldn't read this PDF ("+((err&&err.message)||"error")+"). Add the questions by hand.</span>"); }
+        })
+        .catch(function(){ us("<span class='err'>Couldn't read this PDF. Add the questions by hand.</span>"); });
     });
   };
   reader.readAsArrayBuffer(file);
