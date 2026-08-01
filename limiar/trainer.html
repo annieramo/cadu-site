@@ -163,6 +163,7 @@ function texInto(el, latex){ if(window.katex){ try{ katex.render(latex, el, {thr
 
 /* ---------- banco + cursor ---------- */
 var BANK = [];
+var BANK_BY_ID = {};
 var BANK_KEY = "limiar_bank_v1";
 var CURSOR_KEY = "limiar_cursor";
 function getCursor(){ var n=parseInt(localStorage.getItem(CURSOR_KEY)||"0",10); return isNaN(n)?0:n; }
@@ -183,6 +184,7 @@ function loadBank(){
   });
 }
 function onBankReady(origem){
+  BANK_BY_ID={}; BANK.forEach(function(x){ BANK_BY_ID[x.id]=x; });
   $("bankStatus").textContent = BANK.length+" exercícios no banco ("+[...new Set(BANK.map(function(x){return x.tipo;}))].length+" tipos). Fonte: "+origem+".";
   $("startBtn").disabled=false;
   refreshCursorUI(); checkResume();
@@ -224,7 +226,8 @@ $("startBtn").addEventListener("click",function(){
       segIdx:-1, blockNumber:0, workCount:0, ordemNoBloco:0,
       sessionStartPerf:t0, sessionElapsed:0, blockStartPerf:t0, blockElapsed:0,
       totalZeroPerf:null, totalZeroElapsed:0,
-      cur:null, curIdx:-1, itemStartSess:0, itemStartBlock:0, revealed:false, itemEnd:0,
+      phase:"study", reviewIdx:0,
+      cur:null, curIdx:-1, itemStartSess:0, itemStartBlock:0, itemStartPerf:0,
       blockEndsAt:0 };
   nextSegment();
 });
@@ -233,7 +236,7 @@ function nextSegment(){
   clearTimers();
   // fecha bloco anterior (se houver) registrando fim
   S.segIdx++;
-  if(S.segIdx>=S.plan.length || S.cursor>=BANK.length){ finish(); return; }
+  if(S.segIdx>=S.plan.length || S.cursor>=BANK.length){ endStudy(); return; }
   var seg=S.plan[S.segIdx];
   if(seg.kind==="rest"){ enterRest(seg); return; }
   // work / warmup
@@ -249,48 +252,64 @@ function nextSegment(){
   save();
 }
 function nextItem(){
-  if(S.cursor>=BANK.length){ finish(); return; }
+  if(S.cursor>=BANK.length){ endStudy(); return; }
   S.curIdx=S.cursor; S.cur=BANK[S.cursor];
-  S.revealed=false;
   S.itemStartPerf = nowMs();
   S.itemStartSess = tSessao(S.itemStartPerf);
   S.itemStartBlock = Math.round(S.itemStartPerf-S.blockStartPerf+S.blockElapsed);
   $("ansRev").classList.add("hide");
   texInto($("qMain"), S.cur.enunciado);
-  $("keysHint").innerHTML='<kbd>espaço</kbd> ver resposta';
+  $("keysHint").innerHTML='<kbd>espaço</kbd> quando terminar';
   save();
 }
-function reveal(){
-  if(!S.cur||S.revealed) return;
-  S.revealed=true; S.itemEndPerf=nowMs();
-  texInto($("ansMain"), S.cur.resposta);
-  $("ansRev").classList.remove("hide");
-  $("keysHint").innerHTML='acertei <kbd>A</kbd> &nbsp;&middot;&nbsp; errei <kbd>E</kbd> &nbsp;&middot;&nbsp; pular <kbd>P</kbd>';
-}
-function grade(result){
+// durante a sessão: espaço só marca o tempo e vai para a próxima. Sem resposta, sem julgamento.
+function advanceStudy(){
   if(!S.cur) return;
-  var endPerf = (result==="pulado") ? nowMs() : (S.itemEndPerf||nowMs());
-  var seg=S.plan[S.segIdx];
-  var fimSess=tSessao(endPerf);
-  var fimBloco=Math.round(endPerf-S.blockStartPerf+S.blockElapsed);
+  var endPerf=nowMs(), seg=S.plan[S.segIdx];
   S.log.push({ sessao_id:S.sessionId, tipo_sessao:("exp"+S.preset), data:S.dateISO,
     bloco:S.blockNumber, flag_aquecimento: seg.kind==="warmup"?"sim":"nao",
     ordem_no_bloco:S.ordemNoBloco, item_id:S.cur.id, tipo_item:S.cur.tipo,
-    t_inicio_sessao_ms:S.itemStartSess, t_fim_sessao_ms:fimSess,
-    t_inicio_bloco_ms:S.itemStartBlock, t_fim_bloco_ms:fimBloco,
-    duracao_ms:Math.round(endPerf-S.itemStartPerf), resultado:result });
+    t_inicio_sessao_ms:S.itemStartSess, t_fim_sessao_ms:tSessao(endPerf),
+    t_inicio_bloco_ms:S.itemStartBlock, t_fim_bloco_ms:Math.round(endPerf-S.blockStartPerf+S.blockElapsed),
+    duracao_ms:Math.round(endPerf-S.itemStartPerf), resultado:"pendente" });
   S.ordemNoBloco++; S.cursor++; setCursor(S.cursor); S.cur=null;
   save();
   if(nowMs()>=S.blockEndsAt){ closeBlock(); nextSegment(); } else { nextItem(); }
 }
 function closeBlock(){ var b=S.blocks[S.blocks.length-1]; if(b&&b.fim_sessao_ms===null){ b.fim_sessao_ms=tSessao(nowMs()); } }
 
+// fim da parte cronometrada -> fase de correção (você marca acerto/erro de tudo de uma vez)
+function endStudy(){
+  clearTimers();
+  if(S.blocks && S.blocks.length) closeBlock();
+  if(!S.log.length){ finish(); return; }
+  startReview();
+}
+function startReview(){ S.phase="review"; S.reviewIdx=0; screen("run"); showReviewItem(); save(); }
+function showReviewItem(){
+  var e=S.log[S.reviewIdx], it=BANK_BY_ID[e.item_id]||{enunciado:"?",resposta:"?"};
+  texInto($("qMain"), it.enunciado);
+  texInto($("ansMain"), it.resposta);
+  $("ansRev").classList.remove("hide");
+  $("keysHint").innerHTML='correção '+(S.reviewIdx+1)+' / '+S.log.length+' &nbsp;&middot;&nbsp; acertei <kbd>A</kbd> &nbsp; errei <kbd>E</kbd> &nbsp; pulei <kbd>P</kbd>';
+}
+function gradeReview(result){
+  if(!S.log[S.reviewIdx]) return;
+  S.log[S.reviewIdx].resultado=result; S.reviewIdx++;
+  save();
+  if(S.reviewIdx>=S.log.length){ finish(); } else { showReviewItem(); }
+}
+
 document.addEventListener("keydown", function(e){
   if(!S || $("run").classList.contains("hide")) return;
   var k=e.key.toLowerCase();
-  if(k===" "||e.code==="Space"){ e.preventDefault(); if(!S.revealed) reveal(); return; }
-  if(k==="p"){ e.preventDefault(); grade("pulado"); return; }
-  if(S.revealed){ if(k==="a"){ e.preventDefault(); grade("acerto"); } else if(k==="e"){ e.preventDefault(); grade("erro"); } }
+  if(S.phase==="review"){
+    if(k==="a"){ e.preventDefault(); gradeReview("acerto"); }
+    else if(k==="e"){ e.preventDefault(); gradeReview("erro"); }
+    else if(k==="p"){ e.preventDefault(); gradeReview("pulado"); }
+    return;
+  }
+  if(k===" "||e.code==="Space"){ e.preventDefault(); advanceStudy(); }
 });
 
 /* timers — o tempo do bloco corre por dentro; o fim é verificado ao concluir cada item.
@@ -325,7 +344,7 @@ function save(){
   try{
     var snap=JSON.parse(JSON.stringify({ sessionId:S.sessionId, preset:S.preset, dateISO:S.dateISO, windowMin:S.windowMin,
       plan:S.plan, cursor:S.cursor, log:S.log, blocks:S.blocks, segIdx:S.segIdx, blockNumber:S.blockNumber,
-      workCount:S.workCount, ordemNoBloco:S.ordemNoBloco, revealed:S.revealed, curIdx:S.curIdx,
+      workCount:S.workCount, ordemNoBloco:S.ordemNoBloco, phase:S.phase, reviewIdx:S.reviewIdx, curIdx:S.curIdx,
       itemStartSess:S.itemStartSess, itemStartBlock:S.itemStartBlock }));
     snap.sessionElapsed = Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed);
     snap.blockElapsed = Math.round(nowMs()-S.blockStartPerf+S.blockElapsed);
@@ -338,18 +357,19 @@ function clearActive(){ try{ localStorage.removeItem(ACTIVE_KEY); }catch(e){} }
 function checkResume(){
   var raw; try{ raw=localStorage.getItem(ACTIVE_KEY); }catch(e){}
   if(!raw){ $("resumeBox").classList.add("hide"); return; }
-  try{ var d=JSON.parse(raw); $("resumeInfo").textContent="Sessão "+d.sessionId+" (exp"+d.preset+"), "+d.log.length+" respostas, cursor em "+d.cursor+"."; $("resumeBox").classList.remove("hide"); window._resume=d; }catch(e){ $("resumeBox").classList.add("hide"); }
+  try{ var d=JSON.parse(raw); var fase=(d.phase==="review")?"correção pendente":"em andamento"; $("resumeInfo").textContent="Sessão "+d.sessionId+" (exp"+d.preset+"), "+d.log.length+" itens, "+fase+"."; $("resumeBox").classList.remove("hide"); window._resume=d; }catch(e){ $("resumeBox").classList.add("hide"); }
 }
 $("resumeBtn").addEventListener("click",function(){
   var d=window._resume; var t=nowMs();
   S={ sessionId:d.sessionId, preset:d.preset, dateISO:d.dateISO, windowMin:d.windowMin||5,
       plan:d.plan, cursor:d.cursor, log:d.log, blocks:d.blocks||[], segIdx:d.segIdx, blockNumber:d.blockNumber,
-      workCount:d.workCount, ordemNoBloco:d.ordemNoBloco,
+      workCount:d.workCount, ordemNoBloco:d.ordemNoBloco, phase:d.phase||"study", reviewIdx:d.reviewIdx||0,
       sessionStartPerf:t, sessionElapsed:d.sessionElapsed||0, blockStartPerf:t, blockElapsed:d.blockElapsed||0,
       totalZeroPerf:(d.totalZeroElapsed!=null?t:null), totalZeroElapsed:(d.totalZeroElapsed||0),
-      cur:null, curIdx:-1, itemStartSess:0, itemStartBlock:0, revealed:false,
+      cur:null, curIdx:-1, itemStartSess:0, itemStartBlock:0,
       blockEndsAt: t+(d.blockRemainingMs||0) };
   $("resumeBox").classList.add("hide");
+  if(S.phase==="review"){ screen("run"); showReviewItem(); return; }
   var seg=S.plan[S.segIdx]||{kind:"work",min:1};
   if(seg.kind==="rest"){ enterRest({min:(d.blockRemainingMs||0)/60000||seg.min}); }
   else { screen("run"); nextItem(); }
