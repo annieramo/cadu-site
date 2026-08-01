@@ -26,83 +26,47 @@
   .row{display:flex;gap:1rem;flex-wrap:wrap}
   .field{flex:1;min-width:8rem}
   .field label{display:block;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.64rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
-  input,select,textarea{width:100%;font:inherit;font-size:1rem;padding:.55rem .6rem;border:1px solid var(--rule);border-radius:7px;background:var(--bg);color:var(--ink)}
-  input[type=file]{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.85rem;padding:.45rem}
-  input[type=checkbox]{width:auto}
-  .chk{display:flex;align-items:center;gap:.5rem;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.85rem;color:var(--muted)}
-  textarea{min-height:5rem;resize:vertical}
+  input,select{width:100%;font:inherit;font-size:1rem;padding:.55rem .6rem;border:1px solid var(--rule);border-radius:7px;background:var(--bg);color:var(--ink)}
   .btn{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.05em;padding:.7em 1.2em;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:7px;cursor:pointer}
   .btn:hover{opacity:.9}
   .btn:disabled{opacity:.4;cursor:not-allowed}
   .btn.ghost{background:transparent;color:var(--accent)}
+  .btn.warn{border-color:var(--bad);color:var(--bad);background:transparent}
   .btn.lg{font-size:.9rem;padding:.85em 1.5em}
   .muted{color:var(--muted)}
   .err{color:var(--bad);font-size:.88rem;margin-top:.5rem}
   .hide{display:none}
-  /* review de itens */
-  .qitem{border:1px solid var(--rule);border-radius:8px;padding:.8rem;margin-bottom:.7rem;background:var(--bg)}
-  .qitem.excluded{opacity:.45}
-  .qitem .qh{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-bottom:.45rem}
-  .qitem .qid{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
-  .qitem .qactions{display:flex;gap:.5rem;align-items:center}
-  .qitem select.type{width:auto;font-size:.8rem;padding:.25rem .4rem}
-  .qitem .tog{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.68rem;background:none;border:1px solid var(--rule);border-radius:5px;padding:.25rem .5rem;cursor:pointer;color:var(--muted)}
-  .qedit{width:100%;font-size:.95rem;min-height:3.2rem;margin-bottom:.4rem;font-family:Consolas,Menlo,monospace}
-  .qprev{font-size:.95rem;padding:.5rem .6rem;background:var(--faint);border-radius:6px;min-height:1.5rem}
-  .qprev.ans{border-left:2px solid var(--good);margin-top:.4rem}
-  /* sessão de estudo */
+  .cursorline{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.85rem}
+  .cursorline input{width:6rem}
+  .resume{border:1px solid var(--accent);background:transparent}
+  /* sessão */
   #run{max-width:46rem;margin:0 auto;padding:2.5rem 1.4rem;min-height:100vh;display:flex;flex-direction:column}
   .runbar{display:flex;justify-content:space-between;align-items:center;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
   .runbar .clock{font-variant-numeric:tabular-nums;font-size:.95rem;letter-spacing:.05em}
   .warmtag{color:var(--accent);border:1px solid var(--accent);border-radius:100px;padding:.2em .7em;font-size:.6rem}
   .qzone{flex:1;display:flex;flex-direction:column;justify-content:center}
-  .qmain{font-size:1.4rem;line-height:1.5}
-  .ansrev{margin-top:1.6rem;padding-top:1.2rem;border-top:1px solid var(--rule)}
+  .qcall{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.8rem;letter-spacing:.05em;color:var(--muted);margin-bottom:1rem}
+  .qmain{font-size:1.9rem;line-height:1.5}
+  .ansrev{margin-top:1.8rem;padding-top:1.3rem;border-top:1px solid var(--rule)}
   .ansrev .albl{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--good);display:block;margin-bottom:.5rem}
-  .ansmain{font-size:1.25rem}
+  .ansmain{font-size:1.6rem}
   .keys{margin-top:2.5rem;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.74rem;color:var(--muted);letter-spacing:.03em}
   .keys b{color:var(--ink);font-weight:600}
   .keys kbd{font-family:Consolas,Menlo,monospace;border:1px solid var(--rule);border-bottom-width:2px;border-radius:4px;padding:.05em .45em;margin:0 .15em;background:var(--faint)}
-  /* descanso: tela escura, sem estímulo */
+  /* descanso */
   #rest{position:fixed;inset:0;background:#000;color:#3a3a3a;display:none;align-items:center;justify-content:center;flex-direction:column;z-index:40}
   #rest .rc{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:2.2rem;font-variant-numeric:tabular-nums;letter-spacing:.05em}
   #rest .rl{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;margin-bottom:1rem}
-  /* portão */
-  #gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:1.4rem;z-index:50}
-  #gate .box{max-width:22rem;width:100%;text-align:center}
-  #gate .lockrow{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:.9rem}
-  #gate svg{width:1.3rem;height:1.3rem;color:var(--accent)}
-  #gate input{text-align:center;letter-spacing:.15em;margin-bottom:.8rem}
-  #gate .gerr{color:var(--bad);font-size:.85rem;min-height:1.2rem}
   /* resultados */
   table{border-collapse:collapse;width:100%;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.78rem;margin:1rem 0}
   th,td{border-bottom:1px solid var(--rule);padding:.4rem .45rem;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
   th{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-  canvas{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:10px;background:var(--bg);margin:.6rem 0 1.2rem}
-  .params{display:flex;gap:1.6rem;flex-wrap:wrap;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;margin:.4rem 0 1rem}
-  .params .v{font-size:1.4rem;font-variant-numeric:tabular-nums}
-  .params .k{font-size:.6rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);display:block}
-  .resume{border:1px solid var(--accent);background:transparent}
 </style>
 </head>
 <body>
-<div id="gate">
-  <div class="box">
-    <div class="lockrow">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
-      <span class="label" style="letter-spacing:.2em">Área privada</span>
-    </div>
-    <h1>Instrumento LIMIAR</h1>
-    <p class="muted" style="font-size:.9rem;margin-bottom:1.1rem">Esta ferramenta usa IA paga para ler PDFs. Digite a senha.</p>
-    <input type="password" id="gatePass" placeholder="senha" autocomplete="current-password">
-    <button class="btn" id="gateBtn" type="button" style="width:100%">Entrar</button>
-    <div class="gerr" id="gateErr"></div>
-  </div>
-</div>
-
 <!-- SETUP -->
-<div class="wrap hide" id="app">
+<div class="wrap" id="app">
   <div class="topbar">
     <div><span class="label">LIMIAR</span><div class="sans" style="font-size:.8rem;color:var(--muted)">Instrumento de coleta de dados</div></div>
     <a class="back" href="/limiar/">&larr; Projeto</a>
@@ -112,38 +76,34 @@
     <h2>Sessão interrompida encontrada</h2>
     <p class="muted" style="font-size:.9rem;margin-bottom:.8rem" id="resumeInfo"></p>
     <button class="btn" id="resumeBtn" type="button">Retomar</button>
-    <button class="btn ghost" id="resumeExport" type="button">Só exportar o que foi coletado</button>
+    <button class="btn ghost" id="resumeExport" type="button">Só exportar o coletado</button>
     <button class="btn ghost" id="resumeDiscard" type="button">Descartar</button>
   </div>
 
   <section id="setup">
     <h1>Preparar sessão</h1>
-    <p class="sub">Carregue a lista, revise os itens, escolha a estrutura da sessão e comece. A coleta é toda por teclado.</p>
+    <p class="sub">Banco de derivadas consumido em ordem. Resolva no papel; a coleta é toda por teclado.</p>
 
     <div class="card">
-      <h2>1. Lista de exercícios</h2>
-      <div class="row" style="align-items:flex-end">
-        <div class="field" style="flex:2"><label>PDF da lista</label><input type="file" id="pdf" accept="application/pdf"></div>
-        <div class="field"><label>Rótulo da lista</label><input type="text" id="listLabel" placeholder="ex: L05" value="L01"></div>
+      <h2>Banco de questões</h2>
+      <div id="bankStatus" class="muted sans" style="font-size:.85rem">Carregando banco...</div>
+    </div>
+
+    <div class="card">
+      <h2>Marcador de posição (cursor global)</h2>
+      <p class="muted" style="font-size:.86rem;margin-bottom:.8rem">Aponta para o próximo item ainda não usado. Persiste entre sessões — nenhum exercício se repete.</p>
+      <div class="cursorline">
+        <span>Próximo item: <b id="cursorItem">—</b> (posição <span id="cursorPos">0</span> de <span id="cursorTotal">0</span>)</span>
       </div>
-      <label class="chk" style="margin-top:.7rem"><input type="checkbox" id="visionMode"> PDF com muitas fórmulas — usar leitura visual (mais precisa para LaTeX)</label>
-      <div id="pdfstatus" class="muted sans" style="font-size:.82rem;margin-top:.5rem"></div>
-      <details style="margin-top:.8rem"><summary class="sans" style="font-size:.8rem;color:var(--muted);cursor:pointer">ou colar os exercícios manualmente</summary>
-        <textarea id="manual" placeholder="Cole aqui. Uma questão por linha; use $...$ para fórmulas." style="margin-top:.6rem"></textarea>
-        <button class="btn ghost" id="manualBtn" type="button" style="margin-top:.5rem">Usar texto colado</button>
-      </details>
-    </div>
-
-    <div class="card" id="reviewCard">
-      <h2>2. Revisar itens</h2>
-      <p class="muted" style="font-size:.88rem;margin-bottom:.8rem">Cada sub-item vira uma questão. Corrija o que for preciso, defina o tipo, e exclua o que não serve (dissertativas, conceituais).</p>
-      <div id="qlist"></div>
-      <button class="btn ghost" id="addQ" type="button">+ Adicionar item</button>
-      <div class="muted sans" id="qcount" style="font-size:.78rem;margin-top:.6rem"></div>
+      <div class="cursorline" style="margin-top:.8rem">
+        <label>Corrigir posição:</label>
+        <input type="number" id="cursorEdit" min="1"><button class="btn ghost" id="cursorSet" type="button">Aplicar</button>
+        <button class="btn warn" id="cursorReset" type="button">Reiniciar do zero</button>
+      </div>
     </div>
 
     <div class="card">
-      <h2>3. Estrutura da sessão</h2>
+      <h2>Estrutura da sessão</h2>
       <div class="field"><label>Experimento</label>
         <select id="preset">
           <option value="1">Exp. 1 — aquecimento 5, depois 35 / 5 / 35 / 5 / 35</option>
@@ -155,12 +115,15 @@
       </div>
       <div class="row hide" id="customRow" style="margin-top:.6rem">
         <div class="field"><label>Aquecimento (min)</label><input type="number" id="cWarm" value="5" min="0"></div>
-        <div class="field"><label>Blocos de estudo (min, separados por vírgula)</label><input type="text" id="cWork" value="35,35,35"></div>
-        <div class="field"><label>Pausas (min, separadas por vírgula)</label><input type="text" id="cRest" value="5,5"></div>
+        <div class="field"><label>Blocos (min, vírgula)</label><input type="text" id="cWork" value="35,35,35"></div>
+        <div class="field"><label>Pausas (min, vírgula)</label><input type="text" id="cRest" value="5,5"></div>
+      </div>
+      <div class="row" style="margin-top:.6rem">
+        <div class="field"><label>Janela de análise (min)</label><input type="number" id="win" value="5" min="1"></div>
       </div>
       <div id="planPreview" class="muted sans" style="font-size:.8rem;margin-top:.7rem"></div>
       <div id="setupErr" class="err"></div>
-      <div style="margin-top:1.2rem"><button class="btn lg" id="startBtn" type="button">Iniciar sessão</button></div>
+      <div style="margin-top:1.2rem"><button class="btn lg" id="startBtn" type="button" disabled>Iniciar sessão</button></div>
     </div>
   </section>
 
@@ -169,144 +132,66 @@
     <h1>Resultados da sessão</h1>
     <p class="sub" id="resSummary"></p>
     <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.4rem">
-      <button class="btn" id="csvBtn" type="button">Baixar planilha (CSV)</button>
+      <button class="btn" id="csvBruto" type="button">Baixar Bruto (CSV)</button>
+      <button class="btn" id="csvInt" type="button">Baixar Intervalos (CSV)</button>
+      <button class="btn" id="csvResumo" type="button">Baixar Resumo por bloco (CSV)</button>
       <button class="btn ghost" id="againBtn" type="button">Nova sessão</button>
     </div>
-    <div class="params" id="paramBox"></div>
-    <canvas id="chart" width="900" height="460"></canvas>
-    <p class="muted sans" style="font-size:.78rem;margin-top:-.8rem;margin-bottom:1.4rem">Acertos acumulados vs. tempo de estudo (aquecimento excluído). A curva é o ajuste S(t)=a(1&minus;e^&minus;&#8203;kt).</p>
-    <div style="overflow-x:auto"><table id="logTable"></table></div>
+    <h2 class="sans" style="font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Resumo por bloco</h2>
+    <div style="overflow-x:auto"><table id="resumoTable"></table></div>
   </section>
 </div>
 
-<!-- RUN (sessão) -->
+<!-- RUN -->
 <div id="run" class="hide">
-  <div class="runbar">
-    <span id="runPhase"></span>
-    <span class="clock" id="blockClock"></span>
-  </div>
+  <div class="runbar"><span id="runPhase"></span><span class="clock" id="blockClock"></span></div>
   <div class="qzone">
-    <div class="qmain" id="qMain"></div>
-    <div class="ansrev hide" id="ansRev"><span class="albl">Resposta</span><div class="ansmain" id="ansMain"></div></div>
+    <div><div class="qcall">Calcule a derivada de f(x) =</div><div class="qmain" id="qMain"></div></div>
+    <div class="ansrev hide" id="ansRev"><span class="albl">Resposta — f&prime;(x)</span><div class="ansmain" id="ansMain"></div></div>
   </div>
   <div class="keys" id="keysHint"></div>
 </div>
 
-<!-- REST (tela escura) -->
+<!-- REST -->
 <div id="rest"><div class="rl">descanso</div><div class="rc" id="restClock"></div></div>
 
-<script src="/limiar/vendor/pdf.min.js"></script>
 <script src="/limiar/vendor/katex/katex.min.js"></script>
 <script src="/limiar/vendor/katex/contrib/auto-render.min.js"></script>
 <script>
 "use strict";
-if (window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = "/limiar/vendor/pdf.worker.min.js";
 var $ = function(id){ return document.getElementById(id); };
-function tex(el, s){ el.textContent = s || ""; if(window.renderMathInElement){ try{ renderMathInElement(el,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false},{left:"\\[",right:"\\]",display:true}],throwOnError:false}); }catch(e){} } }
+function texInto(el, latex){ if(window.katex){ try{ katex.render(latex, el, {throwOnError:false, displayMode:true}); return; }catch(e){} } el.textContent = latex; }
 
-/* ---------- 0. portão ---------- */
-var PASS = ""; try { PASS = localStorage.getItem("limiar_pass")||""; } catch(e){}
-function openApp(){ $("gate").style.display="none"; $("app").classList.remove("hide"); checkResume(); }
-function tryAuth(pw){ return fetch("/api/auth",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({password:pw})}).then(function(r){return r.json();}); }
-if(PASS){ tryAuth(PASS).then(function(j){ if(j&&j.ok) openApp(); }).catch(function(){}); }
-$("gateBtn").addEventListener("click", function(){
-  var pw=$("gatePass").value; $("gateErr").textContent="Verificando...";
-  tryAuth(pw).then(function(j){ if(j&&j.ok){ PASS=pw; try{localStorage.setItem("limiar_pass",pw);}catch(e){} $("gateErr").textContent=""; openApp(); } else { $("gateErr").textContent="Senha incorreta."; } })
-  .catch(function(){ $("gateErr").textContent="Erro de conexão."; });
-});
-$("gatePass").addEventListener("keydown", function(e){ if(e.key==="Enter") $("gateBtn").click(); });
-
-/* ---------- estado ---------- */
-var items = [];              // {id, text, answer, type, include}
-var S = null;               // sessão ativa
-var TYPES = ["—","direta","uma regra","duas ou mais regras"];
-
-/* ---------- 1. leitura do PDF ---------- */
-function us(html){ $("pdfstatus").innerHTML=html; }
-function extractPdfText(buf){
-  return pdfjsLib.getDocument({data:buf.slice(0)}).promise.then(function(pdf){
-    var pages=[], seq=Promise.resolve();
-    for(var i=1;i<=pdf.numPages;i++){ (function(n){
-      seq=seq.then(function(){ return pdf.getPage(n).then(function(pg){return pg.getTextContent();}).then(function(tc){
-        var lines=[],cur=null,ly=null;
-        tc.items.forEach(function(it){ if(typeof it.str!=="string"||!it.str.length) return; var x=it.transform[4],y=it.transform[5];
-          if(ly===null||Math.abs(y-ly)>3.5){ if(cur)lines.push(cur); cur=[[x,it.str]]; } else cur.push([x,it.str]); ly=y; });
-        if(cur)lines.push(cur);
-        pages.push(lines.map(function(l){return l.sort(function(a,b){return a[0]-b[0];}).map(function(p){return p[1];}).join(" ").replace(/\s+/g," ").trim();}).filter(Boolean).join("\n"));
-      }); });
-    })(i); }
-    return seq.then(function(){ return pages.join("\n"); });
+/* ---------- banco + cursor ---------- */
+var BANK = [];
+var BANK_KEY = "limiar_bank_v1";
+var CURSOR_KEY = "limiar_cursor";
+function getCursor(){ var n=parseInt(localStorage.getItem(CURSOR_KEY)||"0",10); return isNaN(n)?0:n; }
+function setCursor(n){ localStorage.setItem(CURSOR_KEY, String(Math.max(0, Math.min(n, BANK.length)))); refreshCursorUI(); }
+function refreshCursorUI(){
+  var c=getCursor();
+  $("cursorPos").textContent=c; $("cursorTotal").textContent=BANK.length;
+  $("cursorItem").textContent = (c<BANK.length && BANK[c]) ? BANK[c].id : "(fim do banco)";
+  $("cursorEdit").value=c+1;
+}
+function loadBank(){
+  fetch("/limiar/exercicios-derivadas.json").then(function(r){return r.json();}).then(function(a){
+    BANK=a; try{ localStorage.setItem(BANK_KEY, JSON.stringify(a)); }catch(e){}
+    onBankReady("rede");
+  }).catch(function(){
+    try{ var cached=JSON.parse(localStorage.getItem(BANK_KEY)||"null"); if(cached&&cached.length){ BANK=cached; onBankReady("cache"); return; } }catch(e){}
+    $("bankStatus").innerHTML="<span class='err'>Não consegui carregar o banco. Conecte-se uma vez para baixá-lo.</span>";
   });
 }
-function abToB64(buf){ var b=new Uint8Array(buf),s="",c=0x8000; for(var i=0;i<b.length;i+=c){s+=String.fromCharCode.apply(null,b.subarray(i,i+c));} return btoa(s); }
-
-function ingest(list){
-  var lab=($("listLabel").value||"").trim();
-  items = list.map(function(q){
-    var base = typeof q==="string" ? {text:q} : q;
-    var id = (base.id||"").trim();
-    return { id: id ? (lab?lab+"-":"")+id : (lab?lab+"-":"")+("Q"+(items.length+1)), text:(base.text||"").trim(), answer:(base.answer||"").trim(), type:"—", include:true };
-  }).filter(function(q){ return q.text; });
-  renderReview();
+function onBankReady(origem){
+  $("bankStatus").textContent = BANK.length+" exercícios no banco ("+[...new Set(BANK.map(function(x){return x.tipo;}))].length+" tipos). Fonte: "+origem+".";
+  $("startBtn").disabled=false;
+  refreshCursorUI(); checkResume();
 }
-function renderReview(){
-  var w=$("qlist"); w.innerHTML="";
-  items.forEach(function(q,i){
-    var d=document.createElement("div"); d.className="qitem"+(q.include?"":" excluded");
-    var opts=TYPES.map(function(t){return '<option'+(t===q.type?' selected':'')+'>'+t+'</option>';}).join("");
-    d.innerHTML='<div class="qh"><span class="qid">'+q.id+'</span><span class="qactions">'+
-      '<select class="type" data-i="'+i+'">'+opts+'</select>'+
-      '<button class="tog" data-i="'+i+'" type="button">'+(q.include?"excluir":"incluir")+'</button></span></div>'+
-      '<textarea class="qedit" data-i="'+i+'" data-f="text">'+esc(q.text)+'</textarea>'+
-      '<div class="qprev" data-p="'+i+'"></div>'+
-      '<textarea class="qedit" data-i="'+i+'" data-f="answer" placeholder="resposta (opcional)" style="min-height:2.2rem">'+esc(q.answer)+'</textarea>'+
-      '<div class="qprev ans" data-pa="'+i+'"></div>';
-    w.appendChild(d);
-  });
-  w.querySelectorAll(".qedit").forEach(function(t){ t.addEventListener("input",function(){ items[+t.dataset.i][t.dataset.f]=t.value; livePrev(+t.dataset.i); }); });
-  w.querySelectorAll("select.type").forEach(function(s){ s.addEventListener("change",function(){ items[+s.dataset.i].type=s.value; }); });
-  w.querySelectorAll(".tog").forEach(function(b){ b.addEventListener("click",function(){ var i=+b.dataset.i; items[i].include=!items[i].include; renderReview(); }); });
-  items.forEach(function(q,i){ livePrev(i); });
-  updCount();
-}
-function livePrev(i){ var p=document.querySelector('[data-p="'+i+'"]'), a=document.querySelector('[data-pa="'+i+'"]'); if(p) tex(p, items[i].text); if(a) tex(a, items[i].answer); }
-function updCount(){ var n=items.filter(function(q){return q.include;}).length; $("qcount").textContent=n+" item(ns) incluído(s) de "+items.length+"."; }
-function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
-$("addQ").addEventListener("click",function(){ items.push({id:($("listLabel").value?$("listLabel").value+"-":"")+"Q"+(items.length+1),text:"",answer:"",type:"—",include:true}); renderReview(); });
+$("cursorSet").addEventListener("click",function(){ var v=parseInt($("cursorEdit").value,10); if(!isNaN(v)) setCursor(v-1); });
+$("cursorReset").addEventListener("click",function(){ if(confirm("Reiniciar o cursor para o primeiro item do banco? Itens já usados poderão repetir.")){ setCursor(0); } });
 
-$("pdf").addEventListener("change",function(e){
-  var file=e.target.files[0]; if(!file) return;
-  if(file.size>4.3*1024*1024 && $("visionMode").checked){ us("<span class='err'>PDF grande demais para leitura visual (>4MB). Desmarque a leitura visual ou divida o PDF.</span>"); }
-  us("Lendo o PDF...");
-  var reader=new FileReader();
-  reader.onload=function(){
-    var buf=reader.result;
-    var vision=$("visionMode").checked;
-    if(vision){ us("Lendo com IA (visual)..."); callAI({mode:"pdf",pdfBase64:abToB64(buf)}, null); return; }
-    extractPdfText(buf).then(function(text){
-      var hasText=text&&text.replace(/\s/g,"").length>200;
-      us("Lendo com IA...");
-      callAI(hasText?{mode:"text",text:text}:{mode:"pdf",pdfBase64:abToB64(buf)}, text);
-    }).catch(function(){ us("Lendo com IA (visual)..."); callAI({mode:"pdf",pdfBase64:abToB64(reader.result)}, null); });
-  };
-  reader.readAsArrayBuffer(file);
-});
-function callAI(payload, fallbackText){
-  payload.password=PASS;
-  fetch("/api/parse",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)})
-    .then(function(r){return r.json();})
-    .then(function(res){
-      if(res&&res.questions&&res.questions.length){ ingest(res.questions); us(items.length+" item(ns) lido(s) pela IA. Revise a fragmentação e o gabarito."); }
-      else if(res&&res.error==="auth"){ us("<span class='err'>Senha da IA rejeitada.</span>"); }
-      else if(fallbackText){ var qs=basicSplit(fallbackText); if(qs.length){ ingest(qs.map(function(q){return {text:q};})); us("IA indisponível — leitura básica usada, revise com atenção."); } else us("<span class='err'>Não consegui ler. Cole os exercícios manualmente.</span>"); }
-      else us("<span class='err'>Não consegui ler este PDF. Cole os exercícios manualmente.</span>");
-    })
-    .catch(function(){ if(fallbackText){ var qs=basicSplit(fallbackText); if(qs.length){ ingest(qs.map(function(q){return {text:q};})); us("IA indisponível — leitura básica usada."); return; } } us("<span class='err'>Erro de conexão ao ler o PDF.</span>"); });
-}
-function basicSplit(text){ return text.replace(/\r/g,"").split("\n").map(function(s){return s.trim();}).filter(function(s){return s.length>12;}); }
-$("manualBtn").addEventListener("click",function(){ var t=$("manual").value.split("\n").map(function(s){return s.trim();}).filter(Boolean); if(t.length){ ingest(t.map(function(x){return {text:x};})); us(items.length+" item(ns) a partir do texto colado."); } });
-
-/* ---------- 2. plano da sessão ---------- */
+/* ---------- plano ---------- */
 var PRESETS={ "1":{warm:5,work:[35,35,35],rest:[5,5]}, "2":{warm:5,work:[32,32,32],rest:[10,10]}, "3":{warm:5,work:[28,28,28],rest:[15,15]}, "4":{warm:5,work:[115],rest:[]} };
 function buildPlan(){
   var p=$("preset").value, warm,work,rest;
@@ -314,7 +199,7 @@ function buildPlan(){
   else { var d=PRESETS[p]; warm=d.warm; work=d.work.slice(); rest=d.rest.slice(); }
   var plan=[];
   if(warm>0) plan.push({kind:"warmup",min:warm});
-  for(var i=0;i<work.length;i++){ plan.push({kind:"work",min:work[i]}); if(i<rest.length && rest[i]>0) plan.push({kind:"rest",min:rest[i]}); }
+  for(var i=0;i<work.length;i++){ plan.push({kind:"work",min:work[i]}); if(i<rest.length&&rest[i]>0) plan.push({kind:"rest",min:rest[i]}); }
   return plan;
 }
 function showPlan(){ var pl=buildPlan(); $("planPreview").textContent="Sequência: "+pl.map(function(s){return (s.kind==="warmup"?"aquec ":s.kind==="rest"?"pausa ":"estudo ")+s.min+"min";}).join(" · "); }
@@ -322,179 +207,205 @@ $("preset").addEventListener("change",function(){ $("customRow").classList.toggl
 ["cWarm","cWork","cRest"].forEach(function(id){ $(id).addEventListener("input",showPlan); });
 showPlan();
 
-/* ---------- 3. sessão ---------- */
-function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
-function seenSet(){ try{ return JSON.parse(localStorage.getItem("limiar_seen")||"[]"); }catch(e){ return []; } }
+/* ---------- sessão ---------- */
+var S=null, ACTIVE_KEY="limiar_active";
+function nowMs(){ return performance.now(); }
 
 $("startBtn").addEventListener("click",function(){
-  var inc=items.filter(function(q){return q.include && q.text.trim();});
-  if(inc.length===0){ $("setupErr").textContent="Inclua ao menos um item."; return; }
   var plan=buildPlan();
   if(!plan.some(function(s){return s.kind==="work";})){ $("setupErr").textContent="A sessão precisa de ao menos um bloco de estudo."; return; }
-  var seen=seenSet();
-  var fresh=[], old=[];
-  inc.forEach(function(q){ (seen.indexOf(q.id)>=0?old:fresh).push(q); });
-  var queue=shuffle(fresh).concat(shuffle(old)).map(function(q){return q.id;});
-  S={ sessionId:"S"+Date.now(), preset:$("preset").value, dateISO:new Date().toISOString(),
-      itemsById:{}, plan:plan, queue:queue, log:[], startWall:Date.now(),
-      segIdx:-1, blockNumber:0, workCount:0, posInBlock:0,
-      cur:null, itemStartWall:0, blockEndsWall:0, revealed:false };
-  inc.forEach(function(q){ S.itemsById[q.id]=q; });
-  save(); nextSegment();
+  if(getCursor()>=BANK.length){ $("setupErr").textContent="O cursor está no fim do banco. Reinicie-o se quiser recomeçar."; return; }
+  var t0=nowMs();
+  S={ sessionId:"S"+Date.now(), preset:$("preset").value, dateISO:new Date().toISOString().slice(0,10),
+      windowMin:Math.max(1,+$("win").value||5),
+      plan:plan, cursor:getCursor(), log:[], blocks:[],
+      segIdx:-1, blockNumber:0, workCount:0, ordemNoBloco:0,
+      sessionStartPerf:t0, sessionElapsed:0, blockStartPerf:t0, blockElapsed:0,
+      cur:null, curIdx:-1, itemStartSess:0, itemStartBlock:0, revealed:false, itemEnd:0,
+      blockEndsAt:0 };
+  nextSegment();
 });
 
 function nextSegment(){
   clearTimers();
+  // fecha bloco anterior (se houver) registrando fim
   S.segIdx++;
-  if(S.segIdx>=S.plan.length || S.queue.length===0){ finish(); return; }
+  if(S.segIdx>=S.plan.length || S.cursor>=BANK.length){ finish(); return; }
   var seg=S.plan[S.segIdx];
   if(seg.kind==="rest"){ enterRest(seg); return; }
-  // warmup ou work
+  // work / warmup
   S.blockNumber = seg.kind==="warmup" ? 0 : (++S.workCount);
-  S.posInBlock=0;
-  S.blockEndsWall = Date.now() + seg.min*60000;
+  S.ordemNoBloco=0;
+  S.blockStartPerf=nowMs(); S.blockElapsed=0;
+  S.blockEndsAt = nowMs()+seg.min*60000;
+  S.blocks.push({ bloco:S.blockNumber, kind:seg.kind, min:seg.min, inicio_sessao_ms:Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed), fim_sessao_ms:null });
   screen("run");
   $("runPhase").innerHTML = seg.kind==="warmup" ? '<span class="warmtag">aquecimento</span>' : ("bloco "+S.blockNumber);
-  nextItem();
-  startBlockClock();
-  save();
+  nextItem(); startBlockClock(); save();
 }
 function nextItem(){
-  if(S.queue.length===0){ finish(); return; }
-  var id=S.queue.shift();
-  S.cur=S.itemsById[id];
+  if(S.cursor>=BANK.length){ finish(); return; }
+  S.curIdx=S.cursor; S.cur=BANK[S.cursor];
   S.revealed=false;
-  S.itemStartWall=Date.now();
+  S.itemStartSess = Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed);
+  S.itemStartBlock = Math.round(nowMs()-S.blockStartPerf+S.blockElapsed);
+  S.itemStartPerf = nowMs();
   $("ansRev").classList.add("hide");
-  tex($("qMain"), S.cur.text);
+  texInto($("qMain"), S.cur.enunciado);
   $("keysHint").innerHTML='<kbd>espaço</kbd> ver resposta';
   save();
 }
 function reveal(){
   if(!S.cur||S.revealed) return;
-  S.revealed=true; S.itemEndWall=Date.now();
-  tex($("ansMain"), S.cur.answer || "(sem gabarito — confira sua solução)");
+  S.revealed=true; S.itemEndPerf=nowMs();
+  texInto($("ansMain"), S.cur.resposta);
   $("ansRev").classList.remove("hide");
-  $("keysHint").innerHTML='<b>A</b> acertei &nbsp; <kbd>A</kbd> &nbsp;&middot;&nbsp; <b>E</b> errei &nbsp; <kbd>E</kbd> &nbsp;&middot;&nbsp; pular <kbd>P</kbd>';
+  $("keysHint").innerHTML='acertei <kbd>A</kbd> &nbsp;&middot;&nbsp; errei <kbd>E</kbd> &nbsp;&middot;&nbsp; pular <kbd>P</kbd>';
 }
 function grade(result){
   if(!S.cur) return;
-  var end = (result==="pulado") ? Date.now() : (S.itemEndWall||Date.now());
+  var endPerf = (result==="pulado") ? nowMs() : (S.itemEndPerf||nowMs());
   var seg=S.plan[S.segIdx];
-  S.log.push({ sessao_id:S.sessionId, tipo_sessao:("exp"+S.preset), data:S.dateISO.slice(0,10),
-    bloco:S.blockNumber, posicao_no_bloco:S.posInBlock, item_id:S.cur.id, etiqueta:S.cur.type,
-    inicio_ms:S.itemStartWall-S.startWall, fim_ms:end-S.startWall, gasto_ms:end-S.itemStartWall,
-    resultado:result, aquecimento: seg.kind==="warmup" ? "sim":"nao" });
-  S.posInBlock++; S.cur=null;
+  var fimSess=Math.round(endPerf-S.sessionStartPerf+S.sessionElapsed);
+  var fimBloco=Math.round(endPerf-S.blockStartPerf+S.blockElapsed);
+  S.log.push({ sessao_id:S.sessionId, tipo_sessao:("exp"+S.preset), data:S.dateISO,
+    bloco:S.blockNumber, flag_aquecimento: seg.kind==="warmup"?"sim":"nao",
+    ordem_no_bloco:S.ordemNoBloco, item_id:S.cur.id, tipo_item:S.cur.tipo,
+    t_inicio_sessao_ms:S.itemStartSess, t_fim_sessao_ms:fimSess,
+    t_inicio_bloco_ms:S.itemStartBlock, t_fim_bloco_ms:fimBloco,
+    duracao_ms:Math.round(endPerf-S.itemStartPerf), resultado:result });
+  S.ordemNoBloco++; S.cursor++; setCursor(S.cursor); S.cur=null;
   save();
-  if(Date.now()>=S.blockEndsWall){ nextSegment(); } else { nextItem(); }
+  if(nowMs()>=S.blockEndsAt){ closeBlock(); nextSegment(); } else { nextItem(); }
 }
+function closeBlock(){ var b=S.blocks[S.blocks.length-1]; if(b&&b.fim_sessao_ms===null){ b.fim_sessao_ms=Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed); } }
 
-/* teclado */
 document.addEventListener("keydown", function(e){
   if(!S || $("run").classList.contains("hide")) return;
   var k=e.key.toLowerCase();
   if(k===" "||e.code==="Space"){ e.preventDefault(); if(!S.revealed) reveal(); return; }
   if(k==="p"){ e.preventDefault(); grade("pulado"); return; }
-  if(S.revealed){
-    if(k==="a"){ e.preventDefault(); grade("acerto"); }
-    else if(k==="e"){ e.preventDefault(); grade("erro"); }
-  }
+  if(S.revealed){ if(k==="a"){ e.preventDefault(); grade("acerto"); } else if(k==="e"){ e.preventDefault(); grade("erro"); } }
 });
 
-/* relógio do bloco (mostra só tempo restante, discreto) */
-var blockTimer=null;
+/* relógio do bloco */
+var blockTimer=null, restTimer=null;
 function startBlockClock(){ clearInterval(blockTimer); tickBlock(); blockTimer=setInterval(tickBlock,250); }
-function tickBlock(){ var left=Math.max(0,S.blockEndsWall-Date.now()); $("blockClock").textContent="resta "+fmt(left); }
+function tickBlock(){ var left=Math.max(0,S.blockEndsAt-nowMs()); $("blockClock").textContent="resta "+fmt(left); }
 function clearTimers(){ clearInterval(blockTimer); clearInterval(restTimer); }
 
-/* descanso: tela escura */
-var restTimer=null;
 function enterRest(seg){
   screen("rest");
-  var ends=Date.now()+seg.min*60000;
+  var ends=nowMs()+seg.min*60000;
+  var rec={ bloco:"pausa", kind:"rest", min:seg.min, inicio_sessao_ms:Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed), fim_sessao_ms:null };
+  S.blocks.push(rec);
   clearInterval(restTimer);
   restTimer=setInterval(function(){
-    var left=Math.max(0,ends-Date.now());
+    var left=Math.max(0,ends-nowMs());
     $("restClock").textContent=fmt(left);
-    S.blockEndsWall=ends; save();
-    if(left<=0){ clearInterval(restTimer); beep(); nextSegment(); }
+    if(left<=0){ clearInterval(restTimer); rec.fim_sessao_ms=Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed); beep(); nextSegment(); }
   },250);
-  $("restClock").textContent=fmt(seg.min*60000);
-  save();
+  $("restClock").textContent=fmt(seg.min*60000); save();
 }
 function beep(){ try{ var a=new (window.AudioContext||window.webkitAudioContext)(); var o=a.createOscillator(),g=a.createGain(); o.frequency.value=440; o.connect(g); g.connect(a.destination); g.gain.setValueAtTime(0.0001,a.currentTime); g.gain.exponentialRampToValueAtTime(0.15,a.currentTime+0.02); g.gain.exponentialRampToValueAtTime(0.0001,a.currentTime+0.5); o.start(); o.stop(a.currentTime+0.5); }catch(e){} }
 function fmt(ms){ var s=Math.round(ms/1000),m=Math.floor(s/60); s=s%60; return (m<10?"0":"")+m+":"+(s<10?"0":"")+s; }
+function screen(name){ $("app").classList.toggle("hide", name!=="app"); $("run").classList.toggle("hide", name!=="run"); $("rest").style.display = name==="rest"?"flex":"none"; }
 
-function screen(name){ $("app").classList.toggle("hide", name!=="app"); $("run").classList.toggle("hide", name!=="run"); $("rest").style.display = name==="rest" ? "flex":"none"; }
-
-/* ---------- autosave / retomar ---------- */
-function save(){ if(!S) return; try{ var snap=JSON.parse(JSON.stringify(S)); snap.blockRemainingMs=Math.max(0,S.blockEndsWall-Date.now()); localStorage.setItem("limiar_active",JSON.stringify(snap)); }catch(e){} }
-function clearActive(){ try{ localStorage.removeItem("limiar_active"); }catch(e){} }
+/* ---------- autosave / retomar (relógio monotônico via elapsed) ---------- */
+function save(){
+  if(!S) return;
+  try{
+    var snap=JSON.parse(JSON.stringify({ sessionId:S.sessionId, preset:S.preset, dateISO:S.dateISO, windowMin:S.windowMin,
+      plan:S.plan, cursor:S.cursor, log:S.log, blocks:S.blocks, segIdx:S.segIdx, blockNumber:S.blockNumber,
+      workCount:S.workCount, ordemNoBloco:S.ordemNoBloco, revealed:S.revealed, curIdx:S.curIdx,
+      itemStartSess:S.itemStartSess, itemStartBlock:S.itemStartBlock }));
+    snap.sessionElapsed = Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed);
+    snap.blockElapsed = Math.round(nowMs()-S.blockStartPerf+S.blockElapsed);
+    snap.blockRemainingMs = Math.max(0, S.blockEndsAt-nowMs());
+    localStorage.setItem(ACTIVE_KEY, JSON.stringify(snap));
+  }catch(e){}
+}
+function clearActive(){ try{ localStorage.removeItem(ACTIVE_KEY); }catch(e){} }
 function checkResume(){
-  var raw; try{ raw=localStorage.getItem("limiar_active"); }catch(e){}
+  var raw; try{ raw=localStorage.getItem(ACTIVE_KEY); }catch(e){}
   if(!raw){ $("resumeBox").classList.add("hide"); return; }
-  try{ var d=JSON.parse(raw); $("resumeInfo").textContent="Sessão "+d.sessionId+" ("+("exp"+d.preset)+"), "+d.log.length+" respostas registradas."; $("resumeBox").classList.remove("hide"); window._resume=d; }catch(e){ $("resumeBox").classList.add("hide"); }
+  try{ var d=JSON.parse(raw); $("resumeInfo").textContent="Sessão "+d.sessionId+" (exp"+d.preset+"), "+d.log.length+" respostas, cursor em "+d.cursor+"."; $("resumeBox").classList.remove("hide"); window._resume=d; }catch(e){ $("resumeBox").classList.add("hide"); }
 }
 $("resumeBtn").addEventListener("click",function(){
-  S=window._resume; $("resumeBox").classList.add("hide");
-  var seg=S.plan[S.segIdx]||{kind:"work"};
-  if(seg.kind==="rest"){ enterRest({min:(S.blockRemainingMs||0)/60000}); }
-  else { S.blockEndsWall=Date.now()+(S.blockRemainingMs||seg.min*60000); screen("run"); $("runPhase").innerHTML= seg.kind==="warmup"?'<span class="warmtag">aquecimento</span>':("bloco "+S.blockNumber); if(S.cur){ tex($("qMain"),S.cur.text);} else nextItem(); startBlockClock(); }
+  var d=window._resume; var t=nowMs();
+  S={ sessionId:d.sessionId, preset:d.preset, dateISO:d.dateISO, windowMin:d.windowMin||5,
+      plan:d.plan, cursor:d.cursor, log:d.log, blocks:d.blocks||[], segIdx:d.segIdx, blockNumber:d.blockNumber,
+      workCount:d.workCount, ordemNoBloco:d.ordemNoBloco,
+      sessionStartPerf:t, sessionElapsed:d.sessionElapsed||0, blockStartPerf:t, blockElapsed:d.blockElapsed||0,
+      cur:null, curIdx:-1, itemStartSess:0, itemStartBlock:0, revealed:false,
+      blockEndsAt: t+(d.blockRemainingMs||0) };
+  $("resumeBox").classList.add("hide");
+  var seg=S.plan[S.segIdx]||{kind:"work",min:1};
+  if(seg.kind==="rest"){ enterRest({min:(d.blockRemainingMs||0)/60000||seg.min}); }
+  else { screen("run"); $("runPhase").innerHTML=seg.kind==="warmup"?'<span class="warmtag">aquecimento</span>':("bloco "+S.blockNumber); nextItem(); startBlockClock(); }
 });
-$("resumeExport").addEventListener("click",function(){ S=window._resume; finish(); });
+$("resumeExport").addEventListener("click",function(){ var d=window._resume; S={sessionId:d.sessionId,preset:d.preset,dateISO:d.dateISO,windowMin:d.windowMin||5,log:d.log,blocks:d.blocks||[]}; finish(); });
 $("resumeDiscard").addEventListener("click",function(){ clearActive(); $("resumeBox").classList.add("hide"); });
 
-/* ---------- resultados ---------- */
+/* ---------- resultados + planilhas ---------- */
 function finish(){
-  clearTimers(); clearActive();
-  // marca itens vistos
-  try{ var seen=seenSet(); Object.keys(S.itemsById).forEach(function(id){ if(seen.indexOf(id)<0) seen.push(id); }); localStorage.setItem("limiar_seen",JSON.stringify(seen)); }catch(e){}
+  clearTimers();
+  if(S && S.sessionStartPerf!=null && S.blocks && S.blocks.length) closeBlock();
+  clearActive();
   screen("app"); $("setup").classList.add("hide"); $("results").classList.remove("hide"); $("resumeBox").classList.add("hide");
-  var log=S.log;
-  var work=log.filter(function(r){return r.aquecimento==="nao";});
-  var correct=work.filter(function(r){return r.resultado==="acerto";}).length;
-  $("resSummary").textContent = log.length+" respostas ("+work.length+" fora do aquecimento), "+correct+" acertos. Sessão exp"+S.preset+".";
-  // série de trabalho: tempo de estudo acumulado (s) x acertos
-  var t=0,acc=0,pts=[];
-  work.forEach(function(r){ t+=r.gasto_ms/1000; if(r.resultado==="acerto")acc++; pts.push({t:t,y:acc}); });
-  var fit=fitSat(pts);
-  var pb=$("paramBox"); pb.innerHTML="";
-  if(fit){ pb.innerHTML='<div><span class="k">a (teto)</span><span class="v">'+fit.a.toFixed(1)+'</span></div><div><span class="k">k (por min)</span><span class="v">'+(fit.k*60).toFixed(3)+'</span></div><div><span class="k">r&#8320;=a&middot;k (por min)</span><span class="v">'+(fit.a*fit.k*60).toFixed(2)+'</span></div>'; }
-  drawChart(pts,fit); buildTable(log);
+  var log=S.log||[];
+  var work=log.filter(function(r){return r.flag_aquecimento==="nao";});
+  var ac=work.filter(function(r){return r.resultado==="acerto";}).length;
+  $("resSummary").textContent = log.length+" respostas ("+work.length+" fora do aquecimento), "+ac+" acertos. Exp"+S.preset+". Cursor agora em "+getCursor()+"/"+BANK.length+".";
+  renderResumo(computeResumo(log));
 }
-function fitSat(pts){ if(pts.length<3) return null; var T=pts.map(function(p){return p.t;}),Y=pts.map(function(p){return p.y;});
-  function sse(k){ var su=0,suy=0; for(var i=0;i<T.length;i++){var u=1-Math.exp(-k*T[i]);su+=u*u;suy+=u*Y[i];} var a=su>1e-9?suy/su:0,e=0; for(var j=0;j<T.length;j++){var d=Y[j]-a*(1-Math.exp(-k*T[j]));e+=d*d;} return {a:a,sse:e}; }
-  var lo=0.0005,hi=0.5,g=(Math.sqrt(5)-1)/2,c=hi-g*(hi-lo),d=lo+g*(hi-lo);
-  for(var it=0;it<80;it++){ if(sse(c).sse<sse(d).sse) hi=d; else lo=c; c=hi-g*(hi-lo); d=lo+g*(hi-lo); }
-  var k=(lo+hi)/2; return {a:sse(k).a,k:k};
+
+// intervalos por bloco, relógio zerado no bloco
+function computeIntervalos(log){
+  var win=(S.windowMin||5), out=[];
+  var byBlock={};
+  log.forEach(function(r){ (byBlock[r.bloco]=byBlock[r.bloco]||[]).push(r); });
+  Object.keys(byBlock).sort(function(a,b){return a-b;}).forEach(function(bk){
+    var rows=byBlock[bk], acum=0, buckets={};
+    rows.forEach(function(r){ var idx=Math.floor((r.t_inicio_bloco_ms/60000)/win); (buckets[idx]=buckets[idx]||[]).push(r); });
+    Object.keys(buckets).sort(function(a,b){return a-b;}).forEach(function(ix){
+      var it=buckets[ix], n=it.length, acertos=it.filter(function(r){return r.resultado==="acerto";}).length, erros=n-acertos;
+      acum+=acertos;
+      var inicio=ix*win, fim=(+ix+1)*win, pm=inicio+win/2;
+      out.push({ sessao_id:S.sessionId, bloco:bk, intervalo:+ix+1, inicio_min:inicio, fim_min:fim, ponto_medio_min:pm,
+        n_itens:n, acertos:acertos, erros:erros, taxa:(acertos/win), acumulado_S:acum });
+    });
+  });
+  return out;
 }
-function drawChart(pts,fit){ var cv=$("chart"),x=cv.getContext("2d"),W=cv.width,H=cv.height,pad=52;
-  var cs=getComputedStyle(document.documentElement),ink=cs.getPropertyValue("--ink").trim(),mut=cs.getPropertyValue("--muted").trim(),rl=cs.getPropertyValue("--rule").trim(),ac=cs.getPropertyValue("--accent").trim(),gd=cs.getPropertyValue("--good").trim(),bg=cs.getPropertyValue("--bg").trim();
-  x.clearRect(0,0,W,H); x.fillStyle=bg; x.fillRect(0,0,W,H);
-  if(!pts.length){ x.fillStyle=mut; x.font="14px Helvetica"; x.fillText("Sem dados de trabalho.",pad,H/2); return; }
-  var mT=Math.max.apply(null,pts.map(function(p){return p.t;}).concat([1])),mY=Math.max.apply(null,pts.map(function(p){return p.y;}).concat([1])); mY=Math.ceil(mY*1.1)+1;
-  function X(t){return pad+(W-pad*1.5)* (t/mT);} function Y(y){return H-pad-(H-pad*1.6)*(y/mY);}
-  x.strokeStyle=rl; x.fillStyle=mut; x.font="12px Helvetica"; x.lineWidth=1;
-  for(var g2=0;g2<=mY;g2+=Math.max(1,Math.ceil(mY/6))){ var yy=Y(g2); x.beginPath();x.moveTo(X(0),yy);x.lineTo(X(mT),yy);x.stroke(); x.textAlign="right"; x.fillText(g2,X(0)-8,yy+4); }
-  x.textAlign="center"; for(var tk=0;tk<=6;tk++){ var tt=mT*tk/6; x.fillText((tt/60).toFixed(1)+"m",X(tt),H-pad+18); }
-  x.fillText("tempo de estudo",(X(0)+X(mT))/2,H-12);
-  if(fit){ x.strokeStyle=ac; x.lineWidth=2.4; x.beginPath(); for(var px=0;px<=200;px++){ var tt2=mT*px/200,yy2=fit.a*(1-Math.exp(-fit.k*tt2)); var Xp=X(tt2),Yp=Y(yy2); px===0?x.moveTo(Xp,Yp):x.lineTo(Xp,Yp);} x.stroke(); }
-  x.strokeStyle=mut; x.setLineDash([4,4]); x.lineWidth=1.1; x.beginPath(); x.moveTo(X(0),Y(0)); pts.forEach(function(p){x.lineTo(X(p.t),Y(p.y));}); x.stroke(); x.setLineDash([]);
-  x.fillStyle=gd; pts.forEach(function(p){ x.beginPath(); x.arc(X(p.t),Y(p.y),4,0,7); x.fill(); });
+function computeResumo(log){
+  var win=(S.windowMin||5), ints=computeIntervalos(log), out=[];
+  var byBlock={};
+  log.forEach(function(r){ (byBlock[r.bloco]=byBlock[r.bloco]||[]).push(r); });
+  Object.keys(byBlock).sort(function(a,b){return a-b;}).forEach(function(bk){
+    var rows=byBlock[bk], n=rows.length, acertos=rows.filter(function(r){return r.resultado==="acerto";}).length, erros=n-acertos;
+    var durMin=Math.max.apply(null, rows.map(function(r){return r.t_fim_bloco_ms;}))/60000;
+    var bi=ints.filter(function(r){return String(r.bloco)===String(bk);});
+    out.push({ sessao_id:S.sessionId, bloco:bk, duracao_min:+durMin.toFixed(2), n_itens:n, acertos:acertos, erros:erros,
+      taxa_media_do_bloco: durMin>0?+(acertos/durMin).toFixed(3):0,
+      taxa_do_primeiro_intervalo: bi.length?+bi[0].taxa.toFixed(3):0,
+      taxa_do_ultimo_intervalo: bi.length?+bi[bi.length-1].taxa.toFixed(3):0 });
+  });
+  return out;
 }
-function buildTable(log){ var head="<tr><th>#</th><th>item</th><th>bloco</th><th>pos</th><th>tipo</th><th>gasto(ms)</th><th>resultado</th><th>aquec</th></tr>";
-  var rows=log.map(function(r,i){ return "<tr><td>"+(i+1)+"</td><td>"+r.item_id+"</td><td>"+r.bloco+"</td><td>"+r.posicao_no_bloco+"</td><td>"+r.etiqueta+"</td><td>"+r.gasto_ms+"</td><td>"+r.resultado+"</td><td>"+r.aquecimento+"</td></tr>"; }).join("");
-  $("logTable").innerHTML=head+rows;
+function renderResumo(res){
+  var head="<tr><th>bloco</th><th>itens</th><th>acertos</th><th>erros</th><th>dur (min)</th><th>taxa média</th><th>taxa 1º int</th><th>taxa últ int</th></tr>";
+  $("resumoTable").innerHTML=head+res.map(function(r){ return "<tr><td>"+r.bloco+"</td><td>"+r.n_itens+"</td><td>"+r.acertos+"</td><td>"+r.erros+"</td><td>"+r.duracao_min+"</td><td>"+r.taxa_media_do_bloco+"</td><td>"+r.taxa_do_primeiro_intervalo+"</td><td>"+r.taxa_do_ultimo_intervalo+"</td></tr>"; }).join("");
 }
-$("csvBtn").addEventListener("click",function(){
-  var cols=["sessao_id","tipo_sessao","data","bloco","posicao_no_bloco","item_id","etiqueta_de_tipo","instante_inicio_ms","instante_fim_ms","tempo_gasto_ms","resultado","flag_aquecimento"];
-  var lines=[cols.join(",")];
-  S.log.forEach(function(r){ lines.push([r.sessao_id,r.tipo_sessao,r.data,r.bloco,r.posicao_no_bloco,'"'+String(r.item_id).replace(/"/g,'""')+'"','"'+r.etiqueta+'"',r.inicio_ms,r.fim_ms,r.gasto_ms,r.resultado,r.aquecimento].join(",")); });
-  var blob=new Blob([lines.join("\n")],{type:"text/csv"}); var a=document.createElement("a"); a.href=URL.createObjectURL(blob);
-  a.download="limiar-"+S.sessionId+".csv"; a.click();
-});
+function toCSV(cols, rows){ var out=[cols.join(",")]; rows.forEach(function(r){ out.push(cols.map(function(c){ var v=r[c]; if(typeof v==="string"&&/[",\n]/.test(v)) return '"'+v.replace(/"/g,'""')+'"'; return v; }).join(",")); }); return out.join("\n"); }
+function dl(name, text){ var b=new Blob([text],{type:"text/csv"}); var a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=name; a.click(); }
+$("csvBruto").addEventListener("click",function(){ var cols=["sessao_id","tipo_sessao","data","bloco","flag_aquecimento","ordem_no_bloco","item_id","tipo_item","t_inicio_sessao_ms","t_fim_sessao_ms","t_inicio_bloco_ms","t_fim_bloco_ms","duracao_ms","resultado"]; dl("limiar-"+S.sessionId+"-bruto.csv", toCSV(cols,S.log)); });
+$("csvInt").addEventListener("click",function(){ var cols=["sessao_id","bloco","intervalo","inicio_min","fim_min","ponto_medio_min","n_itens","acertos","erros","taxa","acumulado_S"]; dl("limiar-"+S.sessionId+"-intervalos.csv", toCSV(cols,computeIntervalos(S.log))); });
+$("csvResumo").addEventListener("click",function(){ var cols=["sessao_id","bloco","duracao_min","n_itens","acertos","erros","taxa_media_do_bloco","taxa_do_primeiro_intervalo","taxa_do_ultimo_intervalo"]; dl("limiar-"+S.sessionId+"-resumo.csv", toCSV(cols,computeResumo(S.log))); });
 $("againBtn").addEventListener("click",function(){ $("results").classList.add("hide"); $("setup").classList.remove("hide"); S=null; checkResume(); });
+
+/* ---------- boot ---------- */
+loadBank();
 </script>
 </body>
 </html>
