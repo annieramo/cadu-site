@@ -144,7 +144,7 @@
 
 <!-- RUN -->
 <div id="run" class="hide">
-  <div class="runbar"><span id="runPhase"></span><span class="clock" id="blockClock"></span></div>
+  <div class="runbar"><span id="runPhase"></span></div>
   <div class="qzone">
     <div><div class="qcall">Calcule a derivada de f(x) =</div><div class="qmain" id="qMain"></div></div>
     <div class="ansrev hide" id="ansRev"><span class="albl">Resposta — f&prime;(x)</span><div class="ansmain" id="ansMain"></div></div>
@@ -153,7 +153,7 @@
 </div>
 
 <!-- REST -->
-<div id="rest"><div class="rl">descanso</div><div class="rc" id="restClock"></div></div>
+<div id="rest"><div class="rl">descanso</div></div>
 
 <script src="/limiar/vendor/katex/katex.min.js"></script>
 <script src="/limiar/vendor/katex/contrib/auto-render.min.js"></script>
@@ -241,7 +241,7 @@ function nextSegment(){
   S.blocks.push({ bloco:S.blockNumber, kind:seg.kind, min:seg.min, inicio_sessao_ms:Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed), fim_sessao_ms:null });
   screen("run");
   $("runPhase").innerHTML = seg.kind==="warmup" ? '<span class="warmtag">aquecimento</span>' : ("bloco "+S.blockNumber);
-  nextItem(); startBlockClock(); save();
+  nextItem(); save();
 }
 function nextItem(){
   if(S.cursor>=BANK.length){ finish(); return; }
@@ -288,24 +288,22 @@ document.addEventListener("keydown", function(e){
   if(S.revealed){ if(k==="a"){ e.preventDefault(); grade("acerto"); } else if(k==="e"){ e.preventDefault(); grade("erro"); } }
 });
 
-/* relógio do bloco */
+/* timers — o tempo do bloco corre por dentro; o fim é verificado ao concluir cada item.
+   Sem relógio visível durante o estudo (ver o tempo faria correr e contaminaria a medida). */
 var blockTimer=null, restTimer=null;
-function startBlockClock(){ clearInterval(blockTimer); tickBlock(); blockTimer=setInterval(tickBlock,250); }
-function tickBlock(){ var left=Math.max(0,S.blockEndsAt-nowMs()); $("blockClock").textContent="resta "+fmt(left); }
 function clearTimers(){ clearInterval(blockTimer); clearInterval(restTimer); }
 
 function enterRest(seg){
   screen("rest");
+  beep();                 // sinal sonoro de que o descanso começou
   var ends=nowMs()+seg.min*60000;
   var rec={ bloco:"pausa", kind:"rest", min:seg.min, inicio_sessao_ms:Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed), fim_sessao_ms:null };
   S.blocks.push(rec);
   clearInterval(restTimer);
-  restTimer=setInterval(function(){
-    var left=Math.max(0,ends-nowMs());
-    $("restClock").textContent=fmt(left);
-    if(left<=0){ clearInterval(restTimer); rec.fim_sessao_ms=Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed); beep(); nextSegment(); }
+  restTimer=setInterval(function(){          // conta por dentro, sem mostrar número
+    if(nowMs()>=ends){ clearInterval(restTimer); rec.fim_sessao_ms=Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed); beep(); nextSegment(); }
   },250);
-  $("restClock").textContent=fmt(seg.min*60000); save();
+  save();
 }
 function beep(){ try{ var a=new (window.AudioContext||window.webkitAudioContext)(); var o=a.createOscillator(),g=a.createGain(); o.frequency.value=440; o.connect(g); g.connect(a.destination); g.gain.setValueAtTime(0.0001,a.currentTime); g.gain.exponentialRampToValueAtTime(0.15,a.currentTime+0.02); g.gain.exponentialRampToValueAtTime(0.0001,a.currentTime+0.5); o.start(); o.stop(a.currentTime+0.5); }catch(e){} }
 function fmt(ms){ var s=Math.round(ms/1000),m=Math.floor(s/60); s=s%60; return (m<10?"0":"")+m+":"+(s<10?"0":"")+s; }
@@ -342,7 +340,7 @@ $("resumeBtn").addEventListener("click",function(){
   $("resumeBox").classList.add("hide");
   var seg=S.plan[S.segIdx]||{kind:"work",min:1};
   if(seg.kind==="rest"){ enterRest({min:(d.blockRemainingMs||0)/60000||seg.min}); }
-  else { screen("run"); $("runPhase").innerHTML=seg.kind==="warmup"?'<span class="warmtag">aquecimento</span>':("bloco "+S.blockNumber); nextItem(); startBlockClock(); }
+  else { screen("run"); $("runPhase").innerHTML=seg.kind==="warmup"?'<span class="warmtag">aquecimento</span>':("bloco "+S.blockNumber); nextItem(); }
 });
 $("resumeExport").addEventListener("click",function(){ var d=window._resume; S={sessionId:d.sessionId,preset:d.preset,dateISO:d.dateISO,windowMin:d.windowMin||5,log:d.log,blocks:d.blocks||[]}; finish(); });
 $("resumeDiscard").addEventListener("click",function(){ clearActive(); $("resumeBox").classList.add("hide"); });
