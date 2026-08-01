@@ -131,6 +131,9 @@
   <section id="results" class="hide">
     <h1>Resultados da sessão</h1>
     <p class="sub" id="resSummary"></p>
+    <div class="row" style="max-width:20rem;margin-bottom:1.2rem">
+      <div class="field"><label>Janela de análise (min) — pode mudar agora, sem refazer nada</label><input type="number" id="winResult" min="1"></div>
+    </div>
     <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.4rem">
       <button class="btn" id="csvBruto" type="button">Baixar Bruto (CSV)</button>
       <button class="btn" id="csvInt" type="button">Baixar Intervalos (CSV)</button>
@@ -387,8 +390,13 @@ function finish(){
   var work=log.filter(function(r){return r.flag_aquecimento==="nao";});
   var ac=work.filter(function(r){return r.resultado==="acerto";}).length;
   $("resSummary").textContent = log.length+" respostas ("+work.length+" fora do aquecimento), "+ac+" acertos. Exp"+S.preset+". Cursor agora em "+getCursor()+"/"+BANK.length+".";
+  $("winResult").value = S.windowMin;
   renderResumo(computeResumo(log));
 }
+// mudar a janela na tela de resultados reagrupa a partir do bruto — sem refazer o experimento
+$("winResult").addEventListener("input", function(){
+  var v=Math.max(1, +$("winResult").value||5); S.windowMin=v; renderResumo(computeResumo(S.log));
+});
 
 // intervalos por bloco, relógio zerado no bloco
 function computeIntervalos(log){
