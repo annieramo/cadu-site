@@ -144,7 +144,6 @@
 
 <!-- RUN -->
 <div id="run" class="hide">
-  <div class="runbar"><span id="runPhase"></span></div>
   <div class="qzone">
     <div><div class="qcall">Calcule a derivada de f(x) =</div><div class="qmain" id="qMain"></div></div>
     <div class="ansrev hide" id="ansRev"><span class="albl">Resposta — f&prime;(x)</span><div class="ansmain" id="ansMain"></div></div>
@@ -153,7 +152,7 @@
 </div>
 
 <!-- REST -->
-<div id="rest"><div class="rl">descanso</div></div>
+<div id="rest"><div class="rl">descanso</div><div class="rc" id="restClock"></div></div>
 
 <script src="/limiar/vendor/katex/katex.min.js"></script>
 <script src="/limiar/vendor/katex/contrib/auto-render.min.js"></script>
@@ -240,7 +239,6 @@ function nextSegment(){
   S.blockEndsAt = nowMs()+seg.min*60000;
   S.blocks.push({ bloco:S.blockNumber, kind:seg.kind, min:seg.min, inicio_sessao_ms:Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed), fim_sessao_ms:null });
   screen("run");
-  $("runPhase").innerHTML = seg.kind==="warmup" ? '<span class="warmtag">aquecimento</span>' : ("bloco "+S.blockNumber);
   nextItem(); save();
 }
 function nextItem(){
@@ -300,9 +298,12 @@ function enterRest(seg){
   var rec={ bloco:"pausa", kind:"rest", min:seg.min, inicio_sessao_ms:Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed), fim_sessao_ms:null };
   S.blocks.push(rec);
   clearInterval(restTimer);
-  restTimer=setInterval(function(){          // conta por dentro, sem mostrar número
-    if(nowMs()>=ends){ clearInterval(restTimer); rec.fim_sessao_ms=Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed); beep(); nextSegment(); }
+  restTimer=setInterval(function(){          // no descanso o contador aparece
+    var left=Math.max(0,ends-nowMs());
+    $("restClock").textContent=fmt(left);
+    if(left<=0){ clearInterval(restTimer); rec.fim_sessao_ms=Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed); beep(); nextSegment(); }
   },250);
+  $("restClock").textContent=fmt(seg.min*60000);
   save();
 }
 function beep(){ try{ var a=new (window.AudioContext||window.webkitAudioContext)(); var o=a.createOscillator(),g=a.createGain(); o.frequency.value=440; o.connect(g); g.connect(a.destination); g.gain.setValueAtTime(0.0001,a.currentTime); g.gain.exponentialRampToValueAtTime(0.15,a.currentTime+0.02); g.gain.exponentialRampToValueAtTime(0.0001,a.currentTime+0.5); o.start(); o.stop(a.currentTime+0.5); }catch(e){} }
@@ -340,7 +341,7 @@ $("resumeBtn").addEventListener("click",function(){
   $("resumeBox").classList.add("hide");
   var seg=S.plan[S.segIdx]||{kind:"work",min:1};
   if(seg.kind==="rest"){ enterRest({min:(d.blockRemainingMs||0)/60000||seg.min}); }
-  else { screen("run"); $("runPhase").innerHTML=seg.kind==="warmup"?'<span class="warmtag">aquecimento</span>':("bloco "+S.blockNumber); nextItem(); }
+  else { screen("run"); nextItem(); }
 });
 $("resumeExport").addEventListener("click",function(){ var d=window._resume; S={sessionId:d.sessionId,preset:d.preset,dateISO:d.dateISO,windowMin:d.windowMin||5,log:d.log,blocks:d.blocks||[]}; finish(); });
 $("resumeDiscard").addEventListener("click",function(){ clearActive(); $("resumeBox").classList.add("hide"); });
