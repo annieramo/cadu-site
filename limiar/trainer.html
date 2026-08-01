@@ -244,7 +244,9 @@ function nextSegment(){
   S.blockEndsAt = nowMs()+seg.min*60000;
   S.blocks.push({ bloco:S.blockNumber, kind:seg.kind, min:seg.min, inicio_sessao_ms:tSessao(nowMs()), fim_sessao_ms:null });
   screen("run");
-  nextItem(); save();
+  nextItem();
+  if(seg.kind==="work" && S.blockNumber===1) softBeep(); // aviso discreto: fim do aquecimento, medição começou
+  save();
 }
 function nextItem(){
   if(S.cursor>=BANK.length){ finish(); return; }
@@ -312,6 +314,8 @@ function enterRest(seg){
   save();
 }
 function beep(){ try{ var a=new (window.AudioContext||window.webkitAudioContext)(); var o=a.createOscillator(),g=a.createGain(); o.frequency.value=440; o.connect(g); g.connect(a.destination); g.gain.setValueAtTime(0.0001,a.currentTime); g.gain.exponentialRampToValueAtTime(0.15,a.currentTime+0.02); g.gain.exponentialRampToValueAtTime(0.0001,a.currentTime+0.5); o.start(); o.stop(a.currentTime+0.5); }catch(e){} }
+// aviso bem discreto: a medição (bloco 1) começou — curto e baixo, para não roubar a atenção
+function softBeep(){ try{ var a=new (window.AudioContext||window.webkitAudioContext)(); var o=a.createOscillator(),g=a.createGain(); o.type="sine"; o.frequency.value=680; o.connect(g); g.connect(a.destination); g.gain.setValueAtTime(0.0001,a.currentTime); g.gain.exponentialRampToValueAtTime(0.045,a.currentTime+0.01); g.gain.exponentialRampToValueAtTime(0.0001,a.currentTime+0.13); o.start(); o.stop(a.currentTime+0.14); }catch(e){} }
 function fmt(ms){ var s=Math.round(ms/1000),m=Math.floor(s/60); s=s%60; return (m<10?"0":"")+m+":"+(s<10?"0":"")+s; }
 function screen(name){ $("app").classList.toggle("hide", name!=="app"); $("run").classList.toggle("hide", name!=="run"); $("rest").style.display = name==="rest"?"flex":"none"; }
 
