@@ -209,6 +209,9 @@ showPlan();
 /* ---------- sessão ---------- */
 var S=null, ACTIVE_KEY="limiar_active";
 function nowMs(){ return performance.now(); }
+// tempo "de sessão" = tempo total da planilha, contado a partir do início do BLOCO 1.
+// Antes disso (aquecimento) retorna "" — o aquecimento não conta para o tempo.
+function tSessao(perf){ return (S && S.totalZeroPerf!=null) ? Math.round(perf - S.totalZeroPerf + S.totalZeroElapsed) : ""; }
 
 $("startBtn").addEventListener("click",function(){
   var plan=buildPlan();
@@ -220,6 +223,7 @@ $("startBtn").addEventListener("click",function(){
       plan:plan, cursor:getCursor(), log:[], blocks:[],
       segIdx:-1, blockNumber:0, workCount:0, ordemNoBloco:0,
       sessionStartPerf:t0, sessionElapsed:0, blockStartPerf:t0, blockElapsed:0,
+      totalZeroPerf:null, totalZeroElapsed:0,
       cur:null, curIdx:-1, itemStartSess:0, itemStartBlock:0, revealed:false, itemEnd:0,
       blockEndsAt:0 };
   nextSegment();
@@ -234,10 +238,11 @@ function nextSegment(){
   if(seg.kind==="rest"){ enterRest(seg); return; }
   // work / warmup
   S.blockNumber = seg.kind==="warmup" ? 0 : (++S.workCount);
+  if(seg.kind==="work" && S.blockNumber===1 && S.totalZeroPerf==null){ S.totalZeroPerf=nowMs(); S.totalZeroElapsed=0; }
   S.ordemNoBloco=0;
   S.blockStartPerf=nowMs(); S.blockElapsed=0;
   S.blockEndsAt = nowMs()+seg.min*60000;
-  S.blocks.push({ bloco:S.blockNumber, kind:seg.kind, min:seg.min, inicio_sessao_ms:Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed), fim_sessao_ms:null });
+  S.blocks.push({ bloco:S.blockNumber, kind:seg.kind, min:seg.min, inicio_sessao_ms:tSessao(nowMs()), fim_sessao_ms:null });
   screen("run");
   nextItem(); save();
 }
@@ -245,9 +250,9 @@ function nextItem(){
   if(S.cursor>=BANK.length){ finish(); return; }
   S.curIdx=S.cursor; S.cur=BANK[S.cursor];
   S.revealed=false;
-  S.itemStartSess = Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed);
-  S.itemStartBlock = Math.round(nowMs()-S.blockStartPerf+S.blockElapsed);
   S.itemStartPerf = nowMs();
+  S.itemStartSess = tSessao(S.itemStartPerf);
+  S.itemStartBlock = Math.round(S.itemStartPerf-S.blockStartPerf+S.blockElapsed);
   $("ansRev").classList.add("hide");
   texInto($("qMain"), S.cur.enunciado);
   $("keysHint").innerHTML='<kbd>espaço</kbd> ver resposta';
@@ -264,7 +269,7 @@ function grade(result){
   if(!S.cur) return;
   var endPerf = (result==="pulado") ? nowMs() : (S.itemEndPerf||nowMs());
   var seg=S.plan[S.segIdx];
-  var fimSess=Math.round(endPerf-S.sessionStartPerf+S.sessionElapsed);
+  var fimSess=tSessao(endPerf);
   var fimBloco=Math.round(endPerf-S.blockStartPerf+S.blockElapsed);
   S.log.push({ sessao_id:S.sessionId, tipo_sessao:("exp"+S.preset), data:S.dateISO,
     bloco:S.blockNumber, flag_aquecimento: seg.kind==="warmup"?"sim":"nao",
@@ -276,7 +281,7 @@ function grade(result){
   save();
   if(nowMs()>=S.blockEndsAt){ closeBlock(); nextSegment(); } else { nextItem(); }
 }
-function closeBlock(){ var b=S.blocks[S.blocks.length-1]; if(b&&b.fim_sessao_ms===null){ b.fim_sessao_ms=Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed); } }
+function closeBlock(){ var b=S.blocks[S.blocks.length-1]; if(b&&b.fim_sessao_ms===null){ b.fim_sessao_ms=tSessao(nowMs()); } }
 
 document.addEventListener("keydown", function(e){
   if(!S || $("run").classList.contains("hide")) return;
@@ -295,13 +300,13 @@ function enterRest(seg){
   screen("rest");
   beep();                 // sinal sonoro de que o descanso começou
   var ends=nowMs()+seg.min*60000;
-  var rec={ bloco:"pausa", kind:"rest", min:seg.min, inicio_sessao_ms:Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed), fim_sessao_ms:null };
+  var rec={ bloco:"pausa", kind:"rest", min:seg.min, inicio_sessao_ms:tSessao(nowMs()), fim_sessao_ms:null };
   S.blocks.push(rec);
   clearInterval(restTimer);
   restTimer=setInterval(function(){          // no descanso o contador aparece
     var left=Math.max(0,ends-nowMs());
     $("restClock").textContent=fmt(left);
-    if(left<=0){ clearInterval(restTimer); rec.fim_sessao_ms=Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed); beep(); nextSegment(); }
+    if(left<=0){ clearInterval(restTimer); rec.fim_sessao_ms=tSessao(nowMs()); beep(); nextSegment(); }
   },250);
   $("restClock").textContent=fmt(seg.min*60000);
   save();
@@ -320,6 +325,7 @@ function save(){
       itemStartSess:S.itemStartSess, itemStartBlock:S.itemStartBlock }));
     snap.sessionElapsed = Math.round(nowMs()-S.sessionStartPerf+S.sessionElapsed);
     snap.blockElapsed = Math.round(nowMs()-S.blockStartPerf+S.blockElapsed);
+    snap.totalZeroElapsed = (S.totalZeroPerf!=null) ? Math.round(nowMs()-S.totalZeroPerf+S.totalZeroElapsed) : null;
     snap.blockRemainingMs = Math.max(0, S.blockEndsAt-nowMs());
     localStorage.setItem(ACTIVE_KEY, JSON.stringify(snap));
   }catch(e){}
@@ -336,6 +342,7 @@ $("resumeBtn").addEventListener("click",function(){
       plan:d.plan, cursor:d.cursor, log:d.log, blocks:d.blocks||[], segIdx:d.segIdx, blockNumber:d.blockNumber,
       workCount:d.workCount, ordemNoBloco:d.ordemNoBloco,
       sessionStartPerf:t, sessionElapsed:d.sessionElapsed||0, blockStartPerf:t, blockElapsed:d.blockElapsed||0,
+      totalZeroPerf:(d.totalZeroElapsed!=null?t:null), totalZeroElapsed:(d.totalZeroElapsed||0),
       cur:null, curIdx:-1, itemStartSess:0, itemStartBlock:0, revealed:false,
       blockEndsAt: t+(d.blockRemainingMs||0) };
   $("resumeBox").classList.add("hide");
@@ -363,7 +370,7 @@ function finish(){
 function computeIntervalos(log){
   var win=(S.windowMin||5), out=[];
   var byBlock={};
-  log.forEach(function(r){ (byBlock[r.bloco]=byBlock[r.bloco]||[]).push(r); });
+  log.filter(function(r){return r.flag_aquecimento!=="sim";}).forEach(function(r){ (byBlock[r.bloco]=byBlock[r.bloco]||[]).push(r); });
   Object.keys(byBlock).sort(function(a,b){return a-b;}).forEach(function(bk){
     var rows=byBlock[bk], acum=0, buckets={};
     rows.forEach(function(r){ var idx=Math.floor((r.t_inicio_bloco_ms/60000)/win); (buckets[idx]=buckets[idx]||[]).push(r); });
@@ -380,7 +387,7 @@ function computeIntervalos(log){
 function computeResumo(log){
   var win=(S.windowMin||5), ints=computeIntervalos(log), out=[];
   var byBlock={};
-  log.forEach(function(r){ (byBlock[r.bloco]=byBlock[r.bloco]||[]).push(r); });
+  log.filter(function(r){return r.flag_aquecimento!=="sim";}).forEach(function(r){ (byBlock[r.bloco]=byBlock[r.bloco]||[]).push(r); });
   Object.keys(byBlock).sort(function(a,b){return a-b;}).forEach(function(bk){
     var rows=byBlock[bk], n=rows.length, acertos=rows.filter(function(r){return r.resultado==="acerto";}).length, erros=n-acertos;
     var durMin=Math.max.apply(null, rows.map(function(r){return r.t_fim_bloco_ms;}))/60000;
