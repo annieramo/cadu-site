@@ -45,9 +45,11 @@ th{color:var(--dim);font-weight:500;font-size:.75rem;letter-spacing:.04em;text-t
 <div class="wrap" id="setup">
   <h1>LIMIAR — flashcards de leitura</h1>
   <p class="sub">O texto aparece sozinho; leia no seu ritmo e pressione <b>espaço</b>. O texto some
-  e surge a pergunta; digite a resposta curta e pressione <b>Enter</b> para o próximo cartão. Nenhum
-  gabarito, contagem ou sinal de desempenho aparece durante a sessão — a correção inteira acontece
-  no final, comparando as suas respostas com os gabaritos.</p>
+  e surge a pergunta; escreva a resposta no caderno, na linha numerada que aparece no alto da tela,
+  e pressione <b>espaço</b> para o próximo cartão. Nenhum gabarito ou sinal de desempenho aparece
+  durante a sessão — a correção inteira acontece no final, linha por linha, contra o caderno.</p>
+  <p class="sub">Tenha o caderno numerado à mão antes de começar: cada cartão traz o número da
+  linha em que a resposta deve ser escrita, e é por ele que a correção se alinha.</p>
 
   <fieldset>
     <legend>Protocolo</legend>
@@ -89,7 +91,6 @@ th{color:var(--dim);font-weight:500;font-size:.75rem;letter-spacing:.04em;text-t
   <div id="tag"></div>
   <div id="texto"></div>
   <div id="pergunta" class="hide"></div>
-  <input id="resp" class="hide" autocomplete="off" autocapitalize="off" spellcheck="false">
   <div id="hint"></div>
 </div>
 
@@ -203,11 +204,11 @@ function proxCard(){
   }
   cardAtual = BANK[S.cursor];
   S.ordem++;
-  $("tag").textContent = (S.blocoKind==="warmup"?"aquecimento":"ciclo "+S.ciclo)+" · "+cardAtual.tema;
+  $("tag").textContent = "#"+(S.log.length+1)+" · "+
+    (S.blocoKind==="warmup"?"aquecimento":"ciclo "+S.ciclo)+" · "+cardAtual.tema;
   $("texto").textContent = cardAtual.texto;
   $("texto").classList.remove("hide");
   $("pergunta").classList.add("hide");
-  $("resp").classList.add("hide");
   $("hint").textContent = "leia com atenção — espaço quando terminar";
   fase = "leitura";
   t0Leitura = nowMs();
@@ -217,10 +218,7 @@ function mostrarPergunta(){
   $("texto").classList.add("hide");
   $("pergunta").textContent = cardAtual.pergunta;
   $("pergunta").classList.remove("hide");
-  $("resp").value = "";
-  $("resp").classList.remove("hide");
-  $("resp").focus();
-  $("hint").textContent = "resposta curta (1 a 3 palavras) — Enter para o próximo";
+  $("hint").textContent = "escreva a resposta no caderno — espaço para o próximo";
   fase = "pergunta";
   t0Pergunta = nowMs();
 }
@@ -236,7 +234,7 @@ function registrar(){
                leitura_ms:Math.round(t0Pergunta - t0Leitura),
                resposta_ms:Math.round(agora - t0Pergunta),
                duracao_ms:Math.round(agora - t0Leitura),
-               resposta_digitada:$("resp").value.trim() });
+               linha_caderno:S.log.length + 1 });
   S.cursor++; setCursor(S.cursor); salvar();
   fase = null;
   proxCard();
@@ -244,10 +242,20 @@ function registrar(){
 
 document.addEventListener("keydown", function(ev){
   if(!S) return;
+  if(corrIdx >= 0){
+    if(ev.key === "a" || ev.key === "A"){ ev.preventDefault(); return marcarCorrecao("acerto"); }
+    if(ev.key === "e" || ev.key === "E"){ ev.preventDefault(); return marcarCorrecao("erro"); }
+    if(ev.key === "Backspace" || ev.key === "ArrowLeft"){
+      ev.preventDefault();
+      if(corrIdx > 0){ corrIdx--; passoCorrecao(); }
+      return;
+    }
+    return;
+  }
   if(fase === "leitura" && (ev.code === "Space" || ev.key === " ")){
     ev.preventDefault(); return mostrarPergunta();
   }
-  if(fase === "pergunta" && ev.key === "Enter"){
+  if(fase === "pergunta" && (ev.code === "Space" || ev.key === " ")){
     ev.preventDefault(); return registrar();
   }
 });
@@ -273,47 +281,59 @@ function beep(){
   setTimeout(function(){ o.stop(); ctx.close(); }, 260);
 }
 
-/* ------------------------------------------------ correção no final */
-function norm(s){
-  return (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"")
-    .replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim();
-}
-function autoMatch(card, resp){
-  var r = norm(resp); if(!r) return false;
-  var cands = [card.resposta].concat(card.alt||[]);
-  for(var i = 0; i < cands.length; i++){
-    var g = norm(cands[i]);
-    if(!g) continue;
-    if(r === g || r.indexOf(g) >= 0 || g.indexOf(r) >= 0) return true;
-    var gt = g.split(" ").filter(function(w){ return w.length > 3; });
-    if(gt.length && gt.every(function(w){ return r.indexOf(w) >= 0; })) return true;
-  }
-  return false;
-}
+/* ------------------------------------------------ correção no final (contra o caderno) */
+var corrIdx = -1;
 
 function iniciarCorrecao(){
   clearTimeout(timerId);
   try{ localStorage.removeItem(ACTIVE); }catch(e){}
   $("exec").classList.add("hide"); $("rest").classList.add("hide");
-  var c = $("corr"); c.classList.remove("hide");
+  $("corr").classList.remove("hide");
   var porId = {}; BANK.forEach(function(b){ porId[b.id] = b; });
-  S.log.forEach(function(r, i){
-    r._card = porId[r.card_id];
-    r.resultado = autoMatch(r._card, r.resposta_digitada) ? "acerto" : "erro";
-  });
+  S.log.forEach(function(r){ r._card = porId[r.card_id]; r.resultado = null; });
+  corrIdx = 0;
+  passoCorrecao();
+}
+
+function passoCorrecao(){
+  if(corrIdx >= S.log.length) return tabelaCorrecao();
+  var r = S.log[corrIdx], c = r._card;
+  var alts = (c.alt || []).length
+    ? "<div class='sub' style='margin-top:.5rem'>também conta: "+c.alt.join(" · ")+"</div>" : "";
+  $("corr").innerHTML =
+    "<h1>Correção</h1>"+
+    "<p class='sub'>Confira contra o seu caderno, linha por linha. Critério fixado antes da "+
+    "coleta: a resposta contém o fato-chave do gabarito — sim ou não.</p>"+
+    "<div style='border:1px solid var(--rule);border-radius:6px;padding:1.5rem;margin:1.5rem 0'>"+
+      "<div class='sub'>linha "+(corrIdx+1)+(r.flag_aquecimento==="sim"?" · aquecimento":"")+"</div>"+
+      "<div style='font-size:1.1rem;margin:.8rem 0 1.2rem'>"+c.pergunta+"</div>"+
+      "<div style='font-size:1.45rem'><b>"+c.resposta+"</b></div>"+alts+
+    "</div>"+
+    "<p class='sub'><b>A</b> acertei · <b>E</b> errei · <b>←</b> volta uma linha "+
+    "&nbsp;·&nbsp; "+(corrIdx+1)+" de "+S.log.length+"</p>";
+}
+
+function marcarCorrecao(res){
+  if(corrIdx < 0 || corrIdx >= S.log.length) return;
+  S.log[corrIdx].resultado = res;
+  corrIdx++;
+  passoCorrecao();
+}
+
+function tabelaCorrecao(){
+  corrIdx = -1;
   var linhas = S.log.map(function(r, i){
-    return "<tr><td class='l'>"+r.card_id+(r.flag_aquecimento==="sim"?" (aq)":"")+"</td>"+
-      "<td class='l' style='max-width:18rem'>"+r._card.pergunta+"</td>"+
-      "<td class='l'><b>"+(r.resposta_digitada||"—")+"</b></td>"+
+    return "<tr><td class='l'>"+(i+1)+(r.flag_aquecimento==="sim"?" (aq)":"")+"</td>"+
+      "<td class='l' style='max-width:22rem'>"+r._card.pergunta+"</td>"+
       "<td class='l'>"+r._card.resposta+"</td>"+
       "<td><button class='mini "+(r.resultado==="acerto"?"on":"off")+"' data-i='"+i+"'>"+
       (r.resultado==="acerto"?"acerto":"erro")+"</button></td></tr>";
   }).join("");
-  c.innerHTML = "<h1>Correção</h1>"+
-    "<p class='sub'>As respostas foram pré-classificadas automaticamente pela presença do "+
-    "fato-chave; revise cada uma e alterne o que a máquina errou. Critério fixado antes da "+
-    "coleta: a resposta contém o fato-chave do gabarito — sim ou não.</p>"+
-    "<table><thead><tr><th>Card</th><th>Pergunta</th><th>Sua resposta</th><th>Gabarito</th>"+
+  var c = $("corr");
+  c.innerHTML = "<h1>Revisão da correção</h1>"+
+    "<p class='sub'>Última conferida antes de fechar: alterne qualquer linha que tenha "+
+    "sido marcada errado.</p>"+
+    "<table><thead><tr><th>Linha</th><th>Pergunta</th><th>Gabarito</th>"+
     "<th>Julgamento</th></tr></thead><tbody>"+linhas+"</tbody></table>"+
     "<button class='primary' id='btnConcluir'>Concluir correção e ver resultados</button>";
   c.querySelectorAll("button.mini").forEach(function(b){
