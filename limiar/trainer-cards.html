@@ -45,11 +45,10 @@ th{color:var(--dim);font-weight:500;font-size:.75rem;letter-spacing:.04em;text-t
 <div class="wrap" id="setup">
   <h1>LIMIAR — flashcards de leitura</h1>
   <p class="sub">O texto aparece sozinho; leia no seu ritmo e pressione <b>espaço</b>. O texto some
-  e surge a pergunta; escreva a resposta no caderno, na linha numerada que aparece no alto da tela,
-  e pressione <b>espaço</b> para o próximo cartão. Nenhum gabarito ou sinal de desempenho aparece
-  durante a sessão — a correção inteira acontece no final, linha por linha, contra o caderno.</p>
-  <p class="sub">Tenha o caderno numerado à mão antes de começar: cada cartão traz o número da
-  linha em que a resposta deve ser escrita, e é por ele que a correção se alinha.</p>
+  e surge a pergunta; escreva a resposta no caderno, uma por linha, e pressione <b>espaço</b> para
+  o próximo cartão. Nada de gabarito, contagem ou sinal de desempenho durante a sessão.</p>
+  <p class="sub">A correção acontece só no fim, depois de todos os ciclos: os cartões voltam um a
+  um, com a pergunta e o gabarito, e você marca acerto ou erro conferindo o caderno na ordem.</p>
 
   <fieldset>
     <legend>Protocolo</legend>
@@ -204,8 +203,7 @@ function proxCard(){
   }
   cardAtual = BANK[S.cursor];
   S.ordem++;
-  $("tag").textContent = "#"+(S.log.length+1)+" · "+
-    (S.blocoKind==="warmup"?"aquecimento":"ciclo "+S.ciclo)+" · "+cardAtual.tema;
+  $("tag").textContent = (S.blocoKind==="warmup"?"aquecimento":"ciclo "+S.ciclo)+" · "+cardAtual.tema;
   $("texto").textContent = cardAtual.texto;
   $("texto").classList.remove("hide");
   $("pergunta").classList.add("hide");
