@@ -40,6 +40,12 @@ th{color:var(--dim);font-weight:500;font-size:.75rem;letter-spacing:.04em;text-t
 #hint{color:var(--dim);font-size:.8rem;margin-top:2.2rem;letter-spacing:.02em}
 #rest{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center}
 #restNum{font:600 2.2rem/1 ui-monospace,Menlo,monospace;color:#3a3a3a}
+#sinal{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;
+       justify-content:center;text-align:center;padding:2rem;background:#e9e9ea;color:#0f1012;
+       animation:pulso .42s steps(1,end) 0s 3}
+#sinal b{font-size:1.65rem;font-weight:600}
+#sinal span{color:#3a3d44;font-size:.95rem;margin-top:.7rem}
+@keyframes pulso{0%,100%{background:#e9e9ea}50%{background:#f4c46a}}
 </style>
 
 <div class="wrap" id="setup">
@@ -94,6 +100,11 @@ th{color:var(--dim);font-weight:500;font-size:.75rem;letter-spacing:.04em;text-t
 </div>
 
 <div id="rest" class="hide"><div id="restNum"></div></div>
+
+<div id="sinal" class="hide">
+  <b>Aquecimento encerrado</b>
+  <span>a medição começa no próximo cartão</span>
+</div>
 
 <div class="wrap hide" id="corr"></div>
 <div class="wrap hide" id="fim"></div>
@@ -179,6 +190,23 @@ function proxSegmento(){
   if(S.segIdx >= S.plan.length) return iniciarCorrecao();
   var seg = S.plan[S.segIdx];
   if(seg.kind === "rest") return iniciarPausa(seg);
+  // aquecimento -> primeiro bloco medido: sinal visual (o bipe as vezes nao sai)
+  if(S.blocoKind === "warmup" && seg.kind !== "warmup") return sinalizarMedicao(seg);
+  abrirBloco(seg);
+}
+
+function sinalizarMedicao(seg){
+  $("exec").classList.add("hide");
+  $("rest").classList.add("hide");
+  $("sinal").classList.remove("hide");
+  try{ beep(); }catch(e){}
+  setTimeout(function(){
+    $("sinal").classList.add("hide");
+    abrirBloco(seg);          // cronometro do bloco so comeca depois do sinal
+  }, 1600);
+}
+
+function abrirBloco(seg){
   S.blocoKind = seg.kind;
   S.ciclo = seg.kind === "warmup" ? 0 : seg.ciclo;
   S.blocoT0 = nowMs();
