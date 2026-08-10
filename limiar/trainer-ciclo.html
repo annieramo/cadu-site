@@ -1,0 +1,528 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>LIMIAR — Instrumento de ciclo com sonda de vigilância</title>
+<link rel="stylesheet" href="/limiar/vendor/katex/katex.min.css">
+<script src="/limiar/vendor/katex/katex.min.js"></script>
+<style>
+:root{--bg:#0f1012;--fg:#e9e9ea;--dim:#8b8d92;--rule:#2a2c31;--acc:#c8cad0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:52rem;margin:0 auto;padding:1.6rem 1.2rem 4rem}
+h1{font-size:1.15rem;font-weight:600;letter-spacing:.01em;margin:0 0 .2rem}
+.sub{color:var(--dim);font-size:.86rem;margin:0 0 1.6rem}
+fieldset{border:1px solid var(--rule);border-radius:6px;padding:.9rem 1rem;margin:0 0 1rem}
+legend{color:var(--dim);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:0 .4rem}
+label{display:block;font-size:.85rem;color:var(--dim);margin:.55rem 0 .2rem}
+input,select{background:#17181c;color:var(--fg);border:1px solid var(--rule);border-radius:4px;padding:.42rem .55rem;font:inherit;font-size:.9rem;width:100%}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.5rem 1rem}
+button{background:#1d1f24;color:var(--fg);border:1px solid var(--rule);border-radius:4px;padding:.55rem 1.1rem;font:inherit;font-size:.9rem;cursor:pointer}
+button:hover{border-color:#3c3f47}
+button.primary{background:#e9e9ea;color:#0f1012;border-color:#e9e9ea;font-weight:600}
+.muted{color:var(--dim);font-size:.82rem}
+.err{color:#e0a0a0;font-size:.85rem;min-height:1.2em}
+.hide{display:none!important}
+
+/* --- tela de exercício --- */
+#exec{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;
+      align-items:center;justify-content:center;padding:2rem;text-align:center}
+#quest{font-size:1.9rem;max-width:90vw;overflow-x:auto;padding:.6rem 0}
+#hint{color:var(--dim);font-size:.82rem;margin-top:2.4rem;letter-spacing:.02em}
+#gab{font-size:1.35rem;color:var(--acc);margin-top:1.4rem;max-width:90vw;overflow-x:auto}
+.tag{color:var(--dim);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.6rem}
+
+/* --- tela do PVT --- */
+#pvt{position:fixed;inset:0;background:#000;display:flex;flex-direction:column;
+     align-items:center;justify-content:center;cursor:none}
+#pvtNum{font:600 3.4rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#d8d8d8;
+        min-height:3.6rem;letter-spacing:.02em}
+#pvtMsg{color:#4a4a4a;font-size:.8rem;margin-top:2.6rem;letter-spacing:.08em}
+
+/* --- relatório --- */
+table{border-collapse:collapse;width:100%;font-size:.85rem;margin:.6rem 0 1.2rem}
+th,td{border-bottom:1px solid var(--rule);padding:.34rem .5rem;text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--dim);font-weight:500;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase}
+.plot{width:100%;height:150px;border:1px solid var(--rule);border-radius:4px;background:#131418}
+</style>
+
+<div class="wrap" id="setup">
+  <h1>LIMIAR — instrumento de ciclo com sonda de vigilância</h1>
+  <p class="sub">Cada ciclo percorre uma vez cada etiqueta do banco, em ordem definida abaixo. Ao
+  fim do ciclo — nunca no meio de um exercício — entra a sonda de vigilância. Todo intervalo entre
+  sondas tem, portanto, composição idêntica por construção.</p>
+
+  <fieldset>
+    <legend>Ciclo</legend>
+    <div class="row">
+      <div><label for="nCiclos">Número de ciclos</label><input id="nCiclos" type="number" min="1" max="40" value="14"></div>
+      <div><label for="aquec">Aquecimento (itens, fora da análise)</label><input id="aquec" type="number" min="0" max="16" value="4"></div>
+    </div>
+    <label for="ordem">Política de ordem dentro do ciclo</label>
+    <select id="ordem">
+      <option value="sorteada">Sorteada a cada ciclo (recomendada)</option>
+      <option value="fixa">Fixa — mesma ordem em todos os ciclos</option>
+      <option value="pesadas_primeiro">Pesadas primeiro, leves depois</option>
+      <option value="pesadas_fim">Leves primeiro, pesadas no fim</option>
+      <option value="alternada">Alternada — pesada, leve, pesada, leve</option>
+    </select>
+    <p class="muted" style="margin:.5rem 0 0">A ordem sorteada nunca repete a mesma etiqueta na
+    virada de um ciclo para o outro. As demais existem para testar se a ordem altera a sonda: se não
+    alterar, basta sortear.</p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Sonda de vigilância</legend>
+    <div class="row">
+      <div><label for="pvtDur">Duração (s)</label><input id="pvtDur" type="number" min="20" max="600" value="60"></div>
+      <div><label for="isiMin">Intervalo mínimo (s)</label><input id="isiMin" type="number" min="0.5" max="10" step="0.5" value="1"></div>
+      <div><label for="isiMax">Intervalo máximo (s)</label><input id="isiMax" type="number" min="1" max="20" step="0.5" value="4"></div>
+    </div>
+    <p class="muted" style="margin:.5rem 0 0">Tela preta. O contador aparece após um intervalo
+    aleatório e você responde com a barra de espaço. O intervalo é aleatório de propósito: fixo,
+    permitiria antecipar, e a medida viraria ritmo em vez de vigilância.</p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Posição no banco</legend>
+    <p class="muted" id="cursorInfo">—</p>
+    <button id="btnCursor" type="button">Corrigir posição</button>
+    <button id="btnZerar" type="button">Reiniciar do zero</button>
+  </fieldset>
+
+  <p class="err" id="setupErr"></p>
+  <button class="primary" id="btnStart">Iniciar sessão</button>
+  <button id="btnRetomar" class="hide">Retomar sessão interrompida</button>
+
+  <div id="arquivo" style="margin-top:2.4rem"></div>
+</div>
+
+<div id="exec" class="hide">
+  <div class="tag" id="execTag"></div>
+  <div id="quest"></div>
+  <div id="gab" class="hide"></div>
+  <div id="hint"></div>
+</div>
+
+<div id="pvt" class="hide">
+  <div id="pvtNum"></div>
+  <div id="pvtMsg"></div>
+</div>
+
+<div class="wrap hide" id="fim"></div>
+
+<script>
+"use strict";
+var $ = function(id){ return document.getElementById(id); };
+var BANK = [], BY_TIPO = {}, TIPOS = [];
+var BANK_KEY = "limiar_ciclo_bank", CUR_KEY = "limiar_ciclo_cursor";
+var ACTIVE = "limiar_ciclo_active", ARQ = "limiar_ciclo_sessoes";
+
+/* Pesos relativos estimados a partir dos tempos medidos por etiqueta na sessão de
+   04/08 (estrutura produto/potência/quociente cara, cadeia barata). Servem apenas
+   para ORDENAR as políticas "pesadas primeiro/fim/alternada" — não entram em conta
+   alguma da análise. */
+var PESO = {
+  "pot-quociente-composto": 9, "tg-quociente-soma": 8, "sen-logaritmica": 7,
+  "raiz-aninhada": 6, "cos-produto-interno": 5, "sen-produto-composto": 4,
+  "arc-arccos": 3, "pot-fracionaria": 2
+};
+
+function nowMs(){ return performance.now(); }
+function getCursor(){ try{ return JSON.parse(localStorage.getItem(CUR_KEY)||"{}"); }catch(e){ return {}; } }
+function setCursor(c){ try{ localStorage.setItem(CUR_KEY, JSON.stringify(c)); }catch(e){} }
+
+function tex(el, s){
+  try{ katex.render(s, el, {throwOnError:false, displayMode:true}); }
+  catch(e){ el.textContent = s; }
+}
+
+/* ---------------- carga do banco ---------------- */
+function ready(origem){
+  BY_TIPO = {};
+  BANK.forEach(function(q){ (BY_TIPO[q.tipo] = BY_TIPO[q.tipo] || []).push(q); });
+  TIPOS = Object.keys(BY_TIPO).sort(function(a,b){ return (PESO[b]||0)-(PESO[a]||0); });
+  var c = getCursor(), partes = [];
+  TIPOS.forEach(function(t){ partes.push(t+" "+(c[t]||0)+"/"+BY_TIPO[t].length); });
+  $("cursorInfo").textContent = "Banco carregado ("+origem+"): "+BANK.length+" itens em "+
+    TIPOS.length+" etiquetas. Posição — "+partes.join(" · ");
+  $("btnStart").disabled = false;
+  try{ if(localStorage.getItem(ACTIVE)) $("btnRetomar").classList.remove("hide"); }catch(e){}
+  renderArquivo();
+}
+$("btnStart").disabled = true;
+fetch("/limiar/exercicios-ciclo.json").then(function(r){ return r.json(); }).then(function(a){
+  BANK = a; try{ localStorage.setItem(BANK_KEY, JSON.stringify(a)); }catch(e){}
+  ready("rede");
+}).catch(function(){
+  try{
+    var c = JSON.parse(localStorage.getItem(BANK_KEY)||"null");
+    if(c && c.length){ BANK = c; ready("cache"); return; }
+  }catch(e){}
+  $("setupErr").textContent = "Não foi possível carregar o banco de exercícios.";
+});
+
+/* ---------------- montagem do plano ---------------- */
+function ordemDoCiclo(politica, idx, anterior){
+  var t = TIPOS.slice();                       // já vem ordenado do mais pesado ao mais leve
+  if(politica === "pesadas_primeiro") return t;
+  if(politica === "pesadas_fim") return t.reverse();
+  if(politica === "alternada"){
+    var out = [], i = 0, j = t.length - 1;
+    while(i <= j){ out.push(t[i++]); if(i <= j) out.push(t[j--]); }
+    return out;
+  }
+  if(politica === "fixa"){                     // uma permutação só, sorteada uma vez
+    if(!ordemDoCiclo._fixa){
+      var f = t.slice();
+      for(var k = f.length-1; k > 0; k--){ var r = Math.floor(Math.random()*(k+1)); var tmp=f[k]; f[k]=f[r]; f[r]=tmp; }
+      ordemDoCiclo._fixa = f;
+    }
+    return ordemDoCiclo._fixa.slice();
+  }
+  // sorteada: permutação nova a cada ciclo, sem repetir na virada
+  for(var tent = 0; tent < 60; tent++){
+    var p = t.slice();
+    for(var m = p.length-1; m > 0; m--){ var r2 = Math.floor(Math.random()*(m+1)); var tp=p[m]; p[m]=p[r2]; p[r2]=tp; }
+    if(!anterior || p[0] !== anterior) return p;
+  }
+  return t;
+}
+
+function proximoItem(tipo, cursor){
+  var lista = BY_TIPO[tipo] || [], i = cursor[tipo] || 0;
+  if(i >= lista.length) return null;
+  cursor[tipo] = i + 1;
+  return lista[i];
+}
+
+/* ---------------- estado da sessão ---------------- */
+var S = null, fase = null, t0Item = 0, itemAtual = null;
+
+function salvar(){ try{ localStorage.setItem(ACTIVE, JSON.stringify(S)); }catch(e){} }
+
+$("btnStart").addEventListener("click", function(){
+  var nC = +$("nCiclos").value || 1, aq = +$("aquec").value || 0;
+  var pol = $("ordem").value;
+  var dur = +$("pvtDur").value || 60, iMin = +$("isiMin").value || 1, iMax = +$("isiMax").value || 4;
+  if(iMax <= iMin){ $("setupErr").textContent = "O intervalo máximo precisa ser maior que o mínimo."; return; }
+  ordemDoCiclo._fixa = null;
+
+  var cursor = getCursor(), plano = [], falta = false, anterior = null;
+  for(var a = 0; a < aq; a++){
+    var ta = TIPOS[a % TIPOS.length], ia = proximoItem(ta, cursor);
+    if(!ia){ falta = true; break; }
+    plano.push({kind:"item", ciclo:0, pos:a+1, aquecimento:true, item:ia});
+  }
+  for(var c = 1; c <= nC && !falta; c++){
+    var ord = ordemDoCiclo(pol, c, anterior);
+    for(var k = 0; k < ord.length; k++){
+      var it = proximoItem(ord[k], cursor);
+      if(!it){ falta = true; break; }
+      plano.push({kind:"item", ciclo:c, pos:k+1, aquecimento:false, item:it});
+    }
+    anterior = ord[ord.length-1];
+    plano.push({kind:"pvt", ciclo:c});
+  }
+  if(falta){ $("setupErr").textContent = "O banco não tem itens suficientes para esse número de ciclos."; return; }
+
+  S = { id:"C"+Date.now(), data:new Date().toISOString().slice(0,10), politica:pol,
+        nCiclos:nC, aquecimento:aq, pvtDur:dur, isiMin:iMin, isiMax:iMax,
+        plano:plano, idx:-1, log:[], pvt:[], cursorFinal:cursor, t0:nowMs(), elapsed:0 };
+  setCursor(cursor);
+  $("setup").classList.add("hide");
+  avancar();
+});
+
+$("btnRetomar").addEventListener("click", function(){
+  try{
+    S = JSON.parse(localStorage.getItem(ACTIVE));
+    if(!S){ return; }
+    S.t0 = nowMs();
+    $("setup").classList.add("hide");
+    S.idx--; avancar();
+  }catch(e){ $("setupErr").textContent = "Não foi possível retomar."; }
+});
+
+function tSess(){ return Math.round(nowMs() - S.t0 + (S.elapsed||0)); }
+
+function avancar(){
+  S.idx++;
+  salvar();
+  if(S.idx >= S.plano.length){ return terminar(); }
+  var p = S.plano[S.idx];
+  if(p.kind === "item") mostrarItem(p); else iniciarPVT(p);
+}
+
+/* ---------------- exercício ---------------- */
+function mostrarItem(p){
+  $("pvt").classList.add("hide");
+  $("exec").classList.remove("hide");
+  itemAtual = p;
+  $("execTag").textContent = p.aquecimento ? "aquecimento" : ("ciclo " + p.ciclo);
+  $("gab").classList.add("hide");
+  tex($("quest"), "f(x) = " + p.item.enunciado);
+  $("hint").textContent = "resolva no papel — barra de espaço ao terminar";
+  fase = "resolvendo";
+  t0Item = nowMs();
+}
+
+function mostrarGabarito(){
+  var dur = Math.round(nowMs() - t0Item);
+  itemAtual._dur = dur;
+  itemAtual._fim = tSess();
+  tex($("gab"), "f'(x) = " + itemAtual.item.resposta);
+  $("gab").classList.remove("hide");
+  $("hint").textContent = "A — acertei    E — errei    P — pular (conta como erro)";
+  fase = "julgando";
+}
+
+function registrar(resultado){
+  S.log.push({ sessao_id:S.id, politica:S.politica, ciclo:itemAtual.ciclo,
+               posicao_no_ciclo:itemAtual.pos, aquecimento:itemAtual.aquecimento ? "sim":"nao",
+               item_id:itemAtual.item.id, tipo_item:itemAtual.item.tipo,
+               t_fim_sessao_ms:itemAtual._fim, duracao_ms:itemAtual._dur,
+               resultado:resultado });
+  avancar();
+}
+
+/* ---------------- sonda de vigilância (PVT) ---------------- */
+var pvtState = null;
+
+function iniciarPVT(p){
+  $("exec").classList.add("hide");
+  $("pvt").classList.remove("hide");
+  $("pvtNum").textContent = "";
+  $("pvtMsg").textContent = "";
+  fase = "pvt";
+  pvtState = { ciclo:p.ciclo, inicio:nowMs(), tSess:tSess(), fim:nowMs() + S.pvtDur*1000,
+               reg:[], idx:0, timerId:null, rafId:null, estimuloEm:0, ativo:false };
+  agendarEstimulo();
+}
+
+function agendarEstimulo(){
+  if(nowMs() >= pvtState.fim) return encerrarPVT();
+  var isi = (S.isiMin + Math.random()*(S.isiMax - S.isiMin)) * 1000;
+  pvtState.ativo = false;
+  $("pvtNum").textContent = "";
+  pvtState.timerId = setTimeout(function(){
+    pvtState.ativo = true;
+    pvtState.estimuloEm = nowMs();
+    tick();
+  }, isi);
+  pvtState._isi = isi;
+}
+
+function tick(){
+  if(!pvtState || !pvtState.ativo) return;
+  var el = Math.round(nowMs() - pvtState.estimuloEm);
+  $("pvtNum").textContent = el;
+  pvtState.rafId = requestAnimationFrame(tick);
+}
+
+function responderPVT(){
+  if(!pvtState) return;
+  if(!pvtState.ativo){                                   // apertou antes do estímulo
+    clearTimeout(pvtState.timerId);
+    pvtState.reg.push({ sessao_id:S.id, ciclo:pvtState.ciclo, estimulo:++pvtState.idx,
+                        isi_ms:Math.round(pvtState._isi||0), rt_ms:"", falso_inicio:"sim" });
+    $("pvtMsg").textContent = "cedo demais";
+    setTimeout(function(){ $("pvtMsg").textContent = ""; agendarEstimulo(); }, 700);
+    return;
+  }
+  var rt = Math.round(nowMs() - pvtState.estimuloEm);
+  cancelAnimationFrame(pvtState.rafId);
+  pvtState.ativo = false;
+  $("pvtNum").textContent = rt;
+  pvtState.reg.push({ sessao_id:S.id, ciclo:pvtState.ciclo, estimulo:++pvtState.idx,
+                      isi_ms:Math.round(pvtState._isi||0), rt_ms:rt, falso_inicio:"nao" });
+  setTimeout(agendarEstimulo, 900);
+}
+
+function encerrarPVT(){
+  clearTimeout(pvtState.timerId);
+  cancelAnimationFrame(pvtState.rafId);
+  S.pvt.push({ ciclo:pvtState.ciclo, t_sessao_ms:pvtState.tSess,
+               duracao_s:S.pvtDur, registros:pvtState.reg });
+  pvtState = null;
+  $("pvtNum").textContent = "";
+  $("pvtMsg").textContent = "sonda encerrada — espaço para continuar";
+  fase = "pvt_fim";
+}
+
+/* ---------------- teclado ---------------- */
+document.addEventListener("keydown", function(ev){
+  if(!S) return;
+  var k = ev.key.toLowerCase();
+  if(ev.code === "Space" || k === " "){
+    ev.preventDefault();
+    if(fase === "resolvendo") return mostrarGabarito();
+    if(fase === "pvt") return responderPVT();
+    if(fase === "pvt_fim"){ fase = null; return avancar(); }
+    return;
+  }
+  if(fase === "julgando"){
+    if(k === "a"){ ev.preventDefault(); return registrar("acerto"); }
+    if(k === "e"){ ev.preventDefault(); return registrar("erro"); }
+    if(k === "p"){ ev.preventDefault(); return registrar("pulado"); }
+  }
+});
+
+/* ---------------- fim e relatório ---------------- */
+function agregarPVT(sonda){
+  var rts = sonda.registros.filter(function(r){ return r.falso_inicio === "nao" && r.rt_ms !== ""; })
+                           .map(function(r){ return r.rt_ms; });
+  var falsos = sonda.registros.filter(function(r){ return r.falso_inicio === "sim"; }).length;
+  if(!rts.length) return { n:0, mediana:null, invRT:null, lapsos:0, falsos:falsos };
+  var ord = rts.slice().sort(function(a,b){ return a-b; });
+  var med = ord[Math.floor(ord.length/2)];
+  var inv = rts.reduce(function(s,v){ return s + 1000/v; }, 0) / rts.length;   // 1/RT em s^-1
+  var lap = rts.filter(function(v){ return v > 500; }).length;
+  return { n:rts.length, mediana:med, invRT:inv, lapsos:lap, falsos:falsos };
+}
+
+function ciclosResumo(){
+  var por = {};
+  S.log.forEach(function(r){
+    if(r.aquecimento === "sim") return;
+    var c = por[r.ciclo] = por[r.ciclo] || { n:0, acertos:0, ms:0 };
+    c.n++; c.ms += r.duracao_ms;
+    if(r.resultado === "acerto") c.acertos++;
+  });
+  return por;
+}
+
+function plot(el, pts, rotulo){
+  if(pts.length < 2){ el.outerHTML = '<p class="muted">Pontos insuficientes para o gráfico.</p>'; return; }
+  var W = el.clientWidth || 700, H = 150, m = {t:14,r:12,b:22,l:44};
+  var xs = pts.map(function(p){ return p[0]; }), ys = pts.map(function(p){ return p[1]; });
+  var x0 = Math.min.apply(null,xs), x1 = Math.max.apply(null,xs);
+  var y0 = Math.min.apply(null,ys), y1 = Math.max.apply(null,ys);
+  if(y1 === y0){ y1 = y0 + 1; }
+  var px = function(v){ return m.l + (v-x0)/(x1-x0||1)*(W-m.l-m.r); };
+  var py = function(v){ return H-m.b - (v-y0)/(y1-y0)*(H-m.t-m.b); };
+  var d = pts.map(function(p,i){ return (i?"L":"M") + px(p[0]).toFixed(1) + " " + py(p[1]).toFixed(1); }).join(" ");
+  var dots = pts.map(function(p){ return '<circle cx="'+px(p[0]).toFixed(1)+'" cy="'+py(p[1]).toFixed(1)+'" r="2.6" fill="#c8cad0"/>'; }).join("");
+  el.outerHTML = '<svg class="plot" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none">'+
+    '<path d="'+d+'" fill="none" stroke="#c8cad0" stroke-width="1.4"/>'+dots+
+    '<text x="4" y="'+(m.t+4)+'" fill="#8b8d92" font-size="10">'+y1.toFixed(2)+'</text>'+
+    '<text x="4" y="'+(H-m.b)+'" fill="#8b8d92" font-size="10">'+y0.toFixed(2)+'</text>'+
+    '<text x="'+(W/2-30)+'" y="'+(H-4)+'" fill="#8b8d92" font-size="10">'+rotulo+'</text></svg>';
+}
+
+function terminar(){
+  try{ localStorage.removeItem(ACTIVE); }catch(e){}
+  arquivar();
+  $("exec").classList.add("hide"); $("pvt").classList.add("hide");
+  var f = $("fim"); f.classList.remove("hide");
+
+  var res = ciclosResumo(), ags = S.pvt.map(agregarPVT);
+  var linhas = "", ptsCiclo = [], ptsInv = [], ptsLap = [];
+  S.pvt.forEach(function(s, i){
+    var a = ags[i], c = res[s.ciclo] || {n:0,acertos:0,ms:0};
+    var min = (s.t_sessao_ms/60000);
+    linhas += "<tr><td>"+s.ciclo+"</td><td>"+min.toFixed(1)+"</td><td>"+
+      (c.ms/1000/(c.n||1)).toFixed(1)+"</td><td>"+(c.ms/60000).toFixed(2)+"</td><td>"+
+      c.acertos+"/"+c.n+"</td><td>"+a.n+"</td><td>"+(a.mediana!=null?a.mediana:"—")+"</td><td>"+
+      (a.invRT!=null?a.invRT.toFixed(2):"—")+"</td><td>"+a.lapsos+"</td><td>"+a.falsos+"</td></tr>";
+    if(c.n){ ptsCiclo.push([min, c.ms/60000]); }
+    if(a.invRT!=null){ ptsInv.push([min, a.invRT]); ptsLap.push([min, a.lapsos]); }
+  });
+
+  f.innerHTML =
+    "<h1>Sessão encerrada</h1>"+
+    "<p class='sub'>Política de ordem: <b>"+S.politica+"</b> · "+S.pvt.length+" sondas · "+
+      S.log.filter(function(r){return r.aquecimento==='nao';}).length+" itens medidos</p>"+
+    "<table><thead><tr><th>Ciclo</th><th>min</th><th>s/item</th><th>dur. ciclo (min)</th>"+
+      "<th>acertos</th><th>n sonda</th><th>RT mediano</th><th>1/RT (s⁻¹)</th><th>lapsos</th><th>falsos</th></tr></thead>"+
+      "<tbody>"+linhas+"</tbody></table>"+
+    "<p class='muted'>Duração do ciclo — composição idêntica em todos, portanto comparáveis sem ponderação</p>"+
+    "<div id='p1' class='plot'></div>"+
+    "<p class='muted'>Vigilância — média do recíproco do tempo de reação (cai com a fadiga)</p>"+
+    "<div id='p2' class='plot'></div>"+
+    "<p class='muted'>Lapsos por sonda</p><div id='p3' class='plot'></div>"+
+    "<p style='margin-top:1.4rem'><button class='primary' id='expJson'>Exportar JSON</button> "+
+    "<button id='expCsvItens'>CSV itens</button> <button id='expCsvPvt'>CSV sondas</button> "+
+    "<button id='voltar'>Voltar ao início</button></p>";
+
+  plot($("p1"), ptsCiclo, "minutos de sessão");
+  plot($("p2"), ptsInv, "minutos de sessão");
+  plot($("p3"), ptsLap, "minutos de sessão");
+
+  $("expJson").onclick = function(){ baixar(JSON.stringify(pacote(), null, 1), "limiar-ciclo-"+S.id+".json", "application/json"); };
+  $("expCsvItens").onclick = function(){ baixar(csv(S.log), "limiar-ciclo-itens-"+S.id+".csv", "text/csv"); };
+  $("expCsvPvt").onclick = function(){
+    var flat = [];
+    S.pvt.forEach(function(s){ s.registros.forEach(function(r){
+      flat.push({sessao_id:r.sessao_id, ciclo:r.ciclo, t_sonda_ms:s.t_sessao_ms,
+                 estimulo:r.estimulo, isi_ms:r.isi_ms, rt_ms:r.rt_ms, falso_inicio:r.falso_inicio});
+    }); });
+    baixar(csv(flat), "limiar-ciclo-sondas-"+S.id+".csv", "text/csv");
+  };
+  $("voltar").onclick = function(){ location.reload(); };
+}
+
+function pacote(){
+  return { sessao:{ id:S.id, data:S.data, politica:S.politica, n_ciclos:S.nCiclos,
+                    aquecimento:S.aquecimento, pvt_duracao_s:S.pvtDur,
+                    isi_min_s:S.isiMin, isi_max_s:S.isiMax },
+           etiquetas:TIPOS, itens:S.log,
+           sondas:S.pvt.map(function(s,i){ var a = agregarPVT(s);
+             return { ciclo:s.ciclo, t_sessao_ms:s.t_sessao_ms, n:a.n, rt_mediano_ms:a.mediana,
+                      inv_rt_s:a.invRT, lapsos:a.lapsos, falsos_inicios:a.falsos,
+                      registros:s.registros }; }),
+           ciclos:ciclosResumo() };
+}
+
+function csv(rows){
+  if(!rows.length) return "";
+  var cols = Object.keys(rows[0]);
+  return cols.join(";") + "\n" + rows.map(function(r){
+    return cols.map(function(c){ return r[c] === undefined ? "" : String(r[c]); }).join(";");
+  }).join("\n");
+}
+
+function baixar(txt, nome, mime){
+  var b = new Blob([txt], {type:mime+";charset=utf-8"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(b); a.download = nome; a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+}
+
+/* ---------------- arquivo de sessões ---------------- */
+function arquivar(){
+  try{
+    var arr = JSON.parse(localStorage.getItem(ARQ)||"[]");
+    arr.unshift(pacote());
+    localStorage.setItem(ARQ, JSON.stringify(arr.slice(0,20)));
+  }catch(e){}
+}
+
+function renderArquivo(){
+  var arr = [];
+  try{ arr = JSON.parse(localStorage.getItem(ARQ)||"[]"); }catch(e){}
+  if(!arr.length){ $("arquivo").innerHTML = ""; return; }
+  var l = arr.map(function(p){
+    return "<tr><td>"+p.sessao.data+"</td><td>"+p.sessao.politica+"</td><td>"+
+      p.sondas.length+"</td><td>"+p.itens.length+"</td><td>"+p.sessao.id+"</td></tr>";
+  }).join("");
+  $("arquivo").innerHTML = "<fieldset><legend>Sessões arquivadas</legend><table><thead><tr>"+
+    "<th>Data</th><th>Política</th><th>Sondas</th><th>Itens</th><th>ID</th></tr></thead><tbody>"+
+    l+"</tbody></table><p class='muted'>Guardadas neste navegador. Exporte para preservar.</p></fieldset>";
+}
+
+/* ---------------- cursor ---------------- */
+$("btnCursor").addEventListener("click", function(){
+  var c = getCursor();
+  var t = prompt("Etiqueta a corrigir:\n" + TIPOS.join("\n"));
+  if(!t || !BY_TIPO[t]) return;
+  var v = prompt("Nova posição para " + t + " (0 a " + BY_TIPO[t].length + "):", c[t]||0);
+  if(v === null) return;
+  c[t] = Math.max(0, Math.min(BY_TIPO[t].length, parseInt(v,10)||0));
+  setCursor(c); ready("cache");
+});
+$("btnZerar").addEventListener("click", function(){
+  if(!confirm("Reiniciar a posição de TODAS as etiquetas? Itens já usados voltarão a aparecer.")) return;
+  setCursor({}); ready("cache");
+});
+</script>

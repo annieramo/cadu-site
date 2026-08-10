@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LIMIAR — Instrumento de coleta</title>
+<title>LIMIAR — Instrumento de coleta (carga alta)</title>
 <link rel="stylesheet" href="/limiar/vendor/katex/katex.min.css">
 <style>
   :root{
@@ -232,7 +232,7 @@ function tex(el,latex,disp){ if(window.katex){ try{ katex.render(latex,el,{throw
 function texStr(latex){ if(window.katex){ try{ return katex.renderToString(latex,{throwOnError:false,displayMode:false}); }catch(e){} } return latex; }
 
 /* ---------------- banco + cursor ---------------- */
-var BANK=[],BY_ID={},BANK_KEY="limiar_bank_v2",CURSOR_KEY="limiar_cursor";
+var BANK=[],BY_ID={},BANK_KEY="limiar_bank_v3",CURSOR_KEY="limiar_cursor_v3";
 function getCursor(){var n=parseInt(localStorage.getItem(CURSOR_KEY)||"0",10);return isNaN(n)?0:n;}
 function setCursor(n){localStorage.setItem(CURSOR_KEY,String(Math.max(0,Math.min(n,BANK.length))));refreshCursorUI();}
 function refreshCursorUI(){var c=getCursor();$("cursorPos").textContent=c;$("cursorTotal").textContent=BANK.length;$("cursorItem").textContent=(c<BANK.length&&BANK[c])?BANK[c].id:"(fim do banco)";$("cursorEdit").value=c+1;}
@@ -242,13 +242,13 @@ function refreshCursorUI(){var c=getCursor();$("cursorPos").textContent=c;$("cur
 var PESOS={},PESOS_ORIGEM="nenhuma";
 function pesoDe(tipo){ var p=PESOS[tipo]; return (typeof p==="number"&&p>0)?p:1; }
 function loadPesos(){
-  return fetch("/limiar/pesos-etiquetas.json").then(function(r){return r.json();})
+  return fetch("/limiar/pesos-compostos.json").then(function(r){return r.json();})
     .then(function(p){PESOS=p;PESOS_ORIGEM="referencia externa";})
     .catch(function(){PESOS={};PESOS_ORIGEM="indisponivel — pesos valendo 1";});
 }
 function loadBank(){
   loadPesos();
-  fetch("/limiar/exercicios-derivadas.json").then(function(r){return r.json();}).then(function(a){
+  fetch("/limiar/exercicios-compostos.json").then(function(r){return r.json();}).then(function(a){
     BANK=a; try{localStorage.setItem(BANK_KEY,JSON.stringify(a));}catch(e){} ready("rede");
   }).catch(function(){
     try{var c=JSON.parse(localStorage.getItem(BANK_KEY)||"null");if(c&&c.length){BANK=c;ready("cache");return;}}catch(e){}
@@ -285,7 +285,7 @@ $("preset").addEventListener("change",function(){$("customRow").classList.toggle
 showPlan();
 
 /* ---------------- sessão ---------------- */
-var S=null,ACTIVE="limiar_active",ARQ="limiar_sessoes";
+var S=null,ACTIVE="limiar_active_v3",ARQ="limiar_sessoes_v3";
 function nowMs(){return performance.now();}
 function tSess(p){return (S&&S.totalZeroPerf!=null)?Math.round(p-S.totalZeroPerf+S.totalZeroElapsed):"";}
 

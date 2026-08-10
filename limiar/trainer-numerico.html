@@ -1,0 +1,548 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>LIMIAR — Instrumento de coleta (resposta numérica)</title>
+<link rel="stylesheet" href="/limiar/vendor/katex/katex.min.css">
+<script src="/limiar/vendor/katex/katex.min.js"></script>
+<style>
+:root{--bg:#0f1012;--fg:#e9e9ea;--dim:#8b8d92;--rule:#2a2c31;--acc:#c8cad0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:54rem;margin:0 auto;padding:1.6rem 1.2rem 4rem}
+h1{font-size:1.15rem;font-weight:600;margin:0 0 .2rem}
+h2{font-size:.95rem;font-weight:600;margin:1.8rem 0 .5rem}
+.sub{color:var(--dim);font-size:.86rem;margin:0 0 1.6rem}
+fieldset{border:1px solid var(--rule);border-radius:6px;padding:.9rem 1rem;margin:0 0 1rem}
+legend{color:var(--dim);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:0 .4rem}
+label{display:block;font-size:.85rem;color:var(--dim);margin:.55rem 0 .2rem}
+input,select{background:#17181c;color:var(--fg);border:1px solid var(--rule);border-radius:4px;padding:.42rem .55rem;font:inherit;font-size:.9rem;width:100%}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.5rem 1rem}
+button{background:#1d1f24;color:var(--fg);border:1px solid var(--rule);border-radius:4px;padding:.55rem 1.1rem;font:inherit;font-size:.9rem;cursor:pointer}
+button:hover{border-color:#3c3f47}
+button.primary{background:#e9e9ea;color:#0f1012;border-color:#e9e9ea;font-weight:600}
+.muted{color:var(--dim);font-size:.82rem}
+.err{color:#e0a0a0;font-size:.85rem;min-height:1.2em}
+.hide{display:none!important}
+table{border-collapse:collapse;width:100%;font-size:.85rem;margin:.5rem 0 1.2rem}
+th,td{border-bottom:1px solid var(--rule);padding:.34rem .5rem;text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--dim);font-weight:500;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase}
+.plot{width:100%;height:160px;border:1px solid var(--rule);border-radius:4px;background:#131418;display:block}
+
+#exec{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;
+      align-items:center;justify-content:center;padding:2rem;text-align:center}
+#quest{font-size:2rem;max-width:92vw;overflow-x:auto;padding:.4rem 0}
+#pede{font-size:1.25rem;color:var(--acc);margin-top:1.1rem}
+#resp{margin-top:2rem;width:11rem;font-size:1.5rem;text-align:center;
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace;padding:.5rem}
+#hint{color:var(--dim);font-size:.8rem;margin-top:2.2rem;letter-spacing:.02em}
+#tag{color:var(--dim);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.4rem}
+
+#rest{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center}
+#restNum{font:600 2.2rem/1 ui-monospace,Menlo,monospace;color:#3a3a3a}
+</style>
+
+<div class="wrap" id="setup">
+  <h1>LIMIAR — instrumento de coleta, resposta numérica</h1>
+  <p class="sub">A função aparece com um ponto. Você recupera a regra, avalia no ponto e digita o
+  valor — <b>sem rascunho</b>, que é o que caracteriza prática recuperativa: buscar na memória sem
+  consultar nem descarregar no papel. O gabarito não é mostrado durante a sessão, e não há contagem,
+  percentual nem qualquer sinal de desempenho: tudo isso só depois que a sessão fecha.</p>
+
+  <fieldset>
+    <legend>Estrutura da sessão</legend>
+    <label for="preset">Protocolo</label>
+    <select id="preset">
+      <option value="4">Contínuo — 5 de aquecimento + 115 min</option>
+      <option value="1">35 – 5 – 35 – 5 – 35 (aquecimento 5)</option>
+      <option value="2">32 – 10 – 32 – 10 – 32 (aquecimento 5)</option>
+      <option value="3">28 – 15 – 28 – 15 – 28 (aquecimento 5)</option>
+      <option value="5">60 – 10 – 60 (aquecimento 5)</option>
+      <option value="6">60 – 30 – 60 (aquecimento 5)</option>
+      <option value="p">Piloto — 5 de aquecimento + 40 min</option>
+      <option value="custom">Personalizado</option>
+    </select>
+    <div id="customRow" class="row hide">
+      <div><label for="cWarm">Aquecimento (min)</label><input id="cWarm" type="number" min="0" value="5"></div>
+      <div><label for="cWork">Blocos de estudo (min, separados por vírgula)</label><input id="cWork" value="115"></div>
+      <div><label for="cRest">Pausas (min, separadas por vírgula)</label><input id="cRest" value=""></div>
+    </div>
+    <p class="muted" id="planPreview" style="margin:.6rem 0 0"></p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Medida</legend>
+    <div class="row">
+      <div><label for="corte">Corte de segurança por item (s)</label><input id="corte" type="number" min="20" max="600" value="90"></div>
+      <div><label for="janela">Janela de análise (min)</label><input id="janela" type="number" min="1" max="30" value="5"></div>
+    </div>
+    <p class="muted" style="margin:.6rem 0 0">O cronômetro corre do instante em que a função
+    aparece até o Enter — <b>não para enquanto você digita</b>, senão o tempo de digitação viraria
+    tempo de resolução. O corte serve apenas para um item travado não consumir a sessão; num item
+    normal ele não deve ser alcançado.</p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Posição no banco</legend>
+    <p class="muted" id="cursorInfo">—</p>
+    <button id="btnCursor" type="button">Corrigir posição</button>
+    <button id="btnZerar" type="button">Reiniciar do zero</button>
+  </fieldset>
+
+  <p class="err" id="setupErr"></p>
+  <button class="primary" id="btnStart">Iniciar sessão</button>
+  <button id="btnRetomar" class="hide">Retomar sessão interrompida</button>
+  <div id="arquivo" style="margin-top:2.4rem"></div>
+</div>
+
+<div id="exec" class="hide">
+  <div id="tag"></div>
+  <div id="quest"></div>
+  <div id="pede"></div>
+  <input id="resp" autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="text">
+  <div id="hint">digite o valor e pressione Enter</div>
+</div>
+
+<div id="rest" class="hide"><div id="restNum"></div></div>
+
+<div class="wrap hide" id="fim"></div>
+
+<script>
+"use strict";
+var $ = function(id){ return document.getElementById(id); };
+var BANK = [], BANK_KEY = "limiar_num_bank", CUR_KEY = "limiar_num_cursor";
+var ACTIVE = "limiar_num_active", ARQ = "limiar_num_sessoes";
+
+/* Pesos por etiqueta. Vêm de um arquivo externo, calibrado UMA vez no primeiro
+   experimento, e nunca são recalculados a cada sessão: calibrar o peso com os mesmos
+   dados que se quer medir seria circular. Enquanto o arquivo não existir, o gráfico
+   ponderado não aparece — e a tela de resultados oferece calcular e exportar os pesos
+   desta sessão, para virarem o critério fixo das seguintes. */
+var PESOS = null;
+
+var PRESETS = {
+  "1": {warm:5, work:[35,35,35], rest:[5,5]},
+  "2": {warm:5, work:[32,32,32], rest:[10,10]},
+  "3": {warm:5, work:[28,28,28], rest:[15,15]},
+  "4": {warm:5, work:[115],      rest:[]},
+  "5": {warm:5, work:[60,60],    rest:[10]},
+  "6": {warm:5, work:[60,60],    rest:[30]},
+  "p": {warm:5, work:[40],       rest:[]}
+};
+
+function nowMs(){ return performance.now(); }
+function getCursor(){ var v = 0; try{ v = parseInt(localStorage.getItem(CUR_KEY)||"0",10)||0; }catch(e){} return v; }
+function setCursor(v){ try{ localStorage.setItem(CUR_KEY, String(v)); }catch(e){} }
+function tex(el, s){ try{ katex.render(s, el, {throwOnError:false, displayMode:true}); }catch(e){ el.textContent = s; } }
+
+/* ---------- banco ---------- */
+function ready(origem){
+  $("cursorInfo").textContent = "Banco carregado (" + origem + "): " + BANK.length +
+    " itens. Próximo item: " + (getCursor() + 1) + "." +
+    (PESOS ? " Pesos por etiqueta: calibrados." : " Pesos por etiqueta: ainda não calibrados.");
+  $("btnStart").disabled = false;
+  try{ if(localStorage.getItem(ACTIVE)) $("btnRetomar").classList.remove("hide"); }catch(e){}
+  renderArquivo();
+}
+$("btnStart").disabled = true;
+fetch("/limiar/pesos-numericos.json").then(function(r){ return r.ok ? r.json() : null; })
+  .then(function(p){ if(p && Object.keys(p).length) PESOS = p; })
+  .catch(function(){})
+  .then(carregarBanco);
+
+function carregarBanco(){
+fetch("/limiar/exercicios-numericos.json").then(function(r){ return r.json(); }).then(function(a){
+  BANK = a; try{ localStorage.setItem(BANK_KEY, JSON.stringify(a)); }catch(e){}
+  ready("rede");
+}).catch(function(){
+  try{ var c = JSON.parse(localStorage.getItem(BANK_KEY)||"null");
+       if(c && c.length){ BANK = c; ready("cache"); return; } }catch(e){}
+  $("setupErr").textContent = "Não foi possível carregar o banco.";
+});
+}
+
+/* ---------- plano ---------- */
+function buildPlan(){
+  var p = $("preset").value, warm, work, rest;
+  if(p === "custom"){
+    warm = +$("cWarm").value || 0;
+    work = ($("cWork").value||"").split(",").map(function(s){return +s.trim();}).filter(function(n){return n>0;});
+    rest = ($("cRest").value||"").split(",").map(function(s){return +s.trim();}).filter(function(n){return n>0;});
+  } else { var d = PRESETS[p]; warm = d.warm; work = d.work.slice(); rest = d.rest.slice(); }
+  var plan = [];
+  if(warm > 0) plan.push({kind:"warmup", min:warm});
+  for(var i = 0; i < work.length; i++){
+    plan.push({kind:"work", min:work[i]});
+    if(i < rest.length && rest[i] > 0) plan.push({kind:"rest", min:rest[i]});
+  }
+  return plan;
+}
+function showPlan(){
+  var pl = buildPlan();
+  $("planPreview").textContent = "Sequência: " + pl.map(function(s){
+    return (s.kind==="warmup"?"aquec ":s.kind==="rest"?"pausa ":"estudo ") + s.min + " min";
+  }).join("  ·  ") + "   (total " + pl.reduce(function(a,s){return a+s.min;},0) + " min)";
+}
+$("preset").addEventListener("change", function(){
+  $("customRow").classList.toggle("hide", $("preset").value !== "custom"); showPlan();
+});
+["cWarm","cWork","cRest"].forEach(function(id){ $(id).addEventListener("input", showPlan); });
+showPlan();
+
+/* ---------- parser da resposta ---------- */
+function parseResp(s){
+  s = (s||"").trim().replace(/\s+/g,"").replace(",",".");
+  if(!s) return null;
+  var m = s.match(/^(-?\d+)\/(\d+)$/);
+  if(m){ var d = parseInt(m[2],10); if(!d) return null; return parseInt(m[1],10)/d; }
+  if(!/^-?\d*\.?\d+$/.test(s)) return null;
+  var v = parseFloat(s);
+  return isFinite(v) ? v : null;
+}
+function confere(dado, gabarito){
+  var v = parseResp(dado);
+  if(v === null) return false;
+  return Math.abs(v - parseFloat(gabarito)) < 1e-9;
+}
+
+/* ---------- sessão ---------- */
+var S = null, fase = null, t0Item = 0, itemAtual = null, timerBloco = null, corteId = null;
+
+function salvar(){ try{ localStorage.setItem(ACTIVE, JSON.stringify(S)); }catch(e){} }
+
+$("btnStart").addEventListener("click", function(){
+  var plan = buildPlan();
+  if(!plan.some(function(s){ return s.kind === "work"; })){
+    $("setupErr").textContent = "A sessão precisa de ao menos um bloco de estudo."; return;
+  }
+  if(getCursor() >= BANK.length){ $("setupErr").textContent = "O cursor está no fim do banco."; return; }
+  S = { id:"N"+Date.now(), data:new Date().toISOString().slice(0,10), preset:$("preset").value,
+        plan:plan, segIdx:-1, blockNumber:0, ordem:0, cursor:getCursor(),
+        corteS:+$("corte").value || 90, janelaMin:+$("janela").value || 5,
+        log:[], blocos:[], t0:nowMs(), elapsed:0 };
+  $("setup").classList.add("hide");
+  proxSegmento();
+});
+
+$("btnRetomar").addEventListener("click", function(){
+  try{
+    S = JSON.parse(localStorage.getItem(ACTIVE)); if(!S) return;
+    S.t0 = nowMs(); $("setup").classList.add("hide");
+    S.segIdx--; proxSegmento();
+  }catch(e){ $("setupErr").textContent = "Não foi possível retomar."; }
+});
+
+function tSess(){ return Math.round(nowMs() - S.t0 + (S.elapsed||0)); }
+
+function proxSegmento(){
+  S.segIdx++;
+  salvar();
+  if(S.segIdx >= S.plan.length) return terminar();
+  var seg = S.plan[S.segIdx];
+  if(seg.kind === "rest") return iniciarPausa(seg);
+  if(seg.kind === "work") S.blockNumber++;
+  S.blocoKind = seg.kind;
+  S.blocoNum = (seg.kind === "warmup") ? 0 : S.blockNumber;
+  S.blocoT0 = nowMs();
+  S.ordem = 0;
+  S.blocos.push({ bloco:S.blocoNum, kind:seg.kind, min:seg.min, inicio_sessao_ms:tSess() });
+  timerBloco = setTimeout(function(){ S.fimBloco = true; }, seg.min * 60000);
+  S.fimBloco = false;
+  $("rest").classList.add("hide");
+  $("exec").classList.remove("hide");
+  proxItem();
+}
+
+function proxItem(){
+  if(S.fimBloco){ clearTimeout(timerBloco); return proxSegmento(); }
+  if(S.cursor >= BANK.length){ clearTimeout(timerBloco); return terminar(); }
+  itemAtual = BANK[S.cursor];
+  S.ordem++;
+  $("tag").textContent = (S.blocoKind === "warmup") ? "aquecimento" : ("bloco " + S.blocoNum);
+  tex($("quest"), "f(x) = " + itemAtual.enunciado);
+  tex($("pede"), "f'\\left(" + itemAtual.ponto_tex + "\\right) = \\;?");
+  $("resp").value = "";
+  $("resp").focus();
+  fase = "respondendo";
+  t0Item = nowMs();
+  clearTimeout(corteId);
+  corteId = setTimeout(function(){ if(fase === "respondendo") submeter(true); }, S.corteS * 1000);
+}
+
+function submeter(porCorte){
+  if(fase !== "respondendo") return;
+  var dur = Math.round(nowMs() - t0Item);
+  clearTimeout(corteId);
+  fase = null;
+  var dado = $("resp").value;
+  var acertou = porCorte ? false : confere(dado, itemAtual.resposta);
+  S.log.push({ sessao_id:S.id, preset:S.preset, bloco:S.blocoNum,
+               flag_aquecimento:(S.blocoKind === "warmup") ? "sim" : "nao",
+               ordem_no_bloco:S.ordem, item_id:itemAtual.id, tipo_item:itemAtual.tipo,
+               ponto:itemAtual.ponto, gabarito:itemAtual.resposta,
+               digitado:porCorte ? "" : dado.trim(),
+               t_fim_sessao_ms:tSess(),
+               t_inicio_bloco_ms:Math.round(t0Item - S.blocoT0),
+               duracao_ms:dur,
+               resultado: porCorte ? "corte" : (acertou ? "acerto" : "erro") });
+  S.cursor++; setCursor(S.cursor); salvar();
+  proxItem();
+}
+
+$("resp").addEventListener("keydown", function(ev){
+  if(ev.key === "Enter"){ ev.preventDefault(); submeter(false); }
+});
+
+function iniciarPausa(seg){
+  $("exec").classList.add("hide");
+  $("rest").classList.remove("hide");
+  var fim = nowMs() + seg.min * 60000;
+  S.blocos.push({ bloco:"pausa", kind:"rest", min:seg.min, inicio_sessao_ms:tSess() });
+  salvar();
+  var id = setInterval(function(){
+    var falta = Math.max(0, fim - nowMs());
+    var m = Math.floor(falta/60000), s = Math.floor((falta%60000)/1000);
+    $("restNum").textContent = m + ":" + (s<10?"0":"") + s;
+    if(falta <= 0){ clearInterval(id); try{ beep(); }catch(e){} proxSegmento(); }
+  }, 250);
+}
+
+function beep(){
+  var ctx = new (window.AudioContext||window.webkitAudioContext)();
+  var o = ctx.createOscillator(), g = ctx.createGain();
+  o.frequency.value = 440; g.gain.value = 0.05;
+  o.connect(g); g.connect(ctx.destination); o.start();
+  setTimeout(function(){ o.stop(); ctx.close(); }, 260);
+}
+
+/* ---------- análise ---------- */
+function mediana(a){ if(!a.length) return null; var b=a.slice().sort(function(x,y){return x-y;});
+  var m=Math.floor(b.length/2); return b.length%2 ? b[m] : (b[m-1]+b[m])/2; }
+function mad(a){ if(a.length<2) return null; var m=mediana(a);
+  return mediana(a.map(function(v){ return Math.abs(v-m); })); }
+
+/* Pesos calculados a partir desta sessão. O peso de uma etiqueta é o tempo mediano
+   que ela exige, dividido pelo tempo médio por item da sessão — de modo que a média
+   dos pesos fique em torno de 1 e a taxa ponderada permaneça na mesma escala da
+   bruta, comparável item a item. */
+function calcularPesos(){
+  var m = {};
+  S.log.forEach(function(r){
+    if(r.flag_aquecimento === "sim") return;
+    (m[r.tipo_item] = m[r.tipo_item] || []).push(r.duracao_ms/1000);
+  });
+  var tipos = Object.keys(m);
+  if(!tipos.length) return null;
+  var somaN = 0, somaT = 0;
+  tipos.forEach(function(t){ somaN += m[t].length; somaT += mediana(m[t]) * m[t].length; });
+  var base = somaT / somaN;
+  var out = {};
+  tipos.sort().forEach(function(t){ out[t] = +(mediana(m[t]) / base).toFixed(4); });
+  return out;
+}
+
+function janelas(){
+  var W = S.janelaMin, out = [];
+  var porBloco = {};
+  S.log.forEach(function(r){
+    if(r.flag_aquecimento === "sim") return;
+    (porBloco[r.bloco] = porBloco[r.bloco] || []).push(r);
+  });
+  Object.keys(porBloco).forEach(function(b){
+    var rows = porBloco[b], grupos = {};
+    rows.forEach(function(r){
+      var k = Math.floor((r.t_inicio_bloco_ms/60000)/W);
+      (grupos[k] = grupos[k] || []).push(r);
+    });
+    Object.keys(grupos).map(Number).sort(function(x,y){return x-y;}).forEach(function(k){
+      var g = grupos[k];
+      var ts = g.map(function(r){ return r.duracao_ms/1000; });
+      var ac = g.filter(function(r){ return r.resultado === "acerto"; }).length;
+      // taxa ponderada: cada acerto vale o peso da sua etiqueta, o que corrige a
+      // janela ter calhado de trazer itens caros ou baratos
+      var acP = null;
+      if(PESOS){
+        acP = 0;
+        g.forEach(function(r){ if(r.resultado === "acerto") acP += (PESOS[r.tipo_item] || 1); });
+      }
+      out.push({ bloco:+b, intervalo:k+1, inicio_min:k*W, ponto_medio_min:k*W + W/2,
+                 n_itens:g.length, acertos:ac, erros:g.length-ac,
+                 taxa: +(ac/W).toFixed(3),
+                 taxa_ponderada: acP!=null ? +(acP/W).toFixed(3) : "",
+                 acuracia:+(ac/g.length).toFixed(3),
+                 tempo_mediano_s:+mediana(ts).toFixed(2),
+                 inconsistencia_s: mad(ts)!=null ? +mad(ts).toFixed(2) : "" });
+    });
+  });
+  return out;
+}
+
+function porEtiqueta(){
+  var m = {};
+  S.log.forEach(function(r){
+    if(r.flag_aquecimento === "sim") return;
+    var e = m[r.tipo_item] = m[r.tipo_item] || {n:0, ac:0, ts:[]};
+    e.n++; if(r.resultado === "acerto") e.ac++; e.ts.push(r.duracao_ms/1000);
+  });
+  return Object.keys(m).sort().map(function(k){
+    return { tipo:k, n:m[k].n, acertos:m[k].ac,
+             acuracia:+(m[k].ac/m[k].n).toFixed(3),
+             tempo_mediano_s:+mediana(m[k].ts).toFixed(2) };
+  });
+}
+
+function plot(id, pts, rotulo){
+  var el = $(id); if(!el) return;
+  if(pts.length < 2){ el.outerHTML = '<p class="muted">Pontos insuficientes.</p>'; return; }
+  var W = el.clientWidth || 720, H = 160, m = {t:14,r:12,b:24,l:46};
+  var xs = pts.map(function(p){return p[0];}), ys = pts.map(function(p){return p[1];});
+  var x0=Math.min.apply(null,xs), x1=Math.max.apply(null,xs);
+  var y0=Math.min.apply(null,ys), y1=Math.max.apply(null,ys);
+  if(y1===y0) y1 = y0+1;
+  var px=function(v){ return m.l+(v-x0)/(x1-x0||1)*(W-m.l-m.r); };
+  var py=function(v){ return H-m.b-(v-y0)/(y1-y0)*(H-m.t-m.b); };
+  var d = pts.map(function(p,i){ return (i?"L":"M")+px(p[0]).toFixed(1)+" "+py(p[1]).toFixed(1); }).join(" ");
+  var dots = pts.map(function(p){ return '<circle cx="'+px(p[0]).toFixed(1)+'" cy="'+py(p[1]).toFixed(1)+'" r="2.6" fill="#c8cad0"/>'; }).join("");
+  el.outerHTML = '<svg class="plot" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none">'+
+    '<path d="'+d+'" fill="none" stroke="#c8cad0" stroke-width="1.4"/>'+dots+
+    '<text x="4" y="'+(m.t+4)+'" fill="#8b8d92" font-size="10">'+y1.toFixed(2)+'</text>'+
+    '<text x="4" y="'+(H-m.b)+'" fill="#8b8d92" font-size="10">'+y0.toFixed(2)+'</text>'+
+    '<text x="'+(W/2-40)+'" y="'+(H-5)+'" fill="#8b8d92" font-size="10">'+rotulo+'</text></svg>';
+}
+
+function terminar(){
+  clearTimeout(timerBloco); clearTimeout(corteId);
+  try{ localStorage.removeItem(ACTIVE); }catch(e){}
+  $("exec").classList.add("hide"); $("rest").classList.add("hide");
+  arquivar();
+
+  var J = janelas(), E = porEtiqueta();
+  var med = S.log.filter(function(r){ return r.flag_aquecimento === "nao"; });
+  var ac = med.filter(function(r){ return r.resultado === "acerto"; }).length;
+  var cortes = med.filter(function(r){ return r.resultado === "corte"; }).length;
+
+  var novosPesos = calcularPesos();
+  var linhas = J.map(function(j){
+    return "<tr><td>"+j.bloco+"</td><td>"+j.intervalo+"</td><td>"+j.n_itens+"</td><td>"+
+      j.acertos+"</td><td>"+(100*j.acuracia).toFixed(0)+"%</td><td>"+j.taxa.toFixed(2)+"</td><td>"+
+      (j.taxa_ponderada!=="" ? j.taxa_ponderada.toFixed(2) : "—")+"</td><td>"+
+      j.tempo_mediano_s+"</td><td>"+j.inconsistencia_s+"</td></tr>";
+  }).join("");
+  var linhasP = novosPesos ? Object.keys(novosPesos).map(function(t){
+    return "<tr><td>"+t+"</td><td>"+novosPesos[t].toFixed(3)+"</td><td>"+
+      (PESOS && PESOS[t]!=null ? PESOS[t].toFixed(3) : "—")+"</td></tr>"; }).join("") : "";
+  var linhasE = E.map(function(e){
+    return "<tr><td>"+e.tipo+"</td><td>"+e.n+"</td><td>"+e.acertos+"</td><td>"+
+      (100*e.acuracia).toFixed(0)+"%</td><td>"+e.tempo_mediano_s+"</td></tr>";
+  }).join("");
+  var linhasI = med.map(function(r){
+    return "<tr><td>"+r.item_id+"</td><td>"+r.tipo_item+"</td><td>"+r.ponto+"</td><td>"+
+      r.gabarito+"</td><td>"+(r.digitado||"—")+"</td><td>"+(r.duracao_ms/1000).toFixed(1)+"</td><td>"+
+      r.resultado+"</td></tr>";
+  }).join("");
+
+  var f = $("fim"); f.classList.remove("hide");
+  f.innerHTML =
+    "<h1>Sessão encerrada</h1>"+
+    "<p class='sub'>"+med.length+" itens medidos · "+ac+" acertos ("+(100*ac/(med.length||1)).toFixed(1)+
+      "%) · "+cortes+" cortes por tempo · aquecimento excluído</p>"+
+    "<h2>Por janela de "+S.janelaMin+" minutos</h2>"+
+    "<table><thead><tr><th>Bloco</th><th>Janela</th><th>n</th><th>acertos</th><th>acurácia</th>"+
+      "<th>taxa (ac/min)</th><th>taxa ponderada</th><th>tempo mediano (s)</th>"+
+      "<th>inconsistência (s)</th></tr></thead><tbody>"+linhas+"</tbody></table>"+
+    "<p class='muted'>Taxa de acertos por minuto</p><div id='g1' class='plot'></div>"+
+    (PESOS ? "<p class='muted'>Taxa ponderada pela dificuldade da etiqueta — corrige a janela ter "+
+             "calhado de trazer itens caros ou baratos</p><div id='g5' class='plot'></div>" : "")+
+    "<p class='muted'>Tempo mediano por item — a desaceleração é o sinal</p><div id='g2' class='plot'></div>"+
+    "<p class='muted'>Inconsistência (desvio absoluto mediano) — foi a métrica mais sensível em 04/08</p><div id='g3' class='plot'></div>"+
+    "<p class='muted'>Acurácia</p><div id='g4' class='plot'></div>"+
+    (novosPesos ?
+      "<h2>Pesos por etiqueta</h2>"+
+      "<p class='muted'>Tempo mediano da etiqueta dividido pelo tempo médio por item da sessão. "+
+      (PESOS ? "Os pesos vigentes já estão calibrados — a coluna da direita permite conferir se a "+
+               "dificuldade relativa entre famílias se manteve estável, o que é um achado sobre a "+
+               "tarefa. <b>Não recalibre</b>: trocar o critério a cada sessão tornaria as sessões "+
+               "incomparáveis entre si."
+             : "Ainda não há pesos vigentes. Exporte estes como <code>pesos-numericos.json</code>, "+
+               "publique o arquivo e ele passa a ser o critério fixo. <b>Calibre uma vez só</b>, "+
+               "neste primeiro experimento: recalcular o peso com os mesmos dados que se quer medir "+
+               "seria circular.")+"</p>"+
+      "<table><thead><tr><th>Etiqueta</th><th>peso desta sessão</th><th>peso vigente</th></tr></thead>"+
+      "<tbody>"+linhasP+"</tbody></table>" : "")+
+    "<h2>Por etiqueta</h2><table><thead><tr><th>Etiqueta</th><th>n</th><th>acertos</th>"+
+      "<th>acurácia</th><th>tempo mediano (s)</th></tr></thead><tbody>"+linhasE+"</tbody></table>"+
+    "<h2>Itens, com gabarito</h2>"+
+    "<div style='max-height:26rem;overflow:auto'><table><thead><tr><th>id</th><th>etiqueta</th>"+
+      "<th>ponto</th><th>gabarito</th><th>digitado</th><th>s</th><th>resultado</th></tr></thead><tbody>"+
+      linhasI+"</tbody></table></div>"+
+    "<p style='margin-top:1.4rem'><button class='primary' id='eJson'>Exportar JSON</button> "+
+      "<button id='eCsv'>CSV bruto</button> <button id='eCsvJ'>CSV janelas</button> "+
+      (novosPesos ? "<button id='ePesos'>Exportar pesos-numericos.json</button> " : "")+
+      "<button id='voltar'>Voltar</button></p>";
+
+  var acum = 0;
+  plot("g1", J.map(function(j){ return [j.ponto_medio_min, j.taxa]; }), "minutos dentro do bloco");
+  plot("g2", J.map(function(j){ return [j.ponto_medio_min, j.tempo_mediano_s]; }), "minutos dentro do bloco");
+  plot("g3", J.filter(function(j){ return j.inconsistencia_s !== ""; })
+             .map(function(j){ return [j.ponto_medio_min, j.inconsistencia_s]; }), "minutos dentro do bloco");
+  plot("g4", J.map(function(j){ return [j.ponto_medio_min, j.acuracia]; }), "minutos dentro do bloco");
+
+  if(PESOS){
+    plot("g5", J.filter(function(j){ return j.taxa_ponderada !== ""; })
+               .map(function(j){ return [j.ponto_medio_min, j.taxa_ponderada]; }),
+         "minutos dentro do bloco");
+  }
+  if(novosPesos){
+    $("ePesos").onclick = function(){
+      baixar(JSON.stringify(novosPesos, null, 1), "pesos-numericos.json", "application/json");
+    };
+  }
+  $("eJson").onclick = function(){ baixar(JSON.stringify(pacote(),null,1), "limiar-num-"+S.id+".json", "application/json"); };
+  $("eCsv").onclick  = function(){ baixar(csv(S.log), "limiar-num-bruto-"+S.id+".csv", "text/csv"); };
+  $("eCsvJ").onclick = function(){ baixar(csv(J), "limiar-num-janelas-"+S.id+".csv", "text/csv"); };
+  $("voltar").onclick = function(){ location.reload(); };
+}
+
+function pacote(){
+  return { sessao:{ id:S.id, data:S.data, preset:S.preset, janela_min:S.janelaMin,
+                    corte_s:S.corteS, plano:S.plan,
+                    pesos_vigentes:PESOS ? "sim" : "nao" },
+           blocos:S.blocos, bruto:S.log, janelas:janelas(), etiquetas:porEtiqueta(),
+           pesos_vigentes:PESOS, pesos_desta_sessao:calcularPesos() };
+}
+function csv(rows){
+  if(!rows.length) return "";
+  var cols = Object.keys(rows[0]);
+  return cols.join(";")+"\n"+rows.map(function(r){
+    return cols.map(function(c){ return r[c]===undefined?"":String(r[c]); }).join(";"); }).join("\n");
+}
+function baixar(txt, nome, mime){
+  var b = new Blob([txt], {type:mime+";charset=utf-8"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(b); a.download = nome; a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+}
+function arquivar(){
+  try{ var arr = JSON.parse(localStorage.getItem(ARQ)||"[]");
+       arr.unshift(pacote()); localStorage.setItem(ARQ, JSON.stringify(arr.slice(0,20))); }catch(e){}
+}
+function renderArquivo(){
+  var arr = []; try{ arr = JSON.parse(localStorage.getItem(ARQ)||"[]"); }catch(e){}
+  if(!arr.length){ $("arquivo").innerHTML = ""; return; }
+  $("arquivo").innerHTML = "<fieldset><legend>Sessões arquivadas</legend><table><thead><tr>"+
+    "<th>Data</th><th>Protocolo</th><th>Itens</th><th>ID</th></tr></thead><tbody>"+
+    arr.map(function(p){ return "<tr><td>"+p.sessao.data+"</td><td>"+p.sessao.preset+"</td><td>"+
+      p.bruto.length+"</td><td>"+p.sessao.id+"</td></tr>"; }).join("")+
+    "</tbody></table><p class='muted'>Guardadas neste navegador. Exporte para preservar.</p></fieldset>";
+}
+
+$("btnCursor").addEventListener("click", function(){
+  var v = prompt("Posição do cursor (0 a "+BANK.length+"):", getCursor());
+  if(v === null) return;
+  setCursor(Math.max(0, Math.min(BANK.length, parseInt(v,10)||0))); ready("cache");
+});
+$("btnZerar").addEventListener("click", function(){
+  if(!confirm("Reiniciar o cursor? Itens já usados voltarão a aparecer.")) return;
+  setCursor(0); ready("cache");
+});
+</script>

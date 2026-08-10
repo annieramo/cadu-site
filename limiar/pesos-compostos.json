@@ -1,0 +1,21 @@
+{
+ "arc-arccos": 1.0,
+ "arc-arcsen": 1.0,
+ "arc-arctg": 1.0,
+ "base-expoente-composto": 1.0,
+ "cos-logaritmica": 1.0,
+ "cos-produto-interno": 1.0,
+ "cos-raiz-interna": 1.0,
+ "exp-produto-composto": 1.0,
+ "exp-raiz-interna": 1.0,
+ "ln-produto-interno": 1.0,
+ "pot-fracionaria": 1.0,
+ "pot-logaritmica": 1.0,
+ "pot-quociente-composto": 1.0,
+ "raiz-aninhada": 1.0,
+ "sen-logaritmica": 1.0,
+ "sen-produto-composto": 1.0,
+ "sen-produto-interno": 1.0,
+ "sen-raiz-interna": 1.0,
+ "tg-quociente-soma": 1.0
+}

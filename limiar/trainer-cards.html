@@ -1,0 +1,534 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>LIMIAR — Flashcards de leitura (História)</title>
+<style>
+:root{--bg:#0f1012;--fg:#e9e9ea;--dim:#8b8d92;--rule:#2a2c31;--acc:#c8cad0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:56rem;margin:0 auto;padding:1.6rem 1.2rem 4rem}
+h1{font-size:1.15rem;font-weight:600;margin:0 0 .2rem}
+h2{font-size:.95rem;font-weight:600;margin:1.6rem 0 .5rem}
+.sub{color:var(--dim);font-size:.86rem;margin:0 0 1.4rem}
+fieldset{border:1px solid var(--rule);border-radius:6px;padding:.9rem 1rem;margin:0 0 1rem}
+legend{color:var(--dim);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:0 .4rem}
+label{display:block;font-size:.85rem;color:var(--dim);margin:.55rem 0 .2rem}
+input,select{background:#17181c;color:var(--fg);border:1px solid var(--rule);border-radius:4px;padding:.42rem .55rem;font:inherit;font-size:.9rem;width:100%}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.5rem 1rem}
+button{background:#1d1f24;color:var(--fg);border:1px solid var(--rule);border-radius:4px;padding:.55rem 1.1rem;font:inherit;font-size:.9rem;cursor:pointer}
+button:hover{border-color:#3c3f47}
+button.primary{background:#e9e9ea;color:#0f1012;border-color:#e9e9ea;font-weight:600}
+button.mini{padding:.2rem .6rem;font-size:.78rem}
+button.on{background:#2e4636;border-color:#3f6b4c}
+button.off{background:#4a2b2b;border-color:#6b3f3f}
+.muted{color:var(--dim);font-size:.82rem}
+.err{color:#e0a0a0;font-size:.85rem;min-height:1.2em}
+.hide{display:none!important}
+table{border-collapse:collapse;width:100%;font-size:.83rem;margin:.5rem 0 1.2rem}
+th,td{border-bottom:1px solid var(--rule);padding:.32rem .5rem;text-align:right;vertical-align:top}
+th:first-child,td:first-child{text-align:left}
+td.l{text-align:left}
+th{color:var(--dim);font-weight:500;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase}
+.plot{width:100%;height:170px;border:1px solid var(--rule);border-radius:4px;background:#131418;display:block;margin-bottom:1rem}
+
+#exec{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;
+      align-items:center;justify-content:center;padding:2.2rem;text-align:center}
+#tag{color:var(--dim);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.6rem}
+#texto{font-size:1.22rem;line-height:1.75;max-width:44rem;text-align:justify}
+#pergunta{font-size:1.35rem;max-width:42rem;color:var(--acc)}
+#resp{margin-top:1.8rem;width:22rem;max-width:80vw;font-size:1.25rem;text-align:center;padding:.5rem}
+#hint{color:var(--dim);font-size:.8rem;margin-top:2.2rem;letter-spacing:.02em}
+#rest{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center}
+#restNum{font:600 2.2rem/1 ui-monospace,Menlo,monospace;color:#3a3a3a}
+</style>
+
+<div class="wrap" id="setup">
+  <h1>LIMIAR — flashcards de leitura</h1>
+  <p class="sub">O texto aparece sozinho; leia no seu ritmo e pressione <b>espaço</b>. O texto some
+  e surge a pergunta; digite a resposta curta e pressione <b>Enter</b> para o próximo cartão. Nenhum
+  gabarito, contagem ou sinal de desempenho aparece durante a sessão — a correção inteira acontece
+  no final, comparando as suas respostas com os gabaritos.</p>
+
+  <fieldset>
+    <legend>Protocolo</legend>
+    <label for="preset">Estrutura da sessão</label>
+    <select id="preset">
+      <option value="s1">Sessão 1 — aquec 5 + 40 · 5 · 40 · 5 · 40</option>
+      <option value="s2">Sessão 2 — aquec 5 + 40 · 10 · 40 · 10 · 40</option>
+      <option value="s3">Sessão 3 — aquec 5 + 40 · 15 · 40 · 15 · 40</option>
+      <option value="s4">Sessão 4 — aquec 5 + 40 · 20 · 40 · 20 · 40</option>
+      <option value="cont">Contínua — aquec 5 + 115</option>
+      <option value="piloto">Piloto — aquec 5 + 20</option>
+      <option value="custom">Personalizado</option>
+    </select>
+    <div id="customRow" class="row hide" style="margin-top:.5rem">
+      <div><label for="cWarm">Aquecimento (min)</label><input id="cWarm" type="number" min="0" value="5"></div>
+      <div><label for="cWork">Duração do ciclo (min)</label><input id="cWork" type="number" min="1" value="40"></div>
+      <div><label for="cRest">Pausa (min)</label><input id="cRest" type="number" min="0" value="10"></div>
+      <div><label for="cN">Nº de ciclos</label><input id="cN" type="number" min="1" max="12" value="3"></div>
+    </div>
+    <p class="muted" id="planPreview" style="margin:.6rem 0 0"></p>
+    <p class="muted" style="margin:.4rem 0 0">Se o tempo do bloco terminar no meio de um cartão, o
+    cartão é concluído antes de a pausa começar — o excedente fica registrado. Vale também para o
+    aquecimento.</p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Posição no banco</legend>
+    <p class="muted" id="cursorInfo">—</p>
+    <button id="btnCursor" type="button">Corrigir posição</button>
+    <button id="btnZerar" type="button">Reiniciar do zero</button>
+  </fieldset>
+
+  <p class="err" id="setupErr"></p>
+  <button class="primary" id="btnStart">Iniciar sessão</button>
+  <div id="arquivo" style="margin-top:2.2rem"></div>
+</div>
+
+<div id="exec" class="hide">
+  <div id="tag"></div>
+  <div id="texto"></div>
+  <div id="pergunta" class="hide"></div>
+  <input id="resp" class="hide" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <div id="hint"></div>
+</div>
+
+<div id="rest" class="hide"><div id="restNum"></div></div>
+
+<div class="wrap hide" id="corr"></div>
+<div class="wrap hide" id="fim"></div>
+
+<script>
+"use strict";
+var $ = function(id){ return document.getElementById(id); };
+var BANK = [], BANK_KEY = "limiar_fc_bank", CUR_KEY = "limiar_fc_cursor";
+var ACTIVE = "limiar_fc_active", ARQ = "limiar_fc_sessoes";
+
+var PRESETS = {
+  s1:{warm:5, work:40, rest:5,  n:3}, s2:{warm:5, work:40, rest:10, n:3},
+  s3:{warm:5, work:40, rest:15, n:3}, s4:{warm:5, work:40, rest:20, n:3},
+  cont:{warm:5, work:115, rest:0, n:1}, piloto:{warm:5, work:20, rest:0, n:1}
+};
+
+function nowMs(){ return performance.now(); }
+function getCursor(){ var v=0; try{ v=parseInt(localStorage.getItem(CUR_KEY)||"0",10)||0; }catch(e){} return v; }
+function setCursor(v){ try{ localStorage.setItem(CUR_KEY, String(v)); }catch(e){} }
+
+function ready(origem){
+  $("cursorInfo").textContent = "Banco carregado ("+origem+"): "+BANK.length+
+    " cartões em sequência didática. Próximo cartão: "+(getCursor()+1)+
+    (getCursor()<BANK.length ? " — tema: "+BANK[getCursor()].tema : " (fim do banco)")+".";
+  $("btnStart").disabled = false;
+  renderArquivo();
+}
+$("btnStart").disabled = true;
+fetch("/limiar/flashcards-historia.json").then(function(r){ return r.json(); }).then(function(a){
+  BANK = a; try{ localStorage.setItem(BANK_KEY, JSON.stringify(a)); }catch(e){}
+  ready("rede");
+}).catch(function(){
+  try{ var c = JSON.parse(localStorage.getItem(BANK_KEY)||"null");
+       if(c && c.length){ BANK=c; ready("cache"); return; } }catch(e){}
+  $("setupErr").textContent = "Não foi possível carregar o banco de flashcards.";
+});
+
+function buildPlan(){
+  var p = $("preset").value, cfg;
+  if(p === "custom"){
+    cfg = { warm:+$("cWarm").value||0, work:+$("cWork").value||1,
+            rest:+$("cRest").value||0, n:+$("cN").value||1 };
+  } else cfg = PRESETS[p];
+  var plan = [];
+  if(cfg.warm > 0) plan.push({kind:"warmup", min:cfg.warm});
+  for(var i = 1; i <= cfg.n; i++){
+    plan.push({kind:"work", min:cfg.work, ciclo:i});
+    if(i < cfg.n && cfg.rest > 0) plan.push({kind:"rest", min:cfg.rest});
+  }
+  return plan;
+}
+function showPlan(){
+  var pl = buildPlan();
+  $("planPreview").textContent = "Sequência: " + pl.map(function(s){
+    return (s.kind==="warmup"?"aquec ":s.kind==="rest"?"pausa ":"ciclo ")+s.min+" min";
+  }).join("  ·  ")+"   (total "+pl.reduce(function(a,s){return a+s.min;},0)+" min)";
+}
+$("preset").addEventListener("change", function(){
+  $("customRow").classList.toggle("hide", $("preset").value!=="custom"); showPlan();
+});
+["cWarm","cWork","cRest","cN"].forEach(function(id){ $(id).addEventListener("input", showPlan); });
+showPlan();
+
+/* ------------------------------------------------ sessão */
+var S=null, fase=null, t0Leitura=0, t0Pergunta=0, cardAtual=null, timerId=null;
+
+function salvar(){ try{ localStorage.setItem(ACTIVE, JSON.stringify(S)); }catch(e){} }
+
+$("btnStart").addEventListener("click", function(){
+  var plan = buildPlan();
+  if(getCursor() >= BANK.length){ $("setupErr").textContent="O cursor está no fim do banco."; return; }
+  S = { id:"F"+Date.now(), data:new Date().toISOString().slice(0,10),
+        preset:$("preset").value, plan:plan, segIdx:-1, cursor:getCursor(),
+        log:[], blocos:[], t0:nowMs() };
+  $("setup").classList.add("hide");
+  proxSegmento();
+});
+
+function tSess(){ return Math.round(nowMs() - S.t0); }
+
+function proxSegmento(){
+  S.segIdx++; salvar();
+  if(S.segIdx >= S.plan.length) return iniciarCorrecao();
+  var seg = S.plan[S.segIdx];
+  if(seg.kind === "rest") return iniciarPausa(seg);
+  S.blocoKind = seg.kind;
+  S.ciclo = seg.kind === "warmup" ? 0 : seg.ciclo;
+  S.blocoT0 = nowMs();
+  S.fimPrevisto = nowMs() + seg.min*60000;
+  S.fimBloco = false;
+  S.ordem = 0;
+  S.blocos.push({ ciclo:S.ciclo, kind:seg.kind, min:seg.min, inicio_sessao_ms:tSess() });
+  clearTimeout(timerId);
+  timerId = setTimeout(function(){ S.fimBloco = true; }, seg.min*60000);
+  $("rest").classList.add("hide");
+  $("exec").classList.remove("hide");
+  proxCard();
+}
+
+function proxCard(){
+  if(S.fimBloco || S.cursor >= BANK.length){
+    clearTimeout(timerId);
+    if(S.cursor >= BANK.length) return iniciarCorrecao();
+    var b = S.blocos[S.blocos.length-1];
+    b.estouro_ms = Math.max(0, Math.round(nowMs() - S.fimPrevisto));
+    return proxSegmento();
+  }
+  cardAtual = BANK[S.cursor];
+  S.ordem++;
+  $("tag").textContent = (S.blocoKind==="warmup"?"aquecimento":"ciclo "+S.ciclo)+" · "+cardAtual.tema;
+  $("texto").textContent = cardAtual.texto;
+  $("texto").classList.remove("hide");
+  $("pergunta").classList.add("hide");
+  $("resp").classList.add("hide");
+  $("hint").textContent = "leia com atenção — espaço quando terminar";
+  fase = "leitura";
+  t0Leitura = nowMs();
+}
+
+function mostrarPergunta(){
+  $("texto").classList.add("hide");
+  $("pergunta").textContent = cardAtual.pergunta;
+  $("pergunta").classList.remove("hide");
+  $("resp").value = "";
+  $("resp").classList.remove("hide");
+  $("resp").focus();
+  $("hint").textContent = "resposta curta (1 a 3 palavras) — Enter para o próximo";
+  fase = "pergunta";
+  t0Pergunta = nowMs();
+}
+
+function registrar(){
+  var agora = nowMs();
+  S.log.push({ sessao_id:S.id, ciclo:S.ciclo,
+               flag_aquecimento:S.blocoKind==="warmup"?"sim":"nao",
+               ordem_no_bloco:S.ordem, card_id:cardAtual.id, tema:cardAtual.tema,
+               t_inicio_bloco_ms:Math.round(t0Leitura - S.blocoT0),
+               t_fim_bloco_ms:Math.round(agora - S.blocoT0),
+               t_fim_sessao_ms:tSess(),
+               leitura_ms:Math.round(t0Pergunta - t0Leitura),
+               resposta_ms:Math.round(agora - t0Pergunta),
+               duracao_ms:Math.round(agora - t0Leitura),
+               resposta_digitada:$("resp").value.trim() });
+  S.cursor++; setCursor(S.cursor); salvar();
+  fase = null;
+  proxCard();
+}
+
+document.addEventListener("keydown", function(ev){
+  if(!S) return;
+  if(fase === "leitura" && (ev.code === "Space" || ev.key === " ")){
+    ev.preventDefault(); return mostrarPergunta();
+  }
+  if(fase === "pergunta" && ev.key === "Enter"){
+    ev.preventDefault(); return registrar();
+  }
+});
+
+function iniciarPausa(seg){
+  $("exec").classList.add("hide");
+  $("rest").classList.remove("hide");
+  S.blocos.push({ ciclo:"pausa", kind:"rest", min:seg.min, inicio_sessao_ms:tSess() });
+  salvar();
+  var fim = nowMs() + seg.min*60000;
+  var id = setInterval(function(){
+    var falta = Math.max(0, fim - nowMs());
+    var m = Math.floor(falta/60000), s2 = Math.floor((falta%60000)/1000);
+    $("restNum").textContent = m+":"+(s2<10?"0":"")+s2;
+    if(falta <= 0){ clearInterval(id); try{ beep(); }catch(e){} proxSegmento(); }
+  }, 250);
+}
+function beep(){
+  var ctx = new (window.AudioContext||window.webkitAudioContext)();
+  var o = ctx.createOscillator(), g = ctx.createGain();
+  o.frequency.value = 440; g.gain.value = .05;
+  o.connect(g); g.connect(ctx.destination); o.start();
+  setTimeout(function(){ o.stop(); ctx.close(); }, 260);
+}
+
+/* ------------------------------------------------ correção no final */
+function norm(s){
+  return (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"")
+    .replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim();
+}
+function autoMatch(card, resp){
+  var r = norm(resp); if(!r) return false;
+  var cands = [card.resposta].concat(card.alt||[]);
+  for(var i = 0; i < cands.length; i++){
+    var g = norm(cands[i]);
+    if(!g) continue;
+    if(r === g || r.indexOf(g) >= 0 || g.indexOf(r) >= 0) return true;
+    var gt = g.split(" ").filter(function(w){ return w.length > 3; });
+    if(gt.length && gt.every(function(w){ return r.indexOf(w) >= 0; })) return true;
+  }
+  return false;
+}
+
+function iniciarCorrecao(){
+  clearTimeout(timerId);
+  try{ localStorage.removeItem(ACTIVE); }catch(e){}
+  $("exec").classList.add("hide"); $("rest").classList.add("hide");
+  var c = $("corr"); c.classList.remove("hide");
+  var porId = {}; BANK.forEach(function(b){ porId[b.id] = b; });
+  S.log.forEach(function(r, i){
+    r._card = porId[r.card_id];
+    r.resultado = autoMatch(r._card, r.resposta_digitada) ? "acerto" : "erro";
+  });
+  var linhas = S.log.map(function(r, i){
+    return "<tr><td class='l'>"+r.card_id+(r.flag_aquecimento==="sim"?" (aq)":"")+"</td>"+
+      "<td class='l' style='max-width:18rem'>"+r._card.pergunta+"</td>"+
+      "<td class='l'><b>"+(r.resposta_digitada||"—")+"</b></td>"+
+      "<td class='l'>"+r._card.resposta+"</td>"+
+      "<td><button class='mini "+(r.resultado==="acerto"?"on":"off")+"' data-i='"+i+"'>"+
+      (r.resultado==="acerto"?"acerto":"erro")+"</button></td></tr>";
+  }).join("");
+  c.innerHTML = "<h1>Correção</h1>"+
+    "<p class='sub'>As respostas foram pré-classificadas automaticamente pela presença do "+
+    "fato-chave; revise cada uma e alterne o que a máquina errou. Critério fixado antes da "+
+    "coleta: a resposta contém o fato-chave do gabarito — sim ou não.</p>"+
+    "<table><thead><tr><th>Card</th><th>Pergunta</th><th>Sua resposta</th><th>Gabarito</th>"+
+    "<th>Julgamento</th></tr></thead><tbody>"+linhas+"</tbody></table>"+
+    "<button class='primary' id='btnConcluir'>Concluir correção e ver resultados</button>";
+  c.querySelectorAll("button.mini").forEach(function(b){
+    b.addEventListener("click", function(){
+      var r = S.log[+b.dataset.i];
+      r.resultado = r.resultado === "acerto" ? "erro" : "acerto";
+      b.textContent = r.resultado;
+      b.classList.toggle("on"); b.classList.toggle("off");
+    });
+  });
+  $("btnConcluir").addEventListener("click", function(){
+    c.classList.add("hide"); arquivar(); resultados();
+  });
+}
+
+/* ------------------------------------------------ análise e gráficos */
+function medidos(){ return S.log.filter(function(r){ return r.flag_aquecimento === "nao"; }); }
+
+function janelas(W){
+  var por = {};
+  medidos().forEach(function(r){
+    (por[r.ciclo] = por[r.ciclo]||[]).push(r);
+  });
+  var out = [];
+  Object.keys(por).map(Number).sort(function(a,b){return a-b;}).forEach(function(c){
+    var grupos = {};
+    por[c].forEach(function(r){
+      var k = Math.floor((r.t_inicio_bloco_ms/60000)/W);
+      (grupos[k] = grupos[k]||[]).push(r);
+    });
+    var inicioBloco = blocoInicio(c);
+    Object.keys(grupos).map(Number).sort(function(a,b){return a-b;}).forEach(function(k){
+      var g = grupos[k];
+      var ac = g.filter(function(r){ return r.resultado === "acerto"; }).length;
+      out.push({ ciclo:c, janela:k+1, min_bloco:k*W + W/2,
+                 min_sessao:(inicioBloco + k*W*60000 + W*30000)/60000,
+                 n:g.length, acertos:ac,
+                 rendimento:+(ac/W).toFixed(3),
+                 taxa:+(g.length/W).toFixed(3),
+                 acuracia: g.length ? +(ac/g.length).toFixed(3) : 0 });
+    });
+  });
+  return out;
+}
+function blocoInicio(ciclo){
+  for(var i = 0; i < S.blocos.length; i++)
+    if(S.blocos[i].kind === "work" && S.blocos[i].ciclo === ciclo)
+      return S.blocos[i].inicio_sessao_ms;
+  return 0;
+}
+
+function svgPlot(series, opts){
+  // series: [{pts:[[x,y]...], cor, nome, escala:'L'|'R'}]
+  var W2 = 720, H = 170, m = {t:16, r:46, b:26, l:46};
+  var xs = [], yl = [], yr = [];
+  series.forEach(function(s){ s.pts.forEach(function(p){
+    xs.push(p[0]); (s.escala==="R"?yr:yl).push(p[1]); }); });
+  if(!xs.length) return "<p class='muted'>Sem pontos suficientes.</p>";
+  function lim(a){ if(!a.length) return [0,1];
+    var lo = Math.min.apply(null,a), hi = Math.max.apply(null,a);
+    if(lo === hi){ hi = lo+1; } return [lo,hi]; }
+  var lx = lim(xs), ll = lim(yl), lr = lim(yr);
+  if(opts && opts.y0) { ll[0] = 0; lr[0] = 0; }
+  var px = function(v){ return m.l + (v-lx[0])/(lx[1]-lx[0])*(W2-m.l-m.r); };
+  var py = function(v, esc){ var L = esc==="R"?lr:ll;
+    return H-m.b - (v-L[0])/(L[1]-L[0])*(H-m.t-m.b); };
+  var inner = "";
+  series.forEach(function(s){
+    var segs = s.gap ? s.gap : [s.pts];
+    segs.forEach(function(pts){
+      if(pts.length > 1){
+        var d = pts.map(function(p,i){ return (i?"L":"M")+px(p[0]).toFixed(1)+" "+py(p[1],s.escala).toFixed(1); }).join(" ");
+        inner += "<path d='"+d+"' fill='none' stroke='"+s.cor+"' stroke-width='1.4'/>";
+      }
+      pts.forEach(function(p){
+        inner += "<circle cx='"+px(p[0]).toFixed(1)+"' cy='"+py(p[1],s.escala).toFixed(1)+"' r='2.6' fill='"+s.cor+"'/>";
+      });
+    });
+  });
+  inner += "<text x='4' y='"+(m.t+2)+"' fill='#8b8d92' font-size='9'>"+ll[1].toFixed(2)+"</text>";
+  inner += "<text x='4' y='"+(H-m.b)+"' fill='#8b8d92' font-size='9'>"+ll[0].toFixed(2)+"</text>";
+  if(yr.length){
+    inner += "<text x='"+(W2-m.r+4)+"' y='"+(m.t+2)+"' fill='#7fae8f' font-size='9'>"+(100*lr[1]).toFixed(0)+"%</text>";
+    inner += "<text x='"+(W2-m.r+4)+"' y='"+(H-m.b)+"' fill='#7fae8f' font-size='9'>"+(100*lr[0]).toFixed(0)+"%</text>";
+  }
+  var leg = "", lx0 = m.l;
+  series.forEach(function(s){
+    leg += "<circle cx='"+lx0+"' cy='"+(H-8)+"' r='3' fill='"+s.cor+"'/>"+
+           "<text x='"+(lx0+7)+"' y='"+(H-5)+"' fill='#8b8d92' font-size='9'>"+s.nome+"</text>";
+    lx0 += 10 + s.nome.length*5.4;
+  });
+  return "<svg class='plot' viewBox='0 0 "+W2+" "+H+"' preserveAspectRatio='none'>"+inner+leg+"</svg>";
+}
+
+function resultados(){
+  var f = $("fim"); f.classList.remove("hide");
+  var med = medidos();
+  var ac = med.filter(function(r){ return r.resultado === "acerto"; }).length;
+  desenhar(f, med, ac, 5);
+}
+
+function desenhar(f, med, ac, W){
+  var J = janelas(W);
+  var ciclos = []; J.forEach(function(j){ if(ciclos.indexOf(j.ciclo)<0) ciclos.push(j.ciclo); });
+
+  // por ciclo: rendimento (esq) + acurácia (dir), pontos discretos
+  var porCiclo = ciclos.map(function(c){
+    var js = J.filter(function(j){ return j.ciclo === c; });
+    return "<h2>Ciclo "+c+" — rendimento e acerto (janelas de "+W+" min)</h2>"+
+      svgPlot([
+        {pts:js.map(function(j){return [j.min_bloco, j.rendimento];}), cor:"#c8cad0", nome:"rendimento (acertos/min)", escala:"L"},
+        {pts:js.map(function(j){return [j.min_bloco, j.acuracia];}), cor:"#7fae8f", nome:"acurácia", escala:"R"}
+      ], {y0:true});
+  }).join("");
+
+  // contínuo: rendimento vs tempo de sessão, com vazio nas pausas
+  var gaps = ciclos.map(function(c){
+    return J.filter(function(j){ return j.ciclo === c; })
+            .map(function(j){ return [j.min_sessao, j.rendimento]; });
+  });
+  var continuo = svgPlot([{pts:[].concat.apply([],gaps), gap:gaps, cor:"#c8cad0",
+                           nome:"rendimento (acertos/min)", escala:"L"}], {y0:true});
+
+  // S(t): acertos acumulados vs tempo contínuo de sessão
+  var acum = 0, ptsS = [[0,0]];
+  med.slice().sort(function(a,b){ return a.t_fim_sessao_ms - b.t_fim_sessao_ms; })
+     .forEach(function(r){ if(r.resultado === "acerto"){ acum++; ptsS.push([r.t_fim_sessao_ms/60000, acum]); } });
+  var sT = svgPlot([{pts:ptsS, cor:"#c8cad0", nome:"S(t) — acertos acumulados", escala:"L"}], {y0:true});
+
+  var linhasJ = J.map(function(j){
+    return "<tr><td>"+j.ciclo+"</td><td>"+j.janela+"</td><td>"+j.n+"</td><td>"+j.acertos+
+      "</td><td>"+(100*j.acuracia).toFixed(0)+"%</td><td>"+j.taxa.toFixed(2)+
+      "</td><td>"+j.rendimento.toFixed(2)+"</td></tr>";
+  }).join("");
+  var linhasB = med.map(function(r){
+    return "<tr><td>"+r.card_id+"</td><td>"+r.ciclo+"</td><td class='l'>"+r.tema+
+      "</td><td>"+(r.leitura_ms/1000).toFixed(1)+"</td><td>"+(r.resposta_ms/1000).toFixed(1)+
+      "</td><td>"+(r.duracao_ms/1000).toFixed(1)+"</td><td>"+r.resultado+"</td></tr>";
+  }).join("");
+  var estouros = S.blocos.filter(function(b){ return b.estouro_ms; })
+    .map(function(b){ return (b.kind==="warmup"?"aquecimento":"ciclo "+b.ciclo)+": +"+
+      (b.estouro_ms/1000).toFixed(0)+" s"; }).join(" · ") || "nenhum";
+
+  f.innerHTML =
+    "<h1>Sessão encerrada</h1>"+
+    "<p class='sub'>"+med.length+" cartões medidos · "+ac+" acertos ("+
+      (100*ac/(med.length||1)).toFixed(1)+"%) · aquecimento excluído · cartões que "+
+      "estouraram o bloco: "+estouros+"</p>"+
+    "<div class='row' style='max-width:22rem'><div><label>Janela de análise (min)</label>"+
+    "<input id='inJanela' type='number' min='1' max='30' value='"+W+"'></div>"+
+    "<div style='align-self:end'><button id='btnRecalc'>Recalcular</button></div></div>"+
+    porCiclo+
+    "<h2>Rendimento no tempo contínuo da sessão (vazio durante as pausas)</h2>"+continuo+
+    "<h2>Acertos acumulados S(t) — a curva que o modelo prevê saturante</h2>"+sT+
+    "<h2>Planilha — janelas</h2>"+
+    "<table><thead><tr><th>Ciclo</th><th>Janela</th><th>n</th><th>acertos</th><th>acurácia</th>"+
+    "<th>cartões/min</th><th>acertos/min</th></tr></thead><tbody>"+linhasJ+"</tbody></table>"+
+    "<h2>Planilha — cartão a cartão</h2>"+
+    "<div style='max-height:24rem;overflow:auto'><table><thead><tr><th>Card</th><th>Ciclo</th>"+
+    "<th>Tema</th><th>leitura (s)</th><th>resposta (s)</th><th>total (s)</th><th>resultado</th>"+
+    "</tr></thead><tbody>"+linhasB+"</tbody></table></div>"+
+    "<p style='margin-top:1.2rem'><button class='primary' id='eJson'>Exportar JSON</button> "+
+    "<button id='eCsv'>CSV cartões</button> <button id='eCsvJ'>CSV janelas</button> "+
+    "<button id='voltar'>Voltar</button></p>";
+
+  $("btnRecalc").addEventListener("click", function(){
+    desenhar(f, med, ac, Math.max(1, +$("inJanela").value||5));
+  });
+  $("eJson").onclick = function(){ baixar(JSON.stringify(pacote(),null,1), "limiar-fc-"+S.id+".json","application/json"); };
+  $("eCsv").onclick = function(){ baixar(csv(S.log.map(function(r){
+      var o = {}; for(var k in r) if(k[0] !== "_") o[k] = r[k]; return o; })),
+      "limiar-fc-cartoes-"+S.id+".csv","text/csv"); };
+  $("eCsvJ").onclick = function(){ baixar(csv(janelas(Math.max(1,+$("inJanela").value||5))),
+      "limiar-fc-janelas-"+S.id+".csv","text/csv"); };
+  $("voltar").onclick = function(){ location.reload(); };
+}
+
+function pacote(){
+  return { sessao:{ id:S.id, data:S.data, preset:S.preset, plano:S.plan },
+           blocos:S.blocos,
+           bruto:S.log.map(function(r){ var o={}; for(var k in r) if(k[0]!=="_") o[k]=r[k]; return o; }) };
+}
+function csv(rows){
+  if(!rows.length) return "";
+  var cols = Object.keys(rows[0]);
+  return cols.join(";")+"\n"+rows.map(function(r){
+    return cols.map(function(c){ return r[c]===undefined?"":String(r[c]).replace(/;/g,","); }).join(";");
+  }).join("\n");
+}
+function baixar(txt,nome,mime){
+  var b = new Blob([txt],{type:mime+";charset=utf-8"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(b); a.download = nome; a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+}
+function arquivar(){
+  try{ var arr = JSON.parse(localStorage.getItem(ARQ)||"[]");
+       arr.unshift(pacote()); localStorage.setItem(ARQ, JSON.stringify(arr.slice(0,20))); }catch(e){}
+}
+function renderArquivo(){
+  var arr = []; try{ arr = JSON.parse(localStorage.getItem(ARQ)||"[]"); }catch(e){}
+  if(!arr.length){ $("arquivo").innerHTML=""; return; }
+  $("arquivo").innerHTML = "<fieldset><legend>Sessões arquivadas</legend><table><thead><tr>"+
+    "<th>Data</th><th>Protocolo</th><th>Cartões</th><th>ID</th></tr></thead><tbody>"+
+    arr.map(function(p){ return "<tr><td>"+p.sessao.data+"</td><td>"+p.sessao.preset+"</td><td>"+
+      p.bruto.length+"</td><td>"+p.sessao.id+"</td></tr>"; }).join("")+
+    "</tbody></table><p class='muted'>Guardadas neste navegador. Exporte para preservar.</p></fieldset>";
+}
+$("btnCursor").addEventListener("click", function(){
+  var v = prompt("Posição do cursor (0 a "+BANK.length+"):", getCursor());
+  if(v === null) return;
+  setCursor(Math.max(0, Math.min(BANK.length, parseInt(v,10)||0))); ready("cache");
+});
+$("btnZerar").addEventListener("click", function(){
+  if(!confirm("Reiniciar o cursor? Cartões já estudados voltarão a aparecer.")) return;
+  setCursor(0); ready("cache");
+});
+</script>

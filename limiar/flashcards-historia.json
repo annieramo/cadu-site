@@ -1,0 +1,2564 @@
+[
+{
+"id": "H001",
+"tema": "Expansão marítima",
+"texto": "No século XV, Portugal foi pioneiro na expansão marítima europeia. O reino reunia condições raras: centralização política precoce, posição geográfica voltada ao Atlântico e domínio de técnicas de navegação reunidas na chamada Escola de Sagres. O objetivo central era alcançar as Índias contornando a África, para comprar especiarias sem os intermediários italianos e árabes do Mediterrâneo. Foi essa rota, e não o acaso, que estruturou o projeto ultramarino português.",
+"pergunta": "Que vantagem comercial Portugal buscava ao contornar a África rumo às Índias?",
+"resposta": "eliminar intermediários",
+"alt": [
+"evitar intermediários",
+"comprar sem intermediários",
+"cortar intermediários"
+]
+},
+{
+"id": "H002",
+"tema": "Expansão marítima",
+"texto": "A conquista de Ceuta, em 1415, no norte da África, é considerada o marco inicial da expansão portuguesa. A cidade era um entreposto de ouro e cereais e sua tomada revelou o interesse comercial da empreitada. Nas décadas seguintes, os portugueses avançaram ilha por ilha e feitoria por feitoria pela costa africana. Em 1488, Bartolomeu Dias dobrou o Cabo da Boa Esperança, provando que era possível passar do Atlântico ao Índico.",
+"pergunta": "O que a travessia de Bartolomeu Dias em 1488 provou ser possível?",
+"resposta": "passar ao Índico",
+"alt": [
+"ligar Atlântico e Índico",
+"chegar ao Índico",
+"contornar a África"
+]
+},
+{
+"id": "H003",
+"tema": "Expansão marítima",
+"texto": "Espanha e Portugal disputavam as novas rotas e terras, e a solução foi diplomática. Em 1494, os dois reinos assinaram o Tratado de Tordesilhas, que dividia o mundo não europeu por um meridiano a 370 léguas de Cabo Verde. Terras a leste da linha caberiam a Portugal; a oeste, à Espanha. Quando a esquadra de Cabral chegou ao litoral sul-americano em 1500, aquela costa já caía, pelo tratado, no lado português.",
+"pergunta": "Por que a costa encontrada por Cabral já pertencia a Portugal antes mesmo da chegada?",
+"resposta": "Tratado de Tordesilhas",
+"alt": [
+"Tordesilhas",
+"pelo tratado"
+]
+},
+{
+"id": "H004",
+"tema": "Expansão marítima",
+"texto": "A chegada de Vasco da Gama a Calicute, na Índia, em 1498, coroou o projeto português: a rota das especiarias estava aberta. O comércio com o Oriente rendia lucros enormes e concentrou as atenções da Coroa nas décadas seguintes. É essa prioridade que explica o relativo desinteresse inicial de Portugal pela terra encontrada por Cabral em 1500. Comparada à pimenta indiana, a nova costa parecia oferecer pouco.",
+"pergunta": "Qual comércio explicava o desinteresse português inicial pelo Brasil?",
+"resposta": "especiarias",
+"alt": [
+"comércio de especiarias",
+"especiarias das Índias",
+"pimenta"
+]
+},
+{
+"id": "H005",
+"tema": "Expansão marítima",
+"texto": "A viagem de Cabral em 1500 seguia oficialmente para as Índias, repetindo a rota de Vasco da Gama. A esquadra afastou-se da costa africana e tocou o litoral do atual sul da Bahia em abril. Os portugueses celebraram missa, contataram os habitantes da terra e enviaram uma embarcação de volta com a notícia. A carta de Pero Vaz de Caminha ao rei descreveu a terra e seus habitantes, tornando-se o primeiro documento escrito sobre o Brasil.",
+"pergunta": "Qual documento inaugurou o registro escrito sobre a terra encontrada?",
+"resposta": "carta de Caminha",
+"alt": [
+"a carta de Pero Vaz de Caminha",
+"carta ao rei"
+]
+},
+{
+"id": "H006",
+"tema": "Expansão marítima",
+"texto": "Quando os portugueses chegaram, o território era habitado por milhões de indígenas de centenas de povos, com línguas e costumes distintos. No litoral predominavam grupos de língua tupi, que praticavam agricultura de coivara, caça e pesca. A imagem de uma terra vazia, repetida por séculos, serviu para justificar a ocupação. Na prática, toda a colonização se fez sobre territórios já ocupados e organizados.",
+"pergunta": "Que ideia sobre o território serviu de justificativa para a ocupação?",
+"resposta": "terra vazia",
+"alt": [
+"terra desabitada",
+"vazio demográfico"
+]
+},
+{
+"id": "H007",
+"tema": "Período pré-colonial",
+"texto": "Entre 1500 e 1530, Portugal quase não se fixou na nova terra, período por isso chamado de pré-colonial. A atividade principal foi a extração do pau-brasil, madeira que fornecia corante vermelho valorizado na Europa. A exploração usava o escambo: indígenas cortavam e carregavam a madeira em troca de facas, machados e miçangas. Não havia produção nem povoamento, apenas feitorias pontuais no litoral.",
+"pergunta": "Que sistema de troca sustentava a extração do pau-brasil?",
+"resposta": "escambo",
+"alt": [
+"troca",
+"escambo com indígenas"
+]
+},
+{
+"id": "H008",
+"tema": "Período pré-colonial",
+"texto": "A feitoria era um modelo que Portugal já usava na África e na Ásia: um posto fortificado de comércio, sem ocupação do interior. No Brasil pré-colonial, as feitorias armazenavam pau-brasil à espera dos navios. O modelo era barato, pois dispensava colonos e administração. Servia bem a um comércio de extração, mas não defendia a terra contra estrangeiros.",
+"pergunta": "Qual era a principal vantagem econômica do modelo de feitorias?",
+"resposta": "baixo custo",
+"alt": [
+"barato",
+"custo baixo",
+"era barato"
+]
+},
+{
+"id": "H009",
+"tema": "Período pré-colonial",
+"texto": "O litoral atraiu também navios franceses, que negociavam pau-brasil diretamente com os indígenas. A França não reconhecia o Tratado de Tordesilhas, alegando que só a ocupação efetiva garantia a posse. As incursões francesas se tornaram frequentes e ameaçavam o domínio português. Foi essa pressão externa, somada à queda dos lucros no Oriente, que empurrou Portugal para colonizar de fato.",
+"pergunta": "Que argumento a França usava para ignorar Tordesilhas?",
+"resposta": "ocupação efetiva",
+"alt": [
+"posse pela ocupação",
+"uso efetivo",
+"quem ocupa possui"
+]
+},
+{
+"id": "H010",
+"tema": "Período pré-colonial",
+"texto": "A expedição de Martim Afonso de Sousa, iniciada em 1530, marcou a virada para a colonização. Ela combatia corsários, explorava o litoral e trouxe colonos, sementes e animais. Em 1532, Martim Afonso fundou São Vicente, no litoral do atual estado de São Paulo, a primeira vila da colônia. Ali se montaram também os primeiros engenhos de açúcar, ensaiando o modelo econômico que dominaria o século seguinte.",
+"pergunta": "Qual foi a primeira vila fundada na colônia?",
+"resposta": "São Vicente",
+"alt": [
+"vila de São Vicente"
+]
+},
+{
+"id": "H011",
+"tema": "Capitanias",
+"texto": "Para colonizar um território imenso sem esgotar o tesouro real, a Coroa adotou em 1534 as capitanias hereditárias. O litoral foi dividido em quinze lotes, doados a donatários — nobres e funcionários que deveriam povoar, defender e explorar as terras com recursos próprios. O donatário recebia poderes amplos, como fundar vilas e aplicar a justiça, mas não podia vender a capitania. A Coroa transferia assim o custo da colonização para particulares.",
+"pergunta": "Que custo a Coroa transferiu aos donatários com as capitanias?",
+"resposta": "custo da colonização",
+"alt": [
+"colonizar",
+"o custo de colonizar",
+"financiar a colonização"
+]
+},
+{
+"id": "H012",
+"tema": "Capitanias",
+"texto": "A maioria das capitanias fracassou. Faltavam recursos aos donatários, as distâncias eram enormes, e vários lotes sofreram ataques de indígenas que resistiam à ocupação de suas terras. Algumas capitanias sequer foram ocupadas por seus donatários. O resultado geral expôs o limite de uma colonização inteiramente privada.",
+"pergunta": "O fracasso geral das capitanias expôs o limite de qual modelo?",
+"resposta": "colonização privada",
+"alt": [
+"modelo privado",
+"iniciativa privada"
+]
+},
+{
+"id": "H013",
+"tema": "Capitanias",
+"texto": "Duas capitanias, porém, prosperaram: Pernambuco e São Vicente. Ambas tiveram donatários presentes e atuantes e conseguiram implantar a lavoura de cana-de-açúcar com engenhos em funcionamento. Pernambuco, de Duarte Coelho, tornou-se a mais rica da colônia. O contraste com as demais mostrou que o êxito dependia menos do lote e mais de capital e produção organizada.",
+"pergunta": "Qual lavoura explicou o êxito das duas capitanias prósperas?",
+"resposta": "cana-de-açúcar",
+"alt": [
+"açúcar",
+"cana"
+]
+},
+{
+"id": "H014",
+"tema": "Capitanias",
+"texto": "Diante do fracasso da maioria das capitanias, a Coroa criou em 1548 o Governo-Geral, uma administração central para a colônia. O primeiro governador-geral, Tomé de Sousa, chegou em 1549 e fundou Salvador, primeira capital do Brasil. O cargo centralizava a defesa, a justiça e a arrecadação, sem extinguir as capitanias. A mudança corrigia o excesso de descentralização do modelo anterior.",
+"pergunta": "Que excesso do modelo anterior o Governo-Geral veio corrigir?",
+"resposta": "descentralização",
+"alt": [
+"excesso de descentralização",
+"falta de centralização"
+]
+},
+{
+"id": "H015",
+"tema": "Capitanias",
+"texto": "Com Tomé de Sousa vieram os primeiros jesuítas, liderados pelo padre Manuel da Nóbrega. A Companhia de Jesus assumiu a catequese dos indígenas e fundou colégios, começando por Salvador. Os jesuítas reuniam indígenas em aldeamentos, onde impunham o cristianismo e o trabalho disciplinado. A educação na colônia ficaria por dois séculos concentrada nas mãos da ordem.",
+"pergunta": "Que ordem religiosa monopolizou a educação colonial por dois séculos?",
+"resposta": "jesuítas",
+"alt": [
+"Companhia de Jesus",
+"os jesuítas"
+]
+},
+{
+"id": "H016",
+"tema": "Capitanias",
+"texto": "Em 1554, os padres jesuítas José de Anchieta e Manuel da Nóbrega fundaram um colégio no planalto de Piratininga, origem da vila de São Paulo. A posição no alto da serra, longe do litoral, era excepcional na colônia, que se concentrava na costa. O terceiro governador-geral, Mem de Sá, combateu os franceses que haviam ocupado a baía de Guanabara. Da vitória nasceu, em 1565, a cidade do Rio de Janeiro.",
+"pergunta": "A expulsão de qual invasor levou à fundação do Rio de Janeiro?",
+"resposta": "franceses",
+"alt": [
+"os franceses",
+"França"
+]
+},
+{
+"id": "H017",
+"tema": "Açúcar",
+"texto": "A cana-de-açúcar resolveu o problema econômico da colonização. O açúcar era artigo de luxo na Europa, com preço alto e demanda crescente, e Portugal já dominava seu cultivo nas ilhas do Atlântico. O clima quente e úmido e o solo de massapê do litoral nordestino eram ideais para a lavoura. A colônia ganhava, enfim, um produto capaz de pagar a ocupação.",
+"pergunta": "Que problema da colonização o açúcar resolveu?",
+"resposta": "problema econômico",
+"alt": [
+"econômico",
+"financiar a colonização",
+"pagar a ocupação"
+]
+},
+{
+"id": "H018",
+"tema": "Açúcar",
+"texto": "O engenho era o conjunto de instalações onde a cana virava açúcar: moenda, caldeiras e casa de purgar. Em torno dele organizava-se toda a vida da região produtora, com a casa-grande do senhor, a capela e a senzala dos escravizados. O senhor de engenho concentrava poder econômico e social e dominava os lavradores vizinhos que dependiam de sua moenda. A sociedade açucareira era, por isso, fortemente hierarquizada e rural.",
+"pergunta": "Em torno de qual unidade se organizava a sociedade açucareira?",
+"resposta": "engenho",
+"alt": [
+"o engenho",
+"do engenho"
+]
+},
+{
+"id": "H019",
+"tema": "Açúcar",
+"texto": "A lavoura canavieira exigia muitos trabalhadores, e a solução adotada foi a escravidão. Nas primeiras décadas, os colonos escravizaram sobretudo indígenas, apesar da resistência destes e da oposição dos jesuítas, que queriam os índios nos aldeamentos. A partir da segunda metade do século XVI, cresceu a importação de africanos escravizados. O tráfico negreiro tornou-se um dos negócios mais lucrativos do império português.",
+"pergunta": "Além do trabalho nos engenhos, que negócio lucrativo a escravidão africana gerou?",
+"resposta": "tráfico negreiro",
+"alt": [
+"tráfico",
+"comércio de escravizados",
+"tráfico de escravos"
+]
+},
+{
+"id": "H020",
+"tema": "Açúcar",
+"texto": "A travessia dos africanos escravizados era feita nos navios negreiros, em condições desumanas que matavam grande parte dos cativos. No Brasil, os escravizados trabalhavam de sol a sol nos canaviais e nas moendas, sob vigilância e castigos físicos. A violência era o fundamento do sistema, não um excesso ocasional. A escravidão africana durou mais de três séculos e moldou profundamente a sociedade brasileira.",
+"pergunta": "Qual era o fundamento, e não acidente, do sistema escravista?",
+"resposta": "violência",
+"alt": [
+"a violência",
+"coerção",
+"castigo"
+]
+},
+{
+"id": "H021",
+"tema": "Açúcar",
+"texto": "Os escravizados resistiram de muitas formas: fugas, revoltas, trabalho lento proposital e formação de quilombos, comunidades de fugitivos. O maior deles foi o Quilombo dos Palmares, na serra da Barriga, no atual estado de Alagoas, que durou quase todo o século XVII. Palmares reunia milhares de habitantes e resistiu a dezenas de expedições militares. Seu último grande líder, Zumbi, foi morto em 1695.",
+"pergunta": "Qual foi o maior quilombo do período colonial?",
+"resposta": "Palmares",
+"alt": [
+"Quilombo dos Palmares"
+]
+},
+{
+"id": "H022",
+"tema": "Açúcar",
+"texto": "O negócio do açúcar não era só português: os holandeses participavam do refino e da distribuição do produto na Europa, além de financiarem engenhos. A parceria funcionou durante décadas e ajudou a lavoura a crescer. Quando essa participação foi cortada, os holandeses tinham motivos econômicos concretos para atacar o Brasil. O açúcar explicará, assim, as invasões do século XVII.",
+"pergunta": "Em que etapas do negócio açucareiro os holandeses atuavam?",
+"resposta": "refino e distribuição",
+"alt": [
+"refino e venda",
+"refinar e distribuir",
+"refino, distribuição e financiamento"
+]
+},
+{
+"id": "H023",
+"tema": "União Ibérica",
+"texto": "Em 1580, o rei de Portugal morreu sem herdeiro direto, e a coroa portuguesa passou ao rei da Espanha, Filipe II. Começava a União Ibérica, período em que os dois reinos e seus impérios ficaram sob o mesmo monarca, até 1640. Portugal manteve leis e administração próprias, mas herdou os inimigos da Espanha. O principal deles eram os Países Baixos, então em guerra de independência contra os espanhóis.",
+"pergunta": "Que inimigo Portugal herdou ao entrar na União Ibérica?",
+"resposta": "holandeses",
+"alt": [
+"Países Baixos",
+"Holanda",
+"os holandeses"
+]
+},
+{
+"id": "H024",
+"tema": "União Ibérica",
+"texto": "Durante a União Ibérica, a Espanha proibiu o comércio dos holandeses com os domínios portugueses, cortando sua participação no açúcar. Em resposta, os holandeses criaram em 1621 a Companhia das Índias Ocidentais, empresa armada para atacar e explorar a América ibérica. O alvo escolhido foi a zona açucareira do Brasil. A lógica era simples: se não podiam mais comprar o açúcar, tomariam a produção.",
+"pergunta": "Que empresa armada os holandeses criaram para atacar a América ibérica?",
+"resposta": "Índias Ocidentais",
+"alt": [
+"Companhia das Índias Ocidentais",
+"WIC",
+"a companhia"
+]
+},
+{
+"id": "H025",
+"tema": "União Ibérica",
+"texto": "A primeira invasão holandesa, em Salvador em 1624, foi expulsa em um ano por uma esquadra luso-espanhola. A segunda, em 1630, tomou Pernambuco, o coração da produção açucareira, e se consolidou. Os holandeses dominaram boa parte do Nordeste por 24 anos. A fase mais próspera do domínio foi o governo de Maurício de Nassau, entre 1637 e 1644.",
+"pergunta": "Qual capitania os holandeses tomaram na invasão de 1630?",
+"resposta": "Pernambuco",
+"alt": [
+"a de Pernambuco"
+]
+},
+{
+"id": "H026",
+"tema": "União Ibérica",
+"texto": "Maurício de Nassau governou o Brasil holandês com tolerância religiosa, crédito aos senhores de engenho e urbanização do Recife, que ganhou pontes e palácios. Trouxe também cientistas e pintores, como Frans Post, que produziram os primeiros registros visuais sistemáticos da terra. Sua saída, após conflitos com a Companhia, precipitou a crise do domínio. Sem o crédito e a conciliação de Nassau, a cobrança das dívidas empurrou os senhores de engenho para a revolta.",
+"pergunta": "Que medida de Nassau, ao ser cortada, empurrou os senhores à revolta?",
+"resposta": "crédito",
+"alt": [
+"o crédito",
+"empréstimos",
+"crédito aos senhores"
+]
+},
+{
+"id": "H027",
+"tema": "União Ibérica",
+"texto": "A luta contra os holandeses, chamada Insurreição Pernambucana, uniu grupos diversos da colônia: senhores de engenho endividados, indígenas comandados por Felipe Camarão e negros e mestiços sob Henrique Dias. As vitórias decisivas ocorreram nos montes Guararapes, em 1648 e 1649. Em 1654, os holandeses capitularam no Recife. A expulsão foi obra sobretudo de forças locais, fato que alimentou um sentimento inicial de identidade própria.",
+"pergunta": "Que sentimento a vitória por forças locais alimentou na colônia?",
+"resposta": "identidade própria",
+"alt": [
+"identidade",
+"sentimento nativista",
+"orgulho local"
+]
+},
+{
+"id": "H028",
+"tema": "União Ibérica",
+"texto": "Expulsos do Brasil, os holandeses levaram consigo o domínio da técnica açucareira e montaram engenhos nas Antilhas, no Caribe. A produção antilhana, mais próxima da Europa, derrubou os preços do açúcar. A economia açucareira brasileira entrou em longa decadência na segunda metade do século XVII. A colônia precisaria de uma nova riqueza — e a busca por ela empurraria as expedições para o interior.",
+"pergunta": "Que concorrência derrubou o açúcar brasileiro após 1654?",
+"resposta": "Antilhas",
+"alt": [
+"açúcar antilhano",
+"Caribe",
+"açúcar das Antilhas"
+]
+},
+{
+"id": "H029",
+"tema": "Expansão territorial",
+"texto": "As bandeiras eram expedições que partiam sobretudo de São Paulo rumo ao sertão. Os paulistas, pobres em relação ao litoral açucareiro, buscavam riqueza onde podiam: apresavam indígenas para vender como escravos, inclusive os dos aldeamentos jesuíticos, e depois procuraram metais preciosos. As bandeiras ignoravam por completo a linha de Tordesilhas. Ao fazê-lo, expandiram enormemente o território sob controle português.",
+"pergunta": "Que limite legal as bandeiras ignoravam ao avançar pelo sertão?",
+"resposta": "Tordesilhas",
+"alt": [
+"linha de Tordesilhas",
+"o tratado de Tordesilhas"
+]
+},
+{
+"id": "H030",
+"tema": "Expansão territorial",
+"texto": "Outro vetor de interiorização foi a pecuária. O gado, proibido de ocupar as terras litorâneas reservadas à cana, avançou pelos sertões do rio São Francisco, abastecendo os engenhos com carne, couro e animais de tração. As fazendas de gado usavam pouca mão de obra e quase nenhum escravizado. Currais e caminhos de boiada fixaram povoações permanentes no interior do Nordeste.",
+"pergunta": "Por que o gado avançou para o sertão em vez do litoral?",
+"resposta": "litoral da cana",
+"alt": [
+"proibido no litoral",
+"terras da cana",
+"cana ocupava o litoral",
+"litoral era da cana"
+]
+},
+{
+"id": "H031",
+"tema": "Expansão territorial",
+"texto": "No extremo sul, Portugal fundou em 1680 a Colônia do Sacramento, na margem do rio da Prata, em frente a Buenos Aires. O objetivo era comercial e estratégico: acessar a prata espanhola e o comércio da região platina. A fundação gerou mais de um século de disputas com a Espanha. O sul do Brasil se formou nesse ambiente de fronteira militarizada.",
+"pergunta": "Que metal espanhol atraía Portugal à região platina?",
+"resposta": "prata",
+"alt": [
+"a prata"
+]
+},
+{
+"id": "H032",
+"tema": "Mineração",
+"texto": "No final do século XVII, bandeirantes encontraram ouro de aluvião nos rios da região que se tornaria Minas Gerais. A notícia provocou a primeira grande corrida migratória da história do Brasil: portugueses e colonos de todas as capitanias afluíram às minas. A população do interior explodiu em poucas décadas. O eixo econômico da colônia deslocou-se do Nordeste açucareiro para o centro-sul.",
+"pergunta": "Para onde se deslocou o eixo econômico da colônia com o ouro?",
+"resposta": "centro-sul",
+"alt": [
+"para o centro-sul",
+"Minas",
+"sudeste"
+]
+},
+{
+"id": "H033",
+"tema": "Mineração",
+"texto": "A disputa pelas minas opôs os paulistas, que as haviam descoberto e as reivindicavam, aos forasteiros recém-chegados, apelidados de emboabas. A Guerra dos Emboabas, entre 1707 e 1709, terminou com a derrota paulista. Muitos paulistas partiram então para o oeste, onde descobriram novas minas em Goiás e Mato Grosso. A derrota numa guerra acabou expandindo ainda mais o território.",
+"pergunta": "Que consequência territorial teve a derrota paulista na Guerra dos Emboabas?",
+"resposta": "minas a oeste",
+"alt": [
+"novas minas a oeste",
+"expansão para oeste",
+"minas de Goiás",
+"descobertas a oeste"
+]
+},
+{
+"id": "H034",
+"tema": "Mineração",
+"texto": "A Coroa cercou o ouro de controles. O principal tributo era o quinto: a quinta parte de todo o metal extraído pertencia ao rei. Para cobrá-lo, criaram-se as casas de fundição, onde o ouro em pó era obrigatoriamente transformado em barras seladas. Quando a arrecadação caía abaixo da meta, a Coroa podia decretar a derrama, cobrança forçada da diferença acumulada.",
+"pergunta": "Como se chamava a cobrança forçada dos atrasados do quinto?",
+"resposta": "derrama",
+"alt": [
+"a derrama"
+]
+},
+{
+"id": "H035",
+"tema": "Mineração",
+"texto": "Diferente do engenho, isolado e rural, a mineração criou uma rede de vilas: Vila Rica, Sabará, São João del-Rei, entre outras. Nelas floresceu uma sociedade mais urbana e diversificada, com comerciantes, artesãos, tropeiros e funcionários. Havia também mais espaço para alforrias, e a população livre de cor cresceu como em nenhuma outra região. A vida urbana sustentou escolas de música, irmandades e o barroco mineiro de Aleijadinho.",
+"pergunta": "Em contraste com o engenho, que tipo de sociedade a mineração criou?",
+"resposta": "urbana",
+"alt": [
+"sociedade urbana",
+"mais urbana",
+"urbana e diversificada"
+]
+},
+{
+"id": "H036",
+"tema": "Mineração",
+"texto": "O abastecimento das minas articulou a colônia inteira: o gado vinha do sul e do São Francisco, os alimentos das roças próximas, os escravizados e produtos importados subiam do Rio de Janeiro. O porto carioca tornou-se a porta do ouro, e em 1763 a capital da colônia foi transferida de Salvador para o Rio de Janeiro. A mudança oficializava o novo centro de gravidade da América portuguesa. O ouro integrou mercados que o açúcar mantinha separados.",
+"pergunta": "Que transferência de 1763 oficializou o novo centro da colônia?",
+"resposta": "mudança da capital",
+"alt": [
+"a capital",
+"capital para o Rio",
+"transferência da capital"
+]
+},
+{
+"id": "H037",
+"tema": "Crise colonial",
+"texto": "Na segunda metade do século XVIII, o ouro de aluvião se esgotava e a arrecadação do quinto despencava. Lisboa, que dependia do metal, respondeu apertando a fiscalização e ameaçando com a derrama. Ao mesmo tempo, circulavam entre os colonos cultos as ideias iluministas de liberdade e crítica ao absolutismo, e o exemplo recente da independência dos Estados Unidos, de 1776. Pressão fiscal e ideias novas formavam uma mistura explosiva.",
+"pergunta": "Que exemplo recente de independência inspirava os colonos?",
+"resposta": "Estados Unidos",
+"alt": [
+"EUA",
+"independência americana",
+"independência dos EUA"
+]
+},
+{
+"id": "H038",
+"tema": "Crise colonial",
+"texto": "A Inconfidência Mineira, planejada em Vila Rica para estourar na derrama de 1789, reuniu poetas, padres, militares e mineradores endividados. O plano previa proclamar uma república em Minas Gerais. O movimento foi denunciado por Joaquim Silvério dos Reis, que negociou o perdão de suas dívidas, e os conjurados foram presos antes de agir. Só o alferes Joaquim José da Silva Xavier, o Tiradentes, foi executado, em 1792.",
+"pergunta": "O que Silvério dos Reis obteve em troca da delação?",
+"resposta": "perdão das dívidas",
+"alt": [
+"perdão de dívidas",
+"quitação das dívidas"
+]
+},
+{
+"id": "H039",
+"tema": "Crise colonial",
+"texto": "A Conjuração Baiana de 1798, também chamada Revolta dos Alfaiates, teve caráter muito distinto da mineira. Seus participantes eram homens pobres e mestiços de Salvador — alfaiates, soldados, ex-escravizados — influenciados pela Revolução Francesa. O programa era mais radical: além da república, pregava o fim da escravidão e a igualdade racial. A repressão também foi mais dura: quatro participantes populares foram enforcados.",
+"pergunta": "Que bandeira social distinguia a Conjuração Baiana da Mineira?",
+"resposta": "fim da escravidão",
+"alt": [
+"abolição",
+"igualdade racial",
+"fim da escravidão e igualdade"
+]
+},
+{
+"id": "H040",
+"tema": "Crise colonial",
+"texto": "O contraste entre as duas conjurações revela quem cabia em cada projeto de Brasil. Em Minas, uma elite endividada queria a república, mas não tocava na escravidão, da qual vivia. Na Bahia, os de baixo ligavam liberdade política e liberdade social, e por isso assustaram muito mais as autoridades. A pena também obedeceu à hierarquia: poupou os ricos e enforcou os pobres. As duas revoltas fracassaram, mas mostraram que a dominação portuguesa era contestada.",
+"pergunta": "Por que a elite mineira não propôs abolir a escravidão?",
+"resposta": "vivia dela",
+"alt": [
+"dependia dela",
+"era escravista",
+"seus bens eram escravos"
+]
+},
+{
+"id": "H041",
+"tema": "Chegada da corte",
+"texto": "Em 1807, Napoleão Bonaparte, em guerra contra a Inglaterra, decretou o Bloqueio Continental, proibindo o comércio europeu com os ingleses. Portugal, aliado histórico da Inglaterra, foi invadido por tropas francesas ao descumprir a ordem. Antes que Lisboa caísse, a família real e a corte embarcaram para o Brasil, escoltadas pela marinha inglesa. Pela primeira vez, uma metrópole europeia passava a ser governada a partir de sua colônia.",
+"pergunta": "Que decreto napoleônico desencadeou a fuga da corte?",
+"resposta": "Bloqueio Continental",
+"alt": [
+"o bloqueio"
+]
+},
+{
+"id": "H042",
+"tema": "Chegada da corte",
+"texto": "Ainda em 1808, ao chegar, dom João assinou a abertura dos portos às nações amigas, encerrando o exclusivo comercial que obrigava a colônia a negociar somente com Portugal. Na prática, a medida beneficiou a Inglaterra, principal parceira e protetora da coroa portuguesa. Tratados de 1810 deram aos produtos ingleses tarifas mais baixas que as dos próprios portugueses. O pacto colonial estava, de fato, morto.",
+"pergunta": "Que país foi o grande beneficiário da abertura dos portos?",
+"resposta": "Inglaterra",
+"alt": [
+"os ingleses",
+"Grã-Bretanha"
+]
+},
+{
+"id": "H043",
+"tema": "Chegada da corte",
+"texto": "A presença da corte transformou o Rio de Janeiro. Criaram-se o Banco do Brasil, a Imprensa Régia, a Biblioteca Real, o Jardim Botânico e academias militares e de medicina. Revogou-se o alvará que proibia fábricas na colônia. Em 1815, o Brasil foi elevado a Reino Unido a Portugal e Algarves, deixando juridicamente de ser colônia. O retorno puro e simples à condição anterior tornava-se cada vez mais difícil.",
+"pergunta": "Que elevação jurídica de 1815 encerrou o estatuto colonial?",
+"resposta": "Reino Unido",
+"alt": [
+"reino unido a Portugal",
+"elevação a reino"
+]
+},
+{
+"id": "H044",
+"tema": "Independência",
+"texto": "Em 1820, estourou no Porto a Revolução Liberal, que exigia o retorno do rei e uma constituição para Portugal. As cortes portuguesas, porém, queriam também reverter as concessões feitas ao Brasil, devolvendo-o à condição subordinada — o que os brasileiros chamaram de recolonização. Dom João VI voltou a Lisboa em 1821 e deixou o filho, Pedro, como príncipe regente no Rio. A tensão entre as cortes e o regente marcaria o ano seguinte.",
+"pergunta": "Que intenção das cortes os brasileiros chamaram de recolonização?",
+"resposta": "reverter concessões",
+"alt": [
+"subordinar o Brasil",
+"tirar as concessões",
+"voltar a ser colônia"
+]
+},
+{
+"id": "H045",
+"tema": "Independência",
+"texto": "As cortes ordenaram que o príncipe regente voltasse a Portugal. Pressionado por lideranças brasileiras, Pedro anunciou em 9 de janeiro de 1822 que ficava — o episódio ficou conhecido como Dia do Fico. Nos meses seguintes, formou um ministério chefiado por José Bonifácio de Andrada e Silva e convocou uma assembleia constituinte. Cada nova ordem de Lisboa era respondida com um passo a mais rumo à ruptura.",
+"pergunta": "Quem chefiou o ministério do príncipe regente em 1822?",
+"resposta": "José Bonifácio",
+"alt": [
+"Bonifácio",
+"José Bonifácio de Andrada"
+]
+},
+{
+"id": "H046",
+"tema": "Independência",
+"texto": "Em 7 de setembro de 1822, às margens do riacho Ipiranga, Pedro recebeu novas ordens das cortes anulando seus atos e proclamou a separação. Em dezembro, foi coroado imperador como dom Pedro I. A independência manteve a monarquia, a escravidão e a unidade territorial, distinguindo o Brasil das repúblicas vizinhas da América espanhola. A ruptura política veio sem revolução social.",
+"pergunta": "Que instituição social a independência manteve intacta?",
+"resposta": "escravidão",
+"alt": [
+"a escravidão"
+]
+},
+{
+"id": "H047",
+"tema": "Independência",
+"texto": "A independência não foi aceita em toda parte: tropas portuguesas resistiram na Bahia, no Maranhão, no Pará e na Cisplatina. O novo governo contratou oficiais estrangeiros, como o almirante Cochrane, e venceu os focos de resistência até 1823. O reconhecimento externo custou caro: Portugal exigiu indenização de dois milhões de libras, pagas com empréstimo tomado à Inglaterra. O país nascia soberano e endividado.",
+"pergunta": "Como o Brasil pagou a indenização exigida por Portugal?",
+"resposta": "empréstimo inglês",
+"alt": [
+"empréstimo da Inglaterra",
+"empréstimo",
+"dívida com a Inglaterra"
+]
+},
+{
+"id": "H048",
+"tema": "Primeiro Reinado",
+"texto": "Eleita em 1823, a Assembleia Constituinte entrou em choque com dom Pedro I, que não aceitava limites ao seu poder. O imperador dissolveu a assembleia à força e outorgou, em 1824, uma constituição redigida por seu conselho. A carta criava, além dos três poderes clássicos, o Poder Moderador, exclusivo do imperador, que lhe permitia dissolver a câmara e demitir ministros. O arranjo concentrava a decisão final na coroa.",
+"pergunta": "Que poder exclusivo do imperador a carta de 1824 criou?",
+"resposta": "Poder Moderador",
+"alt": [
+"Moderador",
+"o moderador"
+]
+},
+{
+"id": "H049",
+"tema": "Primeiro Reinado",
+"texto": "A outorga da constituição provocou reação no Nordeste. Em 1824, Pernambuco e províncias vizinhas proclamaram a Confederação do Equador, movimento republicano e separatista liderado por figuras como frei Caneca. A repressão imperial foi rápida e severa, com execuções entre os líderes. O episódio somou-se ao autoritarismo da dissolução da constituinte no desgaste do imperador.",
+"pergunta": "Que movimento republicano nordestino reagiu à carta de 1824?",
+"resposta": "Confederação do Equador",
+"alt": [
+"a Confederação do Equador"
+]
+},
+{
+"id": "H050",
+"tema": "Primeiro Reinado",
+"texto": "O desgaste de dom Pedro I acumulou-se ao longo da década de 1820. A guerra da Cisplatina terminou em 1828 com a perda da província, que virou o Uruguai. A economia ia mal e o Banco do Brasil quebrou. O envolvimento do imperador com a sucessão portuguesa alimentava a desconfiança de que ele punha Portugal acima do Brasil. Em 7 de abril de 1831, pressionado por protestos e sem apoio militar, abdicou em favor do filho de cinco anos.",
+"pergunta": "Em favor de quem dom Pedro I abdicou em 1831?",
+"resposta": "do filho",
+"alt": [
+"Pedro II",
+"o filho de cinco anos",
+"dom Pedro II"
+]
+},
+{
+"id": "H051",
+"tema": "Regências",
+"texto": "Com um imperador de cinco anos, o Brasil foi governado entre 1831 e 1840 por regências, período de experimentação política. O Ato Adicional de 1834 criou assembleias provinciais, descentralizando o poder. A regência tornou-se una e eleita, uma quase-presidência dentro da monarquia. Liberais e conservadores disputavam o desenho do Estado enquanto o trono esperava o menino crescer.",
+"pergunta": "Que reforma de 1834 descentralizou o poder para as províncias?",
+"resposta": "Ato Adicional",
+"alt": [
+"o Ato Adicional"
+]
+},
+{
+"id": "H052",
+"tema": "Regências",
+"texto": "As regências enfrentaram a fase mais convulsionada da história imperial, com revoltas em várias províncias: a Cabanagem no Pará, a Sabinada na Bahia, a Balaiada no Maranhão e a Farroupilha no Rio Grande do Sul. As causas combinavam miséria, disputas locais de poder e insatisfação com o centro. A Cabanagem e a Balaiada tiveram forte participação popular e repressão sangrenta. A Farroupilha, de elites pecuaristas, durou dez anos.",
+"pergunta": "Qual revolta regencial se arrastou por dez anos?",
+"resposta": "Farroupilha",
+"alt": [
+"a Farroupilha",
+"Guerra dos Farrapos"
+]
+},
+{
+"id": "H053",
+"tema": "Regências",
+"texto": "Assustadas com as revoltas, as elites convergiram para uma saída: antecipar a maioridade do imperador e devolver ao trono o papel de árbitro. O golpe da maioridade, em 1840, fez de Pedro II imperador aos catorze anos. A aposta era que a figura do monarca uniria o que as regências não seguravam. Nos anos seguintes, as últimas revoltas foram pacificadas e o Estado imperial se consolidou.",
+"pergunta": "Que papel as elites esperavam que o jovem imperador exercesse?",
+"resposta": "árbitro",
+"alt": [
+"árbitro nacional",
+"unificador",
+"árbitro entre as facções"
+]
+},
+{
+"id": "H054",
+"tema": "Segundo Reinado",
+"texto": "A base econômica do Segundo Reinado foi o café, que encontrou no vale do Paraíba, entre Rio e São Paulo, condições ideais. A demanda vinha da Europa e dos Estados Unidos, onde o hábito do café se massificava. As fazendas do vale usavam trabalho escravizado em larga escala, e os barões do café tornaram-se a elite mais poderosa do império. O produto respondeu logo pela maior parte das exportações brasileiras.",
+"pergunta": "Qual região concentrou a primeira grande expansão cafeeira?",
+"resposta": "vale do Paraíba",
+"alt": [
+"Paraíba",
+"o vale do Paraíba"
+]
+},
+{
+"id": "H055",
+"tema": "Segundo Reinado",
+"texto": "A Inglaterra, que já proibira o tráfico em seu império, pressionava o Brasil a fazer o mesmo, chegando a apresar navios negreiros. Em 1850, a Lei Eusébio de Queirós extinguiu de fato o tráfico atlântico de escravizados. O capital antes empregado no tráfico migrou para bancos, ferrovias e empresas. Sem novas levas da África, o preço dos cativos subiu e a escravidão iniciou seu lento declínio.",
+"pergunta": "Para onde migrou o capital liberado pelo fim do tráfico?",
+"resposta": "bancos e ferrovias",
+"alt": [
+"ferrovias",
+"negócios urbanos",
+"bancos, ferrovias e empresas"
+]
+},
+{
+"id": "H056",
+"tema": "Segundo Reinado",
+"texto": "No mesmo ano de 1850, a Lei de Terras determinou que terras públicas só poderiam ser adquiridas por compra, e não mais por posse. A regra, na prática, dificultava o acesso à terra aos pobres e aos futuros ex-escravizados e imigrantes. Terra cara e trabalho barato eram as duas faces do mesmo desenho. A propriedade fundiária concentrada ficou garantida para o século seguinte.",
+"pergunta": "Que forma de aquisição de terras a lei de 1850 eliminou?",
+"resposta": "posse",
+"alt": [
+"a posse",
+"ocupação"
+]
+},
+{
+"id": "H057",
+"tema": "Segundo Reinado",
+"texto": "A guerra do Paraguai, de 1864 a 1870, foi o maior conflito da história sul-americana. O Brasil, aliado à Argentina e ao Uruguai na Tríplice Aliança, enfrentou o Paraguai de Solano López. A vitória custou dezenas de milhares de vidas e uma dívida pesada. Dela saiu fortalecido o exército, que passou a se ver como instituição nacional com opinião própria — inclusive sobre a escravidão, tendo lutado ao lado de escravizados alforriados para combater.",
+"pergunta": "Que instituição saiu fortalecida e politizada da guerra?",
+"resposta": "exército",
+"alt": [
+"o exército",
+"as forças armadas"
+]
+},
+{
+"id": "H058",
+"tema": "Segundo Reinado",
+"texto": "O fim da escravidão veio por etapas calculadas. A Lei do Ventre Livre, de 1871, declarou livres os filhos de escravizadas nascidos dali em diante. A Lei dos Sexagenários, de 1885, libertou os cativos com mais de sessenta anos, quando pouco valor tinham para os senhores. As leis graduais buscavam adiar a abolição total, não apressá-la. A pressão do movimento abolicionista e as fugas em massa é que forçaram o desfecho.",
+"pergunta": "Qual era o objetivo real das leis abolicionistas graduais?",
+"resposta": "adiar a abolição",
+"alt": [
+"ganhar tempo",
+"retardar a abolição",
+"adiar o fim"
+]
+},
+{
+"id": "H059",
+"tema": "Segundo Reinado",
+"texto": "Na década de 1880, o abolicionismo virou movimento de massas, com jornais, comícios e redes que ajudavam fugas, como as de Luís Gama e José do Patrocínio. Em São Paulo, escravizados abandonavam as fazendas em grupos, e o exército se recusava a caçá-los. A escravidão desmoronava na prática antes de acabar na lei. Em 13 de maio de 1888, a princesa Isabel assinou a Lei Áurea, abolindo a escravidão sem qualquer indenização — nem aos senhores, nem aos libertos.",
+"pergunta": "O que a Lei Áurea negou tanto a senhores quanto a libertos?",
+"resposta": "indenização",
+"alt": [
+"compensação",
+"reparação"
+]
+},
+{
+"id": "H060",
+"tema": "Fim do Império",
+"texto": "A abolição tirou do trono seu último grande apoio: os fazendeiros escravistas, que se sentiram traídos. Já os republicanos, organizados desde o manifesto de 1870, cresciam entre profissionais urbanos, cafeicultores paulistas e militares influenciados pelo positivismo. A monarquia ficou isolada, sem base social que a defendesse. A questão não era mais se cairia, mas quando.",
+"pergunta": "Que grupo abandonou a monarquia após a abolição?",
+"resposta": "fazendeiros",
+"alt": [
+"escravistas",
+"barões do café",
+"fazendeiros escravistas"
+]
+},
+{
+"id": "H061",
+"tema": "Fim do Império",
+"texto": "Em 15 de novembro de 1889, tropas comandadas pelo marechal Deodoro da Fonseca depuseram o gabinete imperial no Rio de Janeiro, e a república foi proclamada no mesmo dia. Não houve resistência nem participação popular relevante — o povo, segundo um cronista da época, assistiu \"bestializado\", sem entender a cena. A família imperial partiu para o exílio em dias. Começava a República, chefiada provisoriamente pelos militares que a proclamaram.",
+"pergunta": "Qual foi o papel do povo na proclamação, segundo os cronistas?",
+"resposta": "espectador",
+"alt": [
+"assistiu bestializado",
+"nenhum",
+"mero espectador"
+]
+},
+{
+"id": "H062",
+"tema": "Fim do Império",
+"texto": "Olhando o arco inteiro, a independência de 1822, a abolição de 1888 e a república de 1889 compartilham um traço: foram conduzidas pelo alto, com o mínimo de participação popular que as elites conseguiram garantir. As grandes rupturas preservaram, tanto quanto possível, a ordem social existente. As transformações reais — do trabalho, da terra, da cidadania — ficaram inconclusas ou adiadas. Essa é a chave que os historiadores usam para ligar os três episódios.",
+"pergunta": "Que traço comum liga independência, abolição e república?",
+"resposta": "conduzidas pelo alto",
+"alt": [
+"feitas pelo alto",
+"sem povo",
+"mínima participação popular"
+]
+},
+{
+"id": "H063",
+"tema": "Revisão integradora",
+"texto": "O açúcar e o ouro organizaram espaços diferentes da colônia. O açúcar fixou-se no litoral nordestino, com sociedade rural e isolada em engenhos. O ouro criou no interior uma rede de vilas com vida urbana, comércio ativo e mais mobilidade social. Quando o ouro declinou, o café repetiria no século XIX o papel de motor único da economia. A dependência de um produto de exportação por vez é uma constante da história econômica brasileira.",
+"pergunta": "Que padrão econômico se repete do açúcar ao café?",
+"resposta": "produto único",
+"alt": [
+"monocultura de exportação",
+"dependência de um produto",
+"um produto por vez"
+]
+},
+{
+"id": "H064",
+"tema": "Revisão integradora",
+"texto": "A escravidão atravessou todos os períodos estudados: sustentou o engenho, a mineração e o café, e sobreviveu à independência. Cada mudança econômica reorganizou o trabalho escravizado sem aboli-lo, e as leis que o limitaram vieram tarde e por pressão. Quando a abolição enfim chegou, não veio acompanhada de terra, instrução ou reparação aos libertos. A herança dessa longa duração marca a sociedade brasileira até hoje.",
+"pergunta": "O que faltou aos libertos junto com a abolição?",
+"resposta": "terra e instrução",
+"alt": [
+"reparação",
+"terra, instrução e reparação",
+"apoio ao liberto"
+]
+},
+{
+"id": "H065",
+"tema": "S16 · Brasil Holandês",
+"texto": "A rivalidade entre Espanha e Holanda foi o estopim do conflito holandês no Brasil. Durante a União Ibérica, quando Portugal ficou sob a coroa espanhola, a Espanha decretou embargo ao comércio holandês de açúcar. Os holandeses, que lucravam com o refino e a distribuição do produto, ficaram de fora do negócio de uma hora para outra. A resposta viria em forma de invasão armada à colônia portuguesa.",
+"pergunta": "Que medida espanhola excluiu os holandeses do negócio do açúcar?",
+"resposta": "embargo",
+"alt": [
+"embargo comercial",
+"embargo ao açúcar",
+"embargo ao comércio"
+]
+},
+{
+"id": "H066",
+"tema": "S16 · Brasil Holandês",
+"texto": "Na resistência inicial à invasão holandesa de Pernambuco, os luso-brasileiros organizaram-se no Arraial do Bom Jesus, base de guerrilha contra o invasor. Nesse contexto surgiu a figura controversa de Domingos Fernandes Calabar, que abandonou o lado português e passou a guiar os holandeses pelo território. Para uns foi traidor; para outros, um homem que apostou no projeto mais moderno. O debate sobre Calabar atravessa a historiografia até hoje.",
+"pergunta": "Qual figura da resistência é debatida entre traidor e visionário?",
+"resposta": "Calabar",
+"alt": [
+"Domingos Calabar",
+"Domingos Fernandes Calabar"
+]
+},
+{
+"id": "H067",
+"tema": "S16 · Brasil Holandês",
+"texto": "O conceito central da invasão holandesa é econômico: a Holanda não queria apenas a terra, queria o controle total do lucro do açúcar. Dominar Pernambuco significava controlar produção, refino e distribuição numa cadeia única. Em 1624 os holandeses fracassaram em Salvador, expulsos em um ano. Em 1630 acertaram o alvo: tomaram Pernambuco, a capitania mais rica da colônia.",
+"pergunta": "O que a Holanda buscava controlar por completo com a invasão?",
+"resposta": "lucro do açúcar",
+"alt": [
+"o lucro",
+"a cadeia do açúcar",
+"o negócio do açúcar"
+]
+},
+{
+"id": "H068",
+"tema": "S16 · Brasil Holandês",
+"texto": "Sob o governo de Maurício de Nassau, o Recife foi urbanizado e rebatizado de Cidade Maurícia, com pontes e canais à moda holandesa. Nassau instituiu liberdade religiosa, e sob ela funcionou a primeira sinagoga das Américas. Trouxe também os pintores Eckhout e Post e cientistas para registrar a fauna e a flora. Por essa combinação de guerra e mecenato, ficou conhecido como o príncipe humanista.",
+"pergunta": "Que marco religioso pioneiro das Américas existiu no Recife de Nassau?",
+"resposta": "primeira sinagoga",
+"alt": [
+"sinagoga",
+"a sinagoga"
+]
+},
+{
+"id": "H069",
+"tema": "S16 · Brasil Holandês",
+"texto": "A Insurreição Pernambucana, iniciada em 1645, foi a reação armada contra o domínio holandês após a saída de Nassau e o aperto da cobrança de dívidas pela Companhia das Índias Ocidentais. A luta uniu três lideranças que viraram símbolo: o português André Vidal de Negreiros, o negro Henrique Dias e o indígena Filipe Camarão. Essa composição deu ao movimento uma imagem de união das três raças. A guerra se arrastaria até 1654.",
+"pergunta": "Que cobrança da WIC empurrou os senhores à insurreição?",
+"resposta": "dívidas",
+"alt": [
+"cobrança de dívidas",
+"as dívidas"
+]
+},
+{
+"id": "H070",
+"tema": "S16 · Brasil Holandês",
+"texto": "As batalhas dos Guararapes, vencidas pelos insurretos em 1648 e 1649, decidiram militarmente a guerra contra os holandeses. Pelo simbolismo da união de portugueses, negros e indígenas sob o mesmo comando, Guararapes é considerado o berço do Exército Brasileiro. Em 1654, os holandeses capitularam na Campina do Taborda. O Brasil holandês chegava ao fim depois de 24 anos.",
+"pergunta": "Que instituição tem em Guararapes o seu berço simbólico?",
+"resposta": "Exército Brasileiro",
+"alt": [
+"o Exército",
+"Exército"
+]
+},
+{
+"id": "H071",
+"tema": "S16 · Brasil Holandês",
+"texto": "A consequência da expulsão dos holandeses foi trágica para a economia colonial. Ao partir, eles levaram a tecnologia de produção açucareira para as Antilhas e montaram lá seus próprios engenhos. Em pouco tempo, o açúcar antilhano virou concorrente direto do brasileiro e derrubou os preços. A vitória militar de 1654 abriu, assim, a crise da economia que sustentava a colônia.",
+"pergunta": "Para onde os holandeses levaram a tecnologia do açúcar?",
+"resposta": "Antilhas",
+"alt": [
+"para as Antilhas",
+"Caribe"
+]
+},
+{
+"id": "H072",
+"tema": "S17 · Bandeirantes",
+"texto": "As bandeiras paulistas tinham três tipos com finalidades distintas. As de apresamento caçavam indígenas para escravizar, mirando especialmente as missões jesuíticas, onde os nativos já viviam agrupados. As de prospecção buscavam ouro e pedras preciosas pelo sertão. E o sertanismo de contrato era serviço pago: destruir quilombos e reprimir revoltas indígenas por encomenda.",
+"pergunta": "Que tipo de bandeira era um serviço pago de repressão?",
+"resposta": "sertanismo de contrato",
+"alt": [
+"sertanismo",
+"contrato"
+]
+},
+{
+"id": "H073",
+"tema": "S17 · Bandeirantes",
+"texto": "Os bandeirantes partiam de São Paulo de Piratininga, vila pobre e isolada do circuito açucareiro, que precisava se aventurar para sobreviver. Por séculos foram celebrados como heróis desbravadores que expandiram o território. A historiografia atual, porém, discute seu papel como agentes do genocídio indígena, dado o apresamento em massa. A controvérsia entre as duas leituras segue aberta no debate público.",
+"pergunta": "Que acusação a controvérsia atual dirige aos bandeirantes?",
+"resposta": "genocídio indígena",
+"alt": [
+"genocídio",
+"agentes de genocídio"
+]
+},
+{
+"id": "H074",
+"tema": "S17 · Interiorização",
+"texto": "Expulso do litoral para dar lugar à cana, o gado subiu o curso do rio São Francisco, que por isso ficou conhecido como Rio dos Currais. A pecuária interiorizou o povoamento do Nordeste e também do Sul. Currais e caminhos de boiada fixaram vilas onde antes só havia sertão. O interior começava a ter vida econômica própria, para além do açúcar.",
+"pergunta": "Que apelido o rio São Francisco ganhou com a pecuária?",
+"resposta": "Rio dos Currais",
+"alt": [
+"dos Currais"
+]
+},
+{
+"id": "H075",
+"tema": "S17 · Interiorização",
+"texto": "Na Amazônia, a ocupação avançou pela coleta das chamadas drogas do sertão: cacau, canela, baunilha e cravo, produtos que valiam como especiarias na Europa. As missões religiosas tiveram papel duplo nessa economia, protegendo os indígenas dos apresadores e ao mesmo tempo organizando sua mão de obra na coleta. A floresta entrava no circuito comercial sem plantation nem engenho. Era um modelo de exploração próprio do Norte.",
+"pergunta": "Que produtos amazônicos eram chamados de drogas do sertão?",
+"resposta": "cacau e especiarias",
+"alt": [
+"cacau, canela, baunilha e cravo",
+"cacau",
+"especiarias da floresta"
+]
+},
+{
+"id": "H076",
+"tema": "S17 · Tratados",
+"texto": "Com o fim da União Ibérica em 1640, as fronteiras entre as Américas portuguesa e espanhola precisaram ser redefinidas. O Tratado de Utrecht, em 1713 e 1715, ajustou os limites ao norte e na região do Rio da Prata. O mais importante veio em 1750: o Tratado de Madrid, baseado no princípio do uti possidetis — quem possui a terra de fato é dono dela por direito. A posse consumada pelos bandeirantes virava, assim, fronteira legal.",
+"pergunta": "Que princípio jurídico fundamentou o Tratado de Madrid?",
+"resposta": "uti possidetis",
+"alt": [
+"posse de fato",
+"quem possui é dono"
+]
+},
+{
+"id": "H077",
+"tema": "S17 · Tratados",
+"texto": "O negociador português do Tratado de Madrid foi Alexandre de Gusmão, secretário do rei dom João V e nascido em Santos, na colônia. Sua estratégia de trocar a letra de Tordesilhas pela posse efetiva garantiu a Portugal quase o desenho atual do Brasil. Por essa obra, Gusmão é chamado de pai da diplomacia brasileira. Uma síntese da época resume o processo: as fronteiras foram feitas pelo pé do boi, pela bota do bandeirante e pela caneta do diplomata.",
+"pergunta": "Quem é chamado de pai da diplomacia brasileira?",
+"resposta": "Alexandre de Gusmão",
+"alt": [
+"Gusmão"
+]
+},
+{
+"id": "H078",
+"tema": "S18 · Corrida do ouro",
+"texto": "A descoberta de ouro de aluvião em Minas Gerais, no final do século XVII, nasceu da crise: com o açúcar em declínio pela concorrência antilhana, a vila pobre de São Paulo organizou bandeiras de prospecção para buscar riquezas no interior. A notícia do achado provocou um fluxo migratório sem precedentes, de Portugal e de todas as regiões da colônia. A região não tinha estrutura para receber tanta gente. O resultado imediato foram crises de fome nas próprias minas.",
+"pergunta": "Que crise imediata a corrida do ouro provocou nas minas?",
+"resposta": "fome",
+"alt": [
+"crises de fome",
+"falta de alimentos"
+]
+},
+{
+"id": "H079",
+"tema": "S18 · Sociedade mineradora",
+"texto": "O açúcar havia criado uma sociedade rural, patriarcal e bipolar, dividida entre senhores e escravizados. A mineração impulsionou outra coisa: urbanização, com vilas como Vila Rica, Mariana e Sabará, e o surgimento de camadas médias — comerciantes, advogados, artesãos, alfaiates, médicos e militares. A vida urbana exigia serviços que o engenho dispensava. A estrutura social ficou mais complexa do que a do Nordeste açucareiro.",
+"pergunta": "Que grupo social novo a vida urbana das minas fez surgir?",
+"resposta": "camadas médias",
+"alt": [
+"grupo intermediário",
+"classe média",
+"camada intermediária"
+]
+},
+{
+"id": "H080",
+"tema": "S18 · Sociedade mineradora",
+"texto": "Nas Minas havia uma possibilidade real, embora difícil, de ascensão social — algo raro no Nordeste açucareiro. Escravizados podiam, teoricamente, comprar a própria alforria juntando ouro oculto na faiscação, a cata miúda de ouro nos rios. Homens livres pobres podiam enriquecer no comércio que abastecia as vilas. A mobilidade social distinguia a sociedade do ouro da sociedade da cana.",
+"pergunta": "Com que prática o escravizado podia juntar ouro para a alforria?",
+"resposta": "faiscação",
+"alt": [
+"cata de ouro",
+"ouro oculto"
+]
+},
+{
+"id": "H081",
+"tema": "S18 · Trabalho nas lavras",
+"texto": "O trabalho nas lavras era devastador. Os escravizados passavam horas com as pernas imersas em água fria, o que provocava doenças respiratórias e articulares. A expectativa de vida útil de um trabalhador nas minas era baixíssima. A riqueza do século do ouro se extraía, literalmente, da saúde de quem minerava.",
+"pergunta": "Que condição física constante adoecia os escravizados das lavras?",
+"resposta": "água fria",
+"alt": [
+"pernas na água",
+"imersão em água fria"
+]
+},
+{
+"id": "H082",
+"tema": "S18 · Irmandades",
+"texto": "Diante da opressão, escravizados e libertos organizaram-se em irmandades religiosas negras, como a de Nossa Senhora do Rosário. Essas associações financiavam a compra de alforrias, garantiam enterros dignos e funcionavam como redes de proteção social. Eram também espaços de preservação cultural, onde festas e devoções mantinham tradições africanas sob roupagem católica. A solidariedade organizada respondia ao que o sistema negava.",
+"pergunta": "Que compra as irmandades negras ajudavam a financiar?",
+"resposta": "alforrias",
+"alt": [
+"alforria",
+"a liberdade",
+"cartas de alforria"
+]
+},
+{
+"id": "H083",
+"tema": "S18 · Barroco",
+"texto": "O Barroco chegou ao Brasil como estética da Contrarreforma, carregado de dramaticidade e curvas. Em Minas ganhou traços únicos pelo uso da pedra-sabão nas esculturas e do ouro em pó nos altares. As igrejas eram os centros da vida social, e quanto mais ouro decorasse o altar, maior o prestígio da irmandade que a construiu. Arte, fé e ostentação andavam juntas no século do ouro.",
+"pergunta": "Que material de escultura deu traço único ao barroco mineiro?",
+"resposta": "pedra-sabão",
+"alt": [
+"pedra sabão"
+]
+},
+{
+"id": "H084",
+"tema": "S18 · Barroco",
+"texto": "Os dois maiores nomes do barroco mineiro foram Antônio Francisco Lisboa, o Aleijadinho, na escultura e na arquitetura, e Manuel da Costa Ataíde, o Mestre Ataíde, na pintura dos tetos das igrejas. Ambos eram mestiços, filhos da nova sociedade que o ouro criou. Sua consagração mostra a cara da colônia urbana das Minas, onde o talento podia romper barreiras que o engenho mantinha fechadas. A arte do período tem, assim, também um significado social.",
+"pergunta": "Que origem comum de Aleijadinho e Ataíde revela a nova sociedade?",
+"resposta": "mestiços",
+"alt": [
+"eram mestiços",
+"origem mestiça"
+]
+},
+{
+"id": "H085",
+"tema": "S19 · Controle do ouro",
+"texto": "Para administrar a região do ouro, a Coroa criou em 1702 a Intendência das Minas, órgão máximo da mineração. A Intendência distribuía as terras de exploração, chamadas datas, cobrava os impostos e aplicava a justiça. Operava de forma independente das demais autoridades coloniais, respondendo direto a Lisboa. Era o braço do rei fincado dentro das minas.",
+"pergunta": "Como se chamavam as terras de exploração distribuídas pela Intendência?",
+"resposta": "datas",
+"alt": [
+"as datas"
+]
+},
+{
+"id": "H086",
+"tema": "S19 · Controle do ouro",
+"texto": "O contrabando era o inimigo número um do fisco: ouro em pó se escondia em santos de pau-oco, solas de botas e até nos cabelos. Para contê-lo, Portugal proibiu a circulação de ouro em pó ou em pepitas dentro da colônia. Todo o metal extraído tinha de passar pelas casas de fundição, onde era derretido, transformado em barras com o selo real e taxado na fonte. Sem o selo, o ouro era ilegal por definição.",
+"pergunta": "Em que objeto religioso oco se escondia ouro contrabandeado?",
+"resposta": "santo de pau-oco",
+"alt": [
+"santos de pau-oco",
+"pau-oco"
+]
+},
+{
+"id": "H087",
+"tema": "S19 · Impostos",
+"texto": "Três tributos marcaram o século do ouro. O quinto, o mais famoso, destinava vinte por cento de todo o ouro extraído ao rei. A capitação cobrava por cabeça: cada escravizado nas lavras ou nos serviços urbanos gerava imposto, achasse o minerador ouro ou não. A diferença é cruel — o quinto taxava o resultado, a capitação taxava a simples posse de trabalhadores.",
+"pergunta": "Sobre o que incidia a capitação?",
+"resposta": "cada escravizado",
+"alt": [
+"escravizados",
+"número de escravizados",
+"por trabalhador"
+]
+},
+{
+"id": "H088",
+"tema": "S19 · Impostos",
+"texto": "A derrama era o mecanismo fiscal mais temido das Minas. Portugal fixou uma meta anual de arrecadação de cem arrobas de ouro para a região. Se a meta não fosse atingida, decretava-se a derrama: soldados entravam nas casas confiscando joias, escravizados e propriedades até completar o valor devido. A ameaça permanente da derrama alimentou o ódio ao fisco que explodiria na Inconfidência.",
+"pergunta": "Qual era a meta anual de arrecadação que disparava a derrama?",
+"resposta": "cem arrobas",
+"alt": [
+"100 arrobas",
+"cem arrobas de ouro"
+]
+},
+{
+"id": "H089",
+"tema": "S19 · Revoltas",
+"texto": "A Guerra dos Emboabas, de 1707 a 1709, opôs os paulistas, descobridores das minas que exigiam o monopólio da exploração, aos emboabas — forasteiros portugueses e baianos que chegavam em massa. A vitória coube aos emboabas. O conflito forçou a Coroa a intervir e criar a Capitania de São Paulo e Minas do Ouro, separando a administração da região. A briga entre colonos terminou fortalecendo o controle régio.",
+"pergunta": "Quem saiu vitorioso da Guerra dos Emboabas?",
+"resposta": "emboabas",
+"alt": [
+"os emboabas",
+"os forasteiros",
+"forasteiros"
+]
+},
+{
+"id": "H090",
+"tema": "S19 · Revoltas",
+"texto": "Em 1720, colonos de Vila Rica revoltaram-se contra o anúncio das casas de fundição e os abusos dos funcionários reais. O líder do levante, Felipe dos Santos, foi preso, enforcado e esquartejado pela Coroa. O suplício público servia de exemplo pedagógico pelo medo. A mensagem de Lisboa era clara: contra o fisco do ouro, nenhuma revolta seria tolerada.",
+"pergunta": "Contra a criação de quais postos fiscais Vila Rica se revoltou?",
+"resposta": "casas de fundição",
+"alt": [
+"casa de fundição"
+]
+},
+{
+"id": "H091",
+"tema": "S19 · Revoltas",
+"texto": "É fundamental distinguir a natureza das revoltas mineradoras do início do século XVIII. Emboabas e Vila Rica foram revoltas nativistas: locais, dirigidas contra abusos fiscais e tarifas específicas, sem qualquer projeto de romper com Portugal. A ideia de separação só apareceria no final do século, com a Inconfidência Mineira. Confundir nativismo com separatismo é errar a cronologia da crise colonial.",
+"pergunta": "Que caráter tinham as revoltas de Emboabas e Vila Rica?",
+"resposta": "nativista",
+"alt": [
+"nativistas",
+"local",
+"caráter local"
+]
+},
+{
+"id": "H092",
+"tema": "S20 · Treze Colônias",
+"texto": "A colonização inglesa da América nasceu, em parte, de quem fugia da própria Inglaterra. O absolutismo dos reis Stuart e a imposição do anglicanismo empurraram puritanos, quakers e católicos a buscar liberdade de culto do outro lado do Atlântico. Ao mesmo tempo, os cercamentos transformavam terras camponesas em pastos de ovelhas, gerando uma massa de despossuídos. Para esses, a América era a chance de ter terra própria.",
+"pergunta": "Que transformação agrária inglesa gerou a massa de despossuídos?",
+"resposta": "cercamentos",
+"alt": [
+"enclosures",
+"os cercamentos"
+]
+},
+{
+"id": "H093",
+"tema": "S20 · Treze Colônias",
+"texto": "Muitos pobres ingleses atravessaram o oceano pela servidão por contrato, a indentured servitude. O esquema era simples: a viagem saía de graça em troca de quatro a sete anos de trabalho para quem pagou a passagem. Cumprido o contrato, o servo ganhava a liberdade e um lote de terra. Era uma escravidão temporária com porta de saída — diferença crucial em relação à escravidão africana.",
+"pergunta": "O que o servo por contrato recebia ao fim do prazo?",
+"resposta": "liberdade e terra",
+"alt": [
+"terra e liberdade",
+"um lote de terra",
+"lote e liberdade"
+]
+},
+{
+"id": "H094",
+"tema": "S20 · Treze Colônias",
+"texto": "As colônias do Norte inglês tinham clima temperado, parecido com o europeu, que inviabilizava produtos tropicais. Desenvolveram pequenas e médias propriedades, policultura e mão de obra livre e familiar. Pelo comércio triangular, fabricavam rum e negociavam com a África e as Antilhas, trocando melaço e escravizados. Dessa autonomia comercial nasceu uma burguesia rica e independente da Inglaterra.",
+"pergunta": "Que bebida as colônias do Norte fabricavam para o comércio triangular?",
+"resposta": "rum",
+"alt": [
+"o rum"
+]
+},
+{
+"id": "H095",
+"tema": "S20 · Treze Colônias",
+"texto": "A Inglaterra, ocupada com guerras na Europa, praticou com as colônias do Norte a chamada negligência salutar: deixou que se governassem sozinhas. Esse self-government criou assembleias locais e o hábito da autonomia política. Quando Londres tentasse, mais tarde, apertar o controle e cobrar impostos, encontraria colonos acostumados a decidir por si. A semente da independência americana estava plantada na própria negligência.",
+"pergunta": "Como se chamou a política inglesa de deixar o Norte se governar?",
+"resposta": "negligência salutar",
+"alt": [
+"salutar",
+"self-government"
+]
+},
+{
+"id": "H096",
+"tema": "S20 · Treze Colônias",
+"texto": "O Sul inglês seguiu caminho oposto ao Norte. Clima quente e solo fértil favoreceram o sistema de plantation: latifúndios de monocultura para exportação — tabaco, algodão e arroz — movidos por escravidão africana em massa. A economia do Sul dependia dos interesses de Londres, que comprava sua produção. A sociedade resultante era rural, aristocrática e profundamente desigual.",
+"pergunta": "Que três produtos sustentavam a plantation do Sul?",
+"resposta": "tabaco, algodão, arroz",
+"alt": [
+"tabaco algodão e arroz",
+"algodão, tabaco e arroz"
+]
+},
+{
+"id": "H097",
+"tema": "S20 · Nova França",
+"texto": "A colonização francesa da América do Norte, do Canadá à Louisiana, começou por interesses modestos: a pesca do bacalhau e o lucrativo comércio de peles de castor. Diferente dos ingleses, que expulsavam os indígenas, os franceses muitas vezes faziam alianças comerciais e militares com povos nativos, como os hurons, para garantir as rotas de peles. Já nas Antilhas a França aplicou a plantation açucareira escravista. São Domingos, o atual Haiti, tornou-se uma das colônias mais ricas do mundo.",
+"pergunta": "Que comércio sustentava as alianças francesas com os hurons?",
+"resposta": "peles de castor",
+"alt": [
+"peles",
+"comércio de peles"
+]
+},
+{
+"id": "H098",
+"tema": "S20 · Nova França",
+"texto": "O destino dos povos nativos variou conforme o colonizador. Na América anglo-saxônica, o indígena era visto como obstáculo ao avanço da agricultura, e a política foi de exclusão e expulsão para o oeste. Na América francesa houve maior integração pelo comércio e pelas missões, embora doenças e exploração também dizimassem populações. A disputa por terras entre colonos ingleses e franceses plantou a semente da futura Guerra dos Sete Anos.",
+"pergunta": "Que guerra futura nasceu da disputa anglo-francesa por terras?",
+"resposta": "Sete Anos",
+"alt": [
+"Guerra dos Sete Anos"
+]
+},
+{
+"id": "H099",
+"tema": "S21 · Revoluções Inglesas",
+"texto": "A Inglaterra pré-revolucionária acumulava tensões. Os cercamentos expulsavam camponeses e enriqueciam a gentry, a nobreza aburguesada que investia como burguesia. A religião dividia: Igreja Anglicana oficial, minoria católica apoiada pelos reis e puritanos calvinistas em ascensão, fortemente ligados ao comércio. Guerras com a Escócia forçavam o rei a convocar o Parlamento para pedir dinheiro. Cada convocação virava palco de crítica ao absolutismo e aos impostos sem autorização legal.",
+"pergunta": "Como se chamava a nobreza aburguesada enriquecida pelos cercamentos?",
+"resposta": "gentry",
+"alt": [
+"a gentry"
+]
+},
+{
+"id": "H100",
+"tema": "S21 · Revoluções Inglesas",
+"texto": "O contraste entre dinastias explica a crise inglesa. Elizabeth I, da era Tudor, centralizou o poder, mas governou em harmonia com o Parlamento e incentivou o comércio. Morta sem herdeiros, o trono passou aos Stuart: Jaime I e depois Carlos I tentaram impor o absolutismo de direito divino. Carlos I chegou a governar onze anos sem convocar o Parlamento, perseguindo puritanos. A tensão desembocaria em guerra civil.",
+"pergunta": "Por quantos anos Carlos I governou sem Parlamento?",
+"resposta": "onze",
+"alt": [
+"11",
+"onze anos"
+]
+},
+{
+"id": "H101",
+"tema": "S21 · Revoluções Inglesas",
+"texto": "A Guerra Civil inglesa, de 1642 a 1649, opôs os cavaleiros, partidários do rei, aos cabeças redondas, o exército do Parlamento liderado por Oliver Cromwell. O Parlamento venceu, e Carlos I foi preso e executado por alta traição em 1649 — um rei decapitado por decisão de representantes. A monarquia foi temporariamente extinta. Nascia o Commonwealth, a república puritana de Cromwell.",
+"pergunta": "Como eram chamados os soldados do Parlamento na Guerra Civil?",
+"resposta": "cabeças redondas",
+"alt": [
+"roundheads"
+]
+},
+{
+"id": "H102",
+"tema": "S21 · Revoluções Inglesas",
+"texto": "O Commonwealth de Cromwell foi, na prática, uma ditadura que esmagou a oposição, inclusive movimentos radicais como os niveladores e os cavadores, que pediam igualdade política e de terras. Em 1651, Cromwell decretou os Atos de Navegação: mercadorias inglesas só circulariam em navios ingleses. A medida destruiu a intermediação holandesa e impulsionou a burguesia mercantil nacional. A república puritana serviu, sobretudo, ao comércio inglês.",
+"pergunta": "Que potência os Atos de Navegação golpearam na intermediação?",
+"resposta": "Holanda",
+"alt": [
+"holandeses",
+"a Holanda"
+]
+},
+{
+"id": "H103",
+"tema": "S21 · Revoluções Inglesas",
+"texto": "Morto Cromwell, o Parlamento restaurou a monarquia em 1660 com Carlos II e depois Jaime II, temendo a radicalização popular. Jaime II, porém, tentou restabelecer o catolicismo e o absolutismo, perdendo o apoio das elites. Em 1688, o Parlamento conspirou com o príncipe holandês Guilherme de Orange, que invadiu a Inglaterra e assumiu o trono sem derramamento de sangue. Por isso o episódio ficou conhecido como Revolução Gloriosa.",
+"pergunta": "Que característica do desfecho de 1688 justificou o nome Gloriosa?",
+"resposta": "sem sangue",
+"alt": [
+"sem derramamento de sangue",
+"pacífica",
+"sem guerra"
+]
+},
+{
+"id": "H104",
+"tema": "S21 · Revoluções Inglesas",
+"texto": "Para assumir o trono, Guilherme de Orange foi obrigado a assinar a Declaração de Direitos de 1689, o Bill of Rights. O documento limitava o poder real, proibia impostos sem aprovação do Parlamento e garantia a liberdade de expressão parlamentar. Nascia a monarquia parlamentar constitucional, resumida na fórmula: o rei reina, mas o Parlamento governa. O absolutismo inglês estava enterrado — e a burguesia mercantil, no poder.",
+"pergunta": "Que documento Guilherme assinou como condição para reinar?",
+"resposta": "Bill of Rights",
+"alt": [
+"Declaração de Direitos",
+"Declaração de Direitos de 1689"
+]
+},
+{
+"id": "H105",
+"tema": "S22 · Revolução Industrial",
+"texto": "O pioneirismo industrial inglês foi uma tempestade perfeita de quatro fatores. Capital acumulado pelo comércio colonial, pela pirataria oficial e pelos Atos de Navegação, com a estabilidade política da Revolução Gloriosa. Mão de obra abundante e barata, despejada nas cidades pelo êxodo rural dos cercamentos. Subsolo rico em carvão mineral e ferro. E mercado consumidor: população urbana crescente e colônias espalhadas pelo mundo.",
+"pergunta": "Que dois recursos do subsolo inglês alimentaram a indústria?",
+"resposta": "carvão e ferro",
+"alt": [
+"ferro e carvão",
+"carvão mineral e ferro"
+]
+},
+{
+"id": "H106",
+"tema": "S22 · Revolução Industrial",
+"texto": "A indústria têxtil foi o motor da revolução: dos teares manuais às máquinas hidráulicas e, por fim, ao vapor, a produção de tecidos de algodão se multiplicou. A máquina a vapor aperfeiçoada por James Watt teve um efeito locacional decisivo: desvinculou as fábricas da beira dos rios, permitindo instalá-las nos centros urbanos. As ferrovias e os barcos a vapor encurtaram o transporte de matérias-primas e produtos. Produção e circulação aceleraram juntas.",
+"pergunta": "De que localização a máquina de Watt libertou as fábricas?",
+"resposta": "beira dos rios",
+"alt": [
+"dos rios",
+"margem dos rios"
+]
+},
+{
+"id": "H107",
+"tema": "S22 · Revolução Industrial",
+"texto": "Cidades industriais como Manchester e Liverpool cresceram sem nenhum planejamento, em torno das fábricas. Os operários amontoavam-se em cortiços escuros e úmidos, sem saneamento, água encanada ou coleta de lixo. A fuligem do carvão poluía o ar; o esgoto das fábricas, os rios. O resultado foram surtos devastadores de cólera e tifo.",
+"pergunta": "Que duas doenças epidêmicas devastavam as cidades industriais?",
+"resposta": "cólera e tifo",
+"alt": [
+"tifo e cólera"
+]
+},
+{
+"id": "H108",
+"tema": "S22 · Revolução Industrial",
+"texto": "A rotina fabril era de exploração extrema: jornadas de catorze a dezesseis horas, vigilância de feitores e multas por atraso. Mulheres e crianças eram preferidas pelos salários ainda mais baixos e pela facilidade de operar máquinas pequenas; mutilações eram comuns. Contra esse quadro surgiu o ludismo: trabalhadores invadiam fábricas à noite para destruir as máquinas, vistas como culpadas pelo desemprego e pela miséria. A primeira revolta operária mirou o objeto, não o sistema.",
+"pergunta": "O que os luditas destruíam nas invasões noturnas?",
+"resposta": "máquinas",
+"alt": [
+"as máquinas"
+]
+},
+{
+"id": "H109",
+"tema": "S22 · Revolução Industrial",
+"texto": "O cartismo representou o amadurecimento político do movimento operário inglês. Em vez de quebrar máquinas, os cartistas redigiram a Carta do Povo, dirigida ao Parlamento. As exigências centrais eram o sufrágio universal masculino e o voto secreto, para que os trabalhadores pudessem eleger quem aprovasse leis trabalhistas. A luta saía da fábrica e entrava na política institucional.",
+"pergunta": "Que documento deu nome ao movimento cartista?",
+"resposta": "Carta do Povo",
+"alt": [
+"a Carta do Povo"
+]
+},
+{
+"id": "H110",
+"tema": "S23 · Fases da indústria",
+"texto": "A Primeira Revolução Industrial, no final do século XVIII, foi britânica: mecanização têxtil, ferrovias, energia do carvão mineral e ferro como insumo estrutural. A Segunda, no final do século XIX, expandiu-se para Estados Unidos, Alemanha e Japão. O carvão cedeu lugar ao petróleo e à eletricidade, o ferro ao aço. As linhas de montagem do fordismo e do taylorismo barateariam a produção em massa.",
+"pergunta": "Que fontes de energia marcaram a Segunda Revolução Industrial?",
+"resposta": "petróleo e eletricidade",
+"alt": [
+"eletricidade e petróleo"
+]
+},
+{
+"id": "H111",
+"tema": "S23 · Fases da indústria",
+"texto": "A Terceira Revolução Industrial, em meados do século XX, é chamada de Revolução Técnico-Científica-Informacional: informática, computadores pessoais, robótica nas linhas de produção e o nascimento da internet, acelerando a globalização. A Quarta, já no século XXI, é a Indústria 4.0: fusão de tecnologias físicas, digitais e biológicas, com sistemas ciberfísicos, Big Data, internet das coisas e inteligência artificial onipresente. A automação deixou de atingir só o trabalho braçal e alcançou funções intelectuais. O dilema do emprego estrutural define o debate atual.",
+"pergunta": "Que nome resume a Quarta Revolução Industrial?",
+"resposta": "Indústria 4.0",
+"alt": [
+"quarta revolução",
+"4.0"
+]
+},
+{
+"id": "H112",
+"tema": "S26 · Iluminismo",
+"texto": "O Iluminismo nasceu da crise do Antigo Regime: a burguesia insatisfeita com a centralização absolutista, os privilégios da nobreza e a censura clerical. A inspiração veio da ciência. Se Isaac Newton descobrira leis universais na física, como a gravidade, os filósofos buscariam leis gerais para o comportamento humano e a sociedade. De René Descartes veio a dúvida metódica: submeter crenças, tradições e sentidos a critérios racionais estritos.",
+"pergunta": "Que descoberta de Newton inspirou a busca de leis para a sociedade?",
+"resposta": "leis universais",
+"alt": [
+"gravidade",
+"leis da física",
+"lei da gravidade"
+]
+},
+{
+"id": "H113",
+"tema": "S26 · Iluminismo",
+"texto": "Immanuel Kant definiu o Iluminismo como a saída do ser humano de sua menoridade intelectual, da qual ele próprio é culpado. Menoridade é a incapacidade de pensar por si mesmo, de decidir sem a tutela de autoridades como a Igreja ou o rei. O lema das Luzes resume o programa: Sapere aude — ouse saber. Ter coragem de usar o próprio entendimento era, para Kant, o ato inaugural da autonomia.",
+"pergunta": "Qual é o lema latino do Iluminismo segundo Kant?",
+"resposta": "Sapere aude",
+"alt": [
+"ouse saber"
+]
+},
+{
+"id": "H114",
+"tema": "S26 · Iluminismo",
+"texto": "Três pensadores estruturaram a crítica política iluminista. Voltaire defendeu intransigentemente a liberdade de expressão e atacou a intolerância da Igreja e o cerceamento monárquico. Montesquieu formulou a divisão tripartite dos poderes — Executivo, Legislativo e Judiciário — para impedir a tirania. Rousseau, em O Contrato Social, propôs que o povo é o verdadeiro soberano e apontou a propriedade privada como origem das desigualdades.",
+"pergunta": "Que teoria de Montesquieu visava impedir a tirania?",
+"resposta": "tripartição dos poderes",
+"alt": [
+"divisão dos poderes",
+"três poderes",
+"separação de poderes"
+]
+},
+{
+"id": "H115",
+"tema": "S26 · Iluminismo",
+"texto": "Rousseau destoava dos demais iluministas em pontos decisivos. Criticava a representação política pura, defendendo que a soberania pertence ao povo e não se delega. Teorizou o bom selvagem: o homem nasce bom e a sociedade o corrompe. E localizou na propriedade privada a origem das desigualdades sociais — tese que faria dele referência de correntes radicais nas revoluções seguintes.",
+"pergunta": "Onde Rousseau localizou a origem das desigualdades?",
+"resposta": "propriedade privada",
+"alt": [
+"na propriedade",
+"propriedade"
+]
+},
+{
+"id": "H116",
+"tema": "S26 · Iluminismo",
+"texto": "A grande obra coletiva das Luzes foi a Enciclopédia, organizada por Denis Diderot e Jean d'Alembert, reunindo os principais intelectuais da época para mapear o conhecimento humano sob a ótica da razão. As ideias circulavam em cafés como o Procope, em salões aristocráticos e academias de leitura, driblando a censura real. Havia até leituras públicas de jornais para a população analfabeta — entre metade e três quartos dos franceses. A opinião pública nascia como força política.",
+"pergunta": "Quem organizou a Enciclopédia?",
+"resposta": "Diderot e d'Alembert",
+"alt": [
+"Diderot",
+"d'Alembert e Diderot"
+]
+},
+{
+"id": "H117",
+"tema": "S27 · Liberalismo econômico",
+"texto": "A crítica econômica ao mercantilismo começou na França com a fisiocracia, corrente para a qual a verdadeira riqueza de uma nação vinha da terra e da agricultura. Seu princípio ficou célebre: laissez-faire, laissez-passer — deixai fazer, deixai passar, isto é, mínimo de intervenção estatal. A fisiocracia preparou o terreno para a escola clássica inglesa. A riqueza logo mudaria de endereço: da terra para o trabalho.",
+"pergunta": "De onde vinha a riqueza segundo a fisiocracia?",
+"resposta": "da terra",
+"alt": [
+"terra",
+"agricultura",
+"da agricultura"
+]
+},
+{
+"id": "H118",
+"tema": "S27 · Liberalismo econômico",
+"texto": "Adam Smith, considerado o pai da economia moderna, publicou A Riqueza das Nações argumentando que a riqueza provém do trabalho humano impulsionado pela livre concorrência. Sua tese mais famosa é a mão invisível: o mercado se autorregula pelas leis de oferta e procura, dispensando a intervenção e o protecionismo do Estado. Contra o mercantilismo de monopólios e tarifas, Smith propunha liberdade econômica. O liberalismo ganhava sua obra fundadora.",
+"pergunta": "Que metáfora de Smith descreve a autorregulação do mercado?",
+"resposta": "mão invisível",
+"alt": [
+"a mão invisível"
+]
+},
+{
+"id": "H119",
+"tema": "S27 · Despotismo esclarecido",
+"texto": "O despotismo esclarecido foi a estratégia de monarcas absolutos que adotaram reformas inspiradas no Iluminismo sem abrir mão do poder centralizado — modernizar para preservar o trono. Frederico II, da Prússia, amigo de filósofos, decretou tolerância religiosa e investiu pesado na educação básica. Na Rússia, Pedro, o Grande, e Catarina II ocidentalizaram o império e fundaram a Universidade de Moscou, mantendo o controle rígido sobre os servos. Na Espanha, Carlos III racionalizou a administração e suprimiu a Inquisição.",
+"pergunta": "Que déspota esclarecido suprimiu a Inquisição?",
+"resposta": "Carlos III",
+"alt": [
+"Carlos terceiro",
+"o rei da Espanha"
+]
+},
+{
+"id": "H120",
+"tema": "S27 · Pombal",
+"texto": "Em Portugal, o iluminismo de cúpula teve nome próprio: o Marquês de Pombal, primeiro-ministro do rei dom José I entre 1750 e 1777. Pombal queria modernizar a economia e tirar Portugal da dependência econômica inglesa. Criou companhias de comércio monopolistas e subsidiou manufaturas para industrializar o reino. Era o Iluminismo aplicado de cima para baixo, sem tocar no absolutismo.",
+"pergunta": "De qual dependência econômica Pombal queria livrar Portugal?",
+"resposta": "inglesa",
+"alt": [
+"da Inglaterra",
+"dependência da Inglaterra"
+]
+},
+{
+"id": "H121",
+"tema": "S27 · Pombal",
+"texto": "A medida mais drástica de Pombal foi a guerra aos jesuítas: expulsou a Companhia de Jesus de Portugal e de todas as colônias, inclusive o Brasil, confiscando seus bens. A reforma do ensino que se seguiu trocou o controle humanístico da Igreja por disciplinas técnicas e científicas. No Brasil, a expulsão desmontou os aldeamentos e o sistema educacional que os jesuítas mantinham havia dois séculos. O Estado assumia o que fora da Igreja.",
+"pergunta": "Que ordem religiosa Pombal expulsou de todo o império?",
+"resposta": "jesuítas",
+"alt": [
+"Companhia de Jesus",
+"os jesuítas"
+]
+},
+{
+"id": "H122",
+"tema": "S27 · Crítica",
+"texto": "O balanço crítico do Iluminismo pergunta: luzes para quem? Em teoria, defendiam-se direitos universais inalienáveis — vida, liberdade, propriedade, conhecimento. Na prática, a maioria dos filósofos e dos déspotas esclarecidos era elitista e hostil à participação política das camadas populares. O modelo preservava os privilégios econômicos da burguesia e coexistia sem constrangimento com a escravidão nas colônias e a servidão no leste europeu. As contradições das Luzes iluminam tanto quanto suas promessas.",
+"pergunta": "Com que instituição colonial o Iluminismo coexistiu sem ruptura?",
+"resposta": "escravidão",
+"alt": [
+"a escravidão",
+"escravidão colonial"
+]
+},
+{
+"id": "H123",
+"tema": "Livro · Cap.16",
+"texto": "O êxito da economia açucareira portuguesa não foi obra exclusivamente lusa. Parte do financiamento dos engenhos veio de capitais flamengos, dos Países Baixos, que também participavam do refino e da distribuição do açúcar na Europa. Essa sociedade funcionou bem durante décadas. Quando a política a rompeu, os antigos sócios virariam invasores.",
+"pergunta": "De onde vinha parte do capital que financiou os engenhos?",
+"resposta": "Flandres",
+"alt": [
+"capitais flamengos",
+"dos flamengos",
+"Países Baixos"
+]
+},
+{
+"id": "H124",
+"tema": "Livro · Cap.16",
+"texto": "O segundo governador-geral, Duarte da Costa, teve um governo marcado por conflitos. O choque mais grave foi com o primeiro bispo do Brasil, dom Pero Fernandes Sardinha, que criticava o comportamento dos colonos e do filho do governador. Convocado de volta a Lisboa, o bispo naufragou no litoral e foi capturado e devorado pelos índios caetés em ritual antropofágico. O episódio virou pretexto para guerras de extermínio contra esse povo.",
+"pergunta": "Qual foi o destino do bispo Sardinha após o naufrágio?",
+"resposta": "devorado",
+"alt": [
+"comido pelos caetés",
+"morto pelos caetés",
+"antropofagia"
+]
+},
+{
+"id": "H125",
+"tema": "Livro · Cap.16",
+"texto": "Em novembro de 1555, o francês Nicolas Durand de Villegaignon ocupou uma ilha na baía da Guanabara e fundou a França Antártica. O projeto tinha o apoio do almirante Coligny, líder calvinista, e oferecia liberdade de culto aos protestantes franceses perseguidos. A colônia ameaçava o domínio português numa região ainda sem ocupação efetiva. Foi o terceiro governador-geral, Mem de Sá, quem tomou o forte Coligny em 1560.",
+"pergunta": "Que liberdade a França Antártica oferecia aos calvinistas?",
+"resposta": "de culto",
+"alt": [
+"liberdade religiosa",
+"culto",
+"religiosa"
+]
+},
+{
+"id": "H126",
+"tema": "Livro · Cap.16",
+"texto": "A expulsão definitiva dos franceses da Guanabara foi um processo em etapas. Estácio de Sá, sobrinho de Mem de Sá, fundou a cidade de São Sebastião do Rio de Janeiro no primeiro de março de 1565, como base militar contra os invasores. A vitória final veio apenas em 1567, quando as tropas foram reforçadas pelos índios temiminós liderados por Araribóia. A participação indígena foi decisiva para o desfecho.",
+"pergunta": "Que líder indígena reforçou a expulsão dos franceses do Rio?",
+"resposta": "Araribóia",
+"alt": [
+"Arariboia",
+"os temiminós"
+]
+},
+{
+"id": "H127",
+"tema": "Livro · Cap.16",
+"texto": "Em 1578, o jovem rei dom Sebastião desapareceu na batalha de Alcácer-Quibir, no Marrocos, aos vinte e quatro anos, levando consigo boa parte das tropas portuguesas. Ele sonhava fundar um reino cristão no norte da África e não deixou herdeiros. A coroa passou ao tio-avô, o cardeal dom Henrique, que chegou a pedir ao papa dispensa dos votos religiosos para casar e gerar um sucessor. Morreu em janeiro de 1580, sem tempo para isso.",
+"pergunta": "Onde desapareceu dom Sebastião em 1578?",
+"resposta": "Alcácer-Quibir",
+"alt": [
+"Marrocos",
+"batalha de Alcácer-Quibir"
+]
+},
+{
+"id": "H128",
+"tema": "Livro · Cap.16",
+"texto": "Com a morte do cardeal dom Henrique em 1580, o trono português ficou vago. Felipe II da Espanha reivindicou a coroa por ser neto materno do rei dom Manuel, e foi coroado em Portugal como Felipe I. O acordo previa que a administração portuguesa permaneceria nas mãos de portugueses. Os sucessores de Felipe descumpriram o compromisso nomeando espanhóis, e setores que haviam apoiado a união passaram a tramar a restauração.",
+"pergunta": "Que parentesco legitimou Felipe II ao trono português?",
+"resposta": "neto de Manuel",
+"alt": [
+"neto materno",
+"neto de dom Manuel"
+]
+},
+{
+"id": "H129",
+"tema": "Livro · Cap.16",
+"texto": "Os Países Baixos fizeram parte do reino espanhol até 1579, abrigando uma população calvinista próspera e mercantil, que nunca fora governada nos moldes do absolutismo católico. Felipe II restringiu suas práticas comerciais e perseguiu os não católicos, provocando a declaração de independência. O conflito com a Espanha se arrastou até 1648, com uma trégua de doze anos entre 1609 e 1621. A Companhia das Índias Ocidentais nasceu em 1621, exatamente quando a trégua expirou.",
+"pergunta": "O que expirou em 1621, ano da criação da WIC?",
+"resposta": "a trégua",
+"alt": [
+"trégua de doze anos",
+"o armistício"
+]
+},
+{
+"id": "H130",
+"tema": "Livro · Cap.16",
+"texto": "Em 1633, o holandês Jean de Walbeeck apresentou ao parlamento dos Países Baixos um relatório estratégico sobre o Brasil. Ele destacava que a parte norte da colônia era a mais oriental da América do Sul, permitindo viagem de ida ou de volta em apenas dois meses. E resumia o objetivo sem rodeios: tomando a região, os holandeses destruiriam todo o comércio de açúcar português. A geografia e o lucro justificavam a guerra.",
+"pergunta": "Em quanto tempo se fazia a viagem Holanda-Brasil pelo norte?",
+"resposta": "dois meses",
+"alt": [
+"2 meses"
+]
+},
+{
+"id": "H131",
+"tema": "Livro · Cap.16",
+"texto": "O gado chegou ao Brasil em 1534, trazido por Martim Afonso de Sousa a São Vicente, e Tomé de Sousa o levou depois à Bahia. Nos engenhos, os bois faziam de tudo: eram alimento, forneciam couro e moviam as moendas e os carros de transporte. A criação foi empurrada para o interior pelo esgotamento do solo do litoral e pela prioridade da cana. A pecuária nasceu, assim, como atividade auxiliar do açúcar.",
+"pergunta": "Que função motriz os bois exerciam dentro do engenho?",
+"resposta": "mover as moendas",
+"alt": [
+"tração das moendas",
+"girar a moenda",
+"tração"
+]
+},
+{
+"id": "H132",
+"tema": "Livro · Cap.16",
+"texto": "A pecuária colonial exigia pouco capital e pouca gente: uma fazenda de três léguas ocupava dez a doze homens. Os vaqueiros eram homens livres, mamelucos e mulatos, e o pagamento tinha forma peculiar. O trabalhador recebia uma rês a cada quatro que criasse, ao fim de cinco anos de serviço. Era um caminho lento, mas real, para o vaqueiro formar rebanho próprio.",
+"pergunta": "Qual era a proporção do pagamento do vaqueiro?",
+"resposta": "uma em quatro",
+"alt": [
+"uma rês a cada quatro",
+"1 a cada 4",
+"uma para quatro"
+]
+},
+{
+"id": "H133",
+"tema": "Livro · Cap.16",
+"texto": "A grande bandeira de Antônio Raposo Tavares, entre 1628 e 1630, mostra a escala do apresamento paulista. A expedição reunia sessenta e nove brancos, novecentos mamelucos e cerca de dois mil índios aliados. O alvo foram as reduções jesuíticas de Guairá, no atual Paraná, onde capturou entre quarenta e sessenta mil guaranis. Era mais fácil apresar indígenas já reunidos e sedentarizados pelas missões do que caçá-los dispersos no sertão.",
+"pergunta": "Quantos guaranis a bandeira de Raposo Tavares capturou em Guairá?",
+"resposta": "sessenta mil",
+"alt": [
+"40 a 60 mil",
+"quarenta a sessenta mil",
+"dezenas de milhares"
+]
+},
+{
+"id": "H134",
+"tema": "Livro · Cap.16",
+"texto": "Depois da destruição de Guairá, os jesuítas fugiram para o sul em 1631 levando cerca de doze mil guaranis. A rota descia o rio Paraná, e no salto de Sete Quedas a expedição perdeu trezentas das setecentas canoas. Os sobreviventes caminharam até a região do Tape, no atual Rio Grande do Sul. A fuga em massa é um dos episódios mais dramáticos da história das missões.",
+"pergunta": "Quantas canoas se perderam no salto de Sete Quedas?",
+"resposta": "trezentas",
+"alt": [
+"300",
+"trezentas de setecentas"
+]
+},
+{
+"id": "H135",
+"tema": "Livro · Cap.16",
+"texto": "As reduções da província de Guairá foram fundadas a partir de 1610 por jesuítas espanhóis, às margens do rio Paranapanema. Eram comunidades autônomas: colonos não podiam entrar sem autorização real, o trabalho era coletivo e o excedente era comercializado pelos padres. Em 1628, treze reduções agregavam mais de cem mil índios. Essa concentração explica por que viraram o alvo preferido das bandeiras de apresamento.",
+"pergunta": "Quantos índios as treze reduções de Guairá reuniam em 1628?",
+"resposta": "cem mil",
+"alt": [
+"mais de 100 mil",
+"100 mil"
+]
+},
+{
+"id": "H136",
+"tema": "Livro · Cap.16",
+"texto": "O historiador Luiz Felipe de Alencastro descreve a economia paulista do século XVII como fornecedora de alimentos, sustentada por escravidão indígena em larga escala. Os produtos desciam a serra do Mar carregados nas costas de índios, pois não havia estradas para carros. Os inventários mostram médias de trinta e seis a trinta e oito escravos indígenas por proprietário nas décadas de 1640 e 1650. A prosperidade paulista tinha base servil, ainda que sem africanos.",
+"pergunta": "Como os produtos paulistas desciam a serra do Mar?",
+"resposta": "costas de índios",
+"alt": [
+"nas costas de índios",
+"carregados por índios",
+"no lombo de índios"
+]
+},
+{
+"id": "H137",
+"tema": "Livro · Cap.16",
+"texto": "A maior viagem bandeirante foi a de Antônio Raposo Tavares entre 1648 e 1652. Partindo de São Paulo, a expedição navegou pelos rios do interior até alcançar a foz do Amazonas, chegando a Belém. O percurso total superou doze mil quilômetros. A façanha geográfica ajudou a costurar, na prática, a posse portuguesa sobre o oeste que Tordesilhas negava.",
+"pergunta": "Qual foi a extensão aproximada da grande viagem de Raposo Tavares?",
+"resposta": "doze mil quilômetros",
+"alt": [
+"12 mil km",
+"mais de 12 mil quilômetros"
+]
+},
+{
+"id": "H138",
+"tema": "Livro · Cap.16",
+"texto": "O apresamento paulista teve uma causa atlântica. No início do século XVII, os holandeses tomaram os entrepostos portugueses de Angola e São Tomé, estrangulando o tráfico de africanos para o Brasil. Sem escravizados chegando, o preço do braço indígena subiu e as bandeiras viraram negócio. Quando Portugal retomou os entrepostos africanos, em 1648, o apresamento entrou em declínio.",
+"pergunta": "A tomada de quais entrepostos estimulou o apresamento indígena?",
+"resposta": "Angola",
+"alt": [
+"Angola e São Tomé",
+"entrepostos africanos",
+"São Tomé"
+]
+},
+{
+"id": "H139",
+"tema": "Livro · Cap.16",
+"texto": "Palmares não sobrevivia isolado, como se pensou por muito tempo. O quilombo produzia mandioca e milho como alimentos principais, cana para melado, cerâmica em olarias e até metalurgia própria, forjando lanças, foices e enxadas com saberes trazidos de sociedades africanas. Os excedentes eram trocados com povoados vizinhos e com os próprios cativos das senzalas. Eram as senzalas, aliás, que avisavam o quilombo sobre expedições repressoras a caminho.",
+"pergunta": "Que atividade de forja Palmares dominava?",
+"resposta": "metalurgia",
+"alt": [
+"forjar ferramentas",
+"metalurgia própria",
+"forja"
+]
+},
+{
+"id": "H140",
+"tema": "Livro · Cap.16",
+"texto": "A caçada final a Palmares foi obra do sertanismo de contrato. O paulista Domingos Jorge Velho foi contratado para destruir o quilombo, o que se consumou em 1694 com a queda da Serra da Barriga. Zumbi, o último grande líder, foi morto em vinte de novembro de 1695. Séculos depois, a data de sua morte se tornaria o Dia da Consciência Negra.",
+"pergunta": "Que sertanista foi contratado para destruir Palmares?",
+"resposta": "Domingos Jorge Velho",
+"alt": [
+"Jorge Velho"
+]
+},
+{
+"id": "H141",
+"tema": "Livro · Cap.16",
+"texto": "A transição do apresamento para a mineração tem dois nomes e um equívoco famoso. Fernão Dias Paes partiu de São Paulo em 1674, convidado pelo governador-geral, e marchou sete anos pelo sertão atrás de esmeraldas. Em 1681 encontrou pedras verdes que julgou serem esmeraldas, mas eram turmalinas, e morreu logo em seguida. Foi seu genro Borba Gato quem encontrou ouro de verdade, em 1682, no rio das Velhas, região de Sabará.",
+"pergunta": "Que pedras Fernão Dias confundiu com esmeraldas?",
+"resposta": "turmalinas",
+"alt": [
+"turmalina"
+]
+},
+{
+"id": "H142",
+"tema": "Livro · Cap.16",
+"texto": "O transporte nas Minas dependia do gado muar, capaz de vencer serras que carros de boi não atravessavam. As mulas eram criadas sobretudo em Viamão, no Rio Grande do Sul, e tocadas pelos tropeiros em longas jornadas para o norte. As tropas descansavam dois a três meses em Curitiba antes de seguir. O destino final era Sorocaba, em São Paulo, que abrigou a maior feira de mulas da Colônia.",
+"pergunta": "Que vila paulista sediava a maior feira de mulas da Colônia?",
+"resposta": "Sorocaba",
+"alt": [
+"feira de Sorocaba"
+]
+},
+{
+"id": "H143",
+"tema": "Livro · Cap.16",
+"texto": "No extremo sul, a pecuária gerou o charque, a carne bovina salgada de baixo custo e longa conservação, ideal para alimentar escravizados e tropas em toda a colônia. As charqueadas passaram a dominar a economia sulina e consolidaram o domínio português na região platina. Um traço distinguia essa pecuária: ela quase não empregou trabalho escravizado, usando mestiços, indígenas e negros libertos. O Sul se povoou com uma estrutura social diferente da açucareira.",
+"pergunta": "Qual produto salgado dominou a economia sulina?",
+"resposta": "charque",
+"alt": [
+"carne salgada",
+"o charque"
+]
+},
+{
+"id": "H144",
+"tema": "Livro · Cap.16",
+"texto": "A ocupação da Amazônia começou pelo Forte do Presépio, erguido em 1616, núcleo da futura Belém do Pará. Em 1621, a Coroa separou o Norte do restante da colônia, criando o Estado do Maranhão, com as capitanias do Maranhão e do Grão-Pará, subordinado diretamente a Lisboa. A região vivia do extrativismo das drogas do sertão e tinha mais contato marítimo com Portugal do que com Salvador. Era, na prática, uma segunda colônia dentro da América portuguesa.",
+"pergunta": "Que forte de 1616 deu origem a Belém?",
+"resposta": "Forte do Presépio",
+"alt": [
+"Presépio"
+]
+},
+{
+"id": "H145",
+"tema": "Livro · Cap.16",
+"texto": "Nas missões amazônicas trabalharam jesuítas, franciscanos e carmelitas, reunindo por volta de 1740 cerca de cinquenta mil índios aldeados. Os aldeamentos organizavam a coleta das drogas do sertão e deram origem a muitas vilas da região. Quando Pombal expulsou os jesuítas, em 1759, a estrutura extrativista se desorganizou. A economia do Norte entrou em decadência junto com as missões que a sustentavam.",
+"pergunta": "Quantos índios viviam aldeados na Amazônia por volta de 1740?",
+"resposta": "cinquenta mil",
+"alt": [
+"50 mil"
+]
+},
+{
+"id": "H146",
+"tema": "Livro · Cap.16",
+"texto": "Além do açúcar, outros produtos ganharam peso na pauta colonial. O fumo do sul da Bahia chegou ao segundo lugar nas exportações e servia de moeda no tráfico africano, ao lado da cachaça e da rapadura. O algodão vestia os escravizados e prosperou no Maranhão. Já a mandioca gerou uma curiosidade legal: a Coroa impôs seu cultivo nos engenhos para garantir comida, e a ordem simplesmente nunca foi obedecida.",
+"pergunta": "Que produto ocupava o segundo lugar na pauta de exportações?",
+"resposta": "fumo",
+"alt": [
+"tabaco",
+"o fumo"
+]
+},
+{
+"id": "H147",
+"tema": "Livro · Cap.16",
+"texto": "A Colônia do Sacramento, fundada em frente a Buenos Aires, tinha função comercial precisa: servir de porta para o comércio ilegal com o Vice-Reino do Peru, por onde escoava a prata de Potosí. O Tratado de Madri, de 1750, aplicou o uti possidetis a quase todas as fronteiras, com uma exceção explícita: Sacramento, que Portugal deveria entregar. Pombal recusou a entrega e o tratado acabou cancelado em 1761. A praça só sairia das mãos portuguesas com Santo Ildefonso, em 1777.",
+"pergunta": "Prata de qual centro minerador escoava por Sacramento?",
+"resposta": "Potosí",
+"alt": [
+"prata de Potosí"
+]
+},
+{
+"id": "H148",
+"tema": "Livro · Cap.16",
+"texto": "O Tratado de Madri exigia que os guaranis dos Sete Povos das Missões abandonassem suas terras e cruzassem o rio Uruguai, recebendo indenização. Eles se recusaram e se sublevaram em 1753, dando início à Guerra Guaranítica, que durou até 1756. O detalhe revelador: tropas espanholas e portuguesas lutaram juntas contra os índios missioneiros. O líder guarani Sepé Tiaraju morreu no conflito e virou símbolo da resistência.",
+"pergunta": "Que líder guarani morreu na Guerra Guaranítica?",
+"resposta": "Sepé Tiaraju",
+"alt": [
+"Sepé"
+]
+},
+{
+"id": "H149",
+"tema": "Livro · Cap.18",
+"texto": "A expulsão dos holandeses em 1654 não se resolveu apenas nas armas. Para encerrar formalmente o conflito, Portugal pagou à Holanda uma grande soma indenizatória, comprando a paz que os canhões não garantiam. O detalhe costuma ficar fora da versão heroica de Guararapes. A vitória militar veio acompanhada de uma derrota diplomática cara.",
+"pergunta": "O que Portugal pagou à Holanda após a expulsão?",
+"resposta": "indenização",
+"alt": [
+"soma indenizatória",
+"grande soma"
+]
+},
+{
+"id": "H150",
+"tema": "Livro · Cap.18",
+"texto": "O historiador Evaldo Cabral de Mello faz uma ressalva importante sobre a Insurreição Pernambucana. Para ele, o que existiu foram nativismos locais, um orgulho de cada capitania, e não um nativismo brasileiro unificado. A leitura dos conflitos coloniais como precursores da independência nasceu depois de 1822, quando o período virou a infância da nação. Projetar a nação para trás é erro de anacronismo que a historiografia atual evita.",
+"pergunta": "Segundo Cabral de Mello, os nativismos coloniais eram de que escala?",
+"resposta": "local",
+"alt": [
+"locais",
+"nativismos locais",
+"de capitania"
+]
+},
+{
+"id": "H151",
+"tema": "Livro · Cap.18",
+"texto": "O historiador Luciano Figueiredo observa que as revoltas coloniais eram feitas em nome do rei, e não contra ele. Os rebeldes viam o monarca como protetor, provedor e justiceiro, e se levantavam para corrigir os desacertos do governo local — funcionários abusivos, impostos indevidos, companhias monopolistas. O vocabulário da época nem distinguia com clareza motim, insurreição e revolução. Rebelar-se era, paradoxalmente, um ato de fidelidade ao soberano distante.",
+"pergunta": "Em nome de quem as revoltas coloniais eram feitas?",
+"resposta": "do rei",
+"alt": [
+"rei",
+"em nome do rei"
+]
+},
+{
+"id": "H152",
+"tema": "Livro · Cap.18",
+"texto": "A Revolta de Beckman explodiu no Maranhão em 1684 contra a Companhia Geral do Comércio do Estado do Maranhão, criada dois anos antes. A empresa devia importar quinhentos africanos por ano, vender gêneros da metrópole e comprar a produção local, mas não cumpriu as cotas e praticava preços abusivos. Liderados por Manuel Beckman, os revoltosos expulsaram os dirigentes da companhia e os jesuítas de São Luís. A repressão condenou Manuel à morte, e a companhia foi extinta em 1685.",
+"pergunta": "Quantos africanos por ano a Companhia do Maranhão devia importar?",
+"resposta": "quinhentos",
+"alt": [
+"500",
+"500 por ano"
+]
+},
+{
+"id": "H153",
+"tema": "Livro · Cap.18",
+"texto": "Um episódio da Guerra dos Emboabas ficou como símbolo de perfídia. Em 1708, mais de trezentos paulistas cercados renderam-se sob promessa de vida salva, e foram massacrados após a rendição pelas forças de Bento do Amaral Coutinho. O lugar entrou para a história como Capão da Traição. A derrota final paulista veio na batalha do rio das Mortes, consolidando a vitória dos forasteiros liderados por Manuel Nunes Viana.",
+"pergunta": "Como ficou conhecido o local do massacre dos paulistas rendidos?",
+"resposta": "Capão da Traição",
+"alt": [
+"o Capão"
+]
+},
+{
+"id": "H154",
+"tema": "Livro · Cap.18",
+"texto": "A historiografia recente revisou o rótulo da Guerra dos Emboabas. Para a historiadora Maria de Fátima Gouvêa, não se tratou de revolta nativista contra Portugal, e sim de uma luta entre grupos de colonos pelo poder, pelas terras e pelo ouro da nova região. Laura de Mello e Souza acrescenta que o motor era o anseio dos poderosos locais pelo controle da administração regional. O conflito era pela riqueza, não contra a metrópole.",
+"pergunta": "Segundo Gouvêa, a Guerra dos Emboabas foi uma luta por quê?",
+"resposta": "poder e ouro",
+"alt": [
+"poder, terras e ouro",
+"riqueza e poder",
+"controle da região"
+]
+},
+{
+"id": "H155",
+"tema": "Livro · Cap.18",
+"texto": "A chamada Guerra dos Mascates ganhou esse nome apenas em 1873, com o romance homônimo de José de Alencar; na época falava-se em sedição de Pernambuco. O conflito opôs Olinda, sede dos senhores de engenho endividados, ao Recife dos grandes comerciantes, apelidados depreciativamente de mascates. O estopim foi a elevação do Recife a vila em 1709, libertando-o da câmara olindense. Em 1710, a milícia rural de Olinda invadiu o Recife e queimou a ordem régia.",
+"pergunta": "De onde vem o nome Guerra dos Mascates?",
+"resposta": "romance de Alencar",
+"alt": [
+"José de Alencar",
+"de um romance",
+"livro de 1873"
+]
+},
+{
+"id": "H156",
+"tema": "Livro · Cap.18",
+"texto": "O desfecho da Guerra dos Mascates mostrou de que lado a Coroa estava. O novo capitão-mor chegou em 1711, tomou o partido dos comerciantes do Recife e prendeu mais de cento e cinquenta olindenses, confiscando bens dos líderes por crime de lesa-majestade. Em 1714, porém, dom João V anistiou os condenados e devolveu os bens, para não desorganizar a produção açucareira. O Recife manteve o estatuto de vila, e Olinda nunca recuperou a antiga importância.",
+"pergunta": "Por que dom João V anistiou os senhores olindenses?",
+"resposta": "proteger o açúcar",
+"alt": [
+"não desorganizar o açúcar",
+"salvar a produção",
+"interesse econômico"
+]
+},
+{
+"id": "H157",
+"tema": "Livro · Cap.18",
+"texto": "O conde de Assumar, governador das Minas entre 1717 e 1721, enfrentou dezesseis levantes em apenas quatro anos. Dele é a frase que resume a região: a terra parece que evapora tumultos; o clima é tumba da paz e berço da rebelião. Na revolta de Vila Rica, em 1720, fingiu negociar com os rebeldes para ganhar tempo enquanto reunia cerca de mil e quinhentos homens. A tática do engano precedeu a repressão exemplar.",
+"pergunta": "Quantos levantes Assumar enfrentou em quatro anos?",
+"resposta": "dezesseis",
+"alt": [
+"16"
+]
+},
+{
+"id": "H158",
+"tema": "Livro · Cap.18",
+"texto": "Os rebeldes de Vila Rica não eram contra o rei nem contra pagar tributos. Exigiam a não instalação das casas de fundição e chegaram a oferecer trinta arrobas de ouro por ano diretamente ao monarca, culpando a administração corrupta pelos abusos. Filipe dos Santos, o líder mais exaltado, era um tropeiro. Terminou preso, condenado à morte, esquartejado, com a cabeça exposta no pelourinho de Vila Rica.",
+"pergunta": "Quanto os rebeldes de Vila Rica ofereceram pagar ao rei anualmente?",
+"resposta": "trinta arrobas",
+"alt": [
+"30 arrobas",
+"trinta arrobas de ouro"
+]
+},
+{
+"id": "H159",
+"tema": "Livro · Cap.18",
+"texto": "Entre as revoltas indígenas tardias, destaca-se a resistência dos janduís, no sertão do Rio Grande do Norte e Ceará, por volta de 1680. Liderados pelo chefe Canindé, reuniram cerca de cinco mil guerreiros de arco e flecha. O desfecho veio por acordo, não por extermínio: o armistício de 1692 garantiu terras para as aldeias em troca de obediência e de combate ao lado dos portugueses. Negociar também era uma forma indígena de sobreviver.",
+"pergunta": "Que chefe liderou a resistência dos janduís?",
+"resposta": "Canindé",
+"alt": [
+"o chefe Canindé"
+]
+},
+{
+"id": "H160",
+"tema": "Livro · Cap.18",
+"texto": "A Santidade de Jaguaripe, na Bahia de cerca de 1580, foi um culto sincrético que misturava cristianismo e crenças tupis. O líder indígena Antônio dizia ser Tamandaré, ancestral mítico tupinambá, nomeava bispos numa hierarquia copiada da Igreja e venerava o ídolo Tupanasu. A seita prometia uma vida sem escravidão e se instalou nas terras do fidalgo Fernão Cabral, que a protegia por interesse. A repressão de 1585 arrancou a língua de uma liderança antes de enforcá-la.",
+"pergunta": "Que ancestral mítico o líder Antônio dizia encarnar?",
+"resposta": "Tamandaré",
+"alt": [
+"o Tamandaré"
+]
+},
+{
+"id": "H161",
+"tema": "Livro · Cap.20",
+"texto": "Antes dos ingleses, a França já explorava o norte da América. Giovanni da Verrazano percorreu a costa em 1523 a serviço francês, e Jacques Cartier descobriu o rio São Lourenço em 1535, abrindo o caminho do Canadá. Os franceses dominaram parte do atual Canadá e o vale do Mississippi, a Louisiana. A presença francesa se ancorava na pesca do bacalhau e no comércio de peles.",
+"pergunta": "Que rio Jacques Cartier descobriu em 1535?",
+"resposta": "São Lourenço",
+"alt": [
+"rio São Lourenço"
+]
+},
+{
+"id": "H162",
+"tema": "Livro · Cap.20",
+"texto": "O destino da Louisiana francesa resume o jogo de potências na América. Colonizada lentamente a partir de Nova Orleans, foi cedida pela França aos espanhóis em 1765. Depois de 1803, passou a integrar os Estados Unidos, na famosa compra negociada com Napoleão. Já o Canadá francês tinha população minúscula: cerca de dezesseis mil colonos em 1706, e setenta mil sessenta anos depois.",
+"pergunta": "A que país a Louisiana passou a pertencer depois de 1803?",
+"resposta": "Estados Unidos",
+"alt": [
+"EUA",
+"aos Estados Unidos"
+]
+},
+{
+"id": "H163",
+"tema": "Livro · Cap.20",
+"texto": "A colonização inglesa começou por tentativa e fracasso. A rainha Elizabeth I autorizou Walter Raleigh a colonizar, e entre 1584 e 1587 os ingleses chegaram à região que batizaram de Virgínia, em homenagem à monarca virgem. Ataques indígenas e fome minaram o empreendimento. O caminho que funcionou depois foi outro: companhias comerciais, como a de Plymouth e a de Londres, que investiam em troca dos lucros da exploração.",
+"pergunta": "Em homenagem a quem a Virgínia recebeu esse nome?",
+"resposta": "Elizabeth",
+"alt": [
+"à rainha virgem",
+"monarca virgem",
+"Elizabeth I"
+]
+},
+{
+"id": "H164",
+"tema": "Livro · Cap.20",
+"texto": "O Pacto do Mayflower foi assinado em Cape Cod, em onze de novembro de 1620, antes mesmo do desembarque. Os peregrinos se declararam uma corporação civil política, comprometida a criar leis justas e imparciais para o bem geral da colônia. O documento mesclava princípios políticos e religiosos e é visto como semente do autogoverno americano. Os colonos chegaram dispostos a construir uma ordem diferente da que deixaram na Inglaterra.",
+"pergunta": "Onde o Pacto do Mayflower foi assinado?",
+"resposta": "Cape Cod",
+"alt": [
+"em Cape Cod"
+]
+},
+{
+"id": "H165",
+"tema": "Livro · Cap.20",
+"texto": "A sigla WASP, branco anglo-saxão protestante, nasceu do vigor religioso puritano e moldou o imaginário sobre o passado colonial americano. O livro adverte que essa referência encobre os outros grupos que também migraram: mulheres leiloadas nos cais ingleses, crianças raptadas, aventureiros e degredados de toda espécie. A América inglesa não foi povoada só por santos em busca de Deus. A memória WASP é seleção, não retrato.",
+"pergunta": "O que a referência WASP encobre sobre a colonização?",
+"resposta": "outros grupos",
+"alt": [
+"os demais migrantes",
+"degredados e leiloadas",
+"a diversidade"
+]
+},
+{
+"id": "H166",
+"tema": "Livro · Cap.20",
+"texto": "Os quakers, a Sociedade Religiosa de Amigos, tinham perfil liberal raro para a época: viviam a religião sem hierarquia rígida e defendiam que cada homem era responsável por sua própria vida religiosa. Enfrentaram a oposição dos puritanos, que condenavam o abuso da riqueza e impunham disciplina severa. Estabeleceram-se na Pensilvânia sob a liderança de William Penn. O espírito quaker garantiu ali a convivência entre grupos religiosos diversos.",
+"pergunta": "Em que colônia os quakers se estabeleceram?",
+"resposta": "Pensilvânia",
+"alt": [
+"na Pensilvânia"
+]
+},
+{
+"id": "H167",
+"tema": "Livro · Cap.20",
+"texto": "Em Massachusetts e Connecticut, a Igreja puritana identificou-se com o Estado e exerceu por décadas o que o historiador chama de despotismo eclesiástico, um modelo quase teocrático. O surto de feitiçaria de Salem, em 1692, foi o produto extremo desse arranjo: adolescentes acusaram vizinhos de enfeitiçá-las e a cidade mergulhou em histeria coletiva. Ao final, quase duzentas pessoas tinham sido presas, e catorze mulheres e seis homens foram executados. Quase um século depois, a primeira emenda da Constituição americana proibiria o Congresso de legislar sobre religião.",
+"pergunta": "Quantas pessoas foram executadas em Salem?",
+"resposta": "vinte",
+"alt": [
+"14 mulheres e 6 homens",
+"catorze mulheres e seis homens",
+"20"
+]
+},
+{
+"id": "H168",
+"tema": "Livro · Cap.20",
+"texto": "Os números do crescimento colonial americano impressionam. A população das treze colônias, excluídos os indígenas, era de cerca de duas mil e quinhentas pessoas em 1620, trezentas e cinquenta mil em 1700, e três milhões no ano da independência. Havia ainda meio milhão de africanos escravizados ao final do período colonial. No topo da pirâmide social estavam a burguesia comercial do norte e os grandes fazendeiros do sul.",
+"pergunta": "Qual era a população colonial aproximada em 1776?",
+"resposta": "três milhões",
+"alt": [
+"3 milhões",
+"cerca de três milhões"
+]
+},
+{
+"id": "H169",
+"tema": "Livro · Cap.21",
+"texto": "A dinastia Tudor governou com a participação dos chamados comuns: pequenos e médios proprietários rurais e comerciantes, a baixa burguesia inglesa. Henrique VII, Henrique VIII e Elizabeth I mantiveram e ampliaram medidas de interesse desses setores, que prosperaram sob a dinastia. Foi essa harmonia entre coroa e Parlamento que os Stuart romperam. O contraste entre as duas dinastias explica o caminho até a guerra civil.",
+"pergunta": "Que grupo social formava os comuns na era Tudor?",
+"resposta": "baixa burguesia",
+"alt": [
+"pequenos proprietários",
+"proprietários e comerciantes"
+]
+},
+{
+"id": "H170",
+"tema": "Livro · Cap.21",
+"texto": "Em 1628, diante da voracidade fiscal de Carlos I, o Parlamento o obrigou a aceitar a Petição de Direitos, pela qual a Coroa não poderia recolher impostos sem aprovação parlamentar. O rei cedeu no primeiro momento e, no ano seguinte, dissolveu o Parlamento para não se sujeitar à regra. Governou sozinho pelos onze anos seguintes. A Petição antecipou em sessenta anos o princípio que o Bill of Rights tornaria definitivo.",
+"pergunta": "O que a Petição de Direitos de 1628 exigia para os impostos?",
+"resposta": "aprovação do Parlamento",
+"alt": [
+"consentimento parlamentar",
+"aval do Parlamento"
+]
+},
+{
+"id": "H171",
+"tema": "Livro · Cap.21",
+"texto": "O que forçou Carlos I a reconvocar o Parlamento em 1640 foi a guerra com a Escócia, de motivação religiosa. Querendo consolidar seu poder, o rei tentou impor aos calvinistas escoceses, os presbiterianos, um livro de preces comum baseado na liturgia anglicana. A Escócia pegou em armas e a coroa precisou de dinheiro. Convocado para financiar a guerra, o Parlamento aproveitou para limitar o poder real — e a crise virou revolução.",
+"pergunta": "Que imposição religiosa provocou a guerra com a Escócia?",
+"resposta": "livro de preces",
+"alt": [
+"liturgia anglicana",
+"livro de orações"
+]
+},
+{
+"id": "H172",
+"tema": "Livro · Cap.21",
+"texto": "O exército parlamentar de Cromwell, o Novo Exército Modelo, tinha uma novidade organizacional: o critério de promoção era o mérito, não a origem social. Misturava ricos parlamentares, senhores rurais e religiosos exaltados, e cada grupo lutava por motivos próprios. Os soldados pobres combatiam também contra os grandes senhores, o que assustava a burguesia. A heterogeneidade que venceu a guerra viraria fonte de conflito na república.",
+"pergunta": "Qual era o critério de promoção no Novo Exército Modelo?",
+"resposta": "mérito",
+"alt": [
+"o mérito",
+"por mérito"
+]
+},
+{
+"id": "H173",
+"tema": "Livro · Cap.21",
+"texto": "Entre os soldados pobres do exército de Cromwell destacaram-se os niveladores, que defendiam o voto universal masculino, a redistribuição da propriedade e a proteção aos pequenos proprietários. Instaurada a república, nenhuma dessas reivindicações foi atendida. Os líderes niveladores terminaram executados por ordem do próprio Cromwell. A revolução que decapitou um rei não tolerou os radicais que a serviram.",
+"pergunta": "Qual foi o destino dos líderes niveladores?",
+"resposta": "executados",
+"alt": [
+"mortos por Cromwell",
+"execução"
+]
+},
+{
+"id": "H174",
+"tema": "Livro · Cap.21",
+"texto": "Morto Cromwell em 1658, com o título de Lorde Protetor da Inglaterra, Escócia e Irlanda, o poder passou ao seu filho Ricardo. Sem as habilidades do pai, Ricardo foi deposto em 1660. Temendo novos conflitos e os surtos de reivindicação popular, o Parlamento preferiu restaurar a monarquia com Carlos II, que vivia na França. A república inglesa morreu de sucessão fracassada.",
+"pergunta": "Quem sucedeu Cromwell e foi deposto em 1660?",
+"resposta": "Ricardo",
+"alt": [
+"o filho Ricardo",
+"Ricardo Cromwell"
+]
+},
+{
+"id": "H175",
+"tema": "Livro · Cap.21",
+"texto": "O reinado de Carlos II deixou um legado jurídico duradouro. Em 1679 instituiu-se o habeas corpus, medida legal que assegurava as liberdades individuais e proibia as prisões arbitrárias. Nenhum súdito poderia ser mantido preso sem apresentação à justiça. O instrumento atravessou os séculos e está nas constituições modernas, inclusive na brasileira.",
+"pergunta": "Que garantia legal foi instituída na Inglaterra em 1679?",
+"resposta": "habeas corpus",
+"alt": [
+"o habeas corpus"
+]
+},
+{
+"id": "H176",
+"tema": "Livro · Cap.21",
+"texto": "A queda de Jaime II teve motor religioso e dinástico. Convertido ao catolicismo, cercou-se de conselheiros católicos ligados ao absolutismo francês, perdendo o apoio da Igreja Anglicana e das elites. Os aristocratas articularam sua abdicação em favor do genro, Guilherme de Orange, casado com sua filha Maria. Guilherme e Maria, protestantes, assumiram com o compromisso de respeitar o Parlamento — a transição de 1688 que a história chama de Revolução Gloriosa.",
+"pergunta": "Qual era o parentesco de Guilherme de Orange com Jaime II?",
+"resposta": "genro",
+"alt": [
+"marido da filha",
+"casado com Maria"
+]
+},
+{
+"id": "H177",
+"tema": "Livro · Cap.21",
+"texto": "John Locke, expoente do Iluminismo inglês, atuou nos debates da Revolução Gloriosa. Defendia que o poder político nasce do consentimento dos súditos, e não da submissão, e que os homens são naturalmente livres, iguais e independentes. Sustentava o direito à propriedade e o princípio da vontade da maioria como critério das decisões coletivas. Sua obra deu fundamento filosófico ao regime saído de 1688.",
+"pergunta": "Para Locke, de onde nasce o poder político legítimo?",
+"resposta": "consentimento",
+"alt": [
+"do consentimento",
+"acordo dos súditos"
+]
+},
+{
+"id": "H178",
+"tema": "Livro · Cap.22",
+"texto": "O Tratado de Methuen, de 1703, é o exemplo clássico de acordo comercial desigual. Por ele, Portugal e suas colônias, incluindo o Brasil, comprariam tecidos ingleses, e a Inglaterra compraria vinhos portugueses. A troca era muito vantajosa para os ingleses: manufatura contra produto agrícola. O ouro do Brasil acabou escoando para Londres pela via desse comércio deficitário.",
+"pergunta": "Que produtos Portugal e Inglaterra trocavam pelo Methuen?",
+"resposta": "tecidos e vinhos",
+"alt": [
+"vinhos por tecidos",
+"panos e vinhos"
+]
+},
+{
+"id": "H179",
+"tema": "Livro · Cap.22",
+"texto": "O algodão criou um gargalo técnico no início da industrialização: limpar as sementes das bolas de algodão era lento e caro. Em 1793, uma máquina resolveu o problema, clareando o algodão cinquenta vezes mais rápido do que cinquenta pessoas trabalhando juntas. As fábricas se instalaram perto das minas de carvão e de água corrente. Nos anos 1780, o carvão mineral substituiu maciçamente o vegetal, e o ferro purificado ganhou caráter industrial.",
+"pergunta": "Em que ano surgiu a máquina de limpar algodão?",
+"resposta": "1793",
+"alt": [
+"mil setecentos e noventa e três"
+]
+},
+{
+"id": "H180",
+"tema": "Livro · Cap.22",
+"texto": "A revolução dos transportes tem dois marcos com nome próprio. Em 1805, o norte-americano Robert Fulton apresentou os navios a vapor, libertando as viagens dos ventos e dos remos. Na década de 1820, empresários ingleses decidiram ligar Liverpool a Manchester por ferrovia e premiaram o melhor protótipo de locomotiva. O vencedor de 1829 foi George Stephenson, cuja Rocket puxou um trem por quinze quilômetros a dez quilômetros por hora, e a linha abriu em 1830.",
+"pergunta": "Quem venceu o concurso de locomotivas com a Rocket?",
+"resposta": "Stephenson",
+"alt": [
+"George Stephenson"
+]
+},
+{
+"id": "H181",
+"tema": "Livro · Cap.22",
+"texto": "Os números do trabalho fabril inglês dispensam adjetivos. Em 1835, as indústrias têxteis empregavam cerca de vinte e seis por cento de homens, trinta por cento de mulheres e quarenta e três por cento de adolescentes e crianças, que começavam a trabalhar aos cinco anos de idade. As mulheres recebiam metade do salário masculino; as crianças, um quarto. A fábrica preferia quem custava menos e reclamava menos.",
+"pergunta": "Que fração do salário masculino recebiam as crianças?",
+"resposta": "um quarto",
+"alt": [
+"1/4",
+"um quarto do salário"
+]
+},
+{
+"id": "H182",
+"tema": "Livro · Cap.22",
+"texto": "Um regulamento interno de fiação inglesa de 1828 detalha a disciplina fabril. A jornada era de treze horas; atraso superior a dez minutos custava multa de vinte e cinco centavos. O operário só podia deixar o recinto com autorização escrita, sob pena de perder o dia. E havia o limite fisiológico regulamentado: três idas ao banheiro por dia, com multa para quem excedesse.",
+"pergunta": "Quantas idas diárias ao banheiro o regulamento permitia?",
+"resposta": "três",
+"alt": [
+"3",
+"três vezes"
+]
+},
+{
+"id": "H183",
+"tema": "Livro · Cap.22",
+"texto": "O ludismo tem nome e datas precisos: deriva de Ned Ludd e concentrou-se entre 1811 e 1812, nos centros industriais de Lancashire, Nottinghamshire e Yorkshire. Calcula-se que em alguns distritos cerca de cinco mil pessoas integravam o movimento, com ações planejadas e rápidas. A resposta do Parlamento veio em 1812: pena de morte para os destruidores de máquinas, aplicada em enforcamentos coletivos. O historiador Edward Thompson lembra que aqueles operários defendiam direitos baseados nos costumes antigos.",
+"pergunta": "Que pena o Parlamento criou em 1812 para quem quebrava máquinas?",
+"resposta": "morte",
+"alt": [
+"pena de morte",
+"condenação à morte"
+]
+},
+{
+"id": "H184",
+"tema": "Livro · Cap.22",
+"texto": "A liderança industrial britânica aparece nua nos números da siderurgia. A produção do Reino Unido saltou de cento e noventa milhões de toneladas em 1800 para seiscentos e noventa em 1830 e duas mil trezentas e noventa em 1850. A França, segunda colocada, produzia menos de um quinto disso na última data. A Segunda Revolução Industrial nasceria dessa vantagem acumulada.",
+"pergunta": "Que país liderava com folga a produção siderúrgica em 1850?",
+"resposta": "Reino Unido",
+"alt": [
+"Inglaterra",
+"Grã-Bretanha"
+]
+},
+{
+"id": "H185",
+"tema": "Livro · Cap.22",
+"texto": "Henry Ford, no início do século XX, introduziu a produção em série do automóvel e criou o fordismo, conjunto de normas de racionalização fabril. O modelo pregava a especialização extrema, com uma só tarefa por operário, e a verticalização da produção, controlando tudo da matéria-prima à distribuição. O fordismo expandiu a divisão técnica do trabalho e empregou mão de obra pouco qualificada em massa. Foi a base da indústria por boa parte do século.",
+"pergunta": "Como se chama o controle da matéria-prima à distribuição?",
+"resposta": "verticalização",
+"alt": [
+"verticalização da produção",
+"produção verticalizada"
+]
+},
+{
+"id": "H186",
+"tema": "Livro · Cap.22",
+"texto": "Nos anos 1970, o fordismo deu sinais de esgotamento: produtividade e lucros caíam, e a mão de obra organizada pressionava por salários. A alternativa veio do Japão, onde a Toyota desenvolvera desde os anos 1950 a produção flexível, o toyotismo. Células de trabalho respondiam pelo processo inteiro, robôs assumiam tarefas repetitivas, e as matérias-primas só eram requisitadas quando havia demanda real, reduzindo os estoques. A rigidez fordista cedeu lugar à adaptação contínua ao mercado.",
+"pergunta": "Que empresa japonesa deu nome ao modelo de produção flexível?",
+"resposta": "Toyota",
+"alt": [
+"a Toyota",
+"Toyota Motors"
+]
+},
+{
+"id": "H187",
+"tema": "Livro · Cap.16",
+"texto": "Antonil, cronista do início do século XVIII, descreveu a moenda como o lugar de maior perigo dentro do engenho de açúcar. Um escravizado que tivesse a mão presa nas engrenagens precisava recorrer ao facão sempre mantido à mão, para cortar o próprio braço antes que o corpo inteiro fosse arrastado. O relato revela a violência cotidiana e silenciosa do trabalho escravo, distinta da violência do castigo. Mutilar-se era, paradoxalmente, a forma de sobreviver à máquina.",
+"pergunta": "Que ferramenta ficava sempre à mão perto da moenda?",
+"resposta": "facão",
+"alt": [
+"um facão",
+"facão para cortar"
+]
+},
+{
+"id": "H188",
+"tema": "Livro · Cap.16",
+"texto": "Em 1711, o cronista Antonil observou que os negros trazidos de Angola, criados em Luanda, eram considerados mais capazes de exercer ofícios mecânicos do que outros grupos africanos escravizados. A observação reflete como os próprios senhores hierarquizavam origens africanas conforme utilidade econômica. Essa distinção influenciava preços e destinos no mercado de escravizados. A etnia virava, assim, categoria comercial.",
+"pergunta": "De que região vinham os escravizados tidos como mais hábeis em ofícios mecânicos, segundo Antonil?",
+"resposta": "Angola",
+"alt": [
+"Luanda",
+"de Angola"
+]
+},
+{
+"id": "H189",
+"tema": "Livro · Cap.16",
+"texto": "O historiador Jacob Gorender, citando o cálculo de Robert Conrad, aponta o Brasil como o maior receptor de africanos escravizados de toda a história americana. Das cerca de nove milhões e quatrocentas mil pessoas que Philip Curtin calcula terem sido embarcadas para a América, cinco milhões e meio chegaram vivas ao Brasil. Nenhuma outra colônia ou país recebeu volume comparável. A escala do tráfico para o Brasil não tem paralelo no continente.",
+"pergunta": "Que país recebeu o maior volume de africanos escravizados da história americana?",
+"resposta": "Brasil",
+"alt": [
+"o Brasil"
+]
+},
+{
+"id": "H190",
+"tema": "Livro · Cap.20",
+"texto": "Depois do fracasso de Walter Raleigh, a colonização inglesa avançou por meio de companhias comerciais. A Companhia de Plymouth respondia pela exploração ao sul da costa leste americana, e a Companhia de Londres, pela região norte. Ambas investiam capital privado em troca dos lucros da terra e do comércio colonial, pagando tributos à Coroa. As duas tiveram as licenças suspensas entre 1624 e 1635 por dívidas acumuladas, mas a colonização já era realidade irreversível.",
+"pergunta": "Qual companhia explorava a costa ao norte, rumo à Nova Inglaterra?",
+"resposta": "de Londres",
+"alt": [
+"Companhia de Londres",
+"Londres"
+]
+},
+{
+"id": "H191",
+"tema": "Livro · Cap.20",
+"texto": "Em 1681, William Penn publicou um folheto para atrair colonos à Pensilvânia, descrevendo os tipos de pessoas mais adequadas à colônia. A primeira categoria eram lavradores e diaristas industriosos que, na Inglaterra, mal conseguiam sustentar a família com muito trabalho. Penn prometia que, na América, o mesmo esforço renderia fartura e até sobra para o comércio. O documento é publicidade colonial, não relato neutro.",
+"pergunta": "Que ofício tinha a primeira categoria de colonos ideais para Penn?",
+"resposta": "lavradores",
+"alt": [
+"lavradores e diaristas",
+"diaristas"
+]
+},
+{
+"id": "H192",
+"tema": "Livro · Cap.20",
+"texto": "A segunda categoria de colonos ideais, segundo o folheto de William Penn, eram artesãos laboriosos como carpinteiros, ferreiros, tecelões e sapateiros, ofícios que na Inglaterra estavam em excesso ou mal remunerados. Penn argumentava que na colônia esses profissionais teriam mais valor, por escassez de mão de obra qualificada. O texto tentava converter desemprego inglês em oportunidade americana. Era propaganda dirigida a um público específico e necessário.",
+"pergunta": "Que tipo de profissional formava a segunda categoria do folheto de Penn?",
+"resposta": "artesãos",
+"alt": [
+"artesãos laboriosos"
+]
+},
+{
+"id": "H193",
+"tema": "Livro · Cap.21",
+"texto": "Sucessor de Elizabeth I, Jaime I defendia o direito divino dos reis e usava a religião anglicana para legitimar esse princípio. Suas medidas desagradavam a burguesia: elevação de impostos alfandegários, criação de novas taxas e obtenção de empréstimos forçados dos súditos. A disputa com o Parlamento se acentuou ao longo do reinado. Jaime I abdicou em favor do filho, Carlos I, que herdaria o conflito ainda mais agravado.",
+"pergunta": "Que princípio Jaime I invocava para legitimar seu poder absoluto?",
+"resposta": "direito divino",
+"alt": [
+"direito divino dos reis"
+]
+},
+{
+"id": "H194",
+"tema": "Livro · Cap.21",
+"texto": "Antes da Petição de Direitos de 1628, Carlos I já buscava recursos financeiros de formas consideradas abusivas: empréstimos forçados aos súditos e uma lei que previa prisão para quem se recusasse a cumprir qualquer medida fiscal decretada pelo monarca. Foi diante dessa voracidade fiscal que o Parlamento exigiu a petição, limitando o poder de tributar sem consentimento. Carlos I cedeu, mas dissolveu o Parlamento no ano seguinte para não se sujeitar à regra.",
+"pergunta": "O que a lei anterior à Petição previa para quem recusasse pagar tributos?",
+"resposta": "prisão",
+"alt": [
+"prisão dos súditos",
+"aprisionamento"
+]
+},
+{
+"id": "H195",
+"tema": "Livro · Cap.21",
+"texto": "A política de cercamentos, que transformava terras comunais em propriedade privada para a criação de ovelhas, começou ainda no século XIII na Inglaterra. Foi, porém, intensificada com força no século XVII, quando extensas áreas fundiárias comuns viraram pastagens cercadas. A massa camponesa expulsa migrou para as cidades sem emprego nem ocupação. Esse êxodo forneceria, mais tarde, a mão de obra que a indústria nascente precisava.",
+"pergunta": "Em que século começou a política de cercamentos na Inglaterra?",
+"resposta": "século XIII",
+"alt": [
+"XIII",
+"13"
+]
+},
+{
+"id": "H196",
+"tema": "Livro · Cap.21",
+"texto": "Entre os artigos do Bill of Rights de 1689 está a proibição de se manter um exército permanente em tempos de paz sem o consentimento do Parlamento. A medida buscava impedir que o rei usasse força militar própria para impor sua vontade sem controle parlamentar. Era resposta direta aos temores gerados pelo absolutismo dos Stuart. O documento amarrava o poder militar à autoridade civil eleita.",
+"pergunta": "O que o Bill of Rights exigia para manter um exército em tempo de paz?",
+"resposta": "consentimento do Parlamento",
+"alt": [
+"aprovação do Parlamento",
+"consentimento parlamentar"
+]
+},
+{
+"id": "H197",
+"tema": "Livro · Cap.21",
+"texto": "Outro artigo do Bill of Rights garantia que a liberdade de palavra e dos debates dentro do Parlamento não poderia ser contestada ou julgada em nenhum tribunal externo. Isso assegurava aos parlamentares imunidade para criticar o governo e o próprio rei sem medo de perseguição judicial. O princípio sobrevive até hoje nas democracias parlamentaristas como imunidade parlamentar. Sem essa proteção, o Parlamento não teria força real.",
+"pergunta": "O que o Bill of Rights protegia dentro dos debates parlamentares?",
+"resposta": "liberdade de palavra",
+"alt": [
+"a liberdade de expressão",
+"liberdade de debate"
+]
+},
+{
+"id": "H198",
+"tema": "Livro · Cap.21",
+"texto": "Para John Locke, sendo os homens seres racionais, a maioria é capaz de encontrar o princípio mais lógico para conduzir os caminhos políticos de uma sociedade. Esse princípio da vontade da maioria, defendido em plena Revolução Gloriosa, ainda hoje orienta os critérios eleitorais dos Estados liberais contemporâneos. Locke ligava, assim, racionalidade individual a legitimidade coletiva. A ideia sobreviveu séculos além do contexto que a gerou.",
+"pergunta": "Que critério eleitoral atual Locke ajudou a fundamentar filosoficamente?",
+"resposta": "vontade da maioria",
+"alt": [
+"maioria",
+"voto da maioria"
+]
+},
+{
+"id": "H199",
+"tema": "Livro · Cap.21",
+"texto": "René Descartes propôs um conhecimento que fosse claro e distinto, isto é, irrefutável e acima de qualquer dúvida razoável. Para alcançá-lo, desenvolveu a dúvida metódica: decompor cada problema em sua menor parte possível e submeter todas as informações, incluindo crenças, fé e sentidos, a critérios lógicos rigorosos. Esse método estimulou os iluministas a buscar conhecimento com inspiração matemática. A razão passava a ser o único critério aceitável de verdade.",
+"pergunta": "Como se chama o método de Descartes que decompõe problemas em partes?",
+"resposta": "dúvida metódica",
+"alt": [
+"a dúvida metódica"
+]
+},
+{
+"id": "H200",
+"tema": "Livro · Cap.21",
+"texto": "Um comentário historiográfico compara a Enciclopédia francesa à Suma Teológica de São Tomás de Aquino: se o catolicismo teve sua grande síntese medieval, a burguesia do século XVIII teve na Enciclopédia sua própria Suma Filosófica. Nela estavam expostas, como numa vitrine, as principais ideias e teses da burguesia esclarecida. A obra não era neutra: organizava o conhecimento sob a ótica da razão e dos interesses de uma classe em ascensão.",
+"pergunta": "A que obra medieval a Enciclopédia é comparada como Suma Filosófica?",
+"resposta": "Suma Teológica",
+"alt": [
+"a Suma Teológica"
+]
+},
+{
+"id": "H201",
+"tema": "Livro · Cap.21",
+"texto": "O Café Procope, em Paris, foi um dos locais onde os iluministas se reuniam para discutir suas ideias, driblando a censura que a corte real exercia sobre a circulação de opiniões. Cafés, salões aristocráticos e academias de leitura formavam essa rede de sociabilidade intelectual do século XVIII. A corte não conseguia controlar totalmente a difusão do pensamento crítico nesses espaços privados. A opinião pública nascia, em parte, à mesa de um café.",
+"pergunta": "Em que cidade ficava o Café Procope, ponto de encontro iluminista?",
+"resposta": "Paris",
+"alt": [
+"em Paris"
+]
+},
+{
+"id": "H202",
+"tema": "Livro · Cap.21",
+"texto": "Por volta de 1790, o analfabetismo atingia proporções enormes na França: cerca de cinquenta por cento dos homens e setenta e cinco por cento das mulheres não sabiam ler. Para esse público, o conhecimento iluminista circulava por leituras públicas de jornais, que davam noções práticas sobre política. A opinião pública nascia, assim, também fora da letra escrita. O Iluminismo não foi, portanto, movimento de acesso igualitário.",
+"pergunta": "Qual proporção aproximada de mulheres francesas era analfabeta por volta de 1790?",
+"resposta": "75%",
+"alt": [
+"setenta e cinco por cento",
+"três quartos"
+]
+},
+{
+"id": "H203",
+"tema": "Livro · Cap.21",
+"texto": "Voltaire, pseudônimo de François-Marie Arouet, atacava a monarquia francesa como cerceadora das liberdades individuais e criticava duramente a Igreja. Julgava também que as camadas populares eram inferiores, posição que revela os limites elitistas do pensamento iluminista. Entre suas obras mais conhecidas estão Cândido, o Dicionário Filosófico e as Cartas Filosóficas. Sua crítica era corrosiva, mas não era igualitária.",
+"pergunta": "Qual romance filosófico é uma das obras mais conhecidas de Voltaire?",
+"resposta": "Cândido",
+"alt": [
+"Candido"
+]
+},
+{
+"id": "H204",
+"tema": "Livro · Cap.21",
+"texto": "Desde o Renascimento comercial, a burguesia era aliada importante do Estado absolutista, sobretudo entre os séculos XIV e XVI, dentro do princípio mercantilista da balança comercial favorável. A partir do século XVII, porém, em várias regiões os monarcas absolutos se tornaram aliados incômodos para os burgueses. Nos países ibéricos e na França ainda havia espaço de convivência pelos interesses comuns; na Inglaterra, não. Foi ali que ocorreram as principais revoltas burguesas contra a monarquia.",
+"pergunta": "Até que século a burguesia foi aliada confortável do Estado absolutista?",
+"resposta": "século XVI",
+"alt": [
+"XVI",
+"16"
+]
+},
+{
+"id": "H205",
+"tema": "Livro · Cap.22",
+"texto": "O historiador francês Jules Michelet escreveu em 1832 que a máquina não permitia distração alguma aos operários, e que o fogo incessante das fundições era a pena, o castigo, imposto a eles. Para Michelet, a única forma de suportar aquele ambiente seria o próprio homem se acostumar a ele, como única maneira de produzir o aço. A observação capta o esgotamento físico e mental do trabalho fabril nascente. A crítica vinha de um contemporâneo, não de um historiador posterior.",
+"pergunta": "O que Michelet chamou de pena imposta aos operários das fundições?",
+"resposta": "o fogo",
+"alt": [
+"fogo incessante",
+"o fogo da fundição"
+]
+},
+{
+"id": "H206",
+"tema": "Livro · Cap.22",
+"texto": "A Segunda Revolução Industrial trouxe duas novas fontes de energia que deram mais dinamismo à produção: o petróleo e a eletricidade. Delas nasceram setores inteiramente novos, como o siderúrgico, voltado à produção de aço, e o petroquímico, dedicado ao beneficiamento de derivados de petróleo. A produção se segmentava e se especializava na mesma medida em que o mercado consumidor se diversificava. Cada nova fonte de energia abria um leque de indústrias que dela dependiam.",
+"pergunta": "Que dois novos setores industriais surgiram com petróleo e eletricidade?",
+"resposta": "siderúrgico e petroquímico",
+"alt": [
+"siderurgia e petroquímica",
+"aço e petróleo"
+]
+},
+{
+"id": "H207",
+"tema": "Livro · Cap.22",
+"texto": "A tabela de produção siderúrgica do século XIX mostra o avanço desigual entre as potências europeias. A Alemanha saltou de cinquenta mil toneladas em 1800 para cem mil em 1830, chegando a duzentas e dez mil em 1850, um crescimento de mais de quatro vezes em cinco décadas. O ritmo alemão anunciava a potência industrial que o país se tornaria depois de unificado. Já em 1850, a distância para o Reino Unido ainda era enorme, mas a trajetória estava definida.",
+"pergunta": "Aproximadamente quantas vezes cresceu a produção siderúrgica alemã entre 1800 e 1850?",
+"resposta": "quatro vezes",
+"alt": [
+"4 vezes",
+"mais de quatro"
+]
+},
+{
+"id": "H208",
+"tema": "Livro · Cap.22",
+"texto": "Há divergência sobre como interpretar as mudanças produtivas recentes chamadas de Terceira Revolução Industrial. Alguns historiadores veem nelas avanços tecnológicos com reflexos amplos na organização social, econômica e cultural. Outros as encaram, em contraposição, como apenas uma nova fase do capitalismo industrial, marcada pela redução de postos de trabalho e pelo aumento das desigualdades mundiais. Não há consenso sobre se a mudança foi ruptura ou continuidade agravada.",
+"pergunta": "Que efeito social alguns historiadores associam à Terceira Revolução Industrial?",
+"resposta": "desigualdades",
+"alt": [
+"aumento das desigualdades",
+"mais desigualdade"
+]
+},
+{
+"id": "H209",
+"tema": "Livro · Cap.16",
+"texto": "O historiador Stuart Schwartz observa que a miscigenação colonial variou conforme a região. No litoral entre Pernambuco e o Rio de Janeiro, a população europeia era densa e as normas portuguesas prevaleciam com força. Em Minas Gerais, a imigração europeia veio acompanhada de controle real intenso sobre o território. Já nas periferias, como Amazônia, São Paulo e o Maranhão, mamelucos eram aceitos como portugueses e os colonos frequentemente adotavam produtos e costumes indígenas.",
+"pergunta": "Onde os colonos mais adotavam costumes e produtos indígenas?",
+"resposta": "nas periferias",
+"alt": [
+"periferias da colônia",
+"Amazônia e São Paulo",
+"regiões periféricas"
+]
+},
+{
+"id": "H210",
+"tema": "Livro · Cap.16",
+"texto": "O açaí, fruto amazônico consumido havia séculos pelas populações locais, virou objeto de um caso de biopirataria internacional. Em 2003, uma empresa registrou o açaí como marca no Japão, tentando se apropriar comercialmente de um produto que sempre foi patrimônio da região. A patente só foi derrubada em 2007, após contestação. O episódio ilustra como o conhecimento tradicional amazônico segue disputado no presente.",
+"pergunta": "Em que país o açaí foi registrado indevidamente como marca?",
+"resposta": "Japão",
+"alt": [
+"no Japão"
+]
+},
+{
+"id": "H211",
+"tema": "Livro · Cap.16",
+"texto": "O destino final da Colônia do Sacramento só se resolveu depois de décadas de disputa. O Tratado de Badajós, de 1801, devolveu a Portugal grande parte do território do atual Rio Grande do Sul. Em troca, a Espanha consolidou seu domínio sobre o estuário do rio da Prata, incluindo Sacramento. A fronteira sul do Brasil ficou, assim, praticamente definida às vésperas do século XIX.",
+"pergunta": "Que tratado de 1801 devolveu a Portugal parte do Rio Grande do Sul?",
+"resposta": "Badajós",
+"alt": [
+"Tratado de Badajós"
+]
+},
+{
+"id": "H212",
+"tema": "Livro · Cap.18",
+"texto": "A repressão à Revolta de Beckman não poupou os líderes. Manuel Beckman foi condenado à morte, junto com Jorge Sampaio, outro dos cabeças do movimento contra a Companhia do Maranhão. Já Tomás Beckman, irmão de Manuel, que fora a Lisboa jurar fidelidade ao rei antes da chegada das tropas, recebeu pena diferente: vinte anos de degredo em Pernambuco. A punição variou conforme o grau de envolvimento e a postura de cada um diante da Coroa.",
+"pergunta": "Quantos anos de degredo em Pernambuco recebeu Tomás Beckman?",
+"resposta": "vinte anos",
+"alt": [
+"20 anos",
+"vinte"
+]
+},
+{
+"id": "H213",
+"tema": "Livro · Cap.20",
+"texto": "O território que hoje forma os Estados Unidos era, antes da chegada inglesa, habitado por povos indígenas extremamente diversos. Mais de trezentas línguas eram faladas entre grupos como cherokees, comanches, iroqueses e apaches. Essa diversidade recebeu menos atenção dos historiadores do que as civilizações pré-colombianas mais conhecidas, como maias, astecas e incas. A menor interação entre colonos e indígenas no norte ajudou a apagar esses povos das narrativas tradicionais.",
+"pergunta": "Quantas línguas indígenas eram faladas no território dos futuros EUA?",
+"resposta": "trezentas",
+"alt": [
+"mais de 300",
+"300 línguas"
+]
+},
+{
+"id": "H214",
+"tema": "Livro · Cap.20",
+"texto": "Apesar do apagamento historiográfico, os povos indígenas do norte da América deixaram marcas concretas no cotidiano colonial inglês. O tabaco, o milho, a abóbora e o peru, ave nativa, passaram a integrar a alimentação de ingleses e franceses. Os colonos também incorporaram o uso das canoas para navegar pelo interior do continente e aprenderam com os nativos o uso de ervas medicinais contra enfermidades. A contribuição indígena, embora menos narrada, foi real e duradoura.",
+"pergunta": "Que ave nativa americana os colonos incorporaram à alimentação?",
+"resposta": "peru",
+"alt": [
+"o peru"
+]
+},
+{
+"id": "H215",
+"tema": "Livro · Cap.20",
+"texto": "Os puritanos de Massachusetts se enxergavam em termos bíblicos. Consideravam-se um novo povo de Israel, uma nova Canaã, escolhido por Deus para formar uma sociedade de eleitos. Comparavam sua travessia do Atlântico à travessia hebraica do deserto do Sinai, e viam nas perseguições sofridas na Inglaterra um eco das perseguições bíblicas ao povo judeu. Essa autoimagem de povo eleito é apontada como uma das marcas mais fortes na formação da cultura norte-americana.",
+"pergunta": "A que povo bíblico os puritanos se comparavam?",
+"resposta": "Israel",
+"alt": [
+"povo de Israel",
+"hebreus"
+]
+},
+{
+"id": "H216",
+"tema": "Livro · Cap.20",
+"texto": "A pirâmide social das colônias inglesas tinha camadas bem definidas abaixo da burguesia comercial do norte e dos grandes fazendeiros do sul. Na porção intermediária estavam profissionais como médicos, advogados e clérigos. Abaixo deles vinham os pequenos comerciantes, seguidos por artesãos e camponeses. Na base da pirâmide ficavam os que cumpriam servidão temporária e, por fim, os escravizados.",
+"pergunta": "Que profissionais ocupavam a camada logo abaixo do topo da pirâmide social?",
+"resposta": "médicos e advogados",
+"alt": [
+"médicos, advogados e clérigos",
+"profissionais liberais"
+]
+},
+{
+"id": "H217",
+"tema": "Livro · Cap.20",
+"texto": "O folheto de William Penn descrevia ainda uma terceira categoria de colonos ideais: espíritos laboriosos que na Inglaterra viviam oprimidos pela necessidade de ganhar a vida. Na colônia, com meios de subsistência mais fáceis, esses homens teriam tempo e oportunidade para satisfazer suas inclinações, aprimorar a ciência e ajudar nas escolas. Penn imaginava a Pensilvânia como lugar onde a sobrevivência garantida liberaria energia para o cultivo intelectual. Era uma promessa de ascensão que ia além do simples sustento.",
+"pergunta": "Que atividade intelectual Penn prometia que a colônia permitiria aprimorar?",
+"resposta": "a ciência",
+"alt": [
+"ciência",
+"aprimorar a ciência"
+]
+},
+{
+"id": "H218",
+"tema": "Livro · Cap.20",
+"texto": "A quarta e última categoria do folheto de Penn eram os irmãos caçulas de família com pequenas heranças, que viviam sob a sombra dos parentes mais velhos sem poder exercer atividade própria condizente com sua condição social. Para Penn, a plantação na Pensilvânia lhes daria independência sem exigir ruptura com o status de origem. O documento tentava, assim, cobrir todo o espectro social inglês, do lavrador pobre ao filho desprovido de herança. Cada categoria recebia uma promessa sob medida.",
+"pergunta": "Que tipo de herdeiro formava a quarta categoria do folheto de Penn?",
+"resposta": "irmãos caçulas",
+"alt": [
+"caçulas",
+"irmãos mais novos"
+]
+},
+{
+"id": "H219",
+"tema": "Livro · Cap.20",
+"texto": "As colônias do Norte, conhecidas como Nova Inglaterra, têm origem datada com precisão: 1620, com a fundação de Plymouth, em Massachusetts. Na mesma região vieram depois Rhode Island e Connecticut, ambas em 1636, e New Hampshire, em 1638. Nova York, Pensilvânia, Nova Jersey e Delaware, fundadas após 1660, são chamadas por alguns de colônias centrais, mas compartilham as características sociais e econômicas do Norte. O mapa das Treze Colônias se completou ao longo de quatro décadas.",
+"pergunta": "Em que ano foram fundadas Rhode Island e Connecticut?",
+"resposta": "1636",
+"alt": [
+"mil seiscentos e trinta e seis"
+]
+},
+{
+"id": "H220",
+"tema": "Livro · Cap.20",
+"texto": "As Colônias do Sul, distintas do modelo comercial do Norte, eram cinco: Maryland, Virgínia, Carolina do Norte, Carolina do Sul e Geórgia. Nelas predominava a grande propriedade monocultora voltada à exportação, sustentada por mão de obra escrava africana. Essa base econômica e social as diferenciava nitidamente das colônias do Norte, de pequena propriedade e mão de obra livre. A linha divisória entre os dois modelos moldaria décadas depois a Guerra Civil americana.",
+"pergunta": "Quantas colônias formavam o grupo do Sul?",
+"resposta": "cinco",
+"alt": [
+"5"
+]
+},
+{
+"id": "H221",
+"tema": "Livro · Cap.21",
+"texto": "O apelido dado ao exército parlamentar durante a Guerra Civil inglesa tem origem no visual dos soldados. Eram chamados de cabeças-redondas porque usavam os cabelos cortados curtos, em contraste com os longos cachos dos cavaleiros que defendiam o rei. O corte de cabelo virou, assim, marcador político e social imediato. Reconhecer um soldado por sua aparência era, naquele conflito, também reconhecer seu partido.",
+"pergunta": "Por que o exército parlamentar foi chamado de cabeças-redondas?",
+"resposta": "cabelos curtos",
+"alt": [
+"cabelo curto",
+"por usarem cabelo curto"
+]
+},
+{
+"id": "H222",
+"tema": "Livro · Cap.21",
+"texto": "Além de reprimir a oposição interna durante o Commonwealth, Cromwell voltou sua atenção para a Irlanda, onde monarquistas católicos desconfiavam profundamente do puritano que governava a Inglaterra. Diante da revolta irlandesa, Cromwell invadiu o território e estabeleceu, ao norte da ilha, uma área de colonização protestante. Essa intervenção lançou as bases de uma divisão religiosa e territorial que marcaria a Irlanda por séculos. A república puritana exportava para fora sua própria lógica de conflito religioso.",
+"pergunta": "Que área Cromwell estabeleceu ao norte da Irlanda?",
+"resposta": "colonização protestante",
+"alt": [
+"área protestante",
+"colônia protestante"
+]
+},
+{
+"id": "H223",
+"tema": "Livro · Cap.21",
+"texto": "Entre os artigos do Bill of Rights está também a garantia de que as eleições dos membros do Parlamento deveriam ser livres. O princípio buscava impedir que a Coroa manipulasse ou interferisse na escolha dos representantes que depois lhe fariam oposição. Sem eleições livres, todas as outras garantias do documento perderiam sentido prático. A liberdade do voto era, portanto, a base que sustentava as demais.",
+"pergunta": "O que o Bill of Rights garantia sobre as eleições parlamentares?",
+"resposta": "deveriam ser livres",
+"alt": [
+"livres",
+"liberdade eleitoral"
+]
+},
+{
+"id": "H224",
+"tema": "Livro · Cap.21",
+"texto": "Um texto sobre as heranças do Iluminismo observa que herdamos do movimento, no plano político, principalmente sua vertente autoritária: distante e hostil à participação popular, elitista então como hoje. O texto pergunta como chamar, na atualidade, certas elites tecnocráticas — fundadas na suposta supremacia dos técnicos sobre os demais — senão como manifestações iluministas contemporâneas. A crítica sugere que o culto à razão pode conviver com o desprezo pela vontade popular. O Iluminismo, nesse sentido, ainda está vivo, para o bem e para o mal.",
+"pergunta": "Em que se fundamentam as elites chamadas de tecnocráticas?",
+"resposta": "supremacia técnica",
+"alt": [
+"nos técnicos",
+"supremacia dos técnicos"
+]
+},
+{
+"id": "H225",
+"tema": "Livro · Cap.22",
+"texto": "James Watt, ao patentear sua máquina a vapor aperfeiçoada em 1769, tinha plena consciência do que havia criado. Em carta ao próprio pai, em 1774, escreveu que o negócio a que se dedicava havia se tornado um grande sucesso, e que a máquina de fogo que inventara estava funcionando e obtendo uma resposta muito melhor do que qualquer outra já construída até então. A confiança do inventor se confirmaria nas décadas seguintes. Poucas invenções mudaram tanto a produção quanto aquela.",
+"pergunta": "Em que ano Watt escreveu ao pai sobre o sucesso da máquina?",
+"resposta": "1774",
+"alt": [
+"mil setecentos e setenta e quatro"
+]
+},
+{
+"id": "H226",
+"tema": "Livro · Cap.22",
+"texto": "Um gráfico de produção de carvão mostra a distância entre as duas potências industriais do início do século XIX. Entre 1820 e 1824, a Grã-Bretanha já produzia cerca de quinze milhões de toneladas, contra menos de cinco milhões da França. Entre 1850 e 1854, a distância havia se ampliado ainda mais: a produção britânica ultrapassava cinquenta milhões de toneladas, enquanto a francesa mal chegava a dez. O carvão media, com precisão, o descompasso industrial entre os dois países.",
+"pergunta": "Qual país produzia muito mais carvão que a França no século XIX?",
+"resposta": "Grã-Bretanha",
+"alt": [
+"Inglaterra",
+"Reino Unido"
+]
+},
+{
+"id": "H227",
+"tema": "Livro · Cap.22",
+"texto": "O uso do carvão na indústria têxtil nascente passou por uma transição de matéria-prima. Inicialmente, usava-se carvão vegetal para mover as máquinas a vapor, mas seu alto custo e o processo lento de produção não atendiam à demanda crescente de energia. Na década de 1780, os industriais introduziram maciçamente o carvão mineral, junto com métodos de purificação do ferro que lhe deram caráter propriamente industrial. Essa dupla mudança de insumo sustentou a aceleração da produção nas décadas seguintes.",
+"pergunta": "Que tipo de carvão substituiu o vegetal a partir de 1780?",
+"resposta": "mineral",
+"alt": [
+"carvão mineral",
+"o mineral"
+]
+},
+{
+"id": "H228",
+"tema": "Livro · Cap.22",
+"texto": "O crescimento da produção de ferro inglesa acompanhou o ritmo da industrialização. Movido pelo carvão e purificado pelos novos métodos introduzidos nos anos 1780, o ferro passou a ser produzido em lâminas e lingotes, em quantidades cada vez maiores. Em 1844, a produção já atingia cerca de três milhões de toneladas. Foi esse volume que sustentou o surgimento das indústrias metalúrgicas como setor autônomo e viabilizou ferrovias por toda a Inglaterra.",
+"pergunta": "Aproximadamente quantas toneladas de ferro a Inglaterra produzia em 1844?",
+"resposta": "três milhões",
+"alt": [
+"3 milhões",
+"cerca de 3 milhões"
+]
+},
+{
+"id": "H229",
+"tema": "Livro · Cap.22",
+"texto": "O crescimento urbano do século XIX pode ser medido em uma única cidade. Em 1850, a Europa tinha duas grandes capitais com mais de um milhão de habitantes: Londres, já então com dois milhões e trezentos mil moradores, e Paris. Porém, essas grandes cidades ofereciam pouca qualidade de vida para seus habitantes mais pobres, que viviam em cortiços sem higiene em bairros insalubres. O tamanho da cidade não garantia dignidade a quem nela morava.",
+"pergunta": "Quantos habitantes tinha Londres por volta de 1850?",
+"resposta": "2,3 milhões",
+"alt": [
+"dois milhões e trezentos mil",
+"2.300.000"
+]
+},
+{
+"id": "H230",
+"tema": "Livro · Cap.22",
+"texto": "Um regulamento de fiação inglesa de 1828 fixava a jornada de trabalho em treze horas diárias, com as horas excedentes pagas na mesma proporção do salário normal — sem qualquer adicional que desestimulasse o excesso. O artigo seguinte determinava multa de vinte e cinco centavos para todo trabalhador que se atrasasse mais de dez minutos. As regras mostram como a disciplina fabril tratava o tempo do operário como propriedade da fábrica. Minutos de atraso custavam dinheiro real ao bolso do trabalhador.",
+"pergunta": "Quantas horas durava a jornada segundo o regulamento de 1828?",
+"resposta": "treze horas",
+"alt": [
+"13 horas",
+"13h"
+]
+},
+{
+"id": "H231",
+"tema": "Livro · Cap.22",
+"texto": "As indústrias de alta tecnologia que surgiram nos anos 1980 e 1990 se concentraram em campos específicos: microinformática, robótica, mecatrônica, biotecnologia e telecomunicações. Baseavam-se em mão de obra altamente especializada, ao contrário da produção fordista de massa que dependia de trabalho pouco qualificado. Essa nova unidade fabril exigia investimento constante em pesquisa para se manter competitiva. A produção de ponta passou a exigir tanto capital intelectual quanto capital financeiro.",
+"pergunta": "Que tipo de mão de obra as indústrias de alta tecnologia exigiam?",
+"resposta": "especializada",
+"alt": [
+"altamente especializada",
+"qualificada"
+]
+},
+{
+"id": "H232",
+"tema": "Livro · Cap.22",
+"texto": "A nova produção de alta tecnologia provocou uma reorganização espacial da indústria mundial. As empresas deixaram de se limitar aos territórios de origem e passaram a instalar unidades onde os custos fossem mais baixos, ampliando as margens de lucro. China, México, Brasil, Coreia do Sul e Índia tornaram-se alvos preferidos do capital internacional por oferecerem mão de obra barata e vantagens fiscais. A geografia da produção industrial se redesenhou seguindo o custo, não mais a origem do capital.",
+"pergunta": "Que país asiático virou alvo preferido do capital industrial internacional?",
+"resposta": "China",
+"alt": [
+"a China"
+]
+}
+]
