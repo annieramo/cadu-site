@@ -203,7 +203,7 @@ function proxCard(){
   }
   cardAtual = BANK[S.cursor];
   S.ordem++;
-  $("tag").textContent = (S.blocoKind==="warmup"?"aquecimento":"ciclo "+S.ciclo)+" · "+cardAtual.tema;
+  $("tag").textContent = "";   // tela limpa: sem tema, sem ciclo, sem nocao de tempo
   $("texto").textContent = cardAtual.texto;
   $("texto").classList.remove("hide");
   $("pergunta").classList.add("hide");
