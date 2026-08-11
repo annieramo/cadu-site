@@ -322,6 +322,75 @@
 "tema": "Açúcar, escravidão e invasões"
 },
 {
+"id": "H374",
+"texto": "A colonização efetiva começou pelas capitanias hereditárias, faixas de terra doadas a particulares a partir de 1534. O donatário recebia dois documentos: a carta de doação, que transferia a posse, e o foral, que definia seus direitos e deveres, como fundar vilas, distribuir sesmarias e cobrar tributos. Em troca, arcava sozinho com os custos da ocupação. O modelo transferia ao setor privado uma despesa que a Coroa não queria ter.",
+"pergunta": "Que documento definia direitos e deveres do donatário?",
+"resposta": "o foral",
+"alt": [
+"foral",
+"a carta foral"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H375",
+"texto": "Das quinze capitanias hereditárias distribuídas, apenas duas prosperaram de fato: Pernambuco e São Vicente. As demais fracassaram por falta de recursos dos donatários, resistência indígena, distância e ausência de produto rentável. O insucesso generalizado foi o que levou a Coroa a criar o governo-geral em 1549. As capitanias não foram extintas, mas passaram a existir sob uma autoridade superior.",
+"pergunta": "Quais duas capitanias hereditárias prosperaram?",
+"resposta": "Pernambuco",
+"alt": [
+"Pernambuco e São Vicente",
+"São Vicente",
+"duas"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H376",
+"texto": "Nem todo engenho tinha o mesmo porte. O engenho real era movido por água, com moenda potente e grande capacidade de moagem, e exigia investimento alto. O banguê, ou trapiche, era menor e movido por tração animal, com produção limitada. A diferença marcava a hierarquia entre os senhores, e o título de senhor de engenho real conferia prestígio social equivalente ao de nobreza na colônia.",
+"pergunta": "Que força movia o engenho real?",
+"resposta": "água",
+"alt": [
+"a água",
+"roda-d'água",
+"hidráulica"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H377",
+"texto": "O trabalho no engenho seguia um calendário rígido. A safra ia de julho a maio, e durante a moagem as fornalhas não podiam apagar: trabalhava-se em turnos que se estendiam pela noite, incluindo domingos e dias santos. O intervalo entre safras servia para reparos, plantio e corte de lenha. A continuidade do fogo impunha um ritmo que nenhuma outra atividade colonial exigia.",
+"pergunta": "O que não podia apagar durante a safra do engenho?",
+"resposta": "as fornalhas",
+"alt": [
+"o fogo",
+"fornalhas",
+"as caldeiras"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H378",
+"texto": "Os documentos coloniais distinguiam dois tipos de escravizado africano. O boçal era o recém-chegado, que não falava português nem conhecia o trabalho; o ladino já dominava a língua, os costumes e a rotina produtiva. O ladino valia mais no mercado e ocupava funções de maior responsabilidade, às vezes supervisionando outros. A classificação mostra que o próprio sistema reconhecia o aprendizado como valor econômico.",
+"pergunta": "Como era chamado o escravizado que já dominava a língua?",
+"resposta": "ladino",
+"alt": [
+"o ladino",
+"ladinos"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H379",
+"texto": "A alforria existiu durante todo o período colonial, embora atingisse uma minoria. Podia ser concedida por testamento, comprada com economias do próprio escravizado ou obtida pela coartação, acordo em que o cativo pagava sua liberdade em parcelas enquanto continuava trabalhando. Mulheres e crianças nascidas na colônia eram alforriadas com mais frequência que homens adultos do eito. A liberdade concedida, porém, podia ser revogada judicialmente por ingratidão.",
+"pergunta": "Como se chamava a compra parcelada da própria liberdade?",
+"resposta": "coartação",
+"alt": [
+"a coartação",
+"coartar"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
 "id": "H074",
 "tema": "Pecuária e interiorização",
 "texto": "Expulso do litoral para dar lugar à cana, o gado subiu o curso do rio São Francisco, que por isso ficou conhecido como Rio dos Currais. A pecuária interiorizou o povoamento do Nordeste e também do Sul. Currais e caminhos de boiada fixaram vilas onde antes só havia sertão. O interior começava a ter vida econômica própria, para além do açúcar.",
@@ -529,6 +598,75 @@
 "couros",
 "o couro",
 "peles"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H380",
+"texto": "Os criadores distinguiam duas frentes de expansão pecuária. O sertão de fora acompanhava o litoral em direção ao norte, alcançando o Ceará e o Piauí; o sertão de dentro seguia o vale do São Francisco rumo ao interior e depois às minas. As duas frentes se encontraram no século XVIII, fechando a ocupação do Nordeste. A geografia dos rios definiu por onde o gado avançou.",
+"pergunta": "Que frente pecuária seguia o vale do São Francisco?",
+"resposta": "sertão de dentro",
+"alt": [
+"de dentro",
+"o sertão de dentro"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H381",
+"texto": "Como o gado era criado solto em áreas sem cerca, era preciso identificar a propriedade de cada animal. Usava-se o ferro, marca em brasa aplicada no couro com o símbolo registrado do fazendeiro, gravado em cartório. A operação anual de reunir, marcar e contar o rebanho chamava-se ferra e mobilizava vaqueiros de várias fazendas. Sem essa marca, um boi solto no sertão não teria dono reconhecível.",
+"pergunta": "Que operação anual reunia e marcava o rebanho?",
+"resposta": "a ferra",
+"alt": [
+"ferra",
+"marcação"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H382",
+"texto": "A disputa do vaqueiro com o gado bravio no mato fechado deu origem a uma prática que virou festa. A vaquejada nasceu como demonstração da habilidade de derrubar o boi puxando-o pela cauda, técnica usada de fato para retirar animais escondidos na caatinga. Com o tempo, transformou-se em competição com regras e público. É um caso em que a técnica de trabalho vira manifestação cultural.",
+"pergunta": "Por onde o vaqueiro derrubava o boi na técnica da vaquejada?",
+"resposta": "pela cauda",
+"alt": [
+"cauda",
+"o rabo",
+"pelo rabo"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H383",
+"texto": "A base alimentar do sertão pecuário não era a carne, e sim a mandioca. Transformada em farinha, ela resistia meses sem estragar, era leve para transportar e acompanhava praticamente todas as refeições. A carne, mesmo em região criadora, era destinada sobretudo à venda. O sertanejo comia o que sobrava do comércio, não o que o rebanho poderia oferecer.",
+"pergunta": "Que alimento formava a base da dieta sertaneja?",
+"resposta": "farinha de mandioca",
+"alt": [
+"mandioca",
+"a farinha"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H384",
+"texto": "Ao lado do gado bovino, o sertão criou caprinos em grande número. Cabras e bodes suportavam melhor a seca e a vegetação espinhosa, exigiam menos água e forneciam leite, carne e couro para uso doméstico. Enquanto o boi era mercadoria de exportação para o litoral, o bode sustentava a família no lugar. A pecuária sertaneja tinha, assim, duas camadas: uma voltada ao mercado, outra à sobrevivência.",
+"pergunta": "Que animal resistia melhor à seca que o gado bovino?",
+"resposta": "o bode",
+"alt": [
+"cabras",
+"caprinos",
+"bode e cabra"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H385",
+"texto": "O crescimento da pecuária criou uma rivalidade permanente com a lavoura canavieira. O gado solto invadia canaviais e roças, destruindo plantações inteiras, e os senhores de engenho pressionavam as autoridades por restrições. Do outro lado, os criadores alegavam que sem pastagens amplas a atividade era inviável. A legislação colonial oscilou entre os dois interesses ao longo de todo o período.",
+"pergunta": "Que atividade agrícola conflitava com o gado solto?",
+"resposta": "a cana",
+"alt": [
+"canaviais",
+"cana-de-açúcar",
+"lavoura de cana"
 ],
 "tema": "Pecuária e interiorização"
 },
@@ -776,6 +914,73 @@
 "tema": "Bandeiras e apresamento"
 },
 {
+"id": "H386",
+"texto": "A documentação colonial distingue bandeiras de entradas. As entradas eram expedições oficiais, financiadas e autorizadas pela Coroa, com objetivos definidos de reconhecimento ou conquista; as bandeiras eram iniciativas particulares, organizadas e custeadas pelos próprios paulistas, que dividiam entre si o que capturassem. A diferença é de patrocínio, não de método. Ambas usavam violência e ambas ultrapassaram o meridiano de Tordesilhas.",
+"pergunta": "Quem financiava as entradas, ao contrário das bandeiras?",
+"resposta": "a Coroa",
+"alt": [
+"Coroa",
+"o governo",
+"a metrópole"
+],
+"tema": "Bandeiras e apresamento"
+},
+{
+"id": "H387",
+"texto": "Nos registros de compra e venda, os indígenas capturados eram contados em peças, mesma unidade usada para africanos escravizados no tráfico atlântico. Uma peça correspondia a um adulto em plenas condições de trabalho; crianças, idosos e doentes valiam frações dessa unidade. A linguagem contábil transformava pessoas em medida padronizada de mercadoria. O vocabulário revela como o sistema precisava desumanizar para funcionar.",
+"pergunta": "Que unidade contava os cativos nos registros comerciais?",
+"resposta": "peça",
+"alt": [
+"peças",
+"a peça"
+],
+"tema": "Bandeiras e apresamento"
+},
+{
+"id": "H388",
+"texto": "As bandeiras usavam os rios como estradas naturais. O Tietê, que corre para o interior e não para o mar, foi a principal via de penetração paulista rumo ao oeste, conectando-se ao Paraná e daí ao Paraguai. Essa peculiaridade geográfica explica por que São Paulo, e não uma capitania litorânea rica, se tornou a base da expansão. O relevo determinou quem podia avançar sobre o sertão.",
+"pergunta": "Que rio serviu de via principal para a expansão paulista?",
+"resposta": "Tietê",
+"alt": [
+"o Tietê",
+"rio Tietê"
+],
+"tema": "Bandeiras e apresamento"
+},
+{
+"id": "H389",
+"texto": "A população paulista do século XVII era majoritariamente mameluca, filha de portugueses com indígenas. Muitos bandeirantes falavam a língua geral em casa e aprendiam o português apenas para os atos oficiais, e alguns nem isso. Conheciam as trilhas, as técnicas de caça e a organização das aldeias porque haviam sido criados nesse universo. A eficácia do apresamento vinha justamente desse conhecimento adquirido pelo lado materno.",
+"pergunta": "Que língua os bandeirantes paulistas falavam em casa?",
+"resposta": "língua geral",
+"alt": [
+"a língua geral",
+"tupi"
+],
+"tema": "Bandeiras e apresamento"
+},
+{
+"id": "H390",
+"texto": "Ao capturar indígenas nas reduções espanholas de Guairá e Tape, as bandeiras cruzaram amplamente o meridiano de Tordesilhas. A ocupação efetiva desses territórios por súditos portugueses seria depois usada como argumento jurídico nas negociações do Tratado de Madri. O que começou como saque acabou virando título de posse. A expansão territorial brasileira deve seu desenho a expedições que a lei da época considerava ilegais.",
+"pergunta": "Que tratado usou a ocupação bandeirante como argumento?",
+"resposta": "Tratado de Madri",
+"alt": [
+"Madri",
+"o de Madri"
+],
+"tema": "Bandeiras e apresamento"
+},
+{
+"id": "H391",
+"texto": "Antes de Raposo Tavares, o mais influente organizador de bandeiras foi Manuel Preto, que reuniu grandes contingentes de indígenas administrados em suas propriedades e financiou expedições ao Guairá. Ele morreu em combate contra os guaranis em 1630, durante o ataque às reduções. Sua trajetória mostra que o apresamento era empresa familiar e hereditária. As fortunas paulistas se mediam em número de administrados, não em terras.",
+"pergunta": "Em que unidade se media a fortuna de um paulista do século XVII?",
+"resposta": "administrados",
+"alt": [
+"índios administrados",
+"número de administrados"
+],
+"tema": "Bandeiras e apresamento"
+},
+{
 "id": "H076",
 "tema": "Amazônia e tratados",
 "texto": "Com o fim da União Ibérica em 1640, as fronteiras entre as Américas portuguesa e espanhola precisaram ser redefinidas. O Tratado de Utrecht, em 1713 e 1715, ajustou os limites ao norte e na região do Rio da Prata. O mais importante veio em 1750: o Tratado de Madrid, baseado no princípio do uti possidetis — quem possui a terra de fato é dono dela por direito. A posse consumada pelos bandeirantes virava, assim, fronteira legal.",
@@ -965,6 +1170,73 @@
 "alt": [
 "rio Guaporé",
 "o Guaporé"
+],
+"tema": "Amazônia e tratados"
+},
+{
+"id": "H392",
+"texto": "Os missionários organizavam expedições para convencer grupos indígenas do interior a descer os rios e se instalar em aldeamentos próximos aos núcleos coloniais. Essas operações chamavam-se descimentos e eram apresentadas como persuasão voluntária, ainda que frequentemente envolvessem coerção. Uma vez aldeados, os grupos ficavam disponíveis para o trabalho de repartição. O descimento era, na prática, a etapa que transformava população livre em mão de obra disponível.",
+"pergunta": "Como se chamavam as expedições que traziam indígenas para aldeias?",
+"resposta": "descimentos",
+"alt": [
+"descimento",
+"os descimentos"
+],
+"tema": "Amazônia e tratados"
+},
+{
+"id": "H393",
+"texto": "Além dos descimentos, a legislação permitia as chamadas tropas de resgate. A justificativa jurídica era que se estava comprando indígenas já feitos prisioneiros por outros grupos indígenas, salvando-os de serem sacrificados. Na prática, a demanda colonial estimulava guerras entre povos para produzir prisioneiros vendáveis. Uma exceção legal desenhada para casos raros virou o principal mecanismo de abastecimento de cativos.",
+"pergunta": "Que argumento justificava legalmente as tropas de resgate?",
+"resposta": "salvar prisioneiros",
+"alt": [
+"resgatar prisioneiros",
+"evitar sacrifício",
+"salvá-los"
+],
+"tema": "Amazônia e tratados"
+},
+{
+"id": "H394",
+"texto": "As drogas do sertão formavam um conjunto variado de produtos florestais. Além do cacau, exportavam-se cravo, canela, salsaparrilha, baunilha, urucum e óleo de copaíba, todos coletados na mata e não cultivados. Muitos serviam como especiaria ou remédio na Europa, substituindo produtos asiáticos mais caros. A economia amazônica dependia inteiramente do conhecimento indígena sobre onde e quando encontrar cada espécie.",
+"pergunta": "Que raiz medicinal figurava entre as drogas do sertão?",
+"resposta": "salsaparrilha",
+"alt": [
+"a salsaparrilha"
+],
+"tema": "Amazônia e tratados"
+},
+{
+"id": "H395",
+"texto": "Para controlar o alto rio Negro e barrar o avanço espanhol vindo da Venezuela, os portugueses construíram a fortaleza de São José, no local onde o rio encontra o Solimões. O povoado formado ao redor recebeu depois o nome de Barra do Rio Negro. É a origem da atual cidade de Manaus. Como em quase toda a Amazônia, a cidade nasceu de um propósito militar antes de qualquer vocação econômica.",
+"pergunta": "Que cidade nasceu da fortaleza de São José do Rio Negro?",
+"resposta": "Manaus",
+"alt": [
+"Manaus, AM",
+"a Barra"
+],
+"tema": "Amazônia e tratados"
+},
+{
+"id": "H396",
+"texto": "A canela e o cravo amazônicos eram vendidos na Europa como substitutos das especiarias orientais. Quando o comércio com as Índias encareceu ou ficou bloqueado por guerras, esses produtos ganharam mercado. Não tinham exatamente o mesmo sabor, e eram tratados como versão mais barata dos originais. A Amazônia entrou no comércio mundial ocupando o lugar que a rota das Índias deixava vago.",
+"pergunta": "Que produtos orientais as drogas amazônicas substituíam?",
+"resposta": "especiarias",
+"alt": [
+"as especiarias",
+"especiarias das Índias"
+],
+"tema": "Amazônia e tratados"
+},
+{
+"id": "H397",
+"texto": "A administração colonial na Amazônia enfrentava um obstáculo prático incontornável: as distâncias. Uma ordem saída de Belém podia levar meses para chegar aos fortes do alto Solimões, e a resposta, outro tanto. Isso dava aos agentes locais autonomia de fato muito maior que a prevista em lei. A lentidão da comunicação foi, durante todo o período colonial, a principal limitadora do poder metropolitano.",
+"pergunta": "Que fator limitava na prática o poder da administração amazônica?",
+"resposta": "as distâncias",
+"alt": [
+"distância",
+"a distância",
+"lentidão"
 ],
 "tema": "Amazônia e tratados"
 },
@@ -1241,6 +1513,73 @@
 "alt": [
 "as irmandades",
 "confrarias"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H398",
+"texto": "A extração do ouro de aluvião usava ferramentas simples e específicas. O almocafre, espécie de enxada estreita, soltava o cascalho do leito do rio; a bateia, gamela de madeira em forma de cone raso, servia para lavar o material e separar o metal pesado da areia. Todo o processo dependia de força humana e água corrente. A simplicidade das ferramentas explica por que qualquer pessoa podia tentar a sorte nas minas.",
+"pergunta": "Que gamela de madeira separava o ouro da areia?",
+"resposta": "bateia",
+"alt": [
+"a bateia"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H399",
+"texto": "Havia duas formas principais de lavra nas minas. O talho aberto explorava depósitos superficiais nas margens e no leito dos rios, exigindo pouco investimento; a lavra de morro atacava as encostas, abrindo galerias e desviando cursos d'água, o que demandava capital, escravizados e conhecimento técnico. À medida que o ouro fácil acabava, a segunda forma se impunha. A mudança técnica excluiu progressivamente o pequeno minerador.",
+"pergunta": "Que tipo de lavra explorava as encostas com galerias?",
+"resposta": "lavra de morro",
+"alt": [
+"de morro",
+"lavra em morro"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H400",
+"texto": "O aumento das fugas nas regiões mineradoras criou uma ocupação específica: o capitão do mato. Contratado por particulares ou pelas câmaras, ele perseguia escravizados fugidos e recebia por cabeça capturada, com valores tabelados conforme a distância percorrida. Muitos capitães do mato eram homens negros libertos. A repressão à fuga se apoiava, em parte, nas próprias pessoas que haviam escapado da escravidão.",
+"pergunta": "Como era pago o capitão do mato?",
+"resposta": "por captura",
+"alt": [
+"por cabeça",
+"por escravizado capturado"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H401",
+"texto": "A concentração populacional nas minas criou um problema que o ouro não resolvia: comida. A região produzia pouco alimento, e tudo vinha de fora, transportado em lombo de mula por semanas. Os preços eram extraordinariamente altos, e uma galinha podia custar o equivalente a vários dias de trabalho. Essa dependência transformou o abastecimento num negócio tão lucrativo quanto a extração.",
+"pergunta": "Como os alimentos chegavam às minas?",
+"resposta": "em mulas",
+"alt": [
+"lombo de mula",
+"por tropas",
+"tropas de mulas"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H402",
+"texto": "A necessidade de abastecer as minas reorganizou a economia de regiões distantes. O Sul forneceu mulas e charque, o Nordeste enviou gado pelo São Francisco, e o Rio de Janeiro virou o porto principal, substituindo Salvador. Em 1763, a capital da colônia foi transferida para o Rio justamente por causa dessa reorientação. O ouro deslocou o eixo econômico e político do país.",
+"pergunta": "Para onde a capital da colônia foi transferida em 1763?",
+"resposta": "Rio de Janeiro",
+"alt": [
+"o Rio",
+"Rio"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H403",
+"texto": "Nas vilas mineradoras surgiu um tipo social que o mundo do açúcar quase não conhecia: o trabalhador urbano livre e assalariado. Alfaiates, sapateiros, ferreiros, tropeiros, taberneiros e vendedores ambulantes atendiam uma população numerosa e concentrada, com dinheiro circulando. Muitos eram forros ou mestiços. A cidade mineira produziu, assim, uma sociedade mais fluida e diversificada que a do litoral açucareiro.",
+"pergunta": "Que tipo de trabalhador surgiu nas vilas das minas?",
+"resposta": "assalariado urbano",
+"alt": [
+"assalariado",
+"trabalhador livre",
+"urbano livre"
 ],
 "tema": "Mineração e sociedade do ouro"
 },
@@ -1533,6 +1872,73 @@
 "salgado",
 "era salgado",
 "salgar o terreno"
+],
+"tema": "Revoltas coloniais"
+},
+{
+"id": "H404",
+"texto": "Entre os primeiros conflitos com povos indígenas destaca-se a longa guerra contra os aimorés, que resistiram por décadas no sul da Bahia e no Espírito Santo a partir do fim do século XVI. Sua tática de ataques rápidos e dispersos na mata inviabilizou engenhos inteiros e travou a expansão da lavoura na região. Os colonos os descreviam com terror nas cartas à Coroa. A resistência só cedeu com guerras de extermínio e com a chegada de epidemias.",
+"pergunta": "Que povo indígena travou a expansão canavieira no sul da Bahia?",
+"resposta": "aimorés",
+"alt": [
+"os aimorés",
+"aimoré"
+],
+"tema": "Revoltas coloniais"
+},
+{
+"id": "H405",
+"texto": "Em Minas Gerais existiram dezenas de quilombos, e o maior deles foi o do Ambrósio, no atual triângulo mineiro. Estima-se que abrigou milhares de pessoas e manteve roças, criação e comércio com povoados vizinhos, replicando em escala menor o modelo de Palmares. Foi destruído por expedições em meados do século XVIII. A existência desses núcleos mostra que a resistência coletiva não terminou com a queda de Palmares.",
+"pergunta": "Qual foi o maior quilombo de Minas Gerais?",
+"resposta": "Ambrósio",
+"alt": [
+"quilombo do Ambrósio",
+"do Ambrósio"
+],
+"tema": "Revoltas coloniais"
+},
+{
+"id": "H406",
+"texto": "As revoltas coloniais nem sempre partiam da população civil. Motins de soldados foram frequentes, provocados por atraso no soldo, alimentação ruim e castigos físicos, e às vezes se somavam a revoltas populares em curso. Como as tropas eram o instrumento da repressão, sua adesão mudava completamente a correlação de forças. Foi o que aconteceu na Conjuração Baiana, em que soldados estavam entre os principais articuladores.",
+"pergunta": "Que causa comum provocava motins de soldados na colônia?",
+"resposta": "atraso do soldo",
+"alt": [
+"falta de pagamento",
+"atraso no soldo",
+"soldo"
+],
+"tema": "Revoltas coloniais"
+},
+{
+"id": "H407",
+"texto": "A Coroa portuguesa raramente enviava tropas da metrópole para reprimir revoltas coloniais, por causa do custo e da distância. Preferia armar setores locais contra os revoltosos, prometendo cargos, terras e privilégios a quem colaborasse. A estratégia dividia a elite colonial e evitava despesas com o Atlântico. Governar à distância significava, sobretudo, saber a quem conceder favores.",
+"pergunta": "Que recurso a Coroa oferecia a quem colaborasse na repressão?",
+"resposta": "cargos e terras",
+"alt": [
+"privilégios",
+"cargos",
+"terras e privilégios"
+],
+"tema": "Revoltas coloniais"
+},
+{
+"id": "H408",
+"texto": "A palavra motim aparece nos documentos coloniais com sentido diferente do atual. Designava qualquer aglomeração desordenada que contestasse autoridade, sem implicar projeto político ou organização prévia. Já sedição indicava conspiração deliberada contra o governo, crime bem mais grave. A escolha do termo pelas autoridades definia a punição, e por isso os réus lutavam nos autos para que seu ato fosse classificado como motim.",
+"pergunta": "Que termo colonial indicava conspiração deliberada contra o governo?",
+"resposta": "sedição",
+"alt": [
+"a sedição"
+],
+"tema": "Revoltas coloniais"
+},
+{
+"id": "H409",
+"texto": "A Inconfidência Mineira nunca chegou a acontecer. Os conjurados discutiram bandeira, forma de governo, capital e até a abolição, mas foram denunciados antes de qualquer ação concreta, e não houve um único confronto armado. O julgamento durou três anos e produziu os Autos de Devassa, milhares de páginas que são hoje a principal fonte sobre o episódio. O movimento é conhecido, paradoxalmente, pelo processo que o puniu.",
+"pergunta": "Que documento judicial é a principal fonte sobre a Inconfidência?",
+"resposta": "Autos de Devassa",
+"alt": [
+"a devassa",
+"Autos"
 ],
 "tema": "Revoltas coloniais"
 },
@@ -1969,6 +2375,73 @@
 "tema": "América do Norte"
 },
 {
+"id": "H410",
+"texto": "As colônias inglesas na América tinham três estatutos jurídicos distintos. As de companhia eram administradas por sociedades comerciais com carta régia; as proprietárias pertenciam a um indivíduo ou família que recebia a terra do rei, como a Pensilvânia de Penn; as régias eram governadas diretamente pela Coroa, com governador nomeado por Londres. Muitas mudaram de estatuto ao longo do tempo, geralmente tornando-se régias. A variedade de formas gerou tradições políticas locais diferentes entre si.",
+"pergunta": "Que estatuto tinha a colônia entregue a uma família, como a Pensilvânia?",
+"resposta": "proprietária",
+"alt": [
+"colônia proprietária",
+"de proprietário"
+],
+"tema": "América do Norte"
+},
+{
+"id": "H411",
+"texto": "Benjamin Franklin encarna a figura do colono que ascendeu sem herança. Filho de um fabricante de velas, tornou-se tipógrafo, editor, inventor do para-raios e cientista respeitado na Europa, além de diplomata. Sua trajetória alimentou a ideia de que na América o mérito individual valia mais que o nascimento. Ele publicava conselhos práticos e máximas de poupança e trabalho num almanaque anual de enorme circulação.",
+"pergunta": "Que invenção elétrica é atribuída a Benjamin Franklin?",
+"resposta": "para-raios",
+"alt": [
+"o para-raios"
+],
+"tema": "América do Norte"
+},
+{
+"id": "H412",
+"texto": "A defesa das colônias inglesas não era feita por um exército profissional permanente. Cada povoação organizava sua própria milícia, formada por homens livres obrigados a possuir arma e a comparecer a treinamentos periódicos. Essas milícias combateram indígenas, franceses e, mais tarde, as tropas do próprio rei. A tradição do cidadão armado organizado localmente nasceu dessa necessidade prática de autodefesa.",
+"pergunta": "Que força defendia as povoações inglesas na América?",
+"resposta": "a milícia",
+"alt": [
+"milícias",
+"milícia local"
+],
+"tema": "América do Norte"
+},
+{
+"id": "H413",
+"texto": "A distribuição da população escravizada nas colônias inglesas era muito desigual. Na Carolina do Sul, os africanos chegaram a ser maioria da população total já no início do século XVIII, por causa das plantações de arroz; no Norte, não passavam de pequena minoria empregada em serviços domésticos e portuários. A escravidão existia em todas as treze colônias, mas com pesos radicalmente diferentes. Essa assimetria seria a raiz do conflito que dividiria o país no século seguinte.",
+"pergunta": "Em que colônia os escravizados chegaram a ser maioria?",
+"resposta": "Carolina do Sul",
+"alt": [
+"Carolina",
+"na Carolina do Sul"
+],
+"tema": "América do Norte"
+},
+{
+"id": "H414",
+"texto": "Filadélfia tornou-se, em meados do século XVIII, a maior cidade das colônias inglesas e uma das maiores do império britânico. Planejada em traçado xadrez por William Penn, atraía imigrantes alemães, escoceses e irlandeses pela tolerância religiosa e pelas oportunidades comerciais. Sua diversidade contrastava com a homogeneidade puritana da Nova Inglaterra. Não por acaso, foi ali que os delegados das colônias se reuniriam para deliberar sobre a ruptura com Londres.",
+"pergunta": "Que traçado urbano Penn planejou para a Filadélfia?",
+"resposta": "xadrez",
+"alt": [
+"em xadrez",
+"quadriculado",
+"grade"
+],
+"tema": "América do Norte"
+},
+{
+"id": "H415",
+"texto": "O surto de feitiçaria de Salem terminou de forma tão abrupta quanto começou. Quando as acusações passaram a atingir pessoas de posição elevada, incluindo a esposa do governador, as autoridades suspenderam o tribunal e proibiram o uso de provas baseadas em visões e sonhos. Anos depois, jurados publicaram um pedido formal de perdão. O episódio virou referência recorrente sempre que se discute histeria coletiva e acusação sem prova.",
+"pergunta": "Que tipo de prova foi proibido para encerrar os processos de Salem?",
+"resposta": "visões e sonhos",
+"alt": [
+"visões",
+"provas espectrais",
+"sonhos"
+],
+"tema": "América do Norte"
+},
+{
 "id": "H102",
 "tema": "Revoluções Inglesas",
 "texto": "O Commonwealth de Cromwell foi, na prática, uma ditadura que esmagou a oposição, inclusive movimentos radicais como os niveladores e os cavadores, que pediam igualdade política e de terras. Em 1651, Cromwell decretou os Atos de Navegação: mercadorias inglesas só circulariam em navios ingleses. A medida destruiu a intermediação holandesa e impulsionou a burguesia mercantil nacional. A república puritana serviu, sobretudo, ao comércio inglês.",
@@ -2350,6 +2823,72 @@
 "tema": "Revoluções Inglesas"
 },
 {
+"id": "H416",
+"texto": "A Igreja Anglicana nasceu de um conflito dinástico, não doutrinário. Em 1534, Henrique VIII rompeu com Roma porque o papa recusou anular seu casamento, e o Ato de Supremacia o tornou chefe da Igreja na Inglaterra. A doutrina permaneceu, no essencial, próxima da católica por décadas. Essa origem ambígua explica por que os puritanos consideravam a reforma inglesa incompleta e queriam purificá-la.",
+"pergunta": "Que ato de 1534 tornou o rei chefe da Igreja inglesa?",
+"resposta": "Ato de Supremacia",
+"alt": [
+"de Supremacia",
+"Supremacia"
+],
+"tema": "Revoluções Inglesas"
+},
+{
+"id": "H417",
+"texto": "Em novembro de 1605, um grupo de católicos ingleses tentou explodir o Parlamento durante a sessão de abertura, com o rei presente. O plano, descoberto na véspera, ficou associado ao nome de Guy Fawkes, encarregado de guardar a pólvora nos porões. O episódio reforçou por gerações a desconfiança inglesa em relação aos católicos. A data ainda é lembrada anualmente no Reino Unido com fogueiras e fogos.",
+"pergunta": "Que conspirador guardava a pólvora sob o Parlamento em 1605?",
+"resposta": "Guy Fawkes",
+"alt": [
+"Fawkes"
+],
+"tema": "Revoluções Inglesas"
+},
+{
+"id": "H418",
+"texto": "Os partidários do rei na guerra civil eram chamados cavaliers, palavra derivada de cavaleiro e usada inicialmente como insulto pelos adversários. Vestiam-se com elegância, usavam cabelos longos encaracolados e vinham majoritariamente da alta nobreza e das regiões rurais do norte e do oeste. O apelido, como o de cabeças-redondas dado aos parlamentares, mostra que a guerra também se travou no terreno da aparência. Os dois lados adotaram como identidade o que o inimigo pretendia como ofensa.",
+"pergunta": "Como eram chamados os partidários do rei na guerra civil?",
+"resposta": "cavaliers",
+"alt": [
+"cavalheiros",
+"os cavaliers"
+],
+"tema": "Revoluções Inglesas"
+},
+{
+"id": "H419",
+"texto": "A restauração da monarquia em 1660 foi articulada por um militar. O general Monck, comandante das tropas inglesas na Escócia, marchou sobre Londres, restabeleceu o Parlamento em sua composição anterior aos expurgos e negociou o retorno de Carlos II. Sem disparar um tiro relevante, ele encerrou a república. O episódio mostra que o exército, criado para derrubar o rei, acabou sendo o instrumento que o trouxe de volta.",
+"pergunta": "Que general articulou a restauração da monarquia em 1660?",
+"resposta": "Monck",
+"alt": [
+"general Monck",
+"o general Monck"
+],
+"tema": "Revoluções Inglesas"
+},
+{
+"id": "H420",
+"texto": "Os primeiros partidos políticos ingleses nasceram de uma disputa sobre sucessão. Os whigs queriam excluir do trono o católico duque de York, futuro Jaime II, e defendiam maior poder do Parlamento; os tories sustentavam a legitimidade hereditária e a autoridade da coroa e da Igreja Anglicana. Ambos os nomes começaram como insultos, significando algo próximo de bandido em gaélico e escocês. A alternância entre esses dois campos estruturaria a política britânica por séculos.",
+"pergunta": "Que partido inglês defendia excluir o herdeiro católico do trono?",
+"resposta": "whigs",
+"alt": [
+"os whigs",
+"whig"
+],
+"tema": "Revoluções Inglesas"
+},
+{
+"id": "H421",
+"texto": "Depois de 1688, a monarquia inglesa passou a depender do Parlamento de um modo prático e cotidiano. Como a coroa não podia mais cobrar impostos por conta própria, precisava de votações anuais para financiar o exército e a administração, o que obrigava a convocar os deputados todos os anos. Nascia assim, sem que ninguém a desenhasse, a rotina do governo parlamentar. O controle do dinheiro foi mais eficaz que qualquer declaração de princípios.",
+"pergunta": "Que controle tornou o Parlamento indispensável após 1688?",
+"resposta": "do dinheiro",
+"alt": [
+"dos impostos",
+"o orçamento",
+"dos tributos"
+],
+"tema": "Revoluções Inglesas"
+},
+{
 "id": "H119",
 "tema": "Iluminismo e reformismo",
 "texto": "O despotismo esclarecido foi a estratégia de monarcas absolutos que adotaram reformas inspiradas no Iluminismo sem abrir mão do poder centralizado — modernizar para preservar o trono. Frederico II, da Prússia, amigo de filósofos, decretou tolerância religiosa e investiu pesado na educação básica. Na Rússia, Pedro, o Grande, e Catarina II ocidentalizaram o império e fundaram a Universidade de Moscou, mantendo o controle rígido sobre os servos. Na Espanha, Carlos III racionalizou a administração e suprimiu a Inquisição.",
@@ -2707,6 +3246,71 @@
 "alt": [
 "trabalho",
 "valor-trabalho"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H422",
+"texto": "Muitos iluministas não eram ateus, mas deístas. Acreditavam num criador que estabeleceu as leis da natureza e depois se afastou, sem interferir nos assuntos humanos por milagres ou revelações. Essa posição permitia manter a ideia de ordem no universo sem submeter o conhecimento à autoridade da Igreja. Deus era admitido como relojoeiro, não como juiz cotidiano dos acontecimentos.",
+"pergunta": "Que corrente admitia um criador que não interfere no mundo?",
+"resposta": "deísmo",
+"alt": [
+"o deísmo",
+"deísta"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H423",
+"texto": "Voltaire escreveu o Tratado sobre a Tolerância a partir de um caso concreto de injustiça. Jean Calas, comerciante protestante de Toulouse, foi torturado e executado em 1762 sob acusação falsa de ter matado o próprio filho para impedi-lo de se converter ao catolicismo. Voltaire mobilizou a opinião pública e conseguiu a revisão do processo, com a reabilitação póstuma de Calas. Foi uma das primeiras campanhas de intelectuais por uma causa judicial.",
+"pergunta": "Que comerciante protestante Voltaire defendeu postumamente?",
+"resposta": "Calas",
+"alt": [
+"Jean Calas",
+"o caso Calas"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H424",
+"texto": "Para os fisiocratas, apenas a agricultura gerava riqueza nova, aquilo que chamavam de produto líquido. A indústria e o comércio apenas transformavam ou deslocavam o que a terra havia produzido, sem acrescentar valor real. Por isso defendiam que só os proprietários rurais deveriam ser tributados, com um imposto único e simples. A tese estava errada em economia, mas o princípio de não interferência do Estado sobreviveu a ela.",
+"pergunta": "Como os fisiocratas chamavam a riqueza nova gerada pela terra?",
+"resposta": "produto líquido",
+"alt": [
+"produto liquido",
+"o produto líquido"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H425",
+"texto": "O terremoto que destruiu Lisboa em 1755 foi também um acontecimento intelectual. A catástrofe, ocorrida em pleno dia de Todos os Santos, com igrejas lotadas, abalou a explicação providencial do mundo e alimentou o debate entre otimistas e críticos, inclusive num poema célebre de Voltaire. Em Portugal, a reconstrução foi conduzida por Pombal com planejamento urbano racional e critérios antissísmicos. A tragédia acelerou tanto a crítica filosófica quanto a reforma administrativa.",
+"pergunta": "Que cidade foi destruída pelo terremoto de 1755?",
+"resposta": "Lisboa",
+"alt": [
+"Lisboa, Portugal"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H426",
+"texto": "O imperador austríaco José II levou o despotismo esclarecido ao limite do que um monarca podia fazer sem perder o trono. Aboliu a servidão pessoal dos camponeses, decretou tolerância para protestantes e judeus, fechou conventos considerados improdutivos e tornou o alemão a língua administrativa do império. A nobreza e o clero reagiram, e várias medidas foram revogadas após sua morte. Ele próprio pediu que em seu túmulo constasse que fracassara em tudo que empreendeu.",
+"pergunta": "Que instituição feudal José II aboliu para os camponeses?",
+"resposta": "a servidão",
+"alt": [
+"servidão",
+"servidão pessoal"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H427",
+"texto": "Pombal reorganizou o ensino português expulsando os jesuítas, que controlavam praticamente todos os colégios do império. Em seu lugar criou as aulas régias, cadeiras isoladas de latim, grego, retórica e filosofia, custeadas por um imposto específico chamado subsídio literário. A transição foi caótica: houve regiões que ficaram anos sem qualquer escola. A reforma mostra o custo prático de substituir uma estrutura consolidada por outra improvisada.",
+"pergunta": "Que aulas isoladas substituíram os colégios jesuítas?",
+"resposta": "aulas régias",
+"alt": [
+"régias",
+"as aulas régias"
 ],
 "tema": "Iluminismo e reformismo"
 },
@@ -3295,6 +3899,75 @@
 "ter propriedade",
 "exigência de propriedade",
 "renda"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H428",
+"texto": "Antes das fábricas, a produção têxtil inglesa funcionava pelo sistema doméstico. Um comerciante entregava a matéria-prima a famílias camponesas, que fiavam e teciam em casa no próprio ritmo, e depois recolhia o produto pagando por peça. O trabalhador controlava o próprio tempo, mas não possuía o material nem o produto final. A fábrica não criou a subordinação ao capital: apenas a transferiu para dentro de um edifício com horário fixo.",
+"pergunta": "Onde se trabalhava no sistema doméstico de produção?",
+"resposta": "em casa",
+"alt": [
+"nas casas",
+"no domicílio",
+"na própria casa"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H429",
+"texto": "A máquina a vapor não foi inventada por Watt. Thomas Newcomen construiu em 1712 um motor atmosférico usado para bombear água de dentro das minas de carvão, funcional mas extremamente ineficiente, pois o cilindro era aquecido e resfriado a cada ciclo. Watt o aperfeiçoou décadas depois adicionando um condensador separado, que economizava a maior parte do combustível. A revolução técnica veio de melhorar uma máquina existente, não de criá-la do nada.",
+"pergunta": "Que peça Watt acrescentou ao motor de Newcomen?",
+"resposta": "condensador separado",
+"alt": [
+"o condensador",
+"condensador"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H430",
+"texto": "Antes das ferrovias, a Inglaterra resolveu o transporte pesado abrindo canais. Entre meados do século XVIII e o início do XIX, uma rede de vias navegáveis artificiais ligou minas de carvão, fábricas e portos, reduzindo drasticamente o custo de mover mercadorias volumosas. Uma tonelada de carvão podia ser transportada por uma fração do preço da carroça. Os canais tornaram a industrialização economicamente viável antes que o trem existisse.",
+"pergunta": "Que obras hidráulicas antecederam as ferrovias no transporte pesado?",
+"resposta": "canais",
+"alt": [
+"os canais",
+"canais navegáveis"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H431",
+"texto": "A produção em série exigia uma condição técnica pouco lembrada: peças intercambiáveis. Se cada componente fosse feito artesanalmente com medidas ligeiramente diferentes, não seria possível montar produtos rapidamente nem substituir uma peça quebrada por outra igual. A padronização de medidas e tolerâncias, desenvolvida primeiro na fabricação de armas, tornou-se pré-requisito da linha de montagem. Sem norma técnica, não há produção em massa.",
+"pergunta": "Que característica das peças viabilizou a produção em série?",
+"resposta": "intercambiáveis",
+"alt": [
+"padronizadas",
+"serem intercambiáveis",
+"padronização"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H432",
+"texto": "A industrialização alterou a própria noção de infância nas camadas populares. Antes, crianças trabalhavam junto à família no campo ou na oficina, em ritmo variável e sob supervisão de parentes; na fábrica, cumpriam a mesma jornada dos adultos sob capatazes estranhos, em ambiente perigoso. Foi essa mudança de contexto, mais que o trabalho em si, que gerou indignação pública e produziu as primeiras leis de proteção. A infância como fase protegida é uma construção do século XIX.",
+"pergunta": "Sob supervisão de quem a criança passou a trabalhar na fábrica?",
+"resposta": "capatazes",
+"alt": [
+"estranhos",
+"de capatazes",
+"supervisores"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H433",
+"texto": "A eletricidade transformou também a vida fora da fábrica. A iluminação pública elétrica, difundida no fim do século XIX, prolongou o dia útil das cidades, permitiu turnos noturnos e alterou hábitos de lazer e sociabilidade. Ruas iluminadas reduziram a criminalidade noturna e criaram uma vida urbana depois do pôr do sol. A tecnologia industrial não ficou restrita à produção: reorganizou o cotidiano de quem vivia nas cidades.",
+"pergunta": "Que serviço urbano elétrico prolongou o dia nas cidades?",
+"resposta": "iluminação pública",
+"alt": [
+"a iluminação",
+"iluminação"
 ],
 "tema": "Revolução Industrial"
 }
