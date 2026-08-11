@@ -234,6 +234,94 @@
 "tema": "Açúcar, escravidão e invasões"
 },
 {
+"id": "H309",
+"texto": "Diante do fracasso da maioria das capitanias hereditárias, a Coroa criou em 1549 o governo-geral, centralizando a administração da colônia. Tomé de Sousa chegou como primeiro governador, trazendo funcionários, soldados e os primeiros jesuítas, e fundou Salvador como sede. A cidade seria capital da América portuguesa por mais de dois séculos. A mudança não extinguiu as capitanias, mas colocou uma autoridade acima delas.",
+"pergunta": "Que cidade Tomé de Sousa fundou como sede do governo-geral?",
+"resposta": "Salvador",
+"alt": [
+"Salvador, Bahia",
+"a Bahia"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H310",
+"texto": "O governo local da colônia ficava a cargo das câmaras municipais, eleitas entre os chamados homens bons. Essa categoria reunia proprietários de terras livres de qualquer mancha de sangue judeu, mouro ou africano, o que na prática entregava o poder local à elite açucareira. As câmaras cobravam impostos, fixavam preços e organizavam obras. Eram o espaço onde os senhores negociavam diretamente com a Coroa.",
+"pergunta": "Que grupo elegia as câmaras municipais na colônia?",
+"resposta": "homens bons",
+"alt": [
+"os homens bons",
+"proprietários"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H311",
+"texto": "A legislação que regeu a colônia por quase todo o período veio das Ordenações Filipinas, código promulgado em 1603, durante a União Ibérica. Reunia normas civis, criminais e administrativas e permaneceu em vigor no Brasil mesmo depois da independência, em matéria civil, até 1916. Sua longevidade mostra como o arcabouço jurídico português sobreviveu às rupturas políticas. Era um código pensado para uma sociedade de ordens, não de cidadãos iguais.",
+"pergunta": "Em que ano foram promulgadas as Ordenações Filipinas?",
+"resposta": "1603",
+"alt": [
+"mil seiscentos e três"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H312",
+"texto": "Os jesuítas chegaram com o primeiro governador-geral e organizaram a catequese em aldeamentos, onde reuniam indígenas de origens diversas sob disciplina religiosa e horário fixo. Manuel da Nóbrega e José de Anchieta foram as figuras centrais dessa fase, fundando o colégio que deu origem a São Paulo em 1554. Os aldeamentos protegiam os indígenas da escravização pelos colonos, mas os submetiam a outro tipo de controle. O choque entre jesuítas e colonos por essa mão de obra atravessou todo o período colonial.",
+"pergunta": "Que colégio jesuíta de 1554 deu origem a São Paulo?",
+"resposta": "Piratininga",
+"alt": [
+"São Paulo de Piratininga",
+"de Piratininga"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H313",
+"texto": "Entre 1554 e 1567, povos tupinambás do litoral entre o Rio de Janeiro e São Vicente uniram-se contra a colonização portuguesa, no que ficou conhecido como Confederação dos Tamoios. Aliaram-se aos franceses da França Antártica, que lhes forneciam armas em troca de pau-brasil. A aliança foi desfeita pela ação combinada de tropas e da mediação dos jesuítas Nóbrega e Anchieta. Sua derrota abriu o caminho para a fundação e consolidação do Rio de Janeiro.",
+"pergunta": "A que europeus os tamoios se aliaram contra os portugueses?",
+"resposta": "franceses",
+"alt": [
+"aos franceses",
+"os franceses"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H314",
+"texto": "O pau-brasil interessava à Europa por um motivo específico: dele se extraía uma tinta vermelha usada para tingir tecidos de luxo, cor difícil e cara de obter por outros meios. A madeira também servia para marcenaria fina. Por ser considerado riqueza estratégica, o corte era monopólio da Coroa, concedido a particulares mediante licença e pagamento. Extrair sem autorização era crime punido com severidade.",
+"pergunta": "Que produto se extraía do pau-brasil para tingir tecidos?",
+"resposta": "tinta vermelha",
+"alt": [
+"corante vermelho",
+"tintura vermelha",
+"corante"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H315",
+"texto": "Em 1649, por sugestão do padre Antônio Vieira, criou-se a Companhia Geral do Comércio do Brasil, empresa com capital privado e privilégios reais. Ela detinha o monopólio de produtos como vinho, azeite, farinha e bacalhau e devia organizar comboios armados para proteger os navios contra corsários. O capital veio em parte de cristãos-novos, em troca de proteção contra confiscos da Inquisição. A companhia foi decisiva para financiar a expulsão dos holandeses.",
+"pergunta": "Que religioso sugeriu a criação da Companhia de 1649?",
+"resposta": "Antônio Vieira",
+"alt": [
+"padre Vieira",
+"Vieira"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
+"id": "H316",
+"texto": "A concorrência que arruinou o açúcar brasileiro nasceu da própria derrota holandesa. Expulsos do Nordeste em 1654, os holandeses levaram para as Antilhas o conhecimento técnico de plantio, moagem e refino que haviam adquirido em Pernambuco. Em poucas décadas, ilhas do Caribe produziam açúcar mais barato e mais perto da Europa. O Brasil perdeu a primazia não por deixar de produzir, mas porque o produto deixou de ser exclusivo.",
+"pergunta": "Para que região os holandeses levaram a técnica açucareira?",
+"resposta": "Antilhas",
+"alt": [
+"Caribe",
+"as Antilhas"
+],
+"tema": "Açúcar, escravidão e invasões"
+},
+{
 "id": "H074",
 "tema": "Pecuária e interiorização",
 "texto": "Expulso do litoral para dar lugar à cana, o gado subiu o curso do rio São Francisco, que por isso ficou conhecido como Rio dos Currais. A pecuária interiorizou o povoamento do Nordeste e também do Sul. Currais e caminhos de boiada fixaram vilas onde antes só havia sertão. O interior começava a ter vida econômica própria, para além do açúcar.",
@@ -386,6 +474,61 @@
 "resposta": "gibão",
 "alt": [
 "o gibão"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H317",
+"texto": "A ocupação do Piauí foi obra da pecuária, e não da lavoura. Domingos Afonso Mafrense, conhecido como Sertão, montou dezenas de fazendas de gado na região no fim do século XVII, tornando-se um dos maiores proprietários da América portuguesa. Ao morrer, deixou boa parte das fazendas aos jesuítas. O caso mostra que capitanias inteiras nasceram de currais, sem passar pelo ciclo do açúcar.",
+"pergunta": "Que capitania foi ocupada sobretudo por fazendas de gado?",
+"resposta": "Piauí",
+"alt": [
+"o Piauí"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H318",
+"texto": "As boiadas do sertão precisavam de pontos de concentração onde o gado fosse vendido antes de seguir para o abate. A feira de Capuame, na Bahia, foi uma das mais importantes do período colonial, reunindo criadores, marchantes e compradores das cidades litorâneas. Em torno dessas feiras nasceram vilas e caminhos permanentes. Feira de Santana, hoje uma das maiores cidades baianas, tem justamente essa origem.",
+"pergunta": "Que cidade baiana nasceu de uma feira de gado?",
+"resposta": "Feira de Santana",
+"alt": [
+"Feira",
+"Santana"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H319",
+"texto": "Uma boiada levava semanas ou meses para chegar do sertão ao litoral, percorrendo centenas de quilômetros a pé. O gado emagrecia durante o percurso, o que reduzia seu valor na venda, e por isso as rotas eram planejadas em função de pastos e aguadas ao longo do caminho. Os pousos onde as boiadas paravam viraram povoados. A geografia do interior nordestino foi desenhada por esse deslocamento lento.",
+"pergunta": "O que o gado perdia durante as longas viagens até o litoral?",
+"resposta": "peso",
+"alt": [
+"emagrecia",
+"perdia peso"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H320",
+"texto": "A seca periódica é a marca climática do sertão nordestino e sempre condicionou a pecuária. Nos anos secos, rebanhos inteiros morriam e famílias migravam em busca de água, num movimento que a colonização apenas iniciou e que atravessaria os séculos seguintes. A criação extensiva sobrevivia justamente por ser móvel, ao contrário da lavoura fixa. A vulnerabilidade climática está na origem da economia sertaneja, não é acidente posterior.",
+"pergunta": "Que fenômeno climático periódico marcava a pecuária sertaneja?",
+"resposta": "a seca",
+"alt": [
+"seca",
+"as secas"
+],
+"tema": "Pecuária e interiorização"
+},
+{
+"id": "H321",
+"texto": "Em uma economia colonial com pouca moeda circulante, o couro funcionava como valor de troca. Peles curtidas eram aceitas em pagamento, contabilizadas em inventários e exportadas para a Europa, onde alimentavam a indústria de calçados, selas e encadernações. Isso dava ao sertão uma inserção direta no mercado atlântico, sem passar pelo açúcar. A pecuária não era, portanto, apenas atividade de subsistência interna.",
+"pergunta": "Que produto do sertão era exportado para a Europa?",
+"resposta": "couro",
+"alt": [
+"couros",
+"o couro",
+"peles"
 ],
 "tema": "Pecuária e interiorização"
 },
@@ -590,6 +733,49 @@
 "tema": "Bandeiras e apresamento"
 },
 {
+"id": "H322",
+"texto": "São Paulo de Piratininga era, no século XVII, uma vila pobre e distante do circuito do açúcar, isolada pela serra do Mar. Sem capital para comprar escravizados africanos e sem produto de exportação valioso, seus moradores voltaram-se para o único recurso abundante: o sertão e sua população indígena. A pobreza paulista explica o bandeirismo melhor que qualquer disposição aventureira. Foi a falta de alternativa econômica que produziu o apresamento em escala.",
+"pergunta": "Que condição econômica paulista explica a origem do bandeirismo?",
+"resposta": "pobreza",
+"alt": [
+"a pobreza",
+"falta de capital"
+],
+"tema": "Bandeiras e apresamento"
+},
+{
+"id": "H323",
+"texto": "Os indígenas capturados pelas bandeiras não podiam ser legalmente chamados de escravos, já que a escravização indígena era formalmente restrita. Registravam-se então como administrados, sob a alegação de que o colono apenas administrava seu trabalho e sua catequese. Na prática, eram comprados, vendidos e herdados como propriedade. A ficção jurídica permitia manter o sistema sem violar abertamente a lei da Coroa.",
+"pergunta": "Que termo jurídico disfarçava a escravidão indígena em São Paulo?",
+"resposta": "administrados",
+"alt": [
+"administrado",
+"índios administrados"
+],
+"tema": "Bandeiras e apresamento"
+},
+{
+"id": "H324",
+"texto": "A descoberta de ouro em Mato Grosso deve-se a uma bandeira paulista liderada por Pascoal Moreira Cabral, que em 1719 encontrou depósitos às margens do rio Coxipó. O achado deu origem a Cuiabá e estendeu o domínio português muito além da linha de Tordesilhas. A distância enorme até o litoral tornou o abastecimento dependente das monções fluviais. Foi a mineração, e não a catequese, que fixou a fronteira oeste.",
+"pergunta": "Que cidade nasceu do ouro encontrado por Moreira Cabral em 1719?",
+"resposta": "Cuiabá",
+"alt": [
+"Cuiabá, MT"
+],
+"tema": "Bandeiras e apresamento"
+},
+{
+"id": "H325",
+"texto": "Fernão Dias Paes ficou sete anos no sertão em busca de esmeraldas, entre 1674 e 1681, numa expedição financiada por ele próprio e autorizada pela Coroa. Levou família e agregados, plantou roças ao longo do caminho para se abastecer e chegou a mandar executar o próprio filho, acusado de conspiração. Morreu no sertão sem saber que suas pedras verdes eram turmalinas. A expedição, porém, abriu os caminhos que levariam ao ouro poucos anos depois.",
+"pergunta": "Quantos anos Fernão Dias passou no sertão?",
+"resposta": "sete",
+"alt": [
+"7",
+"sete anos"
+],
+"tema": "Bandeiras e apresamento"
+},
+{
 "id": "H076",
 "tema": "Amazônia e tratados",
 "texto": "Com o fim da União Ibérica em 1640, as fronteiras entre as Américas portuguesa e espanhola precisaram ser redefinidas. O Tratado de Utrecht, em 1713 e 1715, ajustou os limites ao norte e na região do Rio da Prata. O mais importante veio em 1750: o Tratado de Madrid, baseado no princípio do uti possidetis — quem possui a terra de fato é dono dela por direito. A posse consumada pelos bandeirantes virava, assim, fronteira legal.",
@@ -734,6 +920,51 @@
 "alt": [
 "escravizados africanos",
 "africanos"
+],
+"tema": "Amazônia e tratados"
+},
+{
+"id": "H326",
+"texto": "Entre as drogas do sertão, o cacau nativo foi a mais importante em volume exportado. Colhido nas matas alagadas por indígenas aldeados, era enviado a Lisboa e de lá revendido à Europa, onde o chocolate se tornava bebida de elite. Diferente do açúcar, não exigia plantação nem engenho: bastava a coleta. Essa característica extrativa moldou uma economia sem grandes propriedades produtivas na Amazônia colonial.",
+"pergunta": "Qual foi a droga do sertão mais exportada da Amazônia?",
+"resposta": "cacau",
+"alt": [
+"o cacau",
+"cacau nativo"
+],
+"tema": "Amazônia e tratados"
+},
+{
+"id": "H327",
+"texto": "O trabalho indígena na Amazônia colonial era distribuído por um sistema chamado repartição. Metade dos moradores de cada aldeia missionária ficava disponível para servir a colonos e à administração por períodos determinados, enquanto a outra metade permanecia na aldeia. Missionários e colonos disputavam permanentemente o controle dessa distribuição. O sistema tentava conciliar dois interesses incompatíveis: catequizar e explorar.",
+"pergunta": "Que fração da aldeia ficava disponível aos colonos na repartição?",
+"resposta": "metade",
+"alt": [
+"a metade",
+"50%"
+],
+"tema": "Amazônia e tratados"
+},
+{
+"id": "H328",
+"texto": "Para garantir a posse do interior amazônico, a Coroa construiu fortificações nos principais rios, especialmente no rio Negro e no Solimões. Esses fortes controlavam a navegação, cobravam tributos e impediam o avanço espanhol e holandês vindo do norte. Ao redor deles formaram-se povoados que hoje são cidades. A ocupação da Amazônia foi, antes de tudo, uma operação militar de controle fluvial.",
+"pergunta": "Que via de circulação os fortes amazônicos controlavam?",
+"resposta": "os rios",
+"alt": [
+"rios",
+"navegação fluvial",
+"a navegação"
+],
+"tema": "Amazônia e tratados"
+},
+{
+"id": "H329",
+"texto": "Vila Bela da Santíssima Trindade foi fundada em 1752 como capital da capitania de Mato Grosso, no extremo oeste do território. Sua localização, junto ao rio Guaporé, foi escolhida deliberadamente para marcar presença portuguesa na fronteira com as possessões espanholas. Era uma cidade construída como argumento diplomático. O uti possidetis precisava de moradores reais para ser invocado.",
+"pergunta": "Junto a que rio Vila Bela foi fundada como marco de fronteira?",
+"resposta": "Guaporé",
+"alt": [
+"rio Guaporé",
+"o Guaporé"
 ],
 "tema": "Amazônia e tratados"
 },
@@ -944,6 +1175,72 @@
 "alt": [
 "12",
 "doze profetas"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H330",
+"texto": "Nas lavras, a distinção entre proprietário e trabalhador era nítida. O minerador possuía a data, as ferramentas e os escravizados, e organizava a extração; o faiscador trabalhava por conta própria em áreas já abandonadas ou nas margens dos rios, catando o que sobrara. Muitos faiscadores eram forros ou escravizados de ganho. Essa segunda categoria manteve viva a esperança de enriquecimento individual que atraía gente para as minas.",
+"pergunta": "Como se chamava quem garimpava por conta própria nas sobras?",
+"resposta": "faiscador",
+"alt": [
+"faiscadores",
+"o faiscador"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H331",
+"texto": "A expectativa de vida do escravizado nas lavras era das mais baixas da colônia, estimada em cerca de doze anos após a chegada à mina. O trabalho consistia em revolver cascalho dentro dos rios por jornadas longas, com o corpo submerso e exposto ao sol. Doenças pulmonares, reumatismo e acidentes eram constantes. A reposição constante de mão de obra explica por que a mineração consumiu tanto tráfico quanto o açúcar.",
+"pergunta": "Qual era a expectativa de vida do escravizado nas lavras?",
+"resposta": "doze anos",
+"alt": [
+"12 anos",
+"cerca de 12 anos"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H332",
+"texto": "Nas minas, o próprio ouro em pó circulava como dinheiro. Comerciantes carregavam balanças de precisão para pesar oitavas nas transações cotidianas, e o valor das mercadorias era cotado em peso de ouro. A prática facilitava o comércio, mas também o contrabando, já que o metal circulava sem passar por fundição. Foi para acabar com isso que a Coroa tentou impor as barras marcadas e as casas de fundição.",
+"pergunta": "Que instrumento os comerciantes das minas carregavam?",
+"resposta": "balança",
+"alt": [
+"balanças",
+"balança de precisão"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H333",
+"texto": "O contrabando de ouro seguia rotas pelo sertão, longe dos registros oficiais, atravessando o São Francisco em direção à Bahia ou descendo por caminhos abertos pelos tropeiros. Boa parte do metal saía escondido em cargas comuns, em imagens religiosas e até em selas de montaria. Estima-se que uma fração muito grande do total extraído jamais foi tributada. A tentativa de conter esse fluxo é a origem direta das principais revoltas mineiras.",
+"pergunta": "Que rio as rotas de contrabando atravessavam rumo à Bahia?",
+"resposta": "São Francisco",
+"alt": [
+"o São Francisco",
+"rio São Francisco"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H334",
+"texto": "A produção aurífera de Minas atingiu o auge por volta de meados do século XVIII e entrou em declínio acentuado nas décadas seguintes. O esgotamento do ouro de aluvião, mais fácil de extrair, exigia técnicas de mineração profunda que a colônia não dominava. À medida que a arrecadação caía, a Coroa endurecia a cobrança, criando o ambiente de tensão que desembocou na Inconfidência. O ciclo do ouro durou pouco mais de meio século.",
+"pergunta": "Que tipo de ouro, mais fácil de extrair, se esgotou primeiro?",
+"resposta": "aluvião",
+"alt": [
+"de aluvião",
+"ouro de aluvião"
+],
+"tema": "Mineração e sociedade do ouro"
+},
+{
+"id": "H335",
+"texto": "A riqueza mineira financiou uma produção artística sem paralelo na colônia. Igrejas de Vila Rica, Mariana, Sabará e São João del-Rei receberam talha dourada, pintura de forro e escultura em profusão, custeadas pelas irmandades leigas que disputavam prestígio entre si. A competição entre irmandades funcionava como motor do investimento artístico. O barroco mineiro é, nesse sentido, produto direto da estrutura social das minas.",
+"pergunta": "Que associações leigas custeavam as igrejas mineiras?",
+"resposta": "irmandades",
+"alt": [
+"as irmandades",
+"confrarias"
 ],
 "tema": "Mineração e sociedade do ouro"
 },
@@ -1189,6 +1486,53 @@
 "alt": [
 "a república",
 "regime republicano"
+],
+"tema": "Revoltas coloniais"
+},
+{
+"id": "H336",
+"texto": "Em 1711, Salvador viveu o Motim do Maneta, revolta popular contra o aumento de impostos sobre o sal e a aguardente. O nome vem do apelido de um dos líderes, que tinha um dos braços mutilado. A multidão tomou prédios públicos e obrigou o governador a suspender os tributos, embora a repressão viesse depois. O episódio mostra que revoltas fiscais não eram exclusividade das minas.",
+"pergunta": "Sobre que produtos incidiam os impostos que geraram o motim de 1711?",
+"resposta": "sal e aguardente",
+"alt": [
+"sal",
+"aguardente"
+],
+"tema": "Revoltas coloniais"
+},
+{
+"id": "H337",
+"texto": "A vila de Pitangui, em Minas, foi palco de sucessivos levantes nas primeiras décadas do século XVIII, a ponto de ficar conhecida como reduto de rebeldia. Distante da sede administrativa e próxima ao sertão, oferecia rota de fuga fácil para quem enfrentasse as autoridades. Os moradores resistiram por anos ao pagamento de tributos e à instalação de aparato fiscal. A geografia acidentada era aliada dos revoltosos tanto quanto o descontentamento.",
+"pergunta": "Que característica geográfica favorecia os rebeldes de Pitangui?",
+"resposta": "a distância",
+"alt": [
+"isolamento",
+"distância da sede",
+"proximidade do sertão"
+],
+"tema": "Revoltas coloniais"
+},
+{
+"id": "H338",
+"texto": "Além dos quilombos, a resistência escrava assumiu formas cotidianas menos visíveis. Fugas individuais, quebra de ferramentas, lentidão deliberada no trabalho, abortos provocados e envenenamentos aparecem com frequência nos registros senhoriais. Essas ações não derrubavam o sistema, mas impunham custos constantes a ele. A historiografia recente as trata como resistência, e não como desvio ou indisciplina.",
+"pergunta": "Que ação contra os instrumentos de trabalho era forma de resistência?",
+"resposta": "quebrar ferramentas",
+"alt": [
+"quebra de ferramentas",
+"sabotagem",
+"destruir ferramentas"
+],
+"tema": "Revoltas coloniais"
+},
+{
+"id": "H339",
+"texto": "A repressão às revoltas coloniais seguia um padrão cuidadoso de encenação. Condenados eram executados em praça pública, com o corpo esquartejado e as partes expostas em locais de passagem, e os bens confiscados. A casa do principal réu era demolida e o terreno salgado, para que nada ali crescesse. O objetivo não era apenas punir, mas produzir uma lembrança física do castigo na paisagem da vila.",
+"pergunta": "O que se fazia ao terreno da casa demolida do condenado?",
+"resposta": "salgava",
+"alt": [
+"salgado",
+"era salgado",
+"salgar o terreno"
 ],
 "tema": "Revoltas coloniais"
 },
@@ -1562,6 +1906,69 @@
 "tema": "América do Norte"
 },
 {
+"id": "H340",
+"texto": "Entre as décadas de 1730 e 1740, as colônias inglesas viveram um intenso movimento de renovação religiosa chamado Grande Despertar. Pregadores itinerantes reuniam multidões ao ar livre, apelando à emoção e à conversão pessoal em vez da autoridade das igrejas estabelecidas. O movimento atravessou fronteiras entre colônias e classes, criando pela primeira vez uma experiência compartilhada por quase todas elas. Historiadores o apontam como um dos primeiros elementos de identidade comum americana.",
+"pergunta": "Que movimento religioso uniu as colônias nos anos 1730 e 1740?",
+"resposta": "Grande Despertar",
+"alt": [
+"o Grande Despertar",
+"Despertar"
+],
+"tema": "América do Norte"
+},
+{
+"id": "H341",
+"texto": "A primeira instituição de ensino superior das colônias inglesas foi fundada em 1636, em Massachusetts, com a finalidade de formar pastores para as congregações puritanas. Recebeu o nome de um clérigo que lhe legou sua biblioteca e metade de sua fortuna. A prioridade dada ao ensino formal, poucos anos após a chegada, distingue a colonização do Norte da experiência ibérica, onde universidades só surgiriam no século XIX. Ler a Bíblia diretamente era exigência religiosa, e isso demandava alfabetização.",
+"pergunta": "Que universidade foi fundada em Massachusetts em 1636?",
+"resposta": "Harvard",
+"alt": [
+"Harvard College"
+],
+"tema": "América do Norte"
+},
+{
+"id": "H342",
+"texto": "A convivência entre colonos e indígenas na Nova Inglaterra rompeu-se violentamente em 1675, na chamada Guerra do Rei Filipe. Metacomet, líder wampanoag apelidado de rei Filipe pelos ingleses, articulou uma aliança de povos contra a expansão das povoações. Proporcionalmente à população, foi um dos conflitos mais mortais da história norte-americana. A derrota indígena eliminou qualquer resistência organizada na região por gerações.",
+"pergunta": "Que líder wampanoag ficou conhecido como rei Filipe?",
+"resposta": "Metacomet",
+"alt": [
+"Metacom",
+"o Metacomet"
+],
+"tema": "América do Norte"
+},
+{
+"id": "H343",
+"texto": "Nas colônias do Sul, a consolidação da escravidão exigiu um arcabouço jurídico próprio. Ao longo do século XVII, assembleias coloniais aprovaram códigos que definiam o escravizado como propriedade vitalícia e hereditária, transmitida pela condição da mãe. Antes disso, a fronteira entre servo por contrato e escravizado era menos nítida, e africanos chegaram a obter liberdade e terras. A lei não registrou uma diferença preexistente: ela a criou.",
+"pergunta": "Por qual linhagem a condição de escravizado era transmitida?",
+"resposta": "pela mãe",
+"alt": [
+"materna",
+"da mãe"
+],
+"tema": "América do Norte"
+},
+{
+"id": "H344",
+"texto": "Boston tornou-se o principal porto da Nova Inglaterra graças a uma economia voltada ao mar. Construção naval, pesca do bacalhau e comércio marítimo compensavam a agricultura pobre do solo rochoso e do inverno longo. Os navios construídos ali eram vendidos inclusive a armadores ingleses. A vocação marítima explica por que as medidas de Londres sobre navegação e comércio atingiram essa região com força particular.",
+"pergunta": "Que peixe sustentava a economia pesqueira da Nova Inglaterra?",
+"resposta": "bacalhau",
+"alt": [
+"o bacalhau"
+],
+"tema": "América do Norte"
+},
+{
+"id": "H345",
+"texto": "A imprensa apareceu cedo nas colônias inglesas, com o primeiro prelo instalado em Massachusetts em 1638. Jornais coloniais circulavam já no início do século XVIII, divulgando notícias da Europa, anúncios comerciais e, cada vez mais, debates políticos. Nada disso existia na América portuguesa, onde a impressão foi proibida até 1808. A diferença ajuda a explicar por que a opinião pública se formou muito antes ao norte.",
+"pergunta": "Até que ano a impressão foi proibida na América portuguesa?",
+"resposta": "1808",
+"alt": [
+"mil oitocentos e oito"
+],
+"tema": "América do Norte"
+},
+{
 "id": "H102",
 "tema": "Revoluções Inglesas",
 "texto": "O Commonwealth de Cromwell foi, na prática, uma ditadura que esmagou a oposição, inclusive movimentos radicais como os niveladores e os cavadores, que pediam igualdade política e de terras. Em 1651, Cromwell decretou os Atos de Navegação: mercadorias inglesas só circulariam em navios ingleses. A medida destruiu a intermediação holandesa e impulsionou a burguesia mercantil nacional. A república puritana serviu, sobretudo, ao comércio inglês.",
@@ -1888,6 +2295,61 @@
 "tema": "Revoluções Inglesas"
 },
 {
+"id": "H346",
+"texto": "O reinado de Elizabeth I consolidou a Inglaterra como potência marítima. Em 1588, a Armada Invencível enviada por Felipe II da Espanha foi derrotada pela combinação de táticas navais inglesas e tempestades no canal. A vitória abriu o Atlântico à navegação inglesa e viabilizou os projetos coloniais na América. Sem esse desfecho, a colonização da Virgínia e da Nova Inglaterra dificilmente teria acontecido.",
+"pergunta": "Que frota espanhola foi derrotada pela Inglaterra em 1588?",
+"resposta": "Armada Invencível",
+"alt": [
+"a Invencível",
+"Armada"
+],
+"tema": "Revoluções Inglesas"
+},
+{
+"id": "H347",
+"texto": "Em dezembro de 1648, oficiais do exército parlamentar cercaram a Câmara dos Comuns e impediram fisicamente a entrada dos deputados dispostos a negociar com o rei. A ação, conduzida pelo coronel Pride, ficou conhecida como Expurgo de Pride e reduziu o Parlamento a um núcleo minoritário, apelidado de Parlamento Rabeira. Foi esse corpo mutilado que julgou e condenou Carlos I. A execução do rei, portanto, não teve maioria parlamentar real.",
+"pergunta": "Que oficial comandou o expurgo do Parlamento em 1648?",
+"resposta": "Pride",
+"alt": [
+"coronel Pride",
+"o coronel Pride"
+],
+"tema": "Revoluções Inglesas"
+},
+{
+"id": "H348",
+"texto": "Entre os grupos radicais surgidos na revolução inglesa, os escavadores foram os mais ousados socialmente. Liderados por Gerrard Winstanley, ocuparam terras comuns em 1649 e começaram a cultivá-las coletivamente, sustentando que a terra era um tesouro comum a todos e que ninguém deveria comprá-la ou vendê-la. Foram dispersos por proprietários e tropas em poucos meses. Suas ideias reapareceriam séculos depois em correntes socialistas.",
+"pergunta": "Que grupo radical cultivou terras comuns coletivamente em 1649?",
+"resposta": "escavadores",
+"alt": [
+"diggers",
+"os escavadores"
+],
+"tema": "Revoluções Inglesas"
+},
+{
+"id": "H349",
+"texto": "A restauração da monarquia em 1660 não foi incondicional. Carlos II assinou a Declaração de Breda, prometendo anistia aos que haviam participado da revolução, liberdade de consciência em matéria religiosa e respeito às propriedades adquiridas durante a república. Nem todas as promessas foram cumpridas: os regicidas vivos foram executados. Mas o documento estabeleceu que o rei voltava mediante condições negociadas, não por direito absoluto.",
+"pergunta": "Que declaração Carlos II assinou para retornar ao trono?",
+"resposta": "Breda",
+"alt": [
+"Declaração de Breda",
+"de Breda"
+],
+"tema": "Revoluções Inglesas"
+},
+{
+"id": "H350",
+"texto": "Em 1701, o Parlamento aprovou o Ato de Estabelecimento, que fixou regras para a sucessão do trono inglês. A norma excluía qualquer católico da linha sucessória e transferia a coroa, na falta de herdeiros protestantes diretos, à casa alemã de Hanôver. Também determinou que juízes não poderiam ser demitidos pela vontade do rei. A lei fechou o ciclo aberto em 1688, submetendo até a sucessão dinástica à decisão parlamentar.",
+"pergunta": "Que casa alemã o Ato de 1701 colocou na linha sucessória?",
+"resposta": "Hanôver",
+"alt": [
+"de Hanôver",
+"Hanover"
+],
+"tema": "Revoluções Inglesas"
+},
+{
 "id": "H119",
 "tema": "Iluminismo e reformismo",
 "texto": "O despotismo esclarecido foi a estratégia de monarcas absolutos que adotaram reformas inspiradas no Iluminismo sem abrir mão do poder centralizado — modernizar para preservar o trono. Frederico II, da Prússia, amigo de filósofos, decretou tolerância religiosa e investiu pesado na educação básica. Na Rússia, Pedro, o Grande, e Catarina II ocidentalizaram o império e fundaram a Universidade de Moscou, mantendo o controle rígido sobre os servos. Na Espanha, Carlos III racionalizou a administração e suprimiu a Inquisição.",
@@ -2168,6 +2630,83 @@
 "alt": [
 "os salões",
 "salão"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H351",
+"texto": "Antes de Locke, Thomas Hobbes já explicara o Estado por um contrato entre os homens, mas chegou à conclusão oposta. Em O Leviatã, de 1651, sustentou que no estado de natureza a vida seria uma guerra de todos contra todos, e que por isso os indivíduos entregariam integralmente seu poder a um soberano, sem direito de retomá-lo. O contrato, nele, justifica o absolutismo em vez de limitá-lo. A comparação mostra que a ideia de contrato social não conduz sozinha à liberdade política.",
+"pergunta": "Que obra de Hobbes justifica o poder absoluto por contrato?",
+"resposta": "O Leviatã",
+"alt": [
+"Leviatã",
+"o Leviatã"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H352",
+"texto": "Em O Espírito das Leis, Montesquieu não tratou apenas da divisão dos poderes. Defendeu também que as leis de um povo devem corresponder ao seu clima, ao seu território e aos seus costumes, ideia que ficou conhecida como teoria dos climas. A tese foi usada depois para justificar hierarquias entre povos, embora sua intenção fosse relativizar a ideia de lei universal. É um exemplo de como o pensamento iluminista podia servir a conclusões opostas.",
+"pergunta": "Que fator natural Montesquieu associou às leis de cada povo?",
+"resposta": "clima",
+"alt": [
+"o clima",
+"teoria dos climas"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H353",
+"texto": "Publicar ideias iluministas na França envolvia risco pessoal concreto. Diderot foi preso em 1749, no castelo de Vincennes, por causa de um texto considerado herético, e a Enciclopédia teve sua licença revogada e volumes condenados pelo Parlamento de Paris e pelo papa. Muitos autores publicavam sem assinatura ou fora do país, e obras circulavam clandestinamente. A censura não impediu a difusão: encareceu-a e tornou-a mais desejada.",
+"pergunta": "Em que castelo Diderot foi preso em 1749?",
+"resposta": "Vincennes",
+"alt": [
+"de Vincennes",
+"castelo de Vincennes"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H354",
+"texto": "A Enciclopédia levou mais de vinte anos para ficar pronta, entre 1751 e 1772, e reuniu na primeira edição vinte e oito volumes, sendo dezessete de texto e onze de pranchas ilustradas. As pranchas mostravam em detalhe ofícios, máquinas e processos produtivos, algo inédito numa obra de referência. Ao dignificar o trabalho manual ao lado da filosofia, a obra fazia uma afirmação política. Saber fazer era apresentado como forma legítima de conhecimento.",
+"pergunta": "Quantos volumes tinha a primeira edição da Enciclopédia?",
+"resposta": "vinte e oito",
+"alt": [
+"28",
+"28 volumes"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H355",
+"texto": "Kant distinguiu dois usos da razão em seu texto sobre o Iluminismo. O uso privado, exercido no cargo que se ocupa, pode e deve ser limitado pela obediência; o uso público, dirigido ao conjunto dos leitores, deve ser inteiramente livre. Assim, o funcionário obedece enquanto funcionário, mas escreve livremente enquanto pensador. A fórmula permitia defender a liberdade intelectual sem pregar a desobediência civil.",
+"pergunta": "Qual uso da razão Kant considerava que deve ser livre?",
+"resposta": "o público",
+"alt": [
+"uso público",
+"público"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H356",
+"texto": "Turgot, discípulo das ideias fisiocráticas, tornou-se controlador-geral das finanças da França em 1774 e tentou aplicar o programa na prática. Aboliu corporações de ofício, liberou o comércio interno de grãos e tentou tributar os privilegiados. A reação da nobreza e do clero levou à sua demissão em dois anos. O episódio mostrou que reformar o Antigo Regime por dentro esbarrava exatamente em quem o sustentava.",
+"pergunta": "Que cargo Turgot ocupou para aplicar as ideias fisiocráticas?",
+"resposta": "controlador-geral",
+"alt": [
+"ministro das finanças",
+"controlador das finanças"
+],
+"tema": "Iluminismo e reformismo"
+},
+{
+"id": "H357",
+"texto": "Adam Smith sustentou que o valor de uma mercadoria decorre da quantidade de trabalho necessária para produzi-la, e não da vontade de quem a vende. A ideia, chamada teoria do valor-trabalho, seria retomada e transformada por economistas posteriores, inclusive por críticos do próprio sistema que Smith defendia. Assim, o fundador da economia liberal forneceu conceitos usados depois contra o liberalismo. As ideias raramente permanecem no campo de quem as formulou.",
+"pergunta": "Segundo Smith, de que decorre o valor de uma mercadoria?",
+"resposta": "do trabalho",
+"alt": [
+"trabalho",
+"valor-trabalho"
 ],
 "tema": "Iluminismo e reformismo"
 },
@@ -2579,6 +3118,183 @@
 "alt": [
 "saneamento",
 "água e esgoto"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H358",
+"texto": "Em 1798, Thomas Malthus publicou um ensaio afirmando que a população cresce em progressão geométrica enquanto os alimentos crescem em progressão aritmética. A conclusão era sombria: fome, guerra e epidemia funcionariam como freios naturais ao crescimento populacional, e ajudar os pobres apenas adiaria o ajuste. A tese influenciou a política social britânica e serviu de argumento contra a assistência aos miseráveis. O aumento da produtividade agrícola no século seguinte desmentiu a previsão.",
+"pergunta": "Em que progressão Malthus dizia que a população crescia?",
+"resposta": "geométrica",
+"alt": [
+"progressão geométrica",
+"em progressão geométrica"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H359",
+"texto": "David Ricardo formulou o princípio segundo o qual cada país deveria se especializar naquilo que produz com custo relativamente menor, trocando o excedente com os demais. Essa teoria das vantagens comparativas sustentou a defesa do livre-comércio no século XIX. Aplicada, ela justificava que a Inglaterra produzisse manufaturas e outros países fornecessem matérias-primas. A divisão internacional do trabalho ganhou assim uma fundamentação econômica.",
+"pergunta": "Como se chama a teoria de Ricardo sobre especialização entre países?",
+"resposta": "vantagens comparativas",
+"alt": [
+"vantagem comparativa",
+"comparativas"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H360",
+"texto": "O industrial galês Robert Owen dirigiu a fábrica de New Lanark, na Escócia, transformando-a numa experiência social. Reduziu a jornada, proibiu o trabalho de crianças pequenas, construiu escola e moradias e ainda assim manteve a empresa lucrativa, argumentando que trabalhadores bem tratados produziam mais. Sua proposta de comunidades cooperativas ficou conhecida como socialismo utópico. Owen queria convencer os patrões pela demonstração, não derrubá-los pelo conflito.",
+"pergunta": "Que fábrica escocesa Owen transformou em experiência social?",
+"resposta": "New Lanark",
+"alt": [
+"Lanark",
+"a New Lanark"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H361",
+"texto": "A Grande Exposição de 1851, realizada em Londres, reuniu produtos industriais de dezenas de países num edifício inteiramente de ferro e vidro, o Palácio de Cristal. Milhões de visitantes percorreram máquinas, tecidos e invenções expostas como espetáculo. O evento afirmava, diante do mundo, a supremacia industrial britânica. Foi a primeira de uma série de exposições universais que se tornariam vitrines da competição entre potências.",
+"pergunta": "Que edifício de ferro e vidro abrigou a Exposição de 1851?",
+"resposta": "Palácio de Cristal",
+"alt": [
+"Crystal Palace",
+"o Palácio de Cristal"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H362",
+"texto": "Em 1856, o inglês Henry Bessemer patenteou um processo que permitia transformar ferro-gusa em aço em grande quantidade, injetando ar sob pressão para queimar as impurezas. O que antes levava horas e custava caro passou a ser feito em minutos. O aço barato viabilizou trilhos mais resistentes, navios maiores, pontes e estruturas de edifícios altos. A Segunda Revolução Industrial se apoia diretamente nessa invenção.",
+"pergunta": "Que metal o processo Bessemer produziu em larga escala?",
+"resposta": "aço",
+"alt": [
+"o aço"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H363",
+"texto": "O telégrafo elétrico, desenvolvido por Samuel Morse e demonstrado publicamente em 1844, separou pela primeira vez a comunicação do transporte. Antes dele, uma notícia viajava na velocidade de quem a levava; depois, atravessava continentes em minutos. Cabos submarinos ligaram Europa e América poucas décadas mais tarde. O efeito sobre comércio, jornalismo e diplomacia foi tão profundo quanto o das ferrovias sobre as mercadorias.",
+"pergunta": "O que o telégrafo separou pela primeira vez do transporte?",
+"resposta": "a comunicação",
+"alt": [
+"comunicação",
+"a informação"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H364",
+"texto": "A industrialização mudou a própria percepção do tempo. Antes das fábricas, o trabalho seguia o ritmo das estações, da luz do dia e das tarefas a cumprir; com elas, passou a ser medido pelo relógio, com entrada, saída e sinos marcando turnos. O historiador Edward Thompson descreveu essa passagem como a substituição da orientação pela tarefa pela disciplina do tempo. Aprender a obedecer ao relógio foi parte do processo de formar a classe operária.",
+"pergunta": "Que instrumento passou a reger o ritmo do trabalho fabril?",
+"resposta": "o relógio",
+"alt": [
+"relógio",
+"o relógio de ponto"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H365",
+"texto": "A energia elétrica, aplicada à produção a partir do fim do século XIX, libertou as fábricas de mais uma limitação física. Enquanto o vapor exigia eixos e correias distribuindo força a partir de uma máquina central, o motor elétrico podia ser instalado em cada equipamento isoladamente. Isso permitiu reorganizar o chão de fábrica segundo a lógica da produção, e não a da transmissão mecânica. A linha de montagem só se tornou possível depois dessa mudança.",
+"pergunta": "Que motor permitiu reorganizar livremente o chão de fábrica?",
+"resposta": "elétrico",
+"alt": [
+"motor elétrico",
+"o elétrico"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H366",
+"texto": "O engenheiro americano Frederick Taylor propôs no início do século XX estudar cientificamente cada movimento do trabalhador para eliminar gestos inúteis e fixar o tempo ideal de cada operação. O método, chamado taylorismo, separava rigidamente quem planeja de quem executa, retirando do operário qualquer decisão sobre o próprio trabalho. Ford aplicaria esses princípios à linha de montagem poucos anos depois. A cronometragem do gesto humano completou a mecanização iniciada pelas máquinas.",
+"pergunta": "Que método cronometrava cada movimento do trabalhador?",
+"resposta": "taylorismo",
+"alt": [
+"o taylorismo",
+"taylorista"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H367",
+"texto": "A produção fabril alterou a estrutura familiar operária. Com salários individuais insuficientes, mulheres e crianças passaram a trabalhar junto com os homens, e a família deixou de ser unidade de produção para se tornar soma de assalariados. O tempo doméstico encolheu e o cuidado com os filhos pequenos recaiu sobre vizinhas, irmãos mais velhos ou ninguém. As transformações do trabalho reorganizaram também a vida privada.",
+"pergunta": "O que a família operária deixou de ser com a fábrica?",
+"resposta": "unidade de produção",
+"alt": [
+"unidade produtiva",
+"produtora"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H368",
+"texto": "A construção de ferrovias exigiu capitais muito superiores ao que qualquer empresário isolado possuía. A solução foi a sociedade anônima, que reunia recursos de muitos investidores em ações negociáveis, difundindo o risco entre eles. As bolsas de valores ganharam com isso papel central no financiamento industrial. A forma jurídica da empresa moderna nasceu, em boa medida, da necessidade de construir trilhos.",
+"pergunta": "Que forma de empresa reuniu capitais para financiar ferrovias?",
+"resposta": "sociedade anônima",
+"alt": [
+"sociedades anônimas",
+"anônima"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H369",
+"texto": "O crescimento industrial dependeu de uma reorganização agrícola prévia. Rotação de culturas sem pousio, seleção de sementes, adubação sistemática e cercamento das terras aumentaram a produtividade do campo inglês ao longo do século XVIII. Sem esse excedente alimentar, seria impossível sustentar cidades onde a maioria não produzia comida. A revolução agrícola foi condição da revolução industrial, e não sua consequência.",
+"pergunta": "Que prática agrícola foi eliminada pela rotação de culturas?",
+"resposta": "pousio",
+"alt": [
+"o pousio",
+"descanso da terra"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H370",
+"texto": "O crescimento urbano do século XIX forçou os governos a intervir em áreas antes consideradas privadas. Sistemas de esgoto, abastecimento de água tratada, coleta de lixo, iluminação pública e códigos de construção surgiram como respostas a epidemias e incêndios. Londres construiu sua rede de esgotos após o episódio de 1858 em que o cheiro do Tâmisa interrompeu os trabalhos do Parlamento. A engenharia sanitária nasceu da cidade industrial.",
+"pergunta": "Que rio londrino teve o mau cheiro registrado em 1858?",
+"resposta": "Tâmisa",
+"alt": [
+"o Tâmisa",
+"rio Tâmisa"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H371",
+"texto": "O trabalho nas minas de carvão britânicas empregava mulheres e crianças em funções específicas. Crianças pequenas abriam e fechavam portas de ventilação em galerias escuras por jornadas inteiras, e mulheres arrastavam vagonetes em túneis baixos demais para um adulto em pé. Relatórios parlamentares publicados em 1842 descreveram essas condições com ilustrações que chocaram a opinião pública. A lei que proibiu mulheres e menores no subsolo saiu no mesmo ano.",
+"pergunta": "Que função as crianças exerciam nas galerias das minas?",
+"resposta": "abrir portas",
+"alt": [
+"portas de ventilação",
+"abriam portas"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H372",
+"texto": "As primeiras associações operárias britânicas assumiram a forma de sociedades de auxílio mútuo. Trabalhadores contribuíam com parte do salário para um fundo comum que socorria os associados em caso de doença, acidente, desemprego ou morte, cobrindo o enterro. Como a lei proibia associações para negociar salários, essas sociedades funcionavam também como estrutura clandestina de organização. Delas nasceriam os sindicatos quando a proibição caiu em 1824.",
+"pergunta": "Que tipo de sociedade operária socorria doentes e desempregados?",
+"resposta": "auxílio mútuo",
+"alt": [
+"socorro mútuo",
+"mútua",
+"de auxílio mútuo"
+],
+"tema": "Revolução Industrial"
+},
+{
+"id": "H373",
+"texto": "O movimento cartista reuniu na Inglaterra, entre 1838 e 1848, milhões de assinaturas em petições ao Parlamento. Suas reivindicações eram políticas, não salariais: voto secreto e universal masculino, eleições anuais, fim da exigência de propriedade para ser candidato e pagamento aos parlamentares, para que trabalhadores pudessem exercer o mandato. Nenhuma foi aceita na época, mas quase todas viraram lei nas décadas seguintes. Foi o primeiro movimento operário de massa com programa próprio.",
+"pergunta": "Que exigência os cartistas queriam abolir para os candidatos?",
+"resposta": "propriedade",
+"alt": [
+"ter propriedade",
+"exigência de propriedade",
+"renda"
 ],
 "tema": "Revolução Industrial"
 }
