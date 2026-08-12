@@ -64,6 +64,8 @@ th{color:var(--dim);font-weight:500;font-size:.75rem;letter-spacing:.04em;text-t
       <option value="s2">Sessão 2 — aquec 5 + 40 · 10 · 40 · 10 · 40</option>
       <option value="s3">Sessão 3 — aquec 5 + 40 · 15 · 40 · 15 · 40</option>
       <option value="s4">Sessão 4 — aquec 5 + 40 · 20 · 40 · 20 · 40</option>
+      <option value="pom">Pomodoro — aquec 5 + 25 · 5 · 25 · 5 · 25 · 5 · 25 (total 115)</option>
+      <option value="longa">Pausa longa — aquec 5 + 50 · 15 · 50 (total 115)</option>
       <option value="cont">Contínua — aquec 5 + 115</option>
       <option value="piloto">Piloto — aquec 5 + 20</option>
       <option value="custom">Personalizado</option>
@@ -118,6 +120,9 @@ var ACTIVE = "limiar_fc_active", ARQ = "limiar_fc_sessoes";
 var PRESETS = {
   s1:{warm:5, work:40, rest:5,  n:3}, s2:{warm:5, work:40, rest:10, n:3},
   s3:{warm:5, work:40, rest:15, n:3}, s4:{warm:5, work:40, rest:20, n:3},
+  // tempo TOTAL igualado a 115 min: mesma soma estudo+pausa da continua
+  pom:{warm:5, work:25, rest:5,  n:4},   // 25·5·25·5·25·5·25 = 100 + 15
+  longa:{warm:5, work:50, rest:15, n:2}, // 50·15·50         = 100 + 15
   cont:{warm:5, work:115, rest:0, n:1}, piloto:{warm:5, work:20, rest:0, n:1}
 };
 
