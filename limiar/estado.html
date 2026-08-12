@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LIMIAR — estado do projeto</title>
+<link rel="stylesheet" href="/limiar/vendor/katex/katex.min.css">
+<style>
+:root{--bg:#0f1012;--fg:#e9e9ea;--dim:#8b8d92;--rule:#2a2c31;--acc:#c8cad0;
+      --warn:#e0a0a0;--ok:#a8c8a8;--new:#c9b47a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.68 ui-serif,Georgia,serif}
+.wrap{max-width:52rem;margin:0 auto;padding:2.6rem 1.3rem 6rem}
+h1{font-size:1.6rem;font-weight:600;margin:0 0 .3rem;letter-spacing:-.01em}
+.sub{color:var(--dim);font-size:.9rem;margin:0 0 2.6rem;line-height:1.5}
+h2{font-size:1.16rem;font-weight:600;margin:3.2rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px solid var(--rule)}
+h3{font-size:1rem;font-weight:600;margin:2rem 0 .5rem;color:var(--acc)}
+p{margin:.85rem 0}
+.eq{margin:1.2rem 0;padding:1rem .8rem;background:#141519;border:1px solid var(--rule);border-radius:5px;overflow-x:auto}
+.eq.num{background:#12161a;border-color:#26333c}
+.rot{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.68rem;letter-spacing:.08em;
+     text-transform:uppercase;color:var(--dim);margin-bottom:.5rem}
+table{border-collapse:collapse;width:100%;font-size:.82rem;margin:1.1rem 0;
+      font-family:ui-sans-serif,system-ui,sans-serif}
+th,td{border-bottom:1px solid var(--rule);padding:.42rem .45rem;text-align:right;vertical-align:top}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--dim);font-weight:500;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase}
+.note{color:var(--dim);font-size:.87rem;margin-top:.45rem}
+.box{border-left:2px solid var(--rule);padding:.35rem 0 .35rem .95rem;margin:1.3rem 0}
+.box.ok{border-color:var(--ok);color:#c6d4c6}
+.box.warn{border-color:var(--warn);color:#d9c6c6}
+.box.new{border-color:var(--new);color:#d6cbab}
+.foot{margin-top:3.5rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--dim);
+      font-size:.82rem;font-family:ui-sans-serif,system-ui,sans-serif}
+ol,ul{padding-left:1.3rem}
+li{margin:.4rem 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>LIMIAR — estado do projeto</h1>
+<p class="sub">Todos os experimentos, as manipulações de dados e as leis de formação obtidas.<br>
+Fechamento em 12 de agosto de 2026, após nove sessões experimentais.</p>
+
+<h2>1. A pergunta e as três grandezas</h2>
+
+<p>O projeto investiga a fadiga cognitiva em sessões prolongadas de estudo e busca o momento
+em que continuar deixa de compensar. Tudo se apoia em três funções do tempo
+<span class="tex">t</span>, medido em minutos desde o início do bloco:</p>
+
+<div class="eq"><div class="rot">as três grandezas</div>
+<div class="tex-d">\underbrace{r(t)}_{\text{acertos por minuto agora}} \qquad
+\underbrace{S(t)=\int_0^t r(u)\,du}_{\text{acertos acumulados}} \qquad
+\underbrace{R(t)=\frac{S(t)}{t+x}}_{\text{média já pagando a pausa }x}</div></div>
+
+<p>Só a terceira tem máximo interior. <span class="tex">S</span> apenas cresce, o que mandaria
+nunca parar; <span class="tex">r</span> apenas cai, o que mandaria parar no primeiro minuto.
+É <span class="tex">R</span> que produz um Limiar.</p>
+
+<h2>2. Os parâmetros — de onde saem <span class="tex">c</span>, <span class="tex">b</span>, <span class="tex">k</span></h2>
+
+<p>Não vêm da teoria: são os três graus de liberdade da família de funções escolhida para
+descrever o rendimento medido, que cai no início e depois estabiliza.</p>
+
+<div class="eq"><div class="tex-d">r(t) = c + b\,e^{-kt}</div></div>
+
+<table>
+<thead><tr><th>parâmetro</th><th>unidade</th><th>significado</th></tr></thead>
+<tbody>
+<tr><td><span class="tex">c</span></td><td>acertos/min</td><td>o piso — rendimento sustentável após a fadiga se instalar; <span class="tex">\lim_{t\to\infty} r(t)</span></td></tr>
+<tr><td><span class="tex">b</span></td><td>acertos/min</td><td>a altura da queda — parte-se de <span class="tex">r(0)=c+b</span> e desce até <span class="tex">c</span>. Se <span class="tex">b=0</span>, não há fadiga</td></tr>
+<tr><td><span class="tex">k</span></td><td>1/min</td><td>a pressa da queda; meia-vida <span class="tex">t_{1/2}=\ln 2/k</span></td></tr>
+</tbody>
+</table>
+
+<h3>Integrando: a lei do ganho acumulado</h3>
+<div class="eq"><div class="rot">dedução</div>
+<div class="tex-d">S(t)=\int_0^t\!\left(c+b e^{-ku}\right)du=\big[c\,u\big]_0^t+b\left[-\tfrac1k e^{-ku}\right]_0^t = c\,t+\frac{b}{k}\left(1-e^{-kt}\right)</div></div>
+
+<div class="box ok">
+<b>Achado central.</b> Em sete ajustes independentes, essa forma venceu tanto a reta pura
+quanto a exponencial saturante pura. O ganho acumulado <b>não satura</b>: decompõe-se numa
+reta dominante (74% a 100% do total) mais uma correção exponencial que se esgota cedo. A
+saturante pura só ajusta projetando tetos de oito a oitenta vezes além do horizonte medido —
+uma reta disfarçada.
+</div>
+
+<h3>O que <span class="tex">b/k</span> mede</h3>
+<p>Comparando com um estudante que rendesse o piso desde o minuto zero:</p>
+<div class="eq"><div class="tex-d">S(t)-\underbrace{c\,t}_{\text{piso o tempo todo}}=\frac{b}{k}\left(1-e^{-kt}\right)\;\xrightarrow[t\to\infty]{}\;\frac{b}{k}</div></div>
+<p class="note">É o <b>bônus</b> que o frescor inicial concede, em acertos, e ele satura. Já o
+custo da fadiga, medido contra quem nunca cansasse, é <span class="tex">b\,t - \frac{b}{k}(1-e^{-kt})</span>
+e cresce sem limite. Bônus limitado contra custo ilimitado: é essa assimetria que faz existir
+um momento ótimo de parar.</p>
+
+<h2>3. A regra de parada e a condição de existência</h2>
+
+<div class="eq"><div class="rot">derivando R e anulando</div>
+<div class="tex-d">R'(t)=\frac{r(t)(t+x)-S(t)}{(t+x)^2}=0 \;\Longleftrightarrow\; \boxed{\,r(t^*)=R(t^*)\,}</div></div>
+<p class="note">Pare quando o rendimento do momento igualar a média já descontada a pausa.</p>
+
+<p>Com <span class="tex">g(t)=r(t)(t+x)-S(t)</span>, tem-se
+<span class="tex">g'(t)=-bk\,e^{-kt}(t+x)<0</span>, logo <span class="tex">g</span> é
+estritamente decrescente, com <span class="tex">g(0)=(c+b)x>0</span> e
+<span class="tex">g(\infty)=cx-b/k</span>. Cruza o zero se e somente se:</p>
+
+<div class="eq"><div class="tex-d">\boxed{\;x<\frac{b}{k\,c}\;}</div></div>
+
+<h2>4. Os nove experimentos</h2>
+
+<h3>Fase 1 — banco de derivadas (1 a 4 de agosto)</h3>
+<table>
+<thead><tr><th>sessão</th><th>protocolo</th><th>n</th><th>resultado</th></tr></thead>
+<tbody>
+<tr><td>01/08</td><td>piloto</td><td>65</td><td>abortada — critério de correção mal definido</td></tr>
+<tr><td>02/08 blocos 1–3</td><td>35·5·35·5·35</td><td>274</td><td><b>b ≈ 0</b> — modelo constante vence; taxa <i>sobe</i> de bloco a bloco (2,00 → 2,34 → 2,78)</td></tr>
+<tr><td>04/08</td><td>contínua 115</td><td>285</td><td>acurácia 99,3% — teto; b/k = 3,30, apenas 1% do acumulado</td></tr>
+</tbody>
+</table>
+<div class="box warn">
+<b>Diagnóstico da fase 1.</b> Executar derivadas já dominadas é processamento automático — o
+canal que a fadiga não atinge. A ausência de fadiga não foi falha de medição, foi resultado:
+mostrou que a tarefa estava errada. Daí a migração para leitura de conteúdo novo.
+</div>
+
+<h3>Fase 2 — flashcards de leitura (10 a 12 de agosto)</h3>
+<table>
+<thead><tr><th>sessão</th><th>sujeito</th><th>protocolo</th><th>n</th><th>acur.</th><th>s/cartão</th><th>c</th><th>b/k</th><th>k</th><th>b/(kc)</th><th>Δ leitura</th></tr></thead>
+<tbody>
+<tr><td>10/08</td><td>Cadu</td><td>contínua 115</td><td>68</td><td>94,1%</td><td>102</td><td>0,470</td><td>9,12</td><td>0,030</td><td>29 min</td><td>−42%***</td></tr>
+<tr><td>11/08</td><td>pai</td><td>contínua 115</td><td>32</td><td>93,8%</td><td>221</td><td>0,223</td><td>2,97</td><td>0,076</td><td>13,3 min</td><td>−15%</td></tr>
+<tr><td>11/08</td><td><b>Cadu</b></td><td>contínua 115</td><td>35</td><td>97,1%</td><td>199</td><td>0,212</td><td>9,47</td><td>0,023</td><td>44,7 min</td><td>−35%**</td></tr>
+<tr><td>12/08</td><td>pai</td><td>25·5·25·5·25·5·25</td><td>47</td><td>83,0%</td><td>129</td><td>0,370</td><td>0,00</td><td>—</td><td>—</td><td>+57%</td></tr>
+<tr><td>12/08</td><td><b>Cadu</b></td><td>40·5·40·5·40</td><td>32</td><td>100%</td><td>227</td><td>0,231</td><td>2,73</td><td>0,035</td><td>11,8 min</td><td>−30%*</td></tr>
+</tbody>
+</table>
+<p class="note">Significância da queda na velocidade de leitura: *** p&lt;0,001 · ** p&lt;0,01 · * p&lt;0,05.
+A sessão de 10/08 tem prolongamento deliberado admitido pelo sujeito e não entra em
+conclusões. A de 12/08 do pai teve o aprendizado dominando a fadiga — segunda sessão da
+vida dele, 42% mais rápido que a primeira.</p>
+
+<h2>5. As manipulações de dados</h2>
+
+<h3>5.1 Critérios de exclusão, fixados antes de olhar o resultado</h3>
+<ol>
+<li><b>Velocidade de leitura acima de 5 palavras/s</b> — impossibilidade física de ter lido o
+texto. Aplicado a todas as sessões. Capturou 1 cartão (H224, a 6,77 pal/s: 85 palavras em
+12,6 s), contra máxima legítima observada de 1,65 pal/s. Nenhum falso positivo.</li>
+<li><b>Resposta ausente do texto</b> — defeito de construção do cartão, verificável por
+varredura automática. Capturou o H341, cuja resposta (Harvard) não constava do enunciado.
+Uma varredura nos 355 cartões achou 4 defeitos, todos corrigidos.</li>
+</ol>
+<p class="note">Ambos são objetivos, verificáveis por terceiros e independentes do resultado do
+cartão. Excluídos são sempre reportados em número e motivo.</p>
+
+<h3>5.2 Normalização pelo tamanho do texto</h3>
+<div class="eq"><div class="tex-d">v(t)=\frac{\text{palavras do texto}}{\text{tempo de leitura (s)}}</div></div>
+<p>Testado empiricamente sobre 180 cartões: o número de palavras explica apenas
+<b>R² = 0,052</b> do tempo de leitura, e normalizar reduz a variabilidade em 5%. A dispersão
+vem do conteúdo — densidade conceitual, familiaridade prévia — e não do volume de texto.
+A normalização é mantida por rigor, mas seu efeito é pequeno.</p>
+
+<h3>5.3 Janelas temporais</h3>
+<p>Rendimento agregado em janelas de 5 e 10 minutos. Com cerca de 32 cartões por sessão,
+sobram 2 a 3 por janela e o rendimento só assume valores discretos (0; 0,2; 0,4). Nessa
+resolução o modelo constante vence por AICc mesmo quando a desaceleração cartão a cartão é
+significativa. <b>Conclusão metodológica: a análise por janelas é subpotente neste desenho</b>
+— a evidência primária é cartão a cartão e o ajuste de S(t).</p>
+
+<h3>5.4 Tempo de estudo contra tempo de sessão</h3>
+<p>Nas sessões cicladas, S(t) é ajustado sobre o <b>tempo de estudo com as pausas
+comprimidas</b>, para que a curva descreva o trabalho e não o relógio. O tempo total, com as
+pausas, entra apenas no denominador de <span class="tex">R(t)</span>, que é onde ele deve
+pesar.</p>
+
+<h3>5.5 Contabilização do cartão que estoura o bloco</h3>
+<p>Quando o tempo expira no meio de um cartão, ele é concluído e o excedente registrado. Dois
+tratamentos foram comparados: usar o <b>tempo real decorrido</b> como denominador, ou ponderar
+o cartão pela fração dentro do bloco. As taxas diferem em menos de 2% (0,2800 contra 0,2859
+no bloco 1), de modo que a escolha é indiferente — ambos são reportados.</p>
+
+<h2>6. A mudança que revelou a recuperação</h2>
+
+<div class="box new">
+<b>Esta é a alteração metodológica mais recente e a mais consequente do projeto.</b>
+</div>
+
+<h3>6.1 O que se fazia antes: comparar as bordas</h3>
+<p>A recuperação era estimada comparando a média dos 3 últimos cartões antes da pausa com a
+dos 3 primeiros depois. Os cinco resultados obtidos foram <b>−2%, +47%, +7%, +8% e −17%</b>,
+aparentemente sem padrão. A leitura precipitada foi concluir que a recuperação exponencial de
+Jaber não descrevia os dados.</p>
+
+<h3>6.2 Por que aquilo era ruído, não sinal</h3>
+<p>A variabilidade cartão a cartão é de <b>CV = 38%</b>. O erro-padrão da diferença entre duas
+médias de <span class="tex">n</span> cartões é:</p>
+<div class="eq"><div class="tex-d">EP_{\text{dif}} = CV\cdot\sqrt{\tfrac{2}{n}}</div></div>
+<div class="eq num"><div class="rot">para n = 3 cartões de cada lado</div>
+<div class="tex-d">EP_{\text{dif}} = 0{,}38\cdot\sqrt{\tfrac{2}{3}} = 31\%</div></div>
+<p>Todas as cinco medidas cabem dentro de uma barra de erro de 31%. Testando a média contra
+zero: <span class="tex">t=0{,}81</span>, <b>p = 0,463</b>. Não havia contradição alguma — havia
+apenas ruído, e eu havia lido padrão onde não existia.</p>
+
+<h3>6.3 O estimador correto: ajustar e comparar interceptos</h3>
+<p>Em vez de comparar bordas, ajusta-se uma reta à duração por cartão <b>dentro de cada
+bloco</b> e compara-se o intercepto — a duração inicial prevista pelo ajuste. Isso usa todos
+os cartões do bloco, e não seis deles:</p>
+
+<div class="eq"><div class="rot">para cada bloco j</div>
+<div class="tex-d">d_j(t) = \alpha_j + \beta_j\, t \qquad\Longrightarrow\qquad \alpha_j = \text{duração inicial do bloco } j</div></div>
+<div class="eq"><div class="rot">recuperação relativa</div>
+<div class="tex-d">\rho_j = \frac{\alpha_1}{\alpha_j} \qquad (\rho=1 \text{ é recuperação total})</div></div>
+
+<h3>6.4 O resultado</h3>
+<table>
+<thead><tr><th>sessão</th><th>bloco</th><th>n</th><th>intercepto <span class="tex">\alpha_j</span></th><th>déficit</th><th><span class="tex">\rho_j</span></th></tr></thead>
+<tbody>
+<tr><td rowspan="4">pai · 25·5 ×4</td><td>1</td><td>11</td><td>117,2 s</td><td>—</td><td>1,000</td></tr>
+<tr><td>2</td><td>11</td><td>170,8 s</td><td><b>+45,7%</b></td><td><b>0,686</b></td></tr>
+<tr><td>3</td><td>12</td><td>144,0 s</td><td>+22,8%</td><td>0,814</td></tr>
+<tr><td>4</td><td>13</td><td>125,6 s</td><td>+7,2%</td><td>0,933</td></tr>
+<tr><td rowspan="3">Cadu · 40·5 ×3</td><td>1</td><td>12</td><td>176,2 s</td><td>—</td><td>1,000</td></tr>
+<tr><td>2</td><td>10</td><td>237,7 s</td><td><b>+34,9%</b></td><td><b>0,741</b></td></tr>
+<tr><td>3</td><td>10</td><td>226,2 s</td><td>+28,4%</td><td>0,779</td></tr>
+</tbody>
+</table>
+
+<div class="box ok">
+<b>A recuperação é incompleta, e o padrão é consistente.</b> Nos dois sujeitos e nos dois
+protocolos, o bloco 2 arranca substancialmente pior que o bloco 1 —
+<span class="tex">\rho \approx 0{,}69</span> e <span class="tex">0{,}74</span> — e os blocos
+seguintes recuperam progressivamente. Uma pausa de cinco minutos devolve algo entre 69% e 74%
+do estado inicial, não os 100% que o modelo clássico pressupõe.
+</div>
+
+<h3>6.5 O poder estatístico, que delimita a afirmação</h3>
+<div class="eq"><div class="rot">n necessário por lado, poder de 80%</div>
+<div class="tex-d">n = 2\left(\frac{(z_{\alpha/2}+z_\beta)\,CV}{\delta}\right)^2 = 2\left(\frac{2{,}80\cdot 0{,}38}{\delta}\right)^2</div></div>
+<table>
+<thead><tr><th>déficit real <span class="tex">\delta</span></th><th>cartões necessários por lado</th></tr></thead>
+<tbody>
+<tr><td>10%</td><td>222</td></tr><tr><td>20%</td><td>56</td></tr>
+<tr><td>30%</td><td>25</td></tr><tr><td>50%</td><td>9</td></tr>
+</tbody>
+</table>
+<p class="note">Com 11 cartões por bloco só se enxergam déficits de 30% ou mais — e os
+observados, de 35% e 46%, estão exatamente acima desse limite. Déficits menores permanecem
+invisíveis. A afirmação de recuperação incompleta é sustentável; qualquer valor preciso de
+<span class="tex">\mu</span> ainda não é.</p>
+
+<h3>6.6 O que isso implica para o modelo</h3>
+<p>Se <span class="tex">\rho<1</span>, os ciclos não são idênticos e
+<span class="tex">R(t)=S(t)/(t+x)</span> deixa de ser a taxa de longo prazo exata: o resíduo de
+fadiga acumula de bloco em bloco. Com a forma de Jaber,</p>
+<div class="eq"><div class="tex-d">\rho(x)=1-e^{-\mu x} \qquad\Longrightarrow\qquad \mu = -\frac{\ln\!\left(1-\rho\right)}{x}</div></div>
+<div class="eq num"><div class="rot">com ρ ≈ 0,70 e x = 5 min</div>
+<div class="tex-d">\mu = -\frac{\ln(0{,}30)}{5} \approx 0{,}24\ \text{min}^{-1}</div></div>
+<p class="note">Recuperação cerca de dez vezes mais rápida que a instalação da fadiga
+(<span class="tex">k\approx0{,}023</span>), o que é compatível com a literatura de
+trabalho-descanso. Este é o primeiro valor de <span class="tex">\mu</span> que o projeto
+produz, e ele fecha a última incógnita do modelo — provisoriamente.</p>
+
+<h2>7. O que está estabelecido e o que não está</h2>
+
+<div class="box ok">
+<b>Sustentado:</b> a fadiga existe e se manifesta no canal de codificação, não no de execução;
+o ganho acumulado não satura, decompondo-se em reta dominante mais correção exponencial; a
+recuperação após cinco minutos é incompleta, na faixa de 0,69 a 0,74; e a estrutura funcional
+saturante de Jaber é compatível com os dados, ao contrário da alternativa de crescimento
+composto.
+</div>
+
+<div class="box warn">
+<b>Não sustentado:</b> qualquer valor numérico do Limiar <span class="tex">t^*</span>, porque
+os parâmetros oscilam entre sessões (<span class="tex">b/k</span> variou de 2,73 a 9,47 no
+mesmo sujeito); a comparação entre protocolos, porque nas sessões cicladas mudaram
+simultaneamente o descanso prévio, o tempo total e o conteúdo; e o valor preciso de
+<span class="tex">\mu</span>, por falta de poder estatístico.
+</div>
+
+<h2>8. A estimativa do Limiar</h2>
+
+<p>Resolvendo <span class="tex">r(t^*)=R(t^*)</span> com os parâmetros das duas sessões limpas
+do sujeito principal, e supondo primeiro recuperação total:</p>
+
+<table>
+<thead><tr><th>sessão</th><th>pausa 5 min</th><th>pausa 10 min</th><th>pausa 15 min</th></tr></thead>
+<tbody>
+<tr><td>11/08 · contínua</td><td>32 min</td><td>48 min</td><td>62 min</td></tr>
+<tr><td>12/08 · ciclada</td><td>45 min</td><td>99 min</td><td>não existe</td></tr>
+</tbody>
+</table>
+
+<h3>Corrigindo pela recuperação medida</h3>
+<p>Com <span class="tex">\rho<1</span> os ciclos deixam de ser idênticos: o bloco
+<span class="tex">n</span> começa adiantado na curva por um resíduo
+<span class="tex">\tau_n</span> que a pausa não removeu. Iterando sobre quatro ciclos:</p>
+
+<div class="eq"><div class="rot">resíduo acumulado entre blocos</div>
+<div class="tex-d">\tau_{n+1} = \left(\tau_n + T\right)\left(1-\rho\right), \qquad
+S_n(T) = c\,T + \frac{b}{k}\,e^{-k\tau_n}\left(1-e^{-kT}\right)</div></div>
+<div class="eq"><div class="rot">maximiza-se a média dos N ciclos</div>
+<div class="tex-d">t^* = \arg\max_T \; \frac{1}{N}\sum_{n=1}^{N} \frac{S_n(T)}{T+x}</div></div>
+
+<table>
+<thead><tr><th>sessão</th><th><span class="tex">\rho=1{,}00</span></th><th><span class="tex">\rho=0{,}70</span> (medido)</th><th><span class="tex">\rho=0{,}50</span></th></tr></thead>
+<tbody>
+<tr><td>11/08 · contínua</td><td>32 min</td><td><b>25 min</b></td><td>22 min</td></tr>
+<tr><td>12/08 · ciclada</td><td>45 min</td><td><b>38 min</b></td><td>40 min</td></tr>
+</tbody>
+</table>
+
+<div class="box ok">
+<b>Estimativa do Limiar: entre 25 e 45 minutos, mediana de 35 minutos</b>, para pausas de
+cinco minutos. A recuperação incompleta desloca o ótimo para <i>antes</i>: como parte da
+fadiga sobrevive à pausa, compensa interromper mais cedo do que o modelo com recuperação
+total indicaria.
+</div>
+
+<p class="note">A faixa é larga porque os parâmetros oscilam entre sessões, e isso é declarado
+como está: uma estimativa com incerteza explícita, não um valor pontual. Ainda assim, ela
+responde à pergunta que originou o projeto e é compatível com a duração dos blocos que a
+prática de estudo consagrou por tentativa e erro.</p>
+
+<div class="foot">
+Projeto LIMIAR · Carlos Raymond · 31ª Feira de Ciências do Colégio Militar de Curitiba<br>
+Nove sessões experimentais entre 1 e 12 de agosto de 2026 · documento atualizado em 12/08/2026
+</div>
+
+</div>
+<script src="/limiar/vendor/katex/katex.min.js"></script>
+<script>
+document.querySelectorAll('.tex').forEach(function(el){
+  try{ katex.render(el.textContent, el, {throwOnError:false, displayMode:false}); }catch(e){}
+});
+document.querySelectorAll('.tex-d').forEach(function(el){
+  try{ katex.render(el.textContent, el, {throwOnError:false, displayMode:true}); }catch(e){}
+});
+</script>
+</body>
+</html>
