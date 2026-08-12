@@ -246,7 +246,9 @@
 "resposta": "Holanda",
 "alt": [
 "holandeses",
-"a Holanda"
+"a Holanda",
+"holandesa",
+"intermediação holandesa"
 ]
 },
 {
@@ -1095,7 +1097,7 @@
 },
 {
 "id": "H341",
-"texto": "A primeira instituição de ensino superior das colônias inglesas foi fundada em 1636, em Massachusetts, com a finalidade de formar pastores para as congregações puritanas. Recebeu o nome de um clérigo que lhe legou sua biblioteca e metade de sua fortuna. A prioridade dada ao ensino formal, poucos anos após a chegada, distingue a colonização do Norte da experiência ibérica, onde universidades só surgiriam no século XIX. Ler a Bíblia diretamente era exigência religiosa, e isso demandava alfabetização.",
+"texto": "A primeira instituição de ensino superior das colônias inglesas foi fundada em 1636, em Massachusetts, com a finalidade de formar pastores para as congregações puritanas. Recebeu o nome de John Harvard, clérigo que lhe legou sua biblioteca e metade de sua fortuna. A prioridade dada ao ensino formal, poucos anos após a chegada, distingue a colonização do Norte da experiência ibérica, onde universidades só surgiriam no século XIX. Ler a Bíblia diretamente era exigência religiosa, e isso demandava alfabetização.",
 "pergunta": "Que universidade foi fundada em Massachusetts em 1636?",
 "resposta": "Harvard",
 "alt": [
@@ -2460,7 +2462,7 @@
 },
 {
 "id": "H529",
-"texto": "Em 1762, Rousseau publicou um tratado sobre educação em forma de romance, acompanhando um menino imaginário desde o nascimento até a maturidade. Defendia que a criança não deve ser tratada como adulto em miniatura, que o aprendizado precisa partir da experiência direta e não da memorização, e que os livros devem esperar. A obra foi condenada e queimada em Paris e em Genebra, e o autor teve de fugir. Ela fundou, ainda assim, a pedagogia moderna.",
+"texto": "Em 1762, Rousseau publicou o Emílio, tratado sobre educação em forma de romance, acompanhando um menino imaginário desde o nascimento até a maturidade. Defendia que a criança não deve ser tratada como adulto em miniatura, que o aprendizado precisa partir da experiência direta e não da memorização, e que os livros devem esperar. A obra foi condenada e queimada em Paris e em Genebra, e o autor teve de fugir. Ela fundou, ainda assim, a pedagogia moderna.",
 "pergunta": "Que obra de Rousseau tratou da educação de uma criança?",
 "resposta": "Emílio",
 "alt": [
@@ -2543,7 +2545,9 @@
 "alt": [
 "eleições",
 "votação",
-"deliberar"
+"deliberar",
+"votavam",
+"votavam decisões"
 ],
 "tema": "Iluminismo e reformismo"
 },
@@ -3824,7 +3828,7 @@
 },
 {
 "id": "H597",
-"texto": "O sistema japonês de produção adotou o princípio de fabricar apenas o necessário, no momento necessário e na quantidade necessária. Peças chegavam à linha pouco antes de serem usadas, o que praticamente eliminava estoques e o capital parado neles. O controle se fazia por cartões que sinalizavam a necessidade de reposição, num fluxo puxado pela demanda real. A contrapartida é a fragilidade: qualquer interrupção no fornecimento para a produção inteira.",
+"texto": "O sistema japonês de produção adotou o princípio do just-in-time: fabricar apenas o necessário, no momento necessário e na quantidade necessária. Peças chegavam à linha pouco antes de serem usadas, o que praticamente eliminava estoques e o capital parado neles. O controle se fazia por cartões que sinalizavam a necessidade de reposição, num fluxo puxado pela demanda real. A contrapartida é a fragilidade: qualquer interrupção no fornecimento para a produção inteira.",
 "pergunta": "Que princípio japonês fabrica apenas o necessário no momento certo?",
 "resposta": "just-in-time",
 "alt": [
@@ -3841,13 +3845,15 @@
 "alt": [
 "parar a produção",
 "interromper",
-"parar tudo"
+"parar tudo",
+"para a produção",
+"parar toda a produção"
 ],
 "tema": "Revolução Industrial"
 },
 {
 "id": "H599",
-"texto": "A partir de 1956, o transporte marítimo passou a usar caixas metálicas padronizadas que podiam ser transferidas diretamente do navio para o caminhão ou o trem sem que a carga fosse manuseada. O tempo de carregar um navio caiu de semanas para horas, e o custo do frete despencou. Portos inteiros foram remodelados e milhares de estivadores perderam o emprego. A padronização de uma caixa viabilizou a produção espalhada por vários países.",
+"texto": "A partir de 1956, o transporte marítimo passou a usar contêineres, caixas metálicas padronizadas que podiam ser transferidas diretamente do navio para o caminhão ou o trem sem que a carga fosse manuseada. O tempo de carregar um navio caiu de semanas para horas, e o custo do frete despencou. Portos inteiros foram remodelados e milhares de estivadores perderam o emprego. A padronização de uma caixa viabilizou a produção espalhada por vários países.",
 "pergunta": "Que caixa padronizada revolucionou o transporte marítimo?",
 "resposta": "o contêiner",
 "alt": [
