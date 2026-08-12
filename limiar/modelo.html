@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LIMIAR — o modelo matemático</title>
+<link rel="stylesheet" href="/limiar/vendor/katex/katex.min.css">
+<style>
+:root{--bg:#0f1012;--fg:#e9e9ea;--dim:#8b8d92;--rule:#2a2c31;--acc:#c8cad0;--warn:#e0a0a0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font:16px/1.65 ui-serif,Georgia,'Times New Roman',serif}
+.wrap{max-width:50rem;margin:0 auto;padding:2.6rem 1.3rem 6rem}
+h1{font-size:1.5rem;font-weight:600;margin:0 0 .3rem;letter-spacing:-.01em}
+.sub{color:var(--dim);font-size:.9rem;margin:0 0 2.6rem}
+h2{font-size:1.12rem;font-weight:600;margin:2.8rem 0 .8rem;padding-bottom:.4rem;
+   border-bottom:1px solid var(--rule)}
+h3{font-size:.97rem;font-weight:600;margin:1.8rem 0 .5rem;color:var(--acc)}
+p{margin:.8rem 0}
+.eq{margin:1.3rem 0;padding:1rem .8rem;background:#141519;border:1px solid var(--rule);
+    border-radius:5px;overflow-x:auto}
+.eq .katex{font-size:1.12em}
+.note{color:var(--dim);font-size:.86rem;margin-top:.45rem;font-style:italic}
+table{border-collapse:collapse;width:100%;font-size:.86rem;margin:1.1rem 0;
+      font-family:ui-sans-serif,system-ui,sans-serif}
+th,td{border-bottom:1px solid var(--rule);padding:.45rem .55rem;text-align:right;vertical-align:top}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--dim);font-weight:500;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase}
+.par{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.1rem;margin:1.1rem 0;
+     align-items:baseline}
+.par dt{text-align:right;padding-top:.15rem}
+.par dd{margin:0;padding-bottom:.7rem;border-bottom:1px solid var(--rule)}
+.par dd:last-child{border-bottom:0}
+.tag{display:inline-block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.68rem;
+     letter-spacing:.06em;text-transform:uppercase;color:var(--dim);
+     border:1px solid var(--rule);border-radius:3px;padding:.1rem .4rem;margin-left:.4rem}
+.alerta{border-left:2px solid var(--warn);padding:.2rem 0 .2rem .9rem;margin:1.2rem 0;
+        color:#d8c4c4}
+.foot{margin-top:3.5rem;padding-top:1rem;border-top:1px solid var(--rule);
+      color:var(--dim);font-size:.82rem;font-family:ui-sans-serif,system-ui,sans-serif}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>LIMIAR — o modelo matemático</h1>
+<p class="sub">Os três parâmetros, as fórmulas derivadas e os valores medidos até 11/08/2026.</p>
+
+<h2>1. Os três parâmetros</h2>
+
+<p>Toda a modelagem parte de uma única grandeza medida: o <b>rendimento</b>, ou seja, quantos
+acertos você produz por minuto num dado instante da sessão. Escrevemos essa grandeza como
+<span class="tex">r(t)</span>, e ela cai ao longo do tempo até parar de cair. São três números
+que descrevem essa queda.</p>
+
+<dl class="par">
+  <dt><span class="tex">c</span></dt>
+  <dd><b>O piso.</b> É o rendimento que você consegue sustentar indefinidamente, depois que
+  a fadiga já se instalou por completo. Não é zero: você continua acertando, só num ritmo
+  menor. Unidade: acertos por minuto. Interpretação: <i>capacidade sustentável</i>.</dd>
+
+  <dt><span class="tex">b</span></dt>
+  <dd><b>A amplitude da queda.</b> É quanto de rendimento você perde do começo da sessão até
+  o piso. O rendimento inicial vale <span class="tex">c+b</span>, e ele decai até
+  <span class="tex">c</span> — portanto <span class="tex">b</span> mede o tamanho do
+  fenômeno da fadiga. Se <span class="tex">b=0</span>, não há fadiga alguma. Unidade:
+  acertos por minuto.</dd>
+
+  <dt><span class="tex">k</span></dt>
+  <dd><b>A velocidade da queda.</b> Diz com que rapidez você vai de <span class="tex">c+b</span>
+  até <span class="tex">c</span>. Não diz <i>quanto</i> você cai (isso é o
+  <span class="tex">b</span>), diz <i>em quanto tempo</i>. Unidade: por minuto. É mais fácil
+  de interpretar pela meia-vida, abaixo.</dd>
+</dl>
+
+<div class="eq"><div class="tex-d">t_{1/2} = \frac{\ln 2}{k}</div></div>
+<p class="note">A meia-vida é o tempo para percorrer metade da queda. Com k = 0,023/min,
+t½ ≈ 30 min: metade da fadiga se instala nos primeiros 30 minutos.</p>
+
+<h2>2. A curva de fadiga</h2>
+
+<p>A lei de formação do rendimento é uma exponencial decrescente somada a um piso:</p>
+<div class="eq"><div class="tex-d">r(t) = c + b\,e^{-kt}</div></div>
+
+<p>Em <span class="tex">t=0</span> ela vale <span class="tex">c+b</span>; quando
+<span class="tex">t\to\infty</span>, o termo exponencial desaparece e sobra
+<span class="tex">c</span>. A inclinação da curva é</p>
+<div class="eq"><div class="tex-d">r'(t) = -\,b\,k\,e^{-kt}</div></div>
+<p class="note">Sempre negativa (o rendimento só cai) e máxima em módulo em t = 0 — a queda é
+mais acentuada no início da sessão e vai ficando mais suave. É por isso que começar cansado
+enfraquece o sinal: você entra já na parte achatada da curva.</p>
+
+<h2>3. O ganho acumulado</h2>
+
+<p>Se <span class="tex">r(t)</span> é o rendimento instantâneo, o total de acertos produzidos
+até o instante <span class="tex">t</span> é a integral dele:</p>
+<div class="eq"><div class="tex-d">S(t) = \int_0^t r(u)\,du = c\,t + \frac{b}{k}\left(1 - e^{-kt}\right)</div></div>
+
+<p>Essa fórmula tem duas partes com comportamentos opostos. O termo
+<span class="tex">c\,t</span> é uma <b>reta</b> que cresce para sempre. O termo
+<span class="tex">\frac{b}{k}(1-e^{-kt})</span> é uma <b>saturante</b> que sobe e trava num
+teto igual a <span class="tex">b/k</span>.</p>
+
+<div class="alerta">
+Resultado empírico das seis sessões do projeto: o termo linear domina, respondendo por 74% a
+100% dos acertos. Ou seja, <b>S(t) não é uma exponencial saturante</b> — é uma reta com uma
+correção saturante pequena. O Limiar não existe porque a “mancha” se esgota, e sim porque o
+rendimento cai até o piso nos primeiros minutos.
+</div>
+
+<p>Note também que <span class="tex">b/k</span> tem unidade de <b>acertos</b> — é o total de
+acertos que a fadiga custou a você ao longo da sessão inteira. É a medida mais direta do
+tamanho do efeito.</p>
+
+<h2>4. O objetivo: taxa média global</h2>
+
+<p>O Teorema do Valor Marginal não maximiza o ganho acumulado nem o rendimento instantâneo,
+e sim a <b>taxa média de longo prazo</b>, que já desconta o tempo gasto na pausa. Chamando de
+<span class="tex">x</span> a duração do descanso:</p>
+<div class="eq"><div class="tex-d">R(t) = \frac{S(t)}{t + x}</div></div>
+
+<p>O descanso entra no <i>denominador</i> porque é tempo que você paga sem colher nada. Isso
+faz de <span class="tex">R</span> a única das três grandezas com máximo interior: o ganho
+acumulado só cresce (recomendaria nunca parar) e o rendimento só cai (recomendaria parar no
+primeiro minuto).</p>
+
+<h3>Por que esse é o objetivo certo para um estudante</h3>
+<p>Com um orçamento fixo de tempo <span class="tex">T</span> dividido em ciclos iguais de
+<span class="tex">(t+x)</span>, o número de ciclos é <span class="tex">N = T/(t+x)</span> e o
+aprendizado total é</p>
+<div class="eq"><div class="tex-d">N \cdot S(t) = \frac{T}{t+x}\,S(t) = T \cdot R(t)</div></div>
+<p class="note">Maximizar o aprendizado total dentro de um tempo fixo é, portanto,
+exatamente maximizar R(t). O objetivo não é uma analogia com forrageio: é a formulação
+correta do problema de quem tem a noite contada.</p>
+
+<h2>5. A regra de parada</h2>
+
+<p>Derivando <span class="tex">R(t)</span> pela regra do quociente:</p>
+<div class="eq"><div class="tex-d">R'(t) = \frac{r(t)\,(t+x) - S(t)}{(t+x)^2}</div></div>
+
+<p>O denominador é sempre positivo, então o sinal de <span class="tex">R'</span> é o sinal do
+numerador. Igualando a zero:</p>
+<div class="eq"><div class="tex-d">r(t^\*)\,(t^\*+x) = S(t^\*) \quad\Longleftrightarrow\quad r(t^\*) = R(t^\*)</div></div>
+
+<p><b>Pare quando o rendimento do momento igualar a sua média já descontada a pausa.</b>
+Enquanto você produz acima da média, continuar puxa a média para cima; quando cai abaixo
+dela, continuar puxa a média para baixo.</p>
+
+<h2>6. Quando o Limiar existe</h2>
+
+<p>Definindo <span class="tex">g(t) = r(t)(t+x) - S(t)</span>, o t* é a raiz de
+<span class="tex">g</span>. Derivando:</p>
+<div class="eq"><div class="tex-d">g'(t) = r'(t)\,(t+x) + r(t) - r(t) = r'(t)\,(t+x) = -\,b\,k\,e^{-kt}(t+x) < 0</div></div>
+
+<p>Logo <span class="tex">g</span> é estritamente decrescente. Nos extremos:</p>
+<div class="eq"><div class="tex-d">g(0) = (c+b)\,x > 0 \qquad\qquad \lim_{t\to\infty} g(t) = c\,x - \frac{b}{k}</div></div>
+
+<p>Uma função decrescente que começa positiva cruza o zero <b>se e somente se</b> termina
+negativa. Portanto:</p>
+<div class="eq"><div class="tex-d">c\,x - \frac{b}{k} < 0 \quad\Longleftrightarrow\quad \boxed{\;x < \frac{b}{k\,c}\;}</div></div>
+
+<p class="note">Condição de existência do Limiar. Se a pausa for mais longa que b/(kc), o
+modelo diz para nunca parar: o pedágio do descanso é mais caro que a fadiga que ele alivia.
+Repare que a condição melhora com b grande (fadiga intensa) e piora com k grande (fadiga
+rápida) ou c grande (piso alto).</p>
+
+<h2>7. A forma equivalente no tempo por cartão</h2>
+
+<p>Como o rendimento é o inverso do tempo gasto por item, a mesma fadiga aparece no tempo por
+cartão crescendo até um teto — a forma que Jaber, Givi e Neumann usam para fadiga industrial:</p>
+<div class="eq"><div class="tex-d">d(t) = D - A\,e^{-kt}</div></div>
+<p class="note">D é o teto de tempo por cartão, A a amplitude do aumento. É a forma
+<i>saturante</i>, oposta à <i>composta</i> (d = d₀e<sup>λt</sup>), que preveria tempo por item
+disparando sem limite. Os dados apoiam a saturante.</p>
+
+<h3>Medida normalizada</h3>
+<p>Como os textos variam de tamanho, o indicador mais limpo de desaceleração é a velocidade
+de leitura, que divide o tamanho do texto pelo tempo gasto lendo:</p>
+<div class="eq"><div class="tex-d">v(t) = \frac{\text{palavras do texto}}{\text{tempo de leitura em segundos}}</div></div>
+<p class="note">Foi nessa medida que a fadiga apareceu com mais clareza: queda de 35% em
+116 minutos, p = 0,007, com o tamanho dos textos comprovadamente constante ao longo da
+sessão (p = 0,56).</p>
+
+<h2>8. Parâmetros medidos</h2>
+
+<table>
+<thead><tr><th>Sessão</th><th>tarefa</th><th>c</th><th>b/k</th><th>k</th><th>t½</th><th>b/(kc)</th></tr></thead>
+<tbody>
+<tr><td>02/08 blocos 1–3</td><td>derivadas</td><td>2,0–2,8</td><td>0,00</td><td>~0</td><td>—</td><td>—</td></tr>
+<tr><td>04/08 contínua</td><td>derivadas</td><td>2,438</td><td>3,30</td><td>0,289</td><td>2,4 min</td><td>1,4 min</td></tr>
+<tr><td>10/08 contínua</td><td>flashcards</td><td>0,470</td><td>9,12</td><td>0,030</td><td>23 min</td><td>~29 min</td></tr>
+<tr><td><b>11/08 contínua</b></td><td>flashcards</td><td><b>0,212</b></td><td><b>9,47</b></td><td><b>0,023</b></td><td><b>30 min</b></td><td><b>44,7 min</b></td></tr>
+<tr><td>11/08 (pai)</td><td>flashcards</td><td>0,223</td><td>2,97</td><td>0,076</td><td>9,1 min</td><td>13,3 min</td></tr>
+</tbody>
+</table>
+
+<p>Duas leituras que os números sustentam. Primeira: nos blocos de derivadas
+<span class="tex">b \approx 0</span> — não havia fadiga a modelar, porque executar
+procedimento dominado é processamento automático. Segunda: entre as duas sessões de
+flashcards do mesmo sujeito, <span class="tex">b/k</span> deu 9,12 e 9,47, uma diferença de
+4%, enquanto <span class="tex">c</span> caiu pela metade. Isso sugere que
+<span class="tex">b</span> e <span class="tex">k</span> pertencem ao par sujeito-tarefa,
+enquanto <span class="tex">c</span> depende do material estudado.</p>
+
+<h2>9. O que ainda falta</h2>
+
+<p>Todas as fórmulas acima descrevem o que acontece <b>dentro</b> de um bloco de estudo. Elas
+supõem, sem ter medido, que a pausa devolve o estudante ao ponto de partida — é essa suposição
+que permite tratar cada ciclo como idêntico ao anterior e escrever
+<span class="tex">R(t)=S(t)/(t+x)</span> como taxa de longo prazo.</p>
+
+<p>Falta portanto a função de recuperação, que se pode escrever como a fração de fadiga
+descarregada por uma pausa de duração <span class="tex">x</span>:</p>
+<div class="eq"><div class="tex-d">\rho(x) = 1 - e^{-\mu x}</div></div>
+
+<p class="note">Se ρ(x) &lt; 1, os ciclos não são idênticos, o resíduo acumula e o problema sai
+do Charnov clássico para controle ótimo — blocos que encurtam ao longo da sessão. Medir μ
+exige sessões com pausas de durações diferentes, comparando onde o bloco seguinte arranca em
+relação ao anterior. Até que isso esteja medido, qualquer t* calculado é condicional.</p>
+
+<div class="foot">
+Projeto LIMIAR · 31ª Feira de Ciências do Colégio Militar de Curitiba · 28 e 29 de agosto de 2026<br>
+Página gerada a partir dos ajustes das seis sessões realizadas entre 1 e 11 de agosto de 2026.
+</div>
+
+</div>
+
+<script src="/limiar/vendor/katex/katex.min.js"></script>
+<script>
+document.querySelectorAll('.tex').forEach(function(el){
+  try{ katex.render(el.textContent, el, {throwOnError:false, displayMode:false}); }catch(e){}
+});
+document.querySelectorAll('.tex-d').forEach(function(el){
+  try{ katex.render(el.textContent, el, {throwOnError:false, displayMode:true}); }catch(e){}
+});
+</script>
+</body>
+</html>
