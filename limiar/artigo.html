@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LIMIAR — o artigo</title>
+<link rel="stylesheet" href="/limiar/vendor/katex/katex.min.css">
+<style>
+:root{--bg:#0f1012;--fg:#e9e9ea;--dim:#8b8d92;--rule:#2a2c31;--acc:#c8cad0;
+      --warn:#e0a0a0;--ok:#a8c8a8;--new:#c9b47a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.72 ui-serif,Georgia,serif}
+.wrap{max-width:50rem;margin:0 auto;padding:3rem 1.3rem 7rem}
+h1{font-size:1.7rem;font-weight:600;margin:0 0 .5rem;letter-spacing:-.015em;line-height:1.3}
+.aut{color:var(--dim);font-size:.92rem;margin:0 0 .4rem}
+.sub{color:var(--dim);font-size:.88rem;margin:0 0 2.8rem;padding-bottom:1.4rem;
+     border-bottom:1px solid var(--rule)}
+h2{font-size:1.2rem;font-weight:600;margin:3.4rem 0 .9rem;padding-bottom:.4rem;
+   border-bottom:1px solid var(--rule)}
+h3{font-size:1.02rem;font-weight:600;margin:2.2rem 0 .6rem;color:var(--acc)}
+p{margin:.9rem 0}
+.eq{margin:1.3rem 0;padding:1.05rem .8rem;background:#141519;border:1px solid var(--rule);
+    border-radius:5px;overflow-x:auto}
+.eq.num{background:#12161a;border-color:#26333c}
+.rot{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.67rem;letter-spacing:.09em;
+     text-transform:uppercase;color:var(--dim);margin-bottom:.55rem}
+.note{color:var(--dim);font-size:.88rem;margin-top:.5rem}
+table{border-collapse:collapse;width:100%;font-size:.84rem;margin:1.2rem 0;
+      font-family:ui-sans-serif,system-ui,sans-serif}
+th,td{border-bottom:1px solid var(--rule);padding:.45rem .5rem;text-align:right;vertical-align:top}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--dim);font-weight:500;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.box{border-left:2px solid var(--rule);padding:.4rem 0 .4rem 1rem;margin:1.4rem 0}
+.box.ok{border-color:var(--ok);color:#c6d4c6}
+.box.warn{border-color:var(--warn);color:#d9c6c6}
+.box.new{border-color:var(--new);color:#d6cbab}
+.res{background:#131519;border:1px solid var(--rule);border-radius:6px;
+     padding:1.2rem 1.3rem;margin:1.6rem 0 2.4rem}
+.res p{margin:.5rem 0;font-size:.94rem}
+ol,ul{padding-left:1.35rem}
+li{margin:.45rem 0}
+.ref{font-size:.85rem;color:var(--dim);margin:.7rem 0;padding-left:1.6rem;text-indent:-1.6rem}
+.foot{margin-top:4rem;padding-top:1.2rem;border-top:1px solid var(--rule);color:var(--dim);
+      font-size:.82rem;font-family:ui-sans-serif,system-ui,sans-serif}
+sup{font-size:.72em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Fadiga cognitiva e ganho acumulado em sessões prolongadas de estudo:<br>
+modelagem matemática e determinação experimental do limiar de interrupção</h1>
+<p class="aut">Carlos Raymond</p>
+<p class="sub">31ª Feira de Ciências do Colégio Militar de Curitiba · agosto de 2026<br>
+Documento técnico completo, escrito para quem nunca viu o projeto.</p>
+
+<div class="res">
+<p><b>Resumo.</b> Este trabalho investiga quando parar de estudar. Adaptando o Teorema do
+Valor Marginal — formulado por Charnov em 1976 para descrever quanto tempo um animal deve
+permanecer forrageando numa mancha de alimento — mede-se o rendimento de sessões de estudo
+e determina-se o instante em que continuar deixa de compensar. Nove sessões experimentais
+foram conduzidas com dois participantes. O rendimento instantâneo ajusta-se a
+<span class="tex">r(t)=c+b\,e^{-kt}</span>, cuja integração fornece
+<span class="tex">S(t)=c\,t+\frac{b}{k}(1-e^{-kt})</span>. O achado central contraria a
+premissa clássica: o ganho acumulado <b>não satura</b> — o termo linear responde por 74% a
+100% do total em sete ajustes independentes. A recuperação após pausas de cinco minutos
+mostrou-se <b>incompleta</b>, entre 0,69 e 0,74. Obtém-se uma solução fechada para o limiar
+em termos da função <span class="tex">W</span> de Lambert, e estima-se o limiar entre 21 e
+36 minutos para pausas curtas.</p>
+</div>
+
+<h2>1. O problema</h2>
+
+<p>Todo estudante conhece a experiência de continuar estudando muito depois de o estudo ter
+parado de render. Sabe-se que existe um ponto além do qual insistir custa mais do que
+produz, mas esse ponto é tratado por intuição, por regras de bolso ou por métodos populares
+sem validação — o Pomodoro, com seus vinte e cinco minutos, é o exemplo mais difundido.</p>
+
+<p>A pergunta deste trabalho é se esse ponto pode ser <b>medido</b> e <b>calculado</b> em
+vez de estimado. Formalmente: existe um instante ótimo de interrupção, e ele é determinável a
+partir de dados de desempenho coletados durante a própria sessão?</p>
+
+<h2>2. A inspiração: o Teorema do Valor Marginal</h2>
+
+<p>Em 1976, o ecólogo Eric Charnov publicou a solução de um problema aparentemente distante.
+Um animal forrageia numa mancha de alimento — um arbusto com frutos, um tronco com insetos.
+Conforme come, a mancha empobrece e cada minuto adicional rende menos. Em algum momento
+compensa abandoná-la e viajar até outra mancha, mas a viagem custa tempo em que nada se
+colhe.</p>
+
+<p>Charnov demonstrou que o forrageador que maximiza o ganho de longo prazo deve abandonar a
+mancha quando <b>a taxa instantânea de ganho iguala a taxa média do ambiente</b>. O resultado
+ficou conhecido como Teorema do Valor Marginal e é um dos pilares da ecologia comportamental.</p>
+
+<div class="box new">
+<b>A transposição.</b> A analogia com o estudo é estrutural, não literária. A sessão de
+estudo é a mancha; o rendimento que decai é o empobrecimento; a pausa é o tempo de viagem.
+Se as três correspondências valem, o teorema fornece a regra de parada.
+</div>
+
+<h3>2.1 O que se maximiza</h3>
+
+<p>Definem-se três grandezas, todas funções do tempo <span class="tex">t</span> em minutos
+desde o início do bloco de estudo:</p>
+
+<div class="eq"><div class="tex-d">r(t) \quad\text{rendimento instantâneo} \qquad
+S(t)=\int_0^t r(u)\,du \quad\text{ganho acumulado} \qquad
+R(t)=\frac{S(t)}{t+x} \quad\text{taxa média global}</div></div>
+
+<p>onde <span class="tex">x</span> é a duração da pausa planejada. Apenas a terceira admite
+máximo interior: <span class="tex">S</span> apenas cresce, e maximizá-la mandaria nunca
+parar; <span class="tex">r</span> apenas decai, e maximizá-la mandaria parar no primeiro
+minuto. É <span class="tex">R</span> que produz um limiar.</p>
+
+<p>Há uma justificativa mais forte para <span class="tex">R</span> ser o objetivo correto,
+que dispensa a analogia com forrageamento. Dispondo de um tempo total <span class="tex">T</span>
+repartido em <span class="tex">N</span> ciclos de <span class="tex">(t+x)</span>, o
+aprendizado total é <span class="tex">N\,S(t)</span>. Como <span class="tex">N=T/(t+x)</span>:</p>
+
+<div class="eq"><div class="tex-d">N\,S(t)=\frac{T}{t+x}\,S(t)=T\cdot R(t)</div></div>
+
+<p class="note">Maximizar o aprendizado de uma noite de duração fixa é <b>idêntico</b> a
+maximizar <span class="tex">R</span>. A pausa entra no denominador porque é tempo pago sem
+colheita.</p>
+
+<h2>3. O instrumento</h2>
+
+<p>Nenhum modelo de quando parar vale sem dados de como o desempenho evolui. Construiu-se
+para isso um instrumento de coleta em navegador, disponível publicamente, que apresenta
+itens de estudo um a um e registra o instante de cada evento com precisão de milissegundos.</p>
+
+<p>O protocolo final funciona assim. Um texto curto e autocontido aparece sozinho; ao
+terminar de ler, o participante pressiona a barra de espaço e o texto <b>desaparece</b>,
+substituído por uma pergunta cuja resposta tem de uma a três palavras. A resposta é escrita à
+mão em caderno numerado, e nova pressão da barra avança. Nada de gabarito, contagem, relógio
+ou sinal de desempenho aparece durante a sessão. A correção acontece integralmente no fim,
+cartão por cartão, contra o caderno.</p>
+
+<p>Essa arquitetura resolve três problemas de medição. O texto sumir antes da pergunta
+garante que se mede <b>recuperação da memória</b>, e não leitura da resposta. A separação
+entre o tempo de leitura e o tempo de resposta permite localizar em qual canal a fadiga age.
+E adiar toda a correção impede que saber o próprio desempenho altere o desempenho medido.</p>
+
+<h2>4. Primeira fase: um fracasso produtivo</h2>
+
+<p>As quatro primeiras sessões usaram um banco de 1.004 exercícios de derivadas, gerados
+programaticamente a partir de listas de cálculo da Universidade de Brasília, com itens
+isomórficos dentro de cada rótulo — mesma estrutura, coeficientes diferentes.</p>
+
+<p>Nenhuma delas mostrou fadiga. Nos três blocos de 35 minutos, o modelo constante venceu na
+comparação por AICc, e a taxa de acerto <b>subiu</b> de bloco para bloco: 2,00, depois 2,34,
+depois 2,78 acertos por minuto. Na sessão contínua de 115 minutos, a acurácia atingiu 99,3%,
+saturando o teto e deixando de medir qualquer coisa.</p>
+
+<div class="box warn">
+<b>O diagnóstico.</b> Executar um procedimento já dominado é <b>processamento automático</b>,
+justamente o canal que a fadiga não atinge. A ausência de sinal não foi falha de medição: foi
+o resultado que revelou que a tarefa estava errada. O que a fadiga degrada é a
+<b>codificação de conteúdo novo</b>.
+</div>
+
+<p>A consequência foi trocar integralmente a tarefa. Construiu-se um banco de 355 cartões de
+leitura de História, cada um com um texto autocontido de quatro a cinco frases seguido de uma
+pergunta de resposta curta, cobrindo colonização da América do Norte, revoluções inglesas,
+Iluminismo e Revolução Industrial. O conteúdo foi extraído de material didático do
+participante — capítulos de <i>História Geral e do Brasil</i>, de Freitas Neto e Tasinafo, e
+apresentações de aula.</p>
+
+<h2>5. O modelo de fadiga</h2>
+
+<p>Os dados de flashcards mostram rendimento que cai no início e depois estabiliza num
+patamar. Três caminhos independentes conduzem à mesma forma funcional.</p>
+
+<h3>5.1 A rota mecânica</h3>
+
+<p>Parte-se de uma hipótese sobre o mecanismo, não sobre o formato: <b>o rendimento cai
+proporcionalmente ao quanto ainda está acima do piso sustentável</b>.</p>
+
+<div class="eq"><div class="rot">equação diferencial</div>
+<div class="tex-d">\frac{dr}{dt} = -k\left(r - c\right)</div></div>
+
+<p>Trata-se da mesma equação da lei de resfriamento de Newton. Separando variáveis e
+integrando com <span class="tex">r(0)=r_0</span>:</p>
+
+<div class="eq"><div class="tex-d">\int\frac{dr}{r-c}=-k\!\int dt \;\Longrightarrow\;
+\ln|r-c| = -kt + C \;\Longrightarrow\; r(t) = c + (r_0-c)\,e^{-kt}</div></div>
+
+<p>Definindo <span class="tex">b=r_0-c</span>:</p>
+
+<div class="eq"><div class="tex-d">\boxed{\;r(t) = c + b\,e^{-kt}\;}</div></div>
+
+<h3>5.2 A rota via literatura de fadiga industrial</h3>
+
+<p>Jaber, Givi e Neumann propuseram em 2013 um modelo que incorpora fadiga e recuperação ao
+processo de aprendizado e esquecimento em trabalho repetitivo. Nele, a fadiga acumulada é
+saturante:</p>
+
+<div class="eq"><div class="tex-d">F(t) = 1 - e^{-\lambda t}, \qquad F(0)=0,\;\; F(\infty)=1</div></div>
+
+<p>Se o desempenho decai proporcionalmente à fadiga acumulada, com
+<span class="tex">\alpha</span> sendo a fração que ela consegue derrubar:</p>
+
+<div class="eq"><div class="tex-d">r(t) = r_{\max}\left(1-\alpha F(t)\right)
+= \underbrace{r_{\max}(1-\alpha)}_{c} + \underbrace{r_{\max}\alpha}_{b}\,e^{-\lambda t}</div></div>
+
+<p class="note">É a mesma expressão. Os parâmetros ganham leitura física:
+<span class="tex">c</span> é o que sobra quando a fadiga satura por completo,
+<span class="tex">b</span> é quanto ela chega a tirar, <span class="tex">k=\lambda</span> é a
+taxa com que se instala, e <span class="tex">\alpha = b/(b+c)</span> é a fração derrubável do
+desempenho.</p>
+
+<h3>5.3 A rota empírica</h3>
+
+<p>Quatro famílias foram ajustadas e comparadas por AICc: constante, linear, exponencial
+composta <span class="tex">r_0e^{-\lambda t}</span> e a saturante com assíntota. A constante
+venceu nos blocos de derivadas, revelando <span class="tex">b\approx 0</span>. A composta foi
+rejeitada porque decai a zero, incompatível com o patamar observado. A linear cruzaria o zero.
+Restou a saturante.</p>
+
+<h3>5.4 Os parâmetros e suas unidades</h3>
+
+<table>
+<thead><tr><th>parâmetro</th><th>unidade</th><th>papel no gráfico</th></tr></thead>
+<tbody>
+<tr><td><span class="tex">c</span></td><td>acertos/min</td><td>o piso onde a curva pousa; sobe ou desce a curva inteira</td></tr>
+<tr><td><span class="tex">b</span></td><td>acertos/min</td><td>a altura da queda; parte-se de <span class="tex">c+b</span></td></tr>
+<tr><td><span class="tex">k</span></td><td>min<sup>−1</sup></td><td>a pressa da queda; não muda início nem fim</td></tr>
+<tr><td><span class="tex">t_{1/2}=\ln 2/k</span></td><td>min</td><td>tempo para percorrer metade da queda</td></tr>
+</tbody>
+</table>
+
+<h2>6. O ganho acumulado</h2>
+
+<p>Integrando o rendimento termo a termo:</p>
+
+<div class="eq"><div class="rot">dedução completa</div>
+<div class="tex-d">S(t)=\int_0^t\!\left(c+b\,e^{-ku}\right)du
+= \Big[c\,u\Big]_0^t + b\left[-\tfrac{1}{k}e^{-ku}\right]_0^t
+= c\,t + \frac{b}{k}\left(1-e^{-kt}\right)</div></div>
+
+<p>O fator <span class="tex">1/k</span> surge porque a primitiva de
+<span class="tex">e^{-ku}</span> é <span class="tex">-\tfrac{1}{k}e^{-ku}</span>.</p>
+
+<h3>6.1 O significado de b/k</h3>
+
+<p>Compare-se com um estudante hipotético que rendesse o piso desde o minuto zero,
+acumulando <span class="tex">c\,t</span>. A diferença é:</p>
+
+<div class="eq"><div class="tex-d">S(t)-c\,t = \frac{b}{k}\left(1-e^{-kt}\right)
+\quad\longrightarrow\quad \frac{b}{k} \;\;\text{quando}\;\; t\to\infty</div></div>
+
+<p>A análise dimensional confirma a leitura: <span class="tex">b/k</span> tem unidade de
+<span class="tex">(\text{acertos}/\text{min})\div(1/\text{min})</span>, ou seja,
+<b>acertos</b> — uma contagem pura. É o <b>bônus</b> que o frescor inicial concede.</p>
+
+<p>O custo da fadiga é outra conta, medida contra quem nunca cansasse:</p>
+
+<div class="eq"><div class="tex-d">\text{Custo}(t) = (c+b)\,t - S(t) = b\,t - \frac{b}{k}\left(1-e^{-kt}\right)</div></div>
+
+<div class="box ok">
+<b>A assimetria fundamental.</b> O bônus é <b>limitado</b> — trava em
+<span class="tex">b/k</span>. O custo é <b>ilimitado</b> — cresce como
+<span class="tex">b\,t</span>. É essa assimetria, e não a saturação do ganho, que faz existir
+um momento ótimo de parar.
+</div>
+
+<h2>7. O achado central: o ganho não satura</h2>
+
+<p>O modelo de Charnov pressupõe ganho saturante — uma curva que dobra até um teto, porque a
+mancha se esgota. Isso equivale a <span class="tex">c=0</span>.</p>
+
+<p>Sete ajustes independentes rejeitam essa premissa. Comparando por AICc três modelos —
+linear puro, exponencial saturante pura <span class="tex">S_{\max}(1-e^{-kt})</span>, e a
+combinação linear mais saturante — a combinação vence, e a decomposição mostra o termo linear
+carregando de <b>74% a 100%</b> do acumulado.</p>
+
+<table>
+<thead><tr><th>sessão</th><th>tarefa</th><th>modelo vencedor</th><th>peso do termo linear</th></tr></thead>
+<tbody>
+<tr><td>02/08, blocos 1–3</td><td>derivadas</td><td>linear puro</td><td>100%</td></tr>
+<tr><td>04/08, contínua</td><td>derivadas</td><td>linear + saturante</td><td>99%</td></tr>
+<tr><td>10/08, contínua</td><td>flashcards</td><td>linear + saturante</td><td>86%</td></tr>
+<tr><td>11/08, contínua</td><td>flashcards</td><td>linear + saturante</td><td>74%</td></tr>
+<tr><td>12/08, ciclada</td><td>flashcards</td><td>linear + saturante</td><td>91%</td></tr>
+</tbody>
+</table>
+
+<p>A saturante pura só consegue ajustar projetando tetos absurdos: 65 acertos alcançados
+apenas aos 755 minutos numa sessão de 116; 4.987 acertos aos 9.059 minutos noutra de 115. Um
+patamar situado de oito a oitenta vezes além do horizonte medido não é um patamar — é uma
+reta disfarçada.</p>
+
+<div class="box new">
+Isso não invalida o teorema; muda a <b>razão</b> de o limiar existir. Não é a mancha que se
+esgota — é o bônus do frescor que satura enquanto o relógio continua correndo.
+</div>
+
+<h2>8. A regra de parada</h2>
+
+<p>Derivando <span class="tex">R(t)=S(t)/(t+x)</span> pela regra do quociente, lembrando que
+<span class="tex">S'(t)=r(t)</span>:</p>
+
+<div class="eq"><div class="tex-d">R'(t) = \frac{r(t)\,(t+x) - S(t)}{(t+x)^2}</div></div>
+
+<p>O denominador é sempre positivo, de modo que o sinal de <span class="tex">R'</span> é o
+sinal do numerador. Anulando:</p>
+
+<div class="eq"><div class="tex-d">r(t^*)\,(t^*+x) = S(t^*)
+\qquad\Longleftrightarrow\qquad \boxed{\;r(t^*) = R(t^*)\;}</div></div>
+
+<p><b>Pare quando o rendimento do momento igualar a média já descontada a pausa.</b> Acima
+dela, continuar puxa a média para cima; abaixo, puxa para baixo.</p>
+
+<p class="note">Geometricamente, <span class="tex">R(t)</span> é a inclinação da reta que liga
+o ponto <span class="tex">(-x,\,0)</span> ao ponto <span class="tex">(t,\,S(t))</span>.
+Maximizá-la é traçar dessa origem a reta <b>tangente</b> a <span class="tex">S</span> — que é
+exatamente o diagrama de Charnov, com a pausa <span class="tex">x</span> no lugar do tempo de
+viagem.</p>
+
+<h2>9. A condição de existência</h2>
+
+<p>Defina-se <span class="tex">g(t)=r(t)(t+x)-S(t)</span>, cujo zero é o limiar. Derivando,
+os termos em <span class="tex">r(t)</span> se cancelam:</p>
+
+<div class="eq"><div class="tex-d">g'(t) = r'(t)(t+x) + r(t) - r(t) = -\,b\,k\,e^{-kt}(t+x) \;<\; 0</div></div>
+
+<p>Logo <span class="tex">g</span> é <b>estritamente decrescente</b>. Basta examinar os
+extremos:</p>
+
+<div class="eq"><div class="tex-d">g(0) = (c+b)\,x \;>\; 0
+\qquad\qquad \lim_{t\to\infty} g(t) = c\,x - \frac{b}{k}</div></div>
+
+<p>Uma função decrescente que começa positiva cruza o zero se e somente se termina negativa:</p>
+
+<div class="eq"><div class="tex-d">c\,x - \frac{b}{k} < 0
+\qquad\Longleftrightarrow\qquad \boxed{\;x \;<\; \frac{b}{k\,c}\;}</div></div>
+
+<p class="note">A análise dimensional valida a expressão:
+<span class="tex">b/(kc)</span> resulta em <b>minutos</b>, o que torna legítima a comparação
+com a pausa <span class="tex">x</span>. Se pausas excedem essa razão, não existe limiar — o
+modelo passa a dizer que nunca compensa parar.</p>
+
+<h2>10. Solução fechada</h2>
+
+<p>No caso clássico com <span class="tex">c=0</span>, isolar <span class="tex">t</span> em
+<span class="tex">r(t)=R</span> é direto e fornece
+<span class="tex">t^*=\frac{1}{k}\ln\!\left(r_0/R\right)</span>. Com
+<span class="tex">c>0</span> a equação deixa de ser elementar.</p>
+
+<p>Substituindo <span class="tex">U=e^{-kt}</span> e portanto
+<span class="tex">t=-\ln U/k</span> na condição de parada, e reorganizando, obtém-se:</p>
+
+<div class="eq"><div class="tex-d">U\left(1 + kx - \ln U\right) = A,
+\qquad A = 1 - \frac{k\,c\,x}{b}</div></div>
+
+<p>Com a substituição <span class="tex">w = 1+kx-\ln U</span>, a equação assume a forma
+canônica <span class="tex">w\,e^{-w} = A\,e^{-(1+kx)}</span>, cuja inversa é a função
+<span class="tex">W</span> de Lambert:</p>
+
+<div class="eq"><div class="rot">solução fechada do limiar</div>
+<div class="tex-d">t^* = \frac{1}{k}\left[-\,W_{-1}\!\left(-A\,e^{-(1+kx)}\right) - 1 - kx\right]</div></div>
+
+<p>A expressão passa nas duas verificações obrigatórias: recai em
+<span class="tex">\frac{1}{k}\ln(r_0/R)</span> quando <span class="tex">c\to 0</span>, e deixa
+de ter solução real quando <span class="tex">x \ge b/(kc)</span>. Confrontada com a solução
+numérica, concorda com erro da ordem de 10<sup>−14</sup> minutos.</p>
+
+<h2>11. A recuperação</h2>
+
+<p>Escrever <span class="tex">R(t)=S(t)/(t+x)</span> como taxa de longo prazo supõe que cada
+ciclo reproduza a mesma curva — ou seja, que a pausa devolva o estudante ao estado inicial.
+Essa suposição precisava ser medida.</p>
+
+<h3>11.1 O erro do método das bordas</h3>
+
+<p>A primeira tentativa comparou a média dos três cartões anteriores à pausa com a dos três
+posteriores. Os cinco resultados foram −2%, +47%, +7%, +8% e −17%, aparentemente
+contraditórios, e a conclusão precipitada foi de que a recuperação exponencial não descrevia
+os dados.</p>
+
+<p>A conclusão estava errada. Com variabilidade entre cartões de
+<span class="tex">CV=38\%</span>, o erro-padrão da diferença entre médias de
+<span class="tex">n</span> cartões é:</p>
+
+<div class="eq"><div class="tex-d">EP_{\text{dif}} = CV\sqrt{\tfrac{2}{n}}
+\qquad\Longrightarrow\qquad EP = 0{,}38\sqrt{\tfrac{2}{3}} = 31\%</div></div>
+
+<p>Todas as cinco medidas cabem nessa barra. Testando a média contra zero:
+<span class="tex">t=0{,}81</span>, <span class="tex">p=0{,}463</span>. Não havia contradição
+— havia ruído, e leu-se padrão onde não existia.</p>
+
+<h3>11.2 O estimador por interceptos</h3>
+
+<p>Em vez de comparar bordas, ajusta-se uma reta à duração por cartão <b>dentro de cada
+bloco</b> e compara-se o intercepto, que estima a duração inicial. Isso emprega todos os
+cartões do bloco em vez de seis:</p>
+
+<div class="eq"><div class="tex-d">d_j(t) = \alpha_j + \beta_j t
+\qquad\Longrightarrow\qquad \rho_j = \frac{\alpha_1}{\alpha_j}</div></div>
+
+<table>
+<thead><tr><th>sessão</th><th>bloco</th><th>n</th><th>intercepto</th><th>déficit</th><th><span class="tex">\rho</span></th></tr></thead>
+<tbody>
+<tr><td rowspan="4">25·5 × 4</td><td>1</td><td>11</td><td>117,2 s</td><td>—</td><td>1,000</td></tr>
+<tr><td>2</td><td>11</td><td>170,8 s</td><td>+45,7%</td><td><b>0,686</b></td></tr>
+<tr><td>3</td><td>12</td><td>144,0 s</td><td>+22,8%</td><td>0,814</td></tr>
+<tr><td>4</td><td>13</td><td>125,6 s</td><td>+7,2%</td><td>0,933</td></tr>
+<tr><td rowspan="3">40·5 × 3</td><td>1</td><td>12</td><td>176,2 s</td><td>—</td><td>1,000</td></tr>
+<tr><td>2</td><td>10</td><td>237,7 s</td><td>+34,9%</td><td><b>0,741</b></td></tr>
+<tr><td>3</td><td>10</td><td>226,2 s</td><td>+28,4%</td><td>0,779</td></tr>
+</tbody>
+</table>
+
+<p>Em dois participantes e dois protocolos, o bloco 2 arranca substancialmente pior que o
+bloco 1, e os seguintes recuperam progressivamente. Uma pausa de cinco minutos devolve entre
+69% e 74% do estado inicial. Adotando a forma de Jaber:</p>
+
+<div class="eq"><div class="tex-d">\rho(x)=1-e^{-\mu x}
+\;\Longrightarrow\; \mu = -\frac{\ln(1-\rho)}{x} = -\frac{\ln(0{,}30)}{5} \approx 0{,}24\ \text{min}^{-1}</div></div>
+
+<p class="note">Recuperação cerca de dez vezes mais rápida que a instalação da fadiga, o que
+é compatível com a literatura de trabalho-descanso.</p>
+
+<h3>11.3 O limite de detecção</h3>
+
+<div class="eq"><div class="tex-d">n = 2\left(\frac{(z_{\alpha/2}+z_\beta)\,CV}{\delta}\right)^2</div></div>
+
+<p>Com 11 cartões por bloco, apenas déficits acima de 30% são detectáveis. Os observados, de
+35% e 46%, situam-se exatamente acima desse limite. A existência de recuperação incompleta é
+sustentável; um valor preciso de <span class="tex">\mu</span>, ainda não.</p>
+
+<h2>12. O regime permanente</h2>
+
+<p>Com <span class="tex">\rho<1</span>, cada bloco começa com um resíduo
+<span class="tex">\tau_n</span> de fadiga não removida, que evolui como
+<span class="tex">\tau_{n+1}=(\tau_n+T)(1-\rho)</span>. Ao longo de muitos ciclos essa
+recorrência converge. No ponto fixo:</p>
+
+<div class="eq"><div class="tex-d">\tau^*=(\tau^*+T)(1-\rho)
+\;\Longrightarrow\; \tau^*\rho = T(1-\rho)
+\;\Longrightarrow\; \boxed{\;\tau^*=\frac{T(1-\rho)}{\rho}\;}</div></div>
+
+<p>Em regime, todo ciclo é idêntico e o rendimento inicial de cada bloco deixa de ser algo a
+medir: passa a ser <b>deduzido</b>.</p>
+
+<div class="eq"><div class="tex-d">R(T)=\frac{c\,T+\frac{b}{k}\,e^{-k\tau^*}\left(1-e^{-kT}\right)}{T+x}</div></div>
+
+<h2>13. Resultados</h2>
+
+<table>
+<thead><tr><th>sessão</th><th>protocolo</th><th>n</th><th>c</th><th>b/k</th><th>k</th><th>b/(kc)</th><th>Δ leitura</th></tr></thead>
+<tbody>
+<tr><td>11/08 · A</td><td>contínua 115</td><td>32</td><td>0,223</td><td>2,97</td><td>0,076</td><td>13,3 min</td><td>−15%</td></tr>
+<tr><td>11/08 · B</td><td>contínua 115</td><td>35</td><td>0,212</td><td>9,47</td><td>0,023</td><td>44,7 min</td><td>−35%**</td></tr>
+<tr><td>12/08 · A</td><td>25·5 × 4</td><td>47</td><td>0,370</td><td>0,00</td><td>—</td><td>—</td><td>+57%</td></tr>
+<tr><td>12/08 · B</td><td>40·5 × 3</td><td>32</td><td>0,231</td><td>2,73</td><td>0,035</td><td>11,8 min</td><td>−30%*</td></tr>
+</tbody>
+</table>
+<p class="note">Δ leitura é a variação percentual da velocidade de leitura, em palavras por
+segundo, ao longo da sessão. Significância: ** <span class="tex">p<0{,}01</span>,
+* <span class="tex">p<0{,}05</span>.</p>
+
+<h3>13.1 A estimativa do limiar</h3>
+
+<table>
+<thead><tr><th>sessão</th><th><span class="tex">\rho=1{,}00</span></th><th><span class="tex">\rho=0{,}70</span></th></tr></thead>
+<tbody>
+<tr><td>11/08 · B</td><td>32 min</td><td><b>23 min</b></td></tr>
+<tr><td>12/08 · B</td><td>45 min</td><td><b>35 min</b></td></tr>
+</tbody>
+</table>
+
+<div class="box ok">
+<b>Limiar estimado entre 21 e 36 minutos, mediana de 29</b>, para pausas de cinco minutos.
+A recuperação incompleta desloca o ótimo para <i>antes</i>: como parte da fadiga sobrevive à
+pausa, compensa interromper mais cedo do que o modelo com recuperação total indicaria.
+</div>
+
+<h2>14. Controles e critérios</h2>
+
+<h3>14.1 Exclusões, fixadas antes de examinar os resultados</h3>
+<ol>
+<li><b>Velocidade de leitura acima de 5 palavras por segundo</b> — impossibilidade física de
+ter lido o texto. Capturou um cartão a 6,77 pal/s, contra máxima legítima observada de 1,65
+em 180 cartões. Nenhum falso positivo.</li>
+<li><b>Resposta ausente do texto</b> — defeito de construção, verificável por varredura
+automática do banco. Capturou um cartão; a varredura completa encontrou quatro defeitos,
+todos corrigidos.</li>
+</ol>
+
+<h3>14.2 Normalização pelo tamanho do texto</h3>
+<p>Testada empiricamente sobre 180 cartões: o número de palavras explica apenas
+<span class="tex">R^2=0{,}052</span> do tempo de leitura, e a normalização reduz a
+variabilidade em 5%. A dispersão provém do conteúdo — densidade conceitual, familiaridade
+prévia — e não do volume de texto. Mantida por rigor, com efeito declaradamente pequeno.</p>
+
+<h3>14.3 Janelas temporais</h3>
+<p>Com cerca de 32 cartões por sessão, janelas de 5 ou 10 minutos contêm 2 a 3 cartões e o
+rendimento assume apenas valores discretos. Nessa resolução o modelo constante vence por
+AICc mesmo quando a desaceleração cartão a cartão é significativa. A evidência primária é,
+portanto, cartão a cartão e o ajuste de <span class="tex">S(t)</span>.</p>
+
+<h2>15. Limitações</h2>
+
+<ul>
+<li>Os parâmetros oscilam entre sessões: <span class="tex">b/k</span> variou de 2,73 a 9,47
+no mesmo participante em dias consecutivos. A estimativa do limiar é uma faixa, não um valor
+pontual.</li>
+<li>A comparação entre protocolos é confundida: nas sessões cicladas mudaram simultaneamente
+o descanso prévio, o tempo total e o conteúdo estudado.</li>
+<li>O valor de <span class="tex">\mu</span> carece de poder estatístico, e a forma
+exponencial da recuperação foi <b>suposta</b>, não testada — um único valor de
+<span class="tex">x</span> não permite verificá-la.</li>
+<li>Acerto imediato mede memória de trabalho, não consolidação. A moeda correta de
+<span class="tex">S(t)</span> seria conhecimento retido, medido por teste retardado.</li>
+<li>Dois participantes, um único banco de História. A generalização para outras matérias e
+outros sujeitos não foi testada.</li>
+<li>A modelagem é <b>fenomenológica</b>: nenhuma das formas funcionais deriva de primeiros
+princípios da cognição.</li>
+</ul>
+
+<h2>16. Fontes e inspirações</h2>
+
+<p class="ref">CHARNOV, E. L. Optimal foraging, the marginal value theorem.
+<i>Theoretical Population Biology</i>, v. 9, n. 2, p. 129–136, 1976. — origem do teorema, da
+regra <span class="tex">r(t^*)=R(t^*)</span> e da construção geométrica da tangente a partir
+de <span class="tex">(-x,0)</span>.</p>
+
+<p class="ref">JABER, M. Y.; GIVI, Z. S.; NEUMANN, W. P. Incorporating human fatigue and
+recovery into the learning–forgetting process. <i>Applied Mathematical Modelling</i>, v. 37,
+2013. — origem da forma saturante da fadiga acumulada e da recuperação exponencial
+<span class="tex">\rho(x)=1-e^{-\mu x}</span>.</p>
+
+<p class="ref">FREITAS NETO, J. A.; TASINAFO, C. R. <i>História Geral e do Brasil</i>. — fonte
+do conteúdo dos cartões de leitura, junto de material de aula do participante.</p>
+
+<p class="ref">Listas de Cálculo da Universidade de Brasília — base dos bancos de exercícios
+de derivadas da primeira fase.</p>
+
+<p class="ref">Lei de resfriamento de Newton — a equação diferencial
+<span class="tex">dr/dt=-k(r-c)</span> é formalmente idêntica, e a analogia do café esfriando
+foi usada para dar leitura física aos parâmetros.</p>
+
+<p class="ref">Função <span class="tex">W</span> de Lambert — inversa de
+<span class="tex">w\,e^{w}</span>, empregada na solução fechada do limiar.</p>
+
+<div class="foot">
+Projeto LIMIAR · Carlos Raymond · carlosraymond.com/limiar<br>
+Nove sessões experimentais entre 1 e 12 de agosto de 2026 · documento de 13/08/2026
+</div>
+
+</div>
+<script src="/limiar/vendor/katex/katex.min.js"></script>
+<script>
+document.querySelectorAll('.tex').forEach(function(el){
+  try{ katex.render(el.textContent, el, {throwOnError:false, displayMode:false}); }catch(e){}
+});
+document.querySelectorAll('.tex-d').forEach(function(el){
+  try{ katex.render(el.textContent, el, {throwOnError:false, displayMode:true}); }catch(e){}
+});
+</script>
+</body>
+</html>
