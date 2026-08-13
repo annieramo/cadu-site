@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LIMIAR — dados no GeoGebra</title>
+<style>
+:root{--bg:#0f1012;--fg:#e9e9ea;--dim:#8b8d92;--rule:#2a2c31;--acc:#c8cad0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font:15px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:74rem;margin:0 auto;padding:1.8rem 1.1rem 4rem}
+h1{font-size:1.25rem;font-weight:600;margin:0 0 .3rem}
+.sub{color:var(--dim);font-size:.88rem;margin:0 0 1.4rem}
+#ggb{border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff;min-height:520px}
+.bar{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem}
+button{background:#1d1f24;color:var(--fg);border:1px solid var(--rule);border-radius:4px;
+       padding:.5rem .9rem;font:inherit;font-size:.86rem;cursor:pointer}
+button:hover{border-color:#4a4e57}
+button.on{background:#e9e9ea;color:#0f1012;border-color:#e9e9ea;font-weight:600}
+.leg{margin:1.2rem 0 0;font-size:.85rem;color:var(--dim)}
+.leg b{color:var(--acc);font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:.82rem;margin:1.2rem 0}
+th,td{border-bottom:1px solid var(--rule);padding:.4rem .5rem;text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--dim);font-weight:500;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+.dot{display:inline-block;width:.62rem;height:.62rem;border-radius:50%;margin-right:.4rem;
+     vertical-align:baseline}
+.aviso{border-left:2px solid #c9b47a;padding:.3rem 0 .3rem .9rem;margin:1.2rem 0;
+       color:#d6cbab;font-size:.87rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>LIMIAR — os dados no GeoGebra</h1>
+<p class="sub">Todas as sessões carregadas num applet interativo. Escolha o que exibir e mexa
+nos parâmetros para ver a curva responder.</p>
+
+<div class="bar">
+  <button id="bS" class="on">Ganho acumulado S(t)</button>
+  <button id="bV">Velocidade de leitura</button>
+  <button id="bD">Segundos por cartão</button>
+  <button id="bR">Curvas ajustadas</button>
+  <button id="bZ">Reenquadrar</button>
+</div>
+
+<div id="ggb"></div>
+
+<p class="leg">
+  <span class="dot" style="background:#2f5d8a"></span><b>Cadu · contínua 115 min</b> &nbsp;
+  <span class="dot" style="background:#9c3b3b"></span><b>Cadu · ciclada 40·5×3</b> &nbsp;
+  <span class="dot" style="background:#2e6b45"></span><b>pai · contínua 115 min</b> &nbsp;
+  <span class="dot" style="background:#b07d2b"></span><b>pai · Pomodoro 25·5×4</b>
+</p>
+
+<table>
+<thead><tr><th>sessão</th><th>pontos</th><th>T (min)</th><th>c</th><th>b</th><th>k</th><th>b/k</th></tr></thead>
+<tbody id="tab"></tbody>
+</table>
+
+<div class="aviso">
+Os controles <b>c</b>, <b>b</b> e <b>k</b> aparecem como seletores dentro do applet. Arraste
+para ver a curva se mover sobre os pontos e reencontrar o ajuste na mão — é a forma mais
+rápida de entender o papel de cada parâmetro.
+</div>
+
+<p class="leg">Ajuste automático usado em cada curva:
+<b>S(t) = c·t + (b/k)(1 − e<sup>−kt</sup>)</b>. As cores das curvas seguem as dos pontos.</p>
+</div>
+
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+<script>
+var CORES = {Cadu_continua:[47,93,138], Cadu_ciclada:[156,59,59],
+             Pai_continua:[46,107,69],  Pai_pomodoro:[176,125,43]};
+var DADOS = null, api = null, modo = "S";
+
+function lista(nome, pares){
+  return nome + "={" + pares.map(function(p){ return "(" + p[0] + "," + p[1] + ")"; }).join(",") + "}";
+}
+
+function desenhar(){
+  if(!api || !DADOS) return;
+  api.setUndoPoint(false);
+  ["S","V","D"].forEach(function(m){
+    Object.keys(DADOS).forEach(function(s){
+      var n = "p" + m + s;
+      if(api.exists(n)) api.setVisible(n, m === modo);
+    });
+  });
+  Object.keys(DADOS).forEach(function(s){
+    if(api.exists("f" + s)) api.setVisible("f" + s, modo === "S" && curvas);
+  });
+  api.setLabels && api.setLabels(false);
+}
+
+var curvas = true;
+
+function montar(api_){
+  api = api_;
+  Object.keys(DADOS).forEach(function(s){
+    var d = DADOS[s], c = CORES[s];
+    ["S","V","D"].forEach(function(m){
+      var n = "p" + m + s;
+      api.evalCommand(lista(n, d[m]));
+      api.setColor(n, c[0], c[1], c[2]);
+      api.setPointSize(n, 3);
+      api.setLabelVisible(n, false);
+      api.setVisible(n, m === "S");
+    });
+    if(d.b > 0){
+      api.evalCommand("f" + s + "(x)=" + d.c + "*x+(" + d.b + "/" + d.k + ")*(1-exp(-" + d.k + "*x))");
+      api.setColor("f" + s, c[0], c[1], c[2]);
+      api.setLineThickness("f" + s, 4);
+      api.setLabelVisible("f" + s, false);
+      api.setFixed("f" + s, true);
+    }
+  });
+  // seletores para explorar o modelo na mao
+  api.evalCommand("c=Slider(0,0.6,0.005)"); api.setValue("c", 0.20);
+  api.evalCommand("b=Slider(0,0.6,0.005)"); api.setValue("b", 0.25);
+  api.evalCommand("k=Slider(0.002,0.15,0.001)"); api.setValue("k", 0.025);
+  api.evalCommand("modelo(x)=c*x+(b/k)*(1-exp(-k*x))");
+  api.setColor("modelo", 20, 20, 20);
+  api.setLineThickness("modelo", 6);
+  api.setLineStyle("modelo", 1);
+  api.setLabelVisible("modelo", false);
+  api.setCoordSystem(-4, 132, -3, 42);
+  desenhar();
+}
+
+fetch("/limiar/dados-geogebra.json").then(function(r){ return r.json(); }).then(function(j){
+  DADOS = j;
+  var tb = document.getElementById("tab");
+  Object.keys(DADOS).forEach(function(s){
+    var d = DADOS[s], c = CORES[s];
+    var tr = document.createElement("tr");
+    tr.innerHTML = "<td><span class='dot' style='background:rgb(" + c.join(",") + ")'></span>" +
+      d.rot + "</td><td>" + d.S.length + "</td><td>" + d.T + "</td><td>" +
+      d.c.toFixed(4) + "</td><td>" + d.b.toFixed(4) + "</td><td>" +
+      (d.b > 0 ? d.k.toFixed(4) : "—") + "</td><td>" +
+      (d.b > 0 ? d.bk.toFixed(2) : "—") + "</td>";
+    tb.appendChild(tr);
+  });
+  new GGBApplet({
+    appName: "graphing", width: 1120, height: 560,
+    showToolBar: false, showAlgebraInput: true, showMenuBar: false,
+    showResetIcon: true, enableRightClick: true, enableLabelDrags: false,
+    algebraInputPosition: "bottom", perspective: "AG",
+    appletOnLoad: montar
+  }, true).inject("ggb");
+});
+
+function sel(id){
+  ["bS","bV","bD"].forEach(function(b){ document.getElementById(b).className = (b === id ? "on" : ""); });
+}
+document.getElementById("bS").onclick = function(){ modo = "S"; sel("bS"); api.setCoordSystem(-4,132,-3,42); desenhar(); };
+document.getElementById("bV").onclick = function(){ modo = "V"; sel("bV"); api.setCoordSystem(-4,132,0,1.3); desenhar(); };
+document.getElementById("bD").onclick = function(){ modo = "D"; sel("bD"); api.setCoordSystem(-4,132,0,360); desenhar(); };
+document.getElementById("bR").onclick = function(){ curvas = !curvas; desenhar(); };
+document.getElementById("bZ").onclick = function(){
+  if(modo === "S") api.setCoordSystem(-4,132,-3,42);
+  else if(modo === "V") api.setCoordSystem(-4,132,0,1.3);
+  else api.setCoordSystem(-4,132,0,360);
+};
+</script>
+</body>
+</html>
